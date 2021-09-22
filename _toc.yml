@@ -1,0 +1,27 @@
+format: jb-article
+root: chapters/intro
+title: Introduction
+options:
+  numbered: true
+sections:
+- file: chapters/01/tutorial-1
+  title: Tutorial 1
+  sections:
+  - file: chapters/01/1/numpy
+    title: Numpy
+  - file: chapters/01/2/pandas
+    title: Pandas
+- file: chapters/02/tutorial-2
+  title: Tutorial 2
+  sections:
+  - file: chapters/02/1/Expressions
+    title: Expressions
+  - file: chapters/02/2/Names
+    title: Names
+    sections:
+    - file: chapters/02/2/1/Growth
+      title: 'Example: Growth Rates'
+  - file: chapters/02/3/Calls
+    title: Call Expressions
+  - file: chapters/02/4/Introduction_to_Tables
+    title: Introduction to Tables
