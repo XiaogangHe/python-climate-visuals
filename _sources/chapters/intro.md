@@ -1,7 +1,5 @@
 # Python Climate Visuals
 
-by [Xiaogang HE](http://hydro.iis.u-tokyo.ac.jp/~hexg/cv.html).
-
 This text was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
 
 You can [view this text online][ghpages] or [view the source][source].
