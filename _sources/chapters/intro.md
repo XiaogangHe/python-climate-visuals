@@ -34,7 +34,7 @@ You can [view this text online][ghpages] or [view the source][source].
     </div>
     <div class="col-lg-5">
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
-        <img src="../images/NUS-campus.svg" style="width:100%">
+        <img src="../_images/NUS-campus.svg" style="width:100%">
       </a>
     </div>
   </div>
