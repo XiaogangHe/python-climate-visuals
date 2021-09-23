@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.4. Introduction to Tables &#8212; Python Climate Visuals</title>
+    <title>1.4. Introduction to Tables &#8212; Python Climate Visuals</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,7 +56,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="2.3. Call Expressions" href="../3/Calls.html" />
+    <link rel="next" title="References" href="../../others/refs.html" />
+    <link rel="prev" title="1.3. Call Expressions" href="../3/Calls.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -90,7 +91,12 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p class="caption">
+ <span class="caption-text">
+  Data Analytics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../01/tutorial-1.html">
    1. Tutorial 1
@@ -113,9 +119,16 @@
    </li>
   </ul>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data visualization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../tutorial-2.html">
-   2. Tutorial 2
+   1. Tutorial 2
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -125,12 +138,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../1/Expressions.html">
-     2.1. Expressions
+     1.1. Expressions
     </a>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../2/Names.html">
-     2.2. Names
+     1.2. Names
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
     <label for="toctree-checkbox-3">
@@ -140,22 +153,34 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../2/1/Growth.html">
-       2.2.1. Example: Growth Rates
+       1.2.1. Example: Growth Rates
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../3/Calls.html">
-     2.3. Call Expressions
+     1.3. Call Expressions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Introduction to Tables
+     1.4. Introduction to Tables
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Others
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../others/refs.html">
+   References
+  </a>
  </li>
 </ul>
 
@@ -266,22 +291,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choosing-sets-of-columns">
-   2.4.1. Choosing Sets of Columns
+   1.4.1. Choosing Sets of Columns
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sorting-rows">
-   2.4.2. Sorting Rows
+   1.4.2. Sorting Rows
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#selecting-rows-that-satisfy-a-condition">
-   2.4.3. Selecting Rows that Satisfy a Condition
+   1.4.3. Selecting Rows that Satisfy a Condition
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-salaries-in-the-nba">
-   2.4.4. Example: Salaries in the NBA
+   1.4.4. Example: Salaries in the NBA
   </a>
  </li>
 </ul>
@@ -298,7 +323,7 @@
   <div class="cell tag_remove-input docutils container">
 </div>
 <div class="section" id="introduction-to-tables">
-<h1><span class="section-number">2.4. </span>Introduction to Tables<a class="headerlink" href="#introduction-to-tables" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1.4. </span>Introduction to Tables<a class="headerlink" href="#introduction-to-tables" title="Permalink to this headline">¶</a></h1>
 <p>We can now apply Python to analyze data. We will work with data stored in Table structures.</p>
 <p>Tables are a fundamental way of representing data sets. A table can be viewed in two ways:</p>
 <ul class="simple">
@@ -373,7 +398,7 @@
 </div>
 <p>You can replace 2 by any number of rows. If you ask for more than six, you will only get six, because <code class="docutils literal notranslate"><span class="pre">cones</span></code> only has six rows.</p>
 <div class="section" id="choosing-sets-of-columns">
-<h2><span class="section-number">2.4.1. </span>Choosing Sets of Columns<a class="headerlink" href="#choosing-sets-of-columns" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.1. </span>Choosing Sets of Columns<a class="headerlink" href="#choosing-sets-of-columns" title="Permalink to this headline">¶</a></h2>
 <p>The method <code class="docutils literal notranslate"><span class="pre">select</span></code> creates a new table consisting of only the specified columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -559,7 +584,7 @@
 <p>Like <code class="docutils literal notranslate"><span class="pre">select</span></code>, the <code class="docutils literal notranslate"><span class="pre">drop</span></code> method creates a smaller table and leaves the original table unchanged. In order to explore your data, you can create any number of smaller tables by using choosing or dropping columns. It will do no harm to your original data table.</p>
 </div>
 <div class="section" id="sorting-rows">
-<h2><span class="section-number">2.4.2. </span>Sorting Rows<a class="headerlink" href="#sorting-rows" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.2. </span>Sorting Rows<a class="headerlink" href="#sorting-rows" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sort</span></code> method creates a new table by arranging the rows of the original table in ascending order of the values in the specified column. Here the <code class="docutils literal notranslate"><span class="pre">cones</span></code> table has been sorted in ascending order of the price of the cones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,7 +661,7 @@
 <p>Like <code class="docutils literal notranslate"><span class="pre">select</span></code> and <code class="docutils literal notranslate"><span class="pre">drop</span></code>, the <code class="docutils literal notranslate"><span class="pre">sort</span></code> method leaves the original table unchanged.</p>
 </div>
 <div class="section" id="selecting-rows-that-satisfy-a-condition">
-<h2><span class="section-number">2.4.3. </span>Selecting Rows that Satisfy a Condition<a class="headerlink" href="#selecting-rows-that-satisfy-a-condition" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.3. </span>Selecting Rows that Satisfy a Condition<a class="headerlink" href="#selecting-rows-that-satisfy-a-condition" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">where</span></code> method creates a new table consisting only of the rows that satisfy a given condition. In this section we will work with a very simple condition, which is that the value in a specified column must be equal to a value that we also specify. Thus the <code class="docutils literal notranslate"><span class="pre">where</span></code> method has two arguments.</p>
 <p>The code in the cell below creates a table consisting only of the rows corresponding to chocolate cones.</p>
 <div class="cell docutils container">
@@ -687,7 +712,7 @@
 <p>Like all the other table methods in this section, <code class="docutils literal notranslate"><span class="pre">where</span></code> leaves the original table unchanged.</p>
 </div>
 <div class="section" id="example-salaries-in-the-nba">
-<h2><span class="section-number">2.4.4. </span>Example: Salaries in the NBA<a class="headerlink" href="#example-salaries-in-the-nba" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4.4. </span>Example: Salaries in the NBA<a class="headerlink" href="#example-salaries-in-the-nba" title="Permalink to this headline">¶</a></h2>
 <p>“The NBA is the highest paying professional sports league in the world,” <a class="reference external" href="http://edition.cnn.com/2015/12/04/sport/gallery/highest-paid-nba-players/">reported CNN</a> in March 2016. The table <code class="docutils literal notranslate"><span class="pre">nba</span></code> contains the <a class="reference external" href="https://www.statcrunch.com/app/index.php?dataid=1843341">salaries of all National Basketball Association players</a> in 2015-2016.</p>
 <p>Each row represents one player. The columns are:</p>
 <table class="colwidths-auto table">
@@ -1029,10 +1054,19 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">2.3. </span>Call Expressions</p>
+                <p class="prevnext-title"><span class="section-number">1.3. </span>Call Expressions</p>
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="../../others/refs.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">References</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
