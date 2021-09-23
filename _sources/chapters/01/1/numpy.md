@@ -1,4 +1,0 @@
-# Numpy
-
-Numpy is xxx.
-
