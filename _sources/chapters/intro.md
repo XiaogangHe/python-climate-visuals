@@ -16,21 +16,20 @@ You can [view this text online][ghpages] or [view the source][source].
 
 ![Image of NUS Campus](../images/NUS-campus.svg)
 
-```{admonition} Resources
+```{admonition} Just for test purposes 
 :class: remove-from-content-only tip
 
 <div class="container">
   <div class="row">
     <div class="col-xl">
-      Register to the
+      Go to xxx website to check
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
         "Machine learning in Python with scikit-learn MOOC"
       </a>,
-      to have the full MOOC experience (quizz solutions, executable notebooks,
+      quizz solutions, executable notebooks,
       discussion forum, etc ...)!
       </br>
-      The MOOC is free and the platform does not use the student data for any other purpose
-      than improving the educational material.
+      The e-book is free. 
     </div>
     <div class="col-lg-5">
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
