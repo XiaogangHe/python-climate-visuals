@@ -5,6 +5,7 @@ author: Xiaogang HE
 email: 'hexg@nus.edu.sg'
 logo                        : "favicon.png"  # A path to the book logo
 exclude_patterns            : ["README.md"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
+exclude_patterns            : ["README.md", Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 
 #######################################################################################
 # Execution settings
