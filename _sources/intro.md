@@ -1,5 +1,9 @@
 # Python Climate Visuals
 
+:::{only} html
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://jupyterbook.org)
+:::
+
 ```{admonition} Welcome!
 :class: remove-from-content-only
 
@@ -42,3 +46,5 @@ You can [view this text online][ghpages] or [view the source][source].
 
 The contents of this book are licensed for free consumption under the following license:
 [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/XiaogangHe/python-climate-visuals/blob/master/chapters/data-analytics/pandas.ipynb)
