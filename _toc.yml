@@ -1,27 +1,26 @@
-format: jb-article
-root: chapters/intro
-title: Introduction
+format: jb-book
+root: intro
 options:
   numbered: true
-sections:
-- file: chapters/01/tutorial-1
-  title: Tutorial 1
-  sections:
-  - file: chapters/01/1/numpy
-    title: Numpy
-  - file: chapters/01/2/pandas
-    title: Pandas
-- file: chapters/02/tutorial-2
-  title: Tutorial 2
-  sections:
-  - file: chapters/02/1/Expressions
-    title: Expressions
-  - file: chapters/02/2/Names
-    title: Names
+parts:
+- caption: Data Analytics
+  numbered: true
+  chapters:
+  - file: chapters/data-analytics/numpy
+  - file: chapters/data-analytics/scipy
+  - file: chapters/data-analytics/pandas
+- caption: Data visualization
+  numbered: true
+  chapters:
+  - file: chapters/data-visuals/matplotlib
     sections:
-    - file: chapters/02/2/1/Growth
-      title: 'Example: Growth Rates'
-  - file: chapters/02/3/Calls
-    title: Call Expressions
-  - file: chapters/02/4/Introduction_to_Tables
-    title: Introduction to Tables
+    - file: chapters/data-visuals/matplotlib/Expressions
+    - file: chapters/data-visuals/matplotlib/Names
+      sections:
+      - file: chapters/data-visuals/matplotlib/Growth
+    - file: chapters/data-visuals/matplotlib/Calls
+    - file: chapters/data-visuals/matplotlib/Introduction_to_Tables
+- caption: Others
+  chapters:
+  - file: chapters/others/refs
+

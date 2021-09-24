@@ -23,6 +23,7 @@ html:
   use_repository_button     : true
   use_edit_page_button      : false
   use_issues_button         : false
+  use_multitoc_numbering    : false
 
 #######################################################################################
 # Launch button settings

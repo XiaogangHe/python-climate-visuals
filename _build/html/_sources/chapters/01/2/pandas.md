@@ -1,4 +1,0 @@
-# Pandas
-
-Pandas is xxx.
-
