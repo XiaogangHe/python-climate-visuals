@@ -14,7 +14,7 @@ You can [view this text online][ghpages] or [view the source][source].
 [ghpages]: https://xiaoganghe.github.io/NUS-CE3201/
 [source]: https://github.com/XiaogangHe/python-climate-visuals
 
-![Image of NUS Campus](../images/NUS-campus.svg)
+![Image of NUS Campus](images/NUS-campus.svg)
 
 ```{admonition} Just for test purposes 
 :class: remove-from-content-only tip
