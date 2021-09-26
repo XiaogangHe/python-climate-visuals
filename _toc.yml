@@ -9,6 +9,9 @@ parts:
   - file: chapters/data-analytics/numpy
   - file: chapters/data-analytics/scipy
   - file: chapters/data-analytics/pandas
+    sections:
+    - file: chapters/data-analytics/pandas-basic
+    - file: chapters/data-analytics/pandas-advanced
 - caption: Data visualization
   numbered: true
   chapters:
