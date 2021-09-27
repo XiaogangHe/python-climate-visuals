@@ -7,7 +7,7 @@
 ```{admonition} Welcome! 👏
 :class: remove-from-content-only
 
-This ```textbook``` was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
+This textbook was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
 
 You can [view this text online][ghpages] or [view the source][source].
 ```
@@ -15,35 +15,37 @@ You can [view this text online][ghpages] or [view the source][source].
 [ghpages]: https://xiaoganghe.github.io/python-climate-visuals
 [source]: https://github.com/XiaogangHe/python-climate-visuals
 
-
-```{image} images/data-visual.svg
-:alt: Visualize Data
-:width: 500px
-:align: center
-```
-
-```{admonition} Just for test purposes 
+```{admonition} About the logo 
 :class: remove-from-content-only tip
 
 <div class="container">
   <div class="row">
     <div class="col-xl">
-      Go to xxx website to check
+      Register to the
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
         "Machine learning in Python with scikit-learn MOOC"
       </a>,
-      quizz solutions, executable notebooks,
+      to have the full MOOC experience (quizz solutions, executable notebooks,
       discussion forum, etc ...)!
       </br>
-      The e-book is free. 
+      The MOOC is free and the platform does not use the student data for any other purpose
+      than improving the educational material.
     </div>
     <div class="col-lg-5">
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
-        <img src="_images/NUS-campus.svg" style="width:100%">
+        <img src="./favicon.png" style="width:100%">
       </a>
     </div>
   </div>
 </div>
+
+```
+
+
+```{image} images/data-visual.svg
+:alt: Visualize Data
+:width: 500px
+:align: center
 ```
 
 The contents of this book are licensed for free consumption under the following license:
