@@ -16,17 +16,17 @@
       </br>
       </br>
       You can
-      <a href="xxx">
+      <a href="https://xiaoganghe.github.io/python-climate-visuals">
         view this text online
       </a>
       or 
-      <a href="xxx">
+      <a href="https://github.com/XiaogangHe/python-climate-visuals">
         view the source.
       </a>
     </div>
     <div class="col-lg-4">
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
-        <img src="/Users/hexg/NUS/Teaching/python-climate-visuals/images/data-visual.svg" style="width:200px">
+        <img src="images/data-visual.svg" style="width:200px">
       </a>
     </div>
   </div>
@@ -39,7 +39,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-6" style="float:none;align:center;">
       </br>
       This logo is xxx.
       This logo is xxx.
@@ -48,13 +48,20 @@
       This logo is xxx.
     </div>
     <div class="col">
-      <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
-        <img src="/Users/hexg/NUS/Teaching/python-climate-visuals/favicon.png" style="width:75%" align="right">
+      <a href="https://xiaoganghe.github.io/python-climate-visuals">
+        <img src="images/favicon.png" style="width:400px">
       </a>
     </div>
   </div>
 </div>
 
+```
+
+```{admonition} Work in progress 
+:class: warning
+
+Please note that this course website is still under active development. Contents will be added and updated frequently
+throughout the course. Your comments to improve the course are highly welcome! 
 ```
 
 ## Citation
@@ -76,13 +83,6 @@ This book project would not have been possible without the contribution of the f
 - Xinyue Liu
 - Zhanwei Liu
 - Huimin Wang
-
-```{admonition} Work in progress 
-:class: warning
-
-Please note that this course website is still under active development. Contents will be added and updated frequently
-throughout the course. Your comments to improve the course are highly welcome! 
-```
 
 The contents of this book are licensed for free consumption under the following license:
 [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).
