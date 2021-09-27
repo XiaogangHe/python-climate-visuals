@@ -59,6 +59,7 @@
       </a>
     </div>
   </div>
+  </br>
   I hope this logo could raise people's awareness of climate change and spark data-driven ideas to battle against the ongoing climate crisis. 
 </div>
 
