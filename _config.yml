@@ -1,10 +1,9 @@
 #######################################################################################
 # Book settings
-title: 
+title: '' 
 author: Xiaogang HE
 email: 'hexg@nus.edu.sg'
 logo                        : "favicon.png"  # A path to the book logo
-exclude_patterns            : ["README.md"]  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 exclude_patterns            : ["README.md", Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 
 #######################################################################################
@@ -20,6 +19,7 @@ parse:
     - dollarmath
     - linkify
     - substitution
+    - html_image
 
 #######################################################################################
 # LaTeX-specific settings
@@ -48,6 +48,7 @@ launch_buttons:
 
 repository:
   url                       : https://github.com/XiaogangHe/python-climate-visuals  # The URL to your book's repository
+  path_to_book              : /Users/hexg/NUS/Teaching/python-climate-visuals/
   branch                    : master  # Which branch of the repository should be used when creating links
 
 sphinx:
