@@ -3,9 +3,9 @@
 
 # # Call Expressions
 # 
-# *Call expressions* invoke functions, which are named operations. The name of the function appears first, followed by expressions in parentheses. 
+# *Call expressions* invoke ``functions``, which are named operations. The name of the function appears first, followed by expressions in parentheses. 
 
-# In[1]:
+# In[2]:
 
 
 abs(-12)

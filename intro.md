@@ -4,18 +4,15 @@
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://jupyterbook.org)
 :::
 
-```{admonition} Welcome!
+```{admonition} Welcome! 👏
 :class: remove-from-content-only
 
-The goal of this course is to xxx. 
-```
-
-This text was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
+This textbook was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
 
 You can [view this text online][ghpages] or [view the source][source].
-
+```
 [pyCIVIL]: https://xiaoganghe.github.io/NUS-CE3201/
-[ghpages]: https://xiaoganghe.github.io/NUS-CE3201/
+[ghpages]: https://xiaoganghe.github.io/python-climate-visuals
 [source]: https://github.com/XiaogangHe/python-climate-visuals
 
 

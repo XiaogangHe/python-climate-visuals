@@ -13,6 +13,20 @@ execute:
   execute_notebooks         : 'off'  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
   timeout                   : 600    # The maximum time (in seconds) each notebook cell is allowed to run.
 
+# Parse and render settings
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+
+#######################################################################################
+# LaTeX-specific settings
+latex:
+  latex_engine              : pdflatex  # one of 'pdflatex', 'xelatex' (recommended for unicode), 'luatex', 'platex', 'uplatex'
+  use_jupyterbook_latex     : true # use sphinx-jupyterbook-latex for pdf builds as default
+
 #######################################################################################
 # HTML-specific settings
 html:
