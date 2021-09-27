@@ -49,7 +49,7 @@
     </div>
     <div class="col">
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
-        <img src="images/favicon.png" style="width:75%" align="center">
+        <img src="images/favicon.png" style="width:400px">
       </a>
     </div>
   </div>
