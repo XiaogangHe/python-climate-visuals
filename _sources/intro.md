@@ -39,7 +39,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-4" style="float:none;align:center;">
+    <div class="col-lg-8" style="float:none;align:center;">
       </br>
       This logo is xxx.
       This logo is xxx.
