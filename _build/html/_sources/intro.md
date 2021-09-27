@@ -12,8 +12,7 @@
     <div class="col-lg-8" style="float:none;align:center;">
       This e-book was originally developed for the NUS course
       <a href="https://xiaoganghe.github.io/NUS-CE3201">
-        Civil Engineering Analytics and Data Visualization
-      </a>.
+        Civil Engineering Analytics and Data Visualization</a>.
       </br>
       </br>
       It is a collection of online Jupyter notebooks 
@@ -26,8 +25,7 @@
       </a>
       or 
       <a href="https://github.com/XiaogangHe/python-climate-visuals">
-        view the source.
-      </a>
+        view the source</a>.
     </div>
     <div class="col-lg-4">
       <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
