@@ -57,6 +57,13 @@
 
 ```
 
+```{admonition} Work in progress 
+:class: warning
+
+Please note that this course website is still under active development. Contents will be added and updated frequently
+throughout the course. Your comments to improve the course are highly welcome! 
+```
+
 ## Citation
 
 If you find this book useful, please cite it via:
@@ -76,13 +83,6 @@ This book project would not have been possible without the contribution of the f
 - Xinyue Liu
 - Zhanwei Liu
 - Huimin Wang
-
-```{admonition} Work in progress 
-:class: warning
-
-Please note that this course website is still under active development. Contents will be added and updated frequently
-throughout the course. Your comments to improve the course are highly welcome! 
-```
 
 The contents of this book are licensed for free consumption under the following license:
 [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).
