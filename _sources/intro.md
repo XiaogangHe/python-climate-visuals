@@ -16,11 +16,11 @@
       </br>
       </br>
       You can
-      <a href="xxx">
+      <a href="https://xiaoganghe.github.io/python-climate-visuals">
         view this text online
       </a>
       or 
-      <a href="xxx">
+      <a href="https://github.com/XiaogangHe/python-climate-visuals">
         view the source.
       </a>
     </div>
@@ -48,7 +48,7 @@
       This logo is xxx.
     </div>
     <div class="col">
-      <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn">
+      <a href="https://xiaoganghe.github.io/python-climate-visuals">
         <img src="images/favicon.png" style="width:400px">
       </a>
     </div>
