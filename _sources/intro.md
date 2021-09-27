@@ -7,7 +7,7 @@
 ```{admonition} Welcome! 👏
 :class: remove-from-content-only
 
-This ```textbook``` was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
+This textbook was originally developed for the NUS course [Civil Engineering Analytics and Data Visualization][pyCIVIL].
 
 You can [view this text online][ghpages] or [view the source][source].
 ```
