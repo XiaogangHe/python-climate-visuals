@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Pandas (Advanced)
+# # Advanced
 
 # The following content is the **Advanced**  part. Please make sure you have studied the **Basic**  part before you start.
 

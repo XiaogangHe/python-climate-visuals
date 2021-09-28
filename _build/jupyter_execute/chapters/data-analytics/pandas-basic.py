@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Pandas (Basic)
+# # Basic
 
 # `Pandas` is a fast, powerful, flexible, and easy-to-use open-source data analysis and manipulation tool, built on top of the `Python` programming language, used for data preparation and data analysis. The tutorial mainly includes two parts, **Basic** and **Advanced**. The former is mandatory for this course and the latter is optional. The following content is the **Basic**  part.
 
@@ -698,7 +698,7 @@ pd.to_datetime([100, 101, 102], unit="h", origin=pd.Timestamp("1900-01-01 00:00:
 
 # prepare data, this section will be introduced in the next tutorial
 # Data Source: http://www.weather.gov.sg/climate-historical-daily/
-data = pd.read_csv('../../../assets/data/Changi_daily_rainfall.csv', index_col=0,header=0,parse_dates=True)
+data = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0,header=0,parse_dates=True)
 data.head()
 
 

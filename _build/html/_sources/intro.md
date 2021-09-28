@@ -45,7 +45,7 @@
     <div class="col-lg-6" style="float:none;align:center;">
       </br>
       This book logo is composed of:
-      <ul>
+      <ul style="padding-left:1.2em;">
       <li>A skyline (Marina Bay Sands) and a landmark (Merlion) of a garden city (Singapore);</li>
       <li>An unseen climate change signal revealed by warming stripes illustrating Singapore's historical (1901-2020) temperature;</li>
       <li>A tag line (Python Climate Visuals) along with its acronym (pyCIVIL) indicating book contents and targeted readers.</li>
@@ -70,7 +70,7 @@ Please note that this book website is still under active development. Contents w
 throughout the course. Your comments to improve the book are highly welcome! 
 ```
 
-## Citation
+## Citation ✍️
 
 If you find this book useful, please cite it via:
 ```
@@ -83,7 +83,7 @@ If you find this book useful, please cite it via:
 }
 ```
 
-## Acknowledgement
+## Acknowledgement 🙏
 
 This book project would not have been possible without the contribution of the following (list alphabetically):
 - Xinyue Liu
