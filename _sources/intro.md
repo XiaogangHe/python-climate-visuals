@@ -70,7 +70,7 @@ Please note that this book website is still under active development. Contents w
 throughout the course. Your comments to improve the book are highly welcome! 
 ```
 
-## Citation
+## Citation ✍️
 
 If you find this book useful, please cite it via:
 ```
@@ -83,7 +83,7 @@ If you find this book useful, please cite it via:
 }
 ```
 
-## Acknowledgement
+## Acknowledgement 🙏
 
 This book project would not have been possible without the contribution of the following (list alphabetically):
 - Xinyue Liu
