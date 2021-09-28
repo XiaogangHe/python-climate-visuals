@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8" style="float:none;align:center;">
-      This e-book was originally developed for the NUS course
+      This book was originally developed for the NUS course
       <a href="https://xiaoganghe.github.io/NUS-CE3201">
         Civil Engineering Analytics and Data Visualization</a>.
       </br>
@@ -46,7 +46,7 @@
       </br>
       This book logo is composed of:
       <ul>
-      <li>A skyline (Marina Bay Sands) and a landmark (Merlion) of a gardent city (Singapore);</li>
+      <li>A skyline (Marina Bay Sands) and a landmark (Merlion) of a garden city (Singapore);</li>
       <li>An unseen climate change signal revealed by warming stripes illustrating Singapore's historical (1901-2020) temperature;</li>
       <li>A tag line (Python Climate Visuals) along with its acronym (pyCIVIL) indicating book contents and targeted readers.</li>
       </ul>
@@ -66,8 +66,8 @@
 ```{admonition} Work in progress 
 :class: warning
 
-Please note that this course website is still under active development. Contents will be added and updated frequently
-throughout the course. Your comments to improve the course are highly welcome! 
+Please note that this book website is still under active development. Contents will be added and updated frequently
+throughout the course. Your comments to improve the book are highly welcome! 
 ```
 
 ## Citation
