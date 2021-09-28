@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.2. Advanced</title>
+    <title>2.2. Advanced</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Matplotlib" href="../data-visuals/matplotlib.html" />
-    <link rel="prev" title="3.1. Basic" href="pandas-basic.html" />
+    <link rel="next" title="3. Scipy" href="scipy.html" />
+    <link rel="prev" title="2.1. Basic" href="pandas-basic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,14 +97,9 @@
    1. NumPy
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="scipy.html">
-   2. Scipy
-  </a>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="pandas.html">
-   3. Pandas
+   2. Pandas
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -114,15 +109,20 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-basic.html">
-     3.1. Basic
+     2.1. Basic
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.2. Advanced
+     2.2. Advanced
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scipy.html">
+   3. Scipy
+  </a>
  </li>
 </ul>
 <p class="caption">
@@ -290,39 +290,39 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hierarchical-indexing-multiindex">
-   3.2.1. Hierarchical indexing (MultiIndex)
+   2.2.1. Hierarchical indexing (MultiIndex)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-a-multiindex">
-     3.2.1.1. Creating a MultiIndex
+     2.2.1.1. Creating a MultiIndex
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#get-index-for-multiindex">
-     3.2.1.2. Get index for multiindex
+     2.2.1.2. Get index for multiindex
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-and-applymap">
-   3.2.2. Apply and Applymap
+   2.2.2. Apply and Applymap
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#groupby">
-   3.2.3. Groupby
+   2.2.3. Groupby
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-visualization">
-   3.2.4. Table Visualization
+   2.2.4. Table Visualization
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tooltips-and-captions">
-   3.2.5. Tooltips and Captions
+   2.2.5. Tooltips and Captions
   </a>
  </li>
 </ul>
@@ -337,7 +337,7 @@
               <div>
                 
   <div class="section" id="advanced">
-<h1><span class="section-number">3.2. </span>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.2. </span>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h1>
 <p>The following content is the <strong>Advanced</strong>  part. Please make sure you have studied the <strong>Basic</strong>  part before you start.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -348,9 +348,9 @@
 </div>
 </div>
 <div class="section" id="hierarchical-indexing-multiindex">
-<h2><span class="section-number">3.2.1. </span>Hierarchical indexing (MultiIndex)<a class="headerlink" href="#hierarchical-indexing-multiindex" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.1. </span>Hierarchical indexing (MultiIndex)<a class="headerlink" href="#hierarchical-indexing-multiindex" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="creating-a-multiindex">
-<h3><span class="section-number">3.2.1.1. </span>Creating a MultiIndex<a class="headerlink" href="#creating-a-multiindex" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1.1. </span>Creating a MultiIndex<a class="headerlink" href="#creating-a-multiindex" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[</span>
@@ -578,7 +578,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">pd.MultiIndex.from_tuples</span></code>, <code class="docutils literal notranslate"><span class="pre">pd.MultiIndex.from_frame</span></code></p>
 </div>
 <div class="section" id="get-index-for-multiindex">
-<h3><span class="section-number">3.2.1.2. </span>Get index for multiindex<a class="headerlink" href="#get-index-for-multiindex" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.2.1.2. </span>Get index for multiindex<a class="headerlink" href="#get-index-for-multiindex" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[</span>
@@ -635,7 +635,7 @@
 </div>
 </div>
 <div class="section" id="apply-and-applymap">
-<h2><span class="section-number">3.2.2. </span>Apply and Applymap<a class="headerlink" href="#apply-and-applymap" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.2. </span>Apply and Applymap<a class="headerlink" href="#apply-and-applymap" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Apply: Apply a function along an axis of the DataFrame.</p></li>
 <li><p>Applymap: Apply a function to a Dataframe elementwise. You can address each element for specfic requirements.</p></li>
@@ -881,7 +881,7 @@
 </div>
 </div>
 <div class="section" id="groupby">
-<h2><span class="section-number">3.2.3. </span>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.3. </span>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Groupby()</span></code> can be used to group large amounts of data and compute operations on these groups.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -986,7 +986,7 @@ temperature site1   1.650404  0.970965  0.608340  1.608136
 </div>
 </div>
 <div class="section" id="table-visualization">
-<h2><span class="section-number">3.2.4. </span>Table Visualization<a class="headerlink" href="#table-visualization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.4. </span>Table Visualization<a class="headerlink" href="#table-visualization" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1181,7 +1181,7 @@ temperature site1   1.650404  0.970965  0.608340  1.608136
 </div>
 </div>
 <div class="section" id="tooltips-and-captions">
-<h2><span class="section-number">3.2.5. </span>Tooltips and Captions<a class="headerlink" href="#tooltips-and-captions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2.5. </span>Tooltips and Captions<a class="headerlink" href="#tooltips-and-captions" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># s.set_caption(&quot;Confusion matrix for multiple cancer prediction models.&quot;)\</span>
@@ -1230,15 +1230,15 @@ temperature site1   1.650404  0.970965  0.608340  1.608136
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3.1. </span>Basic</p>
+                <p class="prevnext-title"><span class="section-number">2.1. </span>Basic</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../data-visuals/matplotlib.html" title="next page">
+        <a class="right-next" href="scipy.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1. </span>Matplotlib</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Scipy</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
