@@ -1,8 +1,14 @@
-name: textbook
+name: pyCIVIL Book
 
 channels:
   - conda-forge
 
 dependencies:
-  - pip:
-    -r requirements.txt
+  - scikit-learn >= 0.24
+  - pandas >= 1
+  - matplotlib-base
+  - seaborn
+  - jupyterlab
+  - notebook
+  - jupytext
+  - plotly
