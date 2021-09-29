@@ -1,6 +1,6 @@
-# Numpy
+# What is NumPy?
 ```{margin} Source
-from the Numpy [website](https://numpy.org/doc/stable/user/whatisnumpy.html)
+from the NumPy [website](https://numpy.org/doc/stable/user/whatisnumpy.html)
 ```
 
 NumPy is the fundamental package for scientific computing in Python. 
@@ -10,7 +10,7 @@ various derived objects (such as masked arrays and matrices), and an assortment 
 for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, 
 selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.
 
-```{admonition} Numpy features/capabilities
+```{admonition} NumPy features/capabilities
 * **POWERFUL N-DIMENSIONAL ARRAYS**: A fast and efficient DataFrame object for data manipulation with integrated indexing;
 * **NUMERICAL COMPUTING TOOLS**: NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines, Fourier transforms, and more.
 * **INTEROPERABLE**: NumPy supports a wide range of hardware and computing platforms, and plays well with distributed, GPU, and sparse array libraries.

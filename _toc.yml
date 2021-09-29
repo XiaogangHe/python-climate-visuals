@@ -7,12 +7,17 @@ parts:
   numbered: true
   chapters:
   - file: chapters/data-analytics/numpy
+    title: NumPy
     sections:
     - file: chapters/data-analytics/numpy-basic
+      title: Tutorial
   - file: chapters/data-analytics/pandas
+    title: Pandas
     sections:
     - file: chapters/data-analytics/pandas-basic
+      title: Tutorial (Basic)
     - file: chapters/data-analytics/pandas-advanced
+      title: Tutorial (Advanced)
   - file: chapters/data-analytics/scipy
 - caption: Data visualization
   numbered: true
