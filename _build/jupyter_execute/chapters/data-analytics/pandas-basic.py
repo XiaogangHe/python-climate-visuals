@@ -3,7 +3,7 @@
 
 # # Basic
 
-# `Pandas` is a fast, powerful, flexible, and easy-to-use open-source data analysis and manipulation tool, built on top of the `Python` programming language, used for data preparation and data analysis. The tutorial mainly includes two parts, **Basic** and **Advanced**. The former is mandatory for this course and the latter is optional. The following content is the **Basic**  part.
+# This `pandas` tutorial mainly includes two parts, **Basic** and **Advanced**. The former is mandatory for this course and the latter is optional. The following content is the **Basic**  part.
 
 # ## Install Pandas
 # If you run code on your own computer, you need to install pandas. Open the console and enter ```pip install pandas```
@@ -13,6 +13,7 @@
 
 # Import panas and view pandas version. The 'as' keyword is to replace pandas with an abbreviation 'pd'.
 import pandas as pd
+
 print(pd.__version__)
 
 
@@ -42,6 +43,7 @@ print(pd.__version__)
 
 s = pd.Series([-1,3,8]) # list
 print(s)
+
 s1 = pd.Series(s) # from Other Series
 print(s1)
 
@@ -59,9 +61,10 @@ print(s1)
 
 
 # when declaring a Series, you can specify the index
-s2 = pd.Series({"a":-1,"b":3,"c":8}) # dictionary
+s2 = pd.Series({"a":-1, "b":3, "c":8}) # dictionary
 print(s2)
-s3 = pd.Series([-1,3,8], index=['x','y','z']) # specify the index by 'index' option
+
+s3 = pd.Series([-1, 3, 8], index=['x', 'y', 'z']) # specify the index by 'index' option
 print(s3)
 
 
@@ -69,8 +72,9 @@ print(s3)
 
 
 import numpy as np
-arr = np.array([100,20,-3]) # from NumPy Arrays
-s4 = pd.Series(arr, index=['x','y','z'] )
+arr = np.array([100, 20, -3]) # from NumPy Arrays
+s4 = pd.Series(arr, index=['x', 'y', 'z'] )
+
 print(s4)
 
 
@@ -159,7 +163,7 @@ s1
 # In[13]:
 
 
-s = pd.Series([1,3,5,2,10])
+s = pd.Series([1, 3, 5, 2, 10])
 s[s>4] # greater than 4
 
 
@@ -167,9 +171,9 @@ s[s>4] # greater than 4
 
 
 # According to Boolean value to filter
-s = pd.Series([1,3,5,2,10])
-print(s.isin([2,5]))
-print(s[s.isin([2,5])])
+s = pd.Series([1, 3, 5, 2, 10])
+print(s.isin([2, 5]))
+print(s[s.isin([2, 5])])
 
 
 # ### Operations and Mathematical Functions
@@ -195,7 +199,7 @@ np.exp(s)
 
 import numpy as np 
 # Declaring a Series with NaN value
-s = pd.Series([1,np.NaN,10,9,-2,np.NaN])
+s = pd.Series([1, np.NaN, 10, 9, -2, np.NaN])
 s
 
 
@@ -222,8 +226,8 @@ print(s[s.notnull()])
 # In[20]:
 
 
-s = pd.Series({"Singapore":30,"Malaysia":23,"Vietnam":36,"Cambodia":41})
-s1 = pd.Series({"China":51,"Japan":73,"Vietnam":36,"Laos":31})
+s = pd.Series({"Singapore":30, "Malaysia":23, "Vietnam":36, "Cambodia":41})
+s1 = pd.Series({"China":51, "Japan":73, "Vietnam":36, "Laos":31})
 s*s1
 
 
@@ -252,18 +256,20 @@ df = pd.DataFrame(np.array([[14, 35, 35, 35],
                             [19, 34, 57, 34],
                             [42, 74, 49, 59]]))
 print(df)
+
 # list,  use 'columns' and 'index' parameters to specify the column and index of generated dataframe.
-df = pd.DataFrame([["Malaysia","Kuala Lumpur",32365999,False],
-              ["Singapore","Singapore",5850342,True],
-              ["Vietnam","Hanoi",97338579,True]],
+df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
+              ["Singapore", "Singapore", 5850342, True],
+              ["Vietnam", "Hanoi", 97338579, True]],
               columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a","b","c"])
+              index=["a", "b", "c"])
 print(df)
+
 # dict
-df = pd.DataFrame({"Country":["Malaysia","Singapore","Vietnam"],
-                   "Capital":["Kuala Lumpur","Singapore","Hanoi"],
-              "Population":[32365999,5850342,97338579],
-              "Isdeveloped":[False,True,True]})
+df = pd.DataFrame({"Country":["Malaysia", "Singapore", "Vietnam"],
+                   "Capital":["Kuala Lumpur", "Singapore", "Hanoi"],
+              "Population":[32365999, 5850342, 97338579],
+              "Isdeveloped":[False, True, True]})
 df
 
 
@@ -274,11 +280,11 @@ df
 # In[22]:
 
 
-df = pd.DataFrame([["Malaysia","Kuala Lumpur",32365999,False],
-              ["Singapore","Singapore",5850342,True],
-              ["Vietnam","Hanoi",97338579,True]],
+df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
+              ["Singapore", "Singapore", 5850342, True],
+              ["Vietnam", "Hanoi", 97338579, True]],
               columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a","b","c"])
+              index=["a", "b", "c"])
 df
 
 
@@ -292,19 +298,19 @@ df.iloc[:,0:2]
 # In[24]:
 
 
-df.loc[:,"Country":"Population"]
+df.loc[:, "Country":"Population"]
 
 
 # In[25]:
 
 
-df.loc["a",["Country","Population"]]
+df.loc["a", ["Country", "Population"]]
 
 
 # In[26]:
 
 
-df.iloc[[0,1]] # If you omit number of columns, all columns will be selected 
+df.iloc[[0, 1]] # If you omit number of columns, all columns will be selected 
 
 
 # Use ```columns```,```index``` and ```values``` atrributes to obtain corresponding object value.
@@ -338,7 +344,7 @@ df["Country"]
 # In[31]:
 
 
-df[["Country","Population"]] # Use list to select multiple columns  
+df[["Country", "Population"]] # Use list to select multiple columns  
 
 
 # In[32]:
@@ -364,10 +370,10 @@ df[0:2] # When select multiple rows, do not use list
 # In[35]:
 
 
-df.loc["c","Country"] = "Japan"
-df.loc["c","Capital"] = "Tokyo"
-df.loc["c","Population"] = 126476461
-df.loc["c","Isdeveloped"] = True
+df.loc["c", "Country"] = "Japan"
+df.loc["c", "Capital"] = "Tokyo"
+df.loc["c", "Population"] = 126476461
+df.loc["c", "Isdeveloped"] = True
 df
 
 
@@ -415,11 +421,11 @@ df[df<30]
 # In[40]:
 
 
-df = pd.DataFrame([["Malaysia","Kuala Lumpur",32365999,False],
-              ["Singapore","Singapore",5850342,True],
-              ["Vietnam","Hanoi",97338579,True]],
+df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
+              ["Singapore", "Singapore", 5850342, True],
+              ["Vietnam", "Hanoi", 97338579, True]],
               columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a","b","c"])
+              index=["a", "b", "c"])
 # Filtering accroding to conditions of one column
 df[df["Population"]<50000000]
 
@@ -428,7 +434,7 @@ df[df["Population"]<50000000]
 
 
 # Filtering accroding to conditions of multiple columns
-df[(df["Population"]<50000000) & (df["Isdeveloped"]==True)]
+df[(df["Population"] < 50000000) & (df["Isdeveloped"]==True)]
 
 
 # ### Transposition  of a Dataframe
@@ -437,11 +443,11 @@ df[(df["Population"]<50000000) & (df["Isdeveloped"]==True)]
 # In[42]:
 
 
-df = pd.DataFrame([["Malaysia","Kuala Lumpur",32365999,False],
-              ["Singapore","Singapore",5850342,True],
-              ["Vietnam","Hanoi",97338579,True]],
+df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
+              ["Singapore", "Singapore", 5850342, True],
+              ["Vietnam", "Hanoi", 97338579, True]],
               columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a","b","c"])
+              index=["a", "b", "c"])
 df1 = df.T
 df1
 
@@ -531,7 +537,7 @@ df.tail()
 # In[54]:
 
 
-df = pd.DataFrame(np.random.rand(5,5))
+df = pd.DataFrame(np.random.rand(5, 5))
 df.cov()
 
 
@@ -568,13 +574,13 @@ df.describe()
 # In[59]:
 
 
-df = pd.DataFrame([["Malaysia","Kuala Lumpur",32365999,False],
-              ["Singapore","Singapore",5850342,True],
-              ["Vietnam","Hanoi",97338579,True],
-                  ["Japan","Tokyo",None,True]],
+df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
+              ["Singapore", "Singapore", 5850342, True],
+              ["Vietnam", "Hanoi", 97338579, True],
+                  ["Japan", "Tokyo", None, True]],
               columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a","b","c",'d'])
-df.sort_values(by=['Population','Country'], ascending=False, na_position='first')
+              index=["a", "b", "c", "d"])
+df.sort_values(by=['Population', 'Country'], ascending=False, na_position='first')
 
 
 # ## Missing data (NaN value)
@@ -641,7 +647,7 @@ df.fillna(method="pad")
 
 # 0, or ‘index’ : Drop rows which contain missing values.
 # 1, or ‘columns’ : Drop columns which contain missing value.
-df.dropna(axis="index",how="any")
+df.dropna(axis="index", how="any")
 
 
 # ## Date index
@@ -651,7 +657,7 @@ df.dropna(axis="index",how="any")
 
 dti = pd.date_range("2018-01-01", periods=3, freq="H")
 print(dti)
-dti = pd.date_range(start = "2021-09-28",end="2021-09-30", freq="10H")
+dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
 print(dti)
 
 
@@ -660,7 +666,7 @@ print(dti)
 # In[69]:
 
 
-dti = pd.date_range(start = "2021-09-28",end="2021-09-30", freq="10H")
+dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
 dti = dti.tz_localize("UTC")
 dti
 
@@ -668,7 +674,7 @@ dti
 # In[70]:
 
 
-dti = pd.date_range(start = "2021-09-28",end="2021-09-30", freq="10H")
+dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
 dti = dti.tz_localize("Asia/Singapore")
 dti
 
@@ -698,7 +704,7 @@ pd.to_datetime([100, 101, 102], unit="h", origin=pd.Timestamp("1900-01-01 00:00:
 
 # prepare data, this section will be introduced in the next tutorial
 # Data Source: http://www.weather.gov.sg/climate-historical-daily/
-data = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0,header=0,parse_dates=True)
+data = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
 data.head()
 
 

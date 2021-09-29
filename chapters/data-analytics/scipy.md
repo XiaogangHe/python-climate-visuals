@@ -1,4 +1,4 @@
 # Scipy
 
-Scipy is xxx.
+Coming soon.
 

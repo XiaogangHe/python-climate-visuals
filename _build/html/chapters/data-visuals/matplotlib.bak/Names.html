@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.2. Names</title>
+    <title>Names</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib/Names.html" />
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib.bak/Names.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="1.2.1. Example: Growth Rates" href="Growth.html" />
-    <link rel="prev" title="1.1. Expressions" href="Expressions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,17 +90,29 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../data-analytics/numpy-basic.html">
-   1. NumPy
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../data-analytics/numpy.html">
+   1. Numpy
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analytics/numpy-basic.html">
+     1.1. NumPy
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../data-analytics/pandas.html">
    2. Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -130,50 +140,11 @@
   Data visualization
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
   <a class="reference internal" href="../matplotlib.html">
    1. Matplotlib
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="Expressions.html">
-     1.1. Expressions
-    </a>
-   </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
-     1.2. Names
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Growth.html">
-       1.2.1. Example: Growth Rates
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Calls.html">
-     1.3. Call Expressions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Introduction_to_Tables.html">
-     1.4. Introduction to Tables
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -228,7 +199,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/chapters/data-visuals/matplotlib/Names.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/chapters/data-visuals/matplotlib.bak/Names.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -266,7 +237,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-visuals/matplotlib/Names.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-visuals/matplotlib.bak/Names.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../../_static/images/logo_binder.svg"
@@ -292,7 +263,7 @@
               <div>
                 
   <div class="section" id="names">
-<h1><span class="section-number">1.2. </span>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h1>
+<h1>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h1>
 <p>Names are given to values in Python using an <em>assignment</em> statement. In an assignment, a name is followed by <code class="docutils literal notranslate"><span class="pre">=</span></code>, which is followed by any expression. The value of the expression to the right of <code class="docutils literal notranslate"><span class="pre">=</span></code> is <em>assigned</em> to the name. Once a name has a value assigned to it, the value will be substituted for that name in future expressions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -356,8 +327,6 @@
 </div>
 </div>
 </div>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -373,7 +342,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/data-visuals/matplotlib"
+            path: "./chapters/data-visuals/matplotlib.bak"
         },
         predefinedOutput: true
     }
@@ -389,24 +358,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="Expressions.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1.1. </span>Expressions</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="Growth.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1.2.1. </span>Example: Growth Rates</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
