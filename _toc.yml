@@ -18,13 +18,6 @@ parts:
   numbered: true
   chapters:
   - file: chapters/data-visuals/matplotlib
-    sections:
-    - file: chapters/data-visuals/matplotlib/Expressions
-    - file: chapters/data-visuals/matplotlib/Names
-      sections:
-      - file: chapters/data-visuals/matplotlib/Growth
-    - file: chapters/data-visuals/matplotlib/Calls
-    - file: chapters/data-visuals/matplotlib/Introduction_to_Tables
 - caption: Others
   chapters:
   - file: chapters/others/refs

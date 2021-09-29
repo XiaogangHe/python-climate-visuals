@@ -1,5 +1,5 @@
 Matplotlib
 =====================
 
-Matplotlib is xxx.
+Coming soon.
 
