@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.1. NumPy tutorial</title>
+    <title>2.1. NumPy tutorial</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. What is Pandas?" href="pandas.html" />
-    <link rel="prev" title="1. What is NumPy?" href="numpy.html" />
+    <link rel="next" title="3. What is Pandas?" href="pandas.html" />
+    <link rel="prev" title="2. What is NumPy?" href="numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,48 +92,65 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python.html">
+   1. Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basic.html">
+     1.1. Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="numpy.html">
-   1. NumPy
+   2. NumPy
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.1. Tutorial
+     2.1. Tutorial
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="pandas.html">
-   2. Pandas
+   3. Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-basic.html">
-     2.1. Tutorial (Basic)
+     3.1. Tutorial (Basic)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-advanced.html">
-     2.2. Tutorial (Advanced)
+     3.2. Tutorial (Advanced)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scipy.html">
-   3. Scipy
+   4. Scipy
   </a>
  </li>
 </ul>
@@ -263,32 +280,32 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array">
-   1.1.1. Array
+   2.1.1. Array
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array-indexing">
-   1.1.2. Array indexing
+   2.1.2. Array indexing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datatypes">
-   1.1.3. Datatypes
+   2.1.3. Datatypes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array-math">
-   1.1.4. Array math
+   2.1.4. Array math
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#broadcasting">
-   1.1.5. Broadcasting
+   2.1.5. Broadcasting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.1.6. References
+   2.1.6. References
   </a>
  </li>
 </ul>
@@ -303,7 +320,7 @@
               <div>
                 
   <div class="section" id="numpy-tutorial">
-<h1><span class="section-number">1.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://www.numpy.org/"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a> is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
@@ -324,7 +341,7 @@
 </div>
 </div>
 <div class="section" id="array">
-<h2><span class="section-number">1.1.1. </span>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.1. </span>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
 <p>A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension.</p>
 <p>We can initialize <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays from nested Python lists using the <code class="docutils literal notranslate"><span class="pre">array</span></code> function, and we can access elements using square brackets with interger indexing. Each <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array has several attributes that allow us to know some basic information about it, such as <code class="docutils literal notranslate"><span class="pre">ndim</span></code> for the number of dimnsions of the array and <code class="docutils literal notranslate"><span class="pre">shape</span></code> for the sizes of all dimensions.</p>
 <div class="cell docutils container">
@@ -384,7 +401,7 @@
 </div>
 </div>
 <div class="section" id="array-indexing">
-<h2><span class="section-number">1.1.2. </span>Array indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.2. </span>Array indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> offers several ways to pull out a section of arrays. The most common ways include <strong>slicing</strong>, <strong>integer array indexing</strong> and <strong>Boolean array indexing</strong>. We may choose the appropriate indexing methods for different purposes.</p>
 <ul class="simple">
 <li><p><em><strong>Slicing</strong></em></p></li>
@@ -543,7 +560,7 @@
 <p>For brevity we have left out a lot of details about numpy array indexing; if you want to know more you should read the <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html">documentation</a>.</p>
 </div>
 <div class="section" id="datatypes">
-<h2><span class="section-number">1.1.3. </span>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.3. </span>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">¶</a></h2>
 <p>Every numpy array is a grid of elements of the same type. <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> provides a large set of numeric datatypes that you can use to construct arrays. <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> tries to guess a datatype when you create an array, but functions that construct arrays usually also include an optional argument to explicitly specify the datatype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,7 +581,7 @@
 <p>You can read all about <code class="docutils literal notranslate"><span class="pre">numpy</span></code> datatypes in the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">documentation</a>.</p>
 </div>
 <div class="section" id="array-math">
-<h2><span class="section-number">1.1.4. </span>Array math<a class="headerlink" href="#array-math" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.4. </span>Array math<a class="headerlink" href="#array-math" title="Permalink to this headline">¶</a></h2>
 <p>Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the numpy module:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -721,7 +738,7 @@ transpose
 <p>You can find the full list of mathematical functions provided by <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/routines.math.html">documentation</a>.</p>
 </div>
 <div class="section" id="broadcasting">
-<h2><span class="section-number">1.1.5. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.5. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h2>
 <p>Broadcasting is a powerful mechanism that allows <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to work with arrays of different shapes when performing arithmetic operations. Frequently we have a smaller array and a larger array, and we want to use the smaller array multiple times to perform some operations on the larger array.</p>
 <p>For example, suppose that we want to add a constant vector to each row of a matrix. At the very begining, we may use a loop to do operations for each element as follows.</p>
 <div class="cell docutils container">
@@ -848,12 +865,12 @@ transpose
 <p>Broadcasting typically makes your code more concise and faster, so you should strive to use it where possible.</p>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">1.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a>.</p></li>
 <li><p>This tutorial has touched on many of the important things that you need to know about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but is far from complete. Check out the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/">numpy reference</a> to find out more.</p></li>
 <li><p>If you are already familiar with MATLAB, you might find this <a class="reference external" href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">tutorial</a> useful to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
-<li><p>If you are already familiar with R, you might refer to this [tutorial] to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (<a class="reference external" href="http://www.data-analysis-in-python.org/python_for_r.html">http://www.data-analysis-in-python.org/python_for_r.html</a>).</p></li>
+<li><p>If you are already familiar with R, you might refer to this <a class="reference external" href="http://www.data-analysis-in-python.org/python_for_r.html">tutorial</a> to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
 </ul>
 </div>
 </div>
@@ -892,7 +909,7 @@ transpose
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1. </span>What is NumPy?</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>What is NumPy?</p>
             </div>
         </a>
     </div>
@@ -900,7 +917,7 @@ transpose
         <a class="right-next" href="pandas.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>What is Pandas?</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>What is Pandas?</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
