@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.2. Python tutorial</title>
+    <title>1.1. Python tutorial</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -104,7 +104,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.2. Tutorial
+     1.1. Tutorial
     </a>
    </li>
   </ul>
@@ -280,71 +280,71 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#jupyter-notebooks">
-   1.2.1. Jupyter Notebooks
+   1.1.1. Jupyter Notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python-versions">
-   1.2.2. Python versions
+   1.1.2. Python versions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basics-of-python">
-   1.2.3. Basics of Python
+   1.1.3. Basics of Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-data-types">
-     1.2.3.1. Basic data types
+     1.1.3.1. Basic data types
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#numbers">
-       1.2.3.1.1. Numbers
+       1.1.3.1.1. Numbers
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#booleans">
-       1.2.3.1.2. Booleans
+       1.1.3.1.2. Booleans
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#strings">
-       1.2.3.1.3. Strings
+       1.1.3.1.3. Strings
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#containers">
-     1.2.3.2. Containers
+     1.1.3.2. Containers
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#lists">
-       1.2.3.2.1. Lists
+       1.1.3.2.1. Lists
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#sets">
-       1.2.3.2.2. Sets
+       1.1.3.2.2. Sets
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#tuples">
-       1.2.3.2.3. Tuples
+       1.1.3.2.3. Tuples
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions">
-     1.2.3.3. Functions
+     1.1.3.3. Functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#classes">
-     1.2.3.4. Classes
+     1.1.3.4. Classes
     </a>
    </li>
   </ul>
@@ -361,14 +361,14 @@
               <div>
                 
   <div class="section" id="python-tutorial">
-<h1><span class="section-number">1.2. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1.1. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial will serve as a quick crash course both on the Python programming language and on the use of Python for scientific computing and visualization.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
 <li><p>Basic Python: Basic data types, Containers, Loops, Functions and Classes</p></li>
 </ul>
 <div class="section" id="jupyter-notebooks">
-<h2><span class="section-number">1.2.1. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.1. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>Before we dive into Python, we’d like to briefly talk about <em>notebooks</em>.
 A Jupyter notebook lets you write and execute Python code <em>locally</em> in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason they are widely used in scientific computing.</p>
 <p>The Binder service powered by BinderHub allows us to run entirely in the <em>cloud</em>. Binder is basically Jupyter notebook on steroids: it’s free, requires no setup, comes preinstalled with many packages, is easy to share with the world, and benefits from free access to hardware resources.</p>
@@ -376,15 +376,15 @@ A Jupyter notebook lets you write and execute Python code <em>locally</em> in yo
 <p><strong>Run Tutorial in Jupyter Notebook</strong>. If you wish to run the notebook locally with Jupyter, make sure your virtual environment is installed correctly, activate it, then run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code> to install Jupyter notebook. Next, open the notebook and download it to a directory of your choice by right-clicking on the page and selecting <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Page</span> <span class="pre">As</span></code>. Then run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. This should automatically launch a notebook server at <code class="docutils literal notranslate"><span class="pre">http://localhost:8888</span></code>. Find the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> jupyter notebook you just downloaded and open it. Now, you will get the same page as Binder.</p>
 </div>
 <div class="section" id="python-versions">
-<h2><span class="section-number">1.2.2. </span>Python versions<a class="headerlink" href="#python-versions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.2. </span>Python versions<a class="headerlink" href="#python-versions" title="Permalink to this headline">¶</a></h2>
 <p>As of Janurary 1, 2020, Python has <a class="reference external" href="https://www.python.org/doc/sunset-python-2/">officially dropped support</a> for <code class="docutils literal notranslate"><span class="pre">python2</span></code>. We’ll be using Python 3.7 for this iteration of the course. In Jupyter notebook, we can check the Python version by clicking <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">About</span></code>.</p>
 </div>
 <div class="section" id="basics-of-python">
-<h2><span class="section-number">1.2.3. </span>Basics of Python<a class="headerlink" href="#basics-of-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.3. </span>Basics of Python<a class="headerlink" href="#basics-of-python" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-data-types">
-<h3><span class="section-number">1.2.3.1. </span>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3.1. </span>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="numbers">
-<h4><span class="section-number">1.2.3.1.1. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.3.1.1. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h4>
 <p>Integers and floats work as you would expect from other languages. When initialzing variables, Python would assign proper data types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -439,7 +439,7 @@ A Jupyter notebook lets you write and execute Python code <em>locally</em> in yo
 </div>
 </div>
 <div class="section" id="booleans">
-<h4><span class="section-number">1.2.3.1.2. </span>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.3.1.2. </span>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h4>
 <p>Python implements all of the usual operators for Boolean logic by using <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -462,7 +462,7 @@ A Jupyter notebook lets you write and execute Python code <em>locally</em> in yo
 </div>
 </div>
 <div class="section" id="strings">
-<h4><span class="section-number">1.2.3.1.3. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.3.1.3. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>   <span class="c1"># String literals can use single quotes</span>
@@ -506,10 +506,10 @@ A Jupyter notebook lets you write and execute Python code <em>locally</em> in yo
 </div>
 </div>
 <div class="section" id="containers">
-<h3><span class="section-number">1.2.3.2. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3.2. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h3>
 <p>Python includes several built-in container types: <strong>lists</strong>, <strong>sets</strong>, and <strong>tuples</strong>.</p>
 <div class="section" id="lists">
-<h4><span class="section-number">1.2.3.2.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.3.2.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
 <p>Lists are the most commonly used data structure. Think of it as a sequence of data that is enclosed in square brackets and data are separated by a comma. Note that elements in Python lists could have different data types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,7 +595,7 @@ foo
 </div>
 </div>
 <div class="section" id="sets">
-<h4><span class="section-number">1.2.3.2.2. </span>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.3.2.2. </span>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h4>
 <p>A set is an unordered collection of distinct elements. Sets are mainly used to eliminate repeated numbers in a sequence/list. It is also used to perform some standard set operations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,7 +634,7 @@ foo
 </div>
 </div>
 <div class="section" id="tuples">
-<h4><span class="section-number">1.2.3.2.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.3.2.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h4>
 <p>A tuple is an (immutable) ordered list of values. A tuple is in many ways similar to a list; one of the most important differences is that tuples can be used as keys in dictionaries and as elements of sets, while lists cannot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +674,7 @@ foo
 </div>
 </div>
 <div class="section" id="functions">
-<h3><span class="section-number">1.2.3.3. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3.3. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,7 +709,7 @@ foo
 </div>
 </div>
 <div class="section" id="classes">
-<h3><span class="section-number">1.2.3.4. </span>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3.4. </span>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <p>The syntax for defining classes in Python is straightforward.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
