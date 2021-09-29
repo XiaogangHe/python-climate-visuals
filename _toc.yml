@@ -6,7 +6,9 @@ parts:
 - caption: Data Analytics
   numbered: true
   chapters:
-  - file: chapters/data-analytics/numpy-basic
+  - file: chapters/data-analytics/numpy
+    sections:
+    - file: chapters/data-analytics/numpy-basic
   - file: chapters/data-analytics/pandas
     sections:
     - file: chapters/data-analytics/pandas-basic

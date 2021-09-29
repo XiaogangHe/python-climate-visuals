@@ -10,6 +10,7 @@
 
 
 import numpy as np
+
 print(np.__version__)
 
 
@@ -22,8 +23,9 @@ print(np.__version__)
 # In[2]:
 
 
-a = [1,2,3]
+a = [1, 2, 3]
 a = np.array(a)   # Create a rank 1 array from a list
+
 print(a, a.shape) 
 print(a[0], a[-1])# Access 1st and last elements
 
@@ -31,7 +33,8 @@ print(a[0], a[-1])# Access 1st and last elements
 # In[3]:
 
 
-b = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])   # Create a rank 2 array
+b = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])   # Create a rank 2 array
+
 print(b, b.shape, b[1, 2])
 
 
@@ -40,11 +43,11 @@ print(b, b.shape, b[1, 2])
 # In[4]:
 
 
-c = np.zeros((2,2))   # Create an array of all zeros
-c = np.ones((1,2))    # Create an array of all ones
-c = np.full((2,2), 7) # Create a constant array
+c = np.zeros((2, 2))   # Create an array of all zeros
+c = np.ones((1, 2))    # Create an array of all ones
+c = np.full((2, 2), 7) # Create a constant array
 c = np.eye(2)         # Create a identity square matrix
-c = np.random.random((2,2)) # Create an array filled with random values
+c = np.random.random((2, 2)) # Create an array filled with random values
 
 
 # ### Array indexing
@@ -57,7 +60,8 @@ c = np.random.random((2,2)) # Create an array filled with random values
 # In[5]:
 
 
-a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+
 print(a)
 print(a[:2, 1:3]) # Slice 1st to 2nd rows and 2nd to 3rd columns
 print(a[:, ::2])  # Slice all odd columns
@@ -70,6 +74,7 @@ print(a[:, ::2])  # Slice all odd columns
 
 b = a[:2, 1:3]
 print(a[0, 1])
+
 b[0, 0] = 77    # b[0, 0] is the same piece of data as a[0, 1]
 print(a[0, 1]) 
 
@@ -80,7 +85,7 @@ print(a[0, 1])
 # In[7]:
 
 
-a = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 print(a)
 print(a[[0, 1, 2], [0, 1, 0]]) # Integer indexing
 
@@ -99,6 +104,7 @@ col = np.array([0, 2, 0, 1])
 
 # Select one element from each row using the indices in col
 print(a[row, col])           # Integer indexing
+
 a[row, col] += 10            # Only operate on specific elements
 print(a)
 
@@ -108,10 +114,11 @@ print(a)
 # In[9]:
 
 
-a = np.array([[1,2,3], [4,5,6], [7,8,9]])
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 row_r1 = a[1, :]      # Rank 1 view of the second row of a  
 row_r2 = a[1:2, :]    # Rank 2 view of the second row of a
 row_r3 = a[[1], :]    # Rank 2 view of the second row of a
+
 print(row_r1, row_r1.shape)
 print(row_r2, row_r2.shape)
 print(row_r3, row_r3.shape)
@@ -168,8 +175,8 @@ print(a.dtype, b.dtype, c.dtype)
 # In[13]:
 
 
-x = np.array([[1,2],[3,4]], dtype=np.float64)
-y = np.array([[5,6],[7,8]], dtype=np.float64)
+x = np.array([[1, 2],[3, 4]], dtype=np.float64)
+y = np.array([[5, 6],[7, 8]], dtype=np.float64)
 
 # Elementwise sum; both produce the array
 print(x + y)
@@ -201,8 +208,8 @@ print(np.dot(v, w))
 # In[16]:
 
 
-x = np.array([[1,2],[3,4]])
-y = np.array([[5,6],[7,8]])
+x = np.array([[1, 2],[3, 4]])
+y = np.array([[5, 6],[7, 8]])
 
 # Matrix / matrix product
 print(x.dot(y))
@@ -231,7 +238,7 @@ print("reshape\n", x.reshape(4))
 # In[19]:
 
 
-v = np.array([[1,2,3,4]]) # Note that dimensions matter when transpose
+v = np.array([[1, 2, 3, 4]]) # Note that dimensions matter when transpose
 print(v)
 print("transpose\n", v.T)
 
@@ -241,7 +248,7 @@ print("transpose\n", v.T)
 # In[20]:
 
 
-x = np.array([[1,2],[3,4]])
+x = np.array([[1, 2], [3, 4]])
 
 print(np.sum(x))  # Compute sum of all elements
 print(np.sum(x, axis=0))  # Compute sum of each column
@@ -261,7 +268,7 @@ print(np.sum(x, axis=1))  # Compute sum of each row
 
 # We will add the vector v to each row of the matrix x,
 # storing the result in the matrix y
-x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+x = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 v = np.array([1, 0, -1])
 
 # Add the vector v to each row of the matrix x with an explicit loop
@@ -309,8 +316,8 @@ print(y)
 
 
 # Compute outer product of vectors
-v = np.array([1,2,3])  # v has shape (3,)
-w = np.array([4,5])    # w has shape (2,)
+v = np.array([1, 2, 3])  # v has shape (3,)
+w = np.array([4, 5])    # w has shape (2,)
 
 # To compute an outer product, we first reshape v to be a column
 # vector of shape (3, 1); we can then broadcast it against w to yield
@@ -322,8 +329,8 @@ print(np.reshape(v, (3, 1)) * w)
 
 
 # Add a vector to each column of a matrix
-x = np.array([[1,2,3], [4,5,6]])
-w = np.array([4,5])    # w has shape (2,)
+x = np.array([[1, 2, 3], [4, 5, 6]])
+w = np.array([4, 5])    # w has shape (2,)
 
 # x has shape (2, 3) and w has shape (2,). Thus, we could transpose x
 # and add w to it by rows at first; then, transpose x back.

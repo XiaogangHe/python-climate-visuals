@@ -64,7 +64,7 @@
 ```
 
 <div class="admonition important" name="html-admonition" style="background: lightgreen; padding: 10px">
-<p class="title">Learning outcomes ✔️</p>
+<p class="title">Learning outcomes </p>
 Tutorials of this module will cover the following key skills that we think should be in civil and environmental engineers’ toolbox 🧰:
 <ul style="padding-left:1.2em; margin-top: -15px">
 <li>Data manipulation (cleaning, mining and wrangling)</li>
