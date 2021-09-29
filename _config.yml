@@ -20,6 +20,7 @@ parse:
     - linkify
     - substitution
     - html_image
+    - html_admonition 
 
 #######################################################################################
 # LaTeX-specific settings
@@ -44,7 +45,7 @@ html:
 # Launch button settings
 launch_buttons:
   binderhub_url             : "https://mybinder.org" # The URL of the BinderHub (e.g., https://mybinder.org)
-  colab_url                 : https://colab.research.google.com
+#  colab_url                 : https://colab.research.google.com
 
 repository:
   url                       : https://github.com/XiaogangHe/python-climate-visuals  # The URL to your book's repository

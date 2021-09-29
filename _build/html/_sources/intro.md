@@ -63,8 +63,25 @@
 
 ```
 
+<div class="admonition important" name="html-admonition" style="background: lightgreen; padding: 10px">
+<p class="title">Learning outcomes</p>
+Tutorials of this module will cover the following key skills that we think should be in civil and environmental engineers’ toolbox:
+<ul style="padding-left:1.2em; margin-top: -15px">
+<li>Data manipulation (cleaning, mining and wrangling)</li>
+<li>Data visualisation (beautiful and informative graphics)</li>
+<li>Basics of probability and statistics</li>
+<li>Exploratory analysis on Earth and Environmental data</li>
+  <ul>
+  <li>Tabular data: rows and columns (e.g., Excel spreadsheet)</li>
+  <li>Gridded data: multidimensional numerical arrays (e.g., raster)</li>
+  </ul>
+<li>Scientific Python and modern data science software</li>
+<li>And others</li>
+</ul>
+</div>
+
 ```{admonition} Work in progress 
-:class: warning
+:class: attention
 
 Please note that this book website is still under active development. Contents will be added and updated frequently
 throughout the course. Your comments to improve the book are highly welcome! 

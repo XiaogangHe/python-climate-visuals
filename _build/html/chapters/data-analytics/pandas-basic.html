@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.1. Basic</title>
+    <title>2.1. Basic</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.2. Advanced" href="pandas-advanced.html" />
-    <link rel="prev" title="3. Pandas" href="pandas.html" />
+    <link rel="next" title="2.2. Advanced" href="pandas-advanced.html" />
+    <link rel="prev" title="2. Pandas" href="pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,14 +97,9 @@
    1. NumPy
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="scipy.html">
-   2. Scipy
-  </a>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="pandas.html">
-   3. Pandas
+   2. Pandas
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -114,15 +109,20 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.1. Basic
+     2.1. Basic
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-advanced.html">
-     3.2. Advanced
+     2.2. Advanced
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scipy.html">
+   3. Scipy
+  </a>
  </li>
 </ul>
 <p class="caption">
@@ -274,11 +274,6 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/XiaogangHe/python-climate-visuals/blob/master/chapters/data-analytics/pandas-basic.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
         
     </div>
 </div>
@@ -295,104 +290,104 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#install-pandas">
-   3.1.1. Install Pandas
+   2.1.1. Install Pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-to-pandas-data-structures">
-   3.1.2. Introduction to pandas Data Structures
+   2.1.2. Introduction to pandas Data Structures
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#series">
-   3.1.3. Series
+   2.1.3. Series
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#defining-a-series">
-     3.1.3.1. Defining a Series
+     2.1.3.1. Defining a Series
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selecting-the-internal-elements">
-     3.1.3.2. Selecting the Internal Elements
+     2.1.3.2. Selecting the Internal Elements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assigning-values-to-the-elements">
-     3.1.3.3. Assigning Values to the Elements
+     2.1.3.3. Assigning Values to the Elements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filtering-values">
-     3.1.3.4. Filtering Values
+     2.1.3.4. Filtering Values
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operations-and-mathematical-functions">
-     3.1.3.5. Operations and Mathematical Functions
+     2.1.3.5. Operations and Mathematical Functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#nan-value">
-     3.1.3.6. Nan Value
+     2.1.3.6. Nan Value
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operation-of-multiple-series">
-     3.1.3.7. Operation of multiple Series
+     2.1.3.7. Operation of multiple Series
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dataframe">
-   3.1.4. DataFrame
+   2.1.4. DataFrame
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#defining-a-dataframe">
-     3.1.4.1. Defining a DataFrame
+     2.1.4.1. Defining a DataFrame
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     3.1.4.2. Selecting the Internal Elements
+     2.1.4.2. Selecting the Internal Elements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assigning-value">
-     3.1.4.3. Assigning value
+     2.1.4.3. Assigning value
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assigning-index-columns-and-name-of-index-and-columns">
-     3.1.4.4. Assigning index, columns, and name of index and columns
+     2.1.4.4. Assigning index, columns, and name of index and columns
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#delete-columns-from-dataframe">
-     3.1.4.5. Delete columns from dataframe
+     2.1.4.5. Delete columns from dataframe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filtering">
-     3.1.4.6. Filtering
+     2.1.4.6. Filtering
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#transposition-of-a-dataframe">
-     3.1.4.7. Transposition  of a Dataframe
+     2.1.4.7. Transposition  of a Dataframe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#merge-of-dataframe">
-     3.1.4.8. Merge of dataframe
+     2.1.4.8. Merge of dataframe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#join-inner-and-merge">
-     3.1.4.9.
+     2.1.4.9.
      <code class="docutils literal notranslate">
       <span class="pre">
        join
@@ -414,27 +409,27 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#view-data">
-     3.1.4.10. View data
+     2.1.4.10. View data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computational-tools">
-     3.1.4.11. Computational tools
+     2.1.4.11. Computational tools
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#covariance">
-     3.1.4.12. Covariance
+     2.1.4.12. Covariance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#correlation">
-     3.1.4.13. Correlation
+     2.1.4.13. Correlation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mean-sum-describe">
-     3.1.4.14.
+     2.1.4.14.
      <code class="docutils literal notranslate">
       <span class="pre">
        mean()
@@ -456,24 +451,24 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#data-ranking">
-     3.1.4.15. Data ranking
+     2.1.4.15. Data ranking
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#missing-data-nan-value">
-   3.1.5. Missing data (NaN value)
+   2.1.5. Missing data (NaN value)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#date-index">
-   3.1.6. Date index
+   2.1.6. Date index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#upsampling-and-downsampling">
-   3.1.7. Upsampling and Downsampling
+   2.1.7. Upsampling and Downsampling
   </a>
  </li>
 </ul>
@@ -488,10 +483,10 @@
               <div>
                 
   <div class="section" id="basic">
-<h1><span class="section-number">3.1. </span>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.1. </span>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> is a fast, powerful, flexible, and easy-to-use open-source data analysis and manipulation tool, built on top of the <code class="docutils literal notranslate"><span class="pre">Python</span></code> programming language, used for data preparation and data analysis. The tutorial mainly includes two parts, <strong>Basic</strong> and <strong>Advanced</strong>. The former is mandatory for this course and the latter is optional. The following content is the <strong>Basic</strong>  part.</p>
 <div class="section" id="install-pandas">
-<h2><span class="section-number">3.1.1. </span>Install Pandas<a class="headerlink" href="#install-pandas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.1. </span>Install Pandas<a class="headerlink" href="#install-pandas" title="Permalink to this headline">¶</a></h2>
 <p>If you run code on your own computer, you need to install pandas. Open the console and enter <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,7 +504,7 @@
 </div>
 </div>
 <div class="section" id="introduction-to-pandas-data-structures">
-<h2><span class="section-number">3.1.2. </span>Introduction to pandas Data Structures<a class="headerlink" href="#introduction-to-pandas-data-structures" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.2. </span>Introduction to pandas Data Structures<a class="headerlink" href="#introduction-to-pandas-data-structures" title="Permalink to this headline">¶</a></h2>
 <p>The two primary data structures of pandas is</p>
 <ul class="simple">
 <li><p>Series</p></li>
@@ -518,7 +513,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">series</span></code> is designed to accommodate a sequence of one-dimensional data, and the <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> is designed to contain cases with several dimensions.</p>
 </div>
 <div class="section" id="series">
-<h2><span class="section-number">3.1.3. </span>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.3. </span>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
 <p>As shown below, the internal structure of the series object is simple, which is composed of two arrays associated with each other. The main array holds the data (data of any <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> type) to which each element is associated
 with a label, contained within the other array, called the <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 <table class="colwidths-auto table">
@@ -540,7 +535,7 @@ with a label, contained within the other array, called the <code class="docutils
 </tbody>
 </table>
 <div class="section" id="defining-a-series">
-<h3><span class="section-number">3.1.3.1. </span>Defining a Series<a class="headerlink" href="#defining-a-series" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.1. </span>Defining a Series<a class="headerlink" href="#defining-a-series" title="Permalink to this headline">¶</a></h3>
 <p>To create the series specified in above, you simply call the <code class="docutils literal notranslate"><span class="pre">Series()</span></code> function and pass as an argument an array containing the values to be included in it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -655,7 +650,7 @@ RangeIndex(start=0, stop=3, step=1)
 </div>
 </div>
 <div class="section" id="selecting-the-internal-elements">
-<h3><span class="section-number">3.1.3.2. </span>Selecting the Internal Elements<a class="headerlink" href="#selecting-the-internal-elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.2. </span>Selecting the Internal Elements<a class="headerlink" href="#selecting-the-internal-elements" title="Permalink to this headline">¶</a></h3>
 <p>You can select individual elements as ordinary numpy arrays, specifying the key.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,7 +725,7 @@ dtype: int64
 </div>
 </div>
 <div class="section" id="assigning-values-to-the-elements">
-<h3><span class="section-number">3.1.3.3. </span>Assigning Values to the Elements<a class="headerlink" href="#assigning-values-to-the-elements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.3. </span>Assigning Values to the Elements<a class="headerlink" href="#assigning-values-to-the-elements" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
@@ -750,7 +745,7 @@ dtype: int64
 </div>
 </div>
 <div class="section" id="filtering-values">
-<h3><span class="section-number">3.1.3.4. </span>Filtering Values<a class="headerlink" href="#filtering-values" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.4. </span>Filtering Values<a class="headerlink" href="#filtering-values" title="Permalink to this headline">¶</a></h3>
 <p>If you need to know which elements in the series are greater than 4, you
 write the following</p>
 <div class="cell docutils container">
@@ -793,7 +788,7 @@ dtype: int64
 </div>
 </div>
 <div class="section" id="operations-and-mathematical-functions">
-<h3><span class="section-number">3.1.3.5. </span>Operations and Mathematical Functions<a class="headerlink" href="#operations-and-mathematical-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.5. </span>Operations and Mathematical Functions<a class="headerlink" href="#operations-and-mathematical-functions" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">*</span><span class="mf">2.5</span>
@@ -830,7 +825,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="nan-value">
-<h3><span class="section-number">3.1.3.6. </span>Nan Value<a class="headerlink" href="#nan-value" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.6. </span>Nan Value<a class="headerlink" href="#nan-value" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">NaN</span></code> refers to <code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">a</span> <span class="pre">Number</span></code>, which generally is caused by the missing value. Before data analysis, the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value need to be adressed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -903,7 +898,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="operation-of-multiple-series">
-<h3><span class="section-number">3.1.3.7. </span>Operation of multiple Series<a class="headerlink" href="#operation-of-multiple-series" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3.7. </span>Operation of multiple Series<a class="headerlink" href="#operation-of-multiple-series" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;Singapore&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="s2">&quot;Cambodia&quot;</span><span class="p">:</span><span class="mi">41</span><span class="p">})</span>
@@ -929,7 +924,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="dataframe">
-<h2><span class="section-number">3.1.4. </span>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.4. </span>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
 <p>Compared with the <code class="docutils literal notranslate"><span class="pre">Series</span></code>, the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can contain multiple dimentional data. Its fist column and first row are <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code>, respectively. (Only for DataFrame without multiple index, <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with multiple indexes which will be introduced later). Each column must be same data type (numeric, string, boolean et al.) but different columns can have different data types.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -958,7 +953,7 @@ dtype: float64
 </tbody>
 </table>
 <div class="section" id="defining-a-dataframe">
-<h3><span class="section-number">3.1.4.1. </span>Defining a DataFrame<a class="headerlink" href="#defining-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.1. </span>Defining a DataFrame<a class="headerlink" href="#defining-a-dataframe" title="Permalink to this headline">¶</a></h3>
 <p>Call <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> function to create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">Array</span></code>, <code class="docutils literal notranslate"><span class="pre">List</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code> all can taken as the input of <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1046,7 +1041,7 @@ c    Vietnam         Hanoi    97338579         True
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">3.1.4.2. </span>Selecting the Internal Elements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.2. </span>Selecting the Internal Elements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Similar with <code class="docutils literal notranslate"><span class="pre">Series</span></code>, two ways can be used to select the elements from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Call <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">loc[]</span></code> to select the elements by position and label, respectively .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1498,7 +1493,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="assigning-value">
-<h3><span class="section-number">3.1.4.3. </span>Assigning value<a class="headerlink" href="#assigning-value" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.3. </span>Assigning value<a class="headerlink" href="#assigning-value" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;Country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Japan&quot;</span>
@@ -1620,7 +1615,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="assigning-index-columns-and-name-of-index-and-columns">
-<h3><span class="section-number">3.1.4.4. </span>Assigning index, columns, and name of index and columns<a class="headerlink" href="#assigning-index-columns-and-name-of-index-and-columns" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.4. </span>Assigning index, columns, and name of index and columns<a class="headerlink" href="#assigning-index-columns-and-name-of-index-and-columns" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">]</span>
@@ -1691,7 +1686,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="delete-columns-from-dataframe">
-<h3><span class="section-number">3.1.4.5. </span>Delete columns from dataframe<a class="headerlink" href="#delete-columns-from-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.5. </span>Delete columns from dataframe<a class="headerlink" href="#delete-columns-from-dataframe" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
@@ -1754,7 +1749,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="filtering">
-<h3><span class="section-number">3.1.4.6. </span>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.6. </span>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
 <p>Same as <code class="docutils literal notranslate"><span class="pre">Series()</span></code> mentioned above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1919,7 +1914,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="transposition-of-a-dataframe">
-<h3><span class="section-number">3.1.4.7. </span>Transposition  of a Dataframe<a class="headerlink" href="#transposition-of-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.7. </span>Transposition  of a Dataframe<a class="headerlink" href="#transposition-of-a-dataframe" title="Permalink to this headline">¶</a></h3>
 <p>Same as <code class="docutils literal notranslate"><span class="pre">Array</span></code> from <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> dataframe can transpose. <code class="docutils literal notranslate"><span class="pre">Columns</span></code> change to <code class="docutils literal notranslate"><span class="pre">Index</span></code> and <code class="docutils literal notranslate"><span class="pre">Index</span></code> change to <code class="docutils literal notranslate"><span class="pre">Columns</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2012,7 +2007,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="merge-of-dataframe">
-<h3><span class="section-number">3.1.4.8. </span>Merge of dataframe<a class="headerlink" href="#merge-of-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.8. </span>Merge of dataframe<a class="headerlink" href="#merge-of-dataframe" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Concat()</span></code>, <code class="docutils literal notranslate"><span class="pre">Join()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2440,10 +2435,10 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="join-inner-and-merge">
-<h3><span class="section-number">3.1.4.9. </span><code class="docutils literal notranslate"><span class="pre">join</span></code>, <code class="docutils literal notranslate"><span class="pre">inner</span></code> and <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#join-inner-and-merge" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.9. </span><code class="docutils literal notranslate"><span class="pre">join</span></code>, <code class="docutils literal notranslate"><span class="pre">inner</span></code> and <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#join-inner-and-merge" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="view-data">
-<h3><span class="section-number">3.1.4.10. </span>View data<a class="headerlink" href="#view-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.10. </span>View data<a class="headerlink" href="#view-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -2589,10 +2584,10 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="computational-tools">
-<h3><span class="section-number">3.1.4.11. </span>Computational tools<a class="headerlink" href="#computational-tools" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.11. </span>Computational tools<a class="headerlink" href="#computational-tools" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="covariance">
-<h3><span class="section-number">3.1.4.12. </span>Covariance<a class="headerlink" href="#covariance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.12. </span>Covariance<a class="headerlink" href="#covariance" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -2673,7 +2668,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="correlation">
-<h3><span class="section-number">3.1.4.13. </span>Correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.13. </span>Correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> <span class="c1"># pearson (default), kendall, spearman</span>
@@ -2753,7 +2748,7 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="section" id="mean-sum-describe">
-<h3><span class="section-number">3.1.4.14. </span><code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">describe()</span></code><a class="headerlink" href="#mean-sum-describe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.14. </span><code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">describe()</span></code><a class="headerlink" href="#mean-sum-describe" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -2891,7 +2886,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="data-ranking">
-<h3><span class="section-number">3.1.4.15. </span>Data ranking<a class="headerlink" href="#data-ranking" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4.15. </span>Data ranking<a class="headerlink" href="#data-ranking" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span><span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span><span class="mi">32365999</span><span class="p">,</span><span class="kc">False</span><span class="p">],</span>
@@ -2965,7 +2960,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="missing-data-nan-value">
-<h2><span class="section-number">3.1.5. </span>Missing data (NaN value)<a class="headerlink" href="#missing-data-nan-value" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.5. </span>Missing data (NaN value)<a class="headerlink" href="#missing-data-nan-value" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -3577,7 +3572,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="date-index">
-<h2><span class="section-number">3.1.6. </span>Date index<a class="headerlink" href="#date-index" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.6. </span>Date index<a class="headerlink" href="#date-index" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2018-01-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
@@ -3656,7 +3651,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 </div>
 </div>
 <div class="section" id="upsampling-and-downsampling">
-<h2><span class="section-number">3.1.7. </span>Upsampling and Downsampling<a class="headerlink" href="#upsampling-and-downsampling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1.7. </span>Upsampling and Downsampling<a class="headerlink" href="#upsampling-and-downsampling" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Upsampling: Increase the frequency of the samples by interpolation, such as from minutes to seconds.</p></li>
 <li><p>Downsampling: Ddecrease the frequency of the samples by aggregation, such as from months to years.</p></li>
@@ -4048,7 +4043,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3. </span>Pandas</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>Pandas</p>
             </div>
         </a>
     </div>
@@ -4056,7 +4051,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
         <a class="right-next" href="pandas-advanced.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">3.2. </span>Advanced</p>
+                <p class="prevnext-title"><span class="section-number">2.2. </span>Advanced</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
