@@ -1,4 +1,4 @@
-# Pandas
+# What is Pandas?
 ```{margin} Source
 from the Pandas [website](https://pandas.pydata.org/pandas-docs/stable/)
 ```

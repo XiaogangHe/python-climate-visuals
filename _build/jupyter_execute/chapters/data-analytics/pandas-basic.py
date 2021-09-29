@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Basic
+# # Pandas tutorial (Basic)
 
 # This `pandas` tutorial mainly includes two parts, **Basic** and **Advanced**. The former is mandatory for this course and the latter is optional. The following content is the **Basic**  part.
 

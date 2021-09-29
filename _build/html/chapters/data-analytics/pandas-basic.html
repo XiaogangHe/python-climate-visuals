@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.1. Basic</title>
+    <title>2.1. Pandas tutorial (Basic)</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2. Advanced" href="pandas-advanced.html" />
-    <link rel="prev" title="2. Pandas" href="pandas.html" />
+    <link rel="next" title="2.2. Pandas tutorial (Advanced)" href="pandas-advanced.html" />
+    <link rel="prev" title="2. What is Pandas?" href="pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +94,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="numpy.html">
-   1. Numpy
+   1. NumPy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -104,7 +104,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="numpy-basic.html">
-     1.1. NumPy
+     1.1. Tutorial
     </a>
    </li>
   </ul>
@@ -121,12 +121,12 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.1. Basic
+     2.1. Tutorial (Basic)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-advanced.html">
-     2.2. Advanced
+     2.2. Tutorial (Advanced)
     </a>
    </li>
   </ul>
@@ -455,8 +455,8 @@
         
               <div>
                 
-  <div class="section" id="basic">
-<h1><span class="section-number">2.1. </span>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pandas-tutorial-basic">
+<h1><span class="section-number">2.1. </span>Pandas tutorial (Basic)<a class="headerlink" href="#pandas-tutorial-basic" title="Permalink to this headline">¶</a></h1>
 <p>This <code class="docutils literal notranslate"><span class="pre">pandas</span></code> tutorial mainly includes two parts, <strong>Basic</strong> and <strong>Advanced</strong>. The former is mandatory for this course and the latter is optional. The following content is the <strong>Basic</strong>  part.</p>
 <div class="section" id="install-pandas">
 <h2><span class="section-number">2.1.1. </span>Install Pandas<a class="headerlink" href="#install-pandas" title="Permalink to this headline">¶</a></h2>
@@ -2032,24 +2032,24 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.861578</td>
-      <td>0.601866</td>
-      <td>0.856589</td>
-      <td>0.944645</td>
+      <td>0.758460</td>
+      <td>0.708747</td>
+      <td>0.106645</td>
+      <td>0.963521</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.916748</td>
-      <td>0.785093</td>
-      <td>0.140930</td>
-      <td>0.894704</td>
+      <td>0.306457</td>
+      <td>0.647090</td>
+      <td>0.143643</td>
+      <td>0.737687</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.980742</td>
-      <td>0.771049</td>
-      <td>0.490635</td>
-      <td>0.497093</td>
+      <td>0.386185</td>
+      <td>0.258675</td>
+      <td>0.300603</td>
+      <td>0.472858</td>
     </tr>
   </tbody>
 </table>
@@ -2089,24 +2089,24 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.583874</td>
-      <td>0.625853</td>
-      <td>0.232905</td>
-      <td>0.850224</td>
+      <td>0.885689</td>
+      <td>0.043059</td>
+      <td>0.544009</td>
+      <td>0.822139</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.785703</td>
-      <td>0.019732</td>
-      <td>0.481667</td>
-      <td>0.365570</td>
+      <td>0.803618</td>
+      <td>0.840237</td>
+      <td>0.780254</td>
+      <td>0.509213</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.734188</td>
-      <td>0.036092</td>
-      <td>0.529348</td>
-      <td>0.552706</td>
+      <td>0.638789</td>
+      <td>0.186718</td>
+      <td>0.222738</td>
+      <td>0.247483</td>
     </tr>
   </tbody>
 </table>
@@ -2146,45 +2146,45 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.863796</td>
-      <td>0.301675</td>
-      <td>0.854542</td>
-      <td>0.336595</td>
+      <td>0.331387</td>
+      <td>0.610999</td>
+      <td>0.348660</td>
+      <td>0.816447</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.509872</td>
-      <td>0.039369</td>
-      <td>0.242522</td>
-      <td>0.373658</td>
+      <td>0.466775</td>
+      <td>0.666340</td>
+      <td>0.696376</td>
+      <td>0.559969</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.952093</td>
-      <td>0.219969</td>
-      <td>0.858534</td>
-      <td>0.709468</td>
+      <td>0.379864</td>
+      <td>0.775182</td>
+      <td>0.190963</td>
+      <td>0.538376</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.538414</td>
-      <td>0.759096</td>
-      <td>0.708909</td>
-      <td>0.042104</td>
+      <td>0.668462</td>
+      <td>0.155479</td>
+      <td>0.024930</td>
+      <td>0.661453</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.100431</td>
-      <td>0.506283</td>
-      <td>0.739453</td>
-      <td>0.558025</td>
+      <td>0.338310</td>
+      <td>0.445183</td>
+      <td>0.730178</td>
+      <td>0.182533</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.086878</td>
-      <td>0.935220</td>
-      <td>0.292523</td>
-      <td>0.478109</td>
+      <td>0.723169</td>
+      <td>0.572044</td>
+      <td>0.969673</td>
+      <td>0.970768</td>
     </tr>
   </tbody>
 </table>
@@ -2226,30 +2226,30 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.635818</td>
-      <td>0.562801</td>
-      <td>0.052231</td>
-      <td>0.149549</td>
-      <td>0.696363</td>
-      <td>0.522363</td>
+      <td>0.988919</td>
+      <td>0.005372</td>
+      <td>0.956877</td>
+      <td>0.679844</td>
+      <td>0.646254</td>
+      <td>0.075873</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.561085</td>
-      <td>0.304113</td>
-      <td>0.915036</td>
-      <td>0.254387</td>
-      <td>0.108537</td>
-      <td>0.369402</td>
+      <td>0.900830</td>
+      <td>0.239119</td>
+      <td>0.215614</td>
+      <td>0.098524</td>
+      <td>0.938513</td>
+      <td>0.810636</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.577760</td>
-      <td>0.079082</td>
-      <td>0.561717</td>
-      <td>0.118137</td>
-      <td>0.476754</td>
-      <td>0.666154</td>
+      <td>0.768650</td>
+      <td>0.639298</td>
+      <td>0.419752</td>
+      <td>0.777635</td>
+      <td>0.789500</td>
+      <td>0.460690</td>
     </tr>
   </tbody>
 </table>
@@ -2289,45 +2289,45 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.861578</td>
-      <td>0.601866</td>
-      <td>0.856589</td>
-      <td>0.944645</td>
+      <td>0.758460</td>
+      <td>0.708747</td>
+      <td>0.106645</td>
+      <td>0.963521</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.916748</td>
-      <td>0.785093</td>
-      <td>0.140930</td>
-      <td>0.894704</td>
+      <td>0.306457</td>
+      <td>0.647090</td>
+      <td>0.143643</td>
+      <td>0.737687</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.980742</td>
-      <td>0.771049</td>
-      <td>0.490635</td>
-      <td>0.497093</td>
+      <td>0.386185</td>
+      <td>0.258675</td>
+      <td>0.300603</td>
+      <td>0.472858</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.583874</td>
-      <td>0.625853</td>
-      <td>0.232905</td>
-      <td>0.850224</td>
+      <td>0.885689</td>
+      <td>0.043059</td>
+      <td>0.544009</td>
+      <td>0.822139</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.785703</td>
-      <td>0.019732</td>
-      <td>0.481667</td>
-      <td>0.365570</td>
+      <td>0.803618</td>
+      <td>0.840237</td>
+      <td>0.780254</td>
+      <td>0.509213</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.734188</td>
-      <td>0.036092</td>
-      <td>0.529348</td>
-      <td>0.552706</td>
+      <td>0.638789</td>
+      <td>0.186718</td>
+      <td>0.222738</td>
+      <td>0.247483</td>
     </tr>
   </tbody>
 </table>
@@ -2368,45 +2368,45 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.861578</td>
-      <td>0.601866</td>
-      <td>0.856589</td>
-      <td>0.944645</td>
+      <td>0.758460</td>
+      <td>0.708747</td>
+      <td>0.106645</td>
+      <td>0.963521</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.916748</td>
-      <td>0.785093</td>
-      <td>0.140930</td>
-      <td>0.894704</td>
+      <td>0.306457</td>
+      <td>0.647090</td>
+      <td>0.143643</td>
+      <td>0.737687</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.980742</td>
-      <td>0.771049</td>
-      <td>0.490635</td>
-      <td>0.497093</td>
+      <td>0.386185</td>
+      <td>0.258675</td>
+      <td>0.300603</td>
+      <td>0.472858</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.583874</td>
-      <td>0.625853</td>
-      <td>0.232905</td>
-      <td>0.850224</td>
+      <td>0.885689</td>
+      <td>0.043059</td>
+      <td>0.544009</td>
+      <td>0.822139</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.785703</td>
-      <td>0.019732</td>
-      <td>0.481667</td>
-      <td>0.365570</td>
+      <td>0.803618</td>
+      <td>0.840237</td>
+      <td>0.780254</td>
+      <td>0.509213</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.734188</td>
-      <td>0.036092</td>
-      <td>0.529348</td>
-      <td>0.552706</td>
+      <td>0.638789</td>
+      <td>0.186718</td>
+      <td>0.222738</td>
+      <td>0.247483</td>
     </tr>
   </tbody>
 </table>
@@ -2453,38 +2453,38 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.936308</td>
-      <td>0.183054</td>
-      <td>0.437616</td>
-      <td>0.652519</td>
+      <td>0.744797</td>
+      <td>0.401245</td>
+      <td>0.786728</td>
+      <td>0.585262</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.723803</td>
-      <td>0.757823</td>
-      <td>0.653108</td>
-      <td>0.344032</td>
+      <td>0.532563</td>
+      <td>0.127944</td>
+      <td>0.700884</td>
+      <td>0.170032</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.300534</td>
-      <td>0.867037</td>
-      <td>0.765600</td>
-      <td>0.518954</td>
+      <td>0.956702</td>
+      <td>0.376625</td>
+      <td>0.422634</td>
+      <td>0.774184</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.593445</td>
-      <td>0.860772</td>
-      <td>0.542617</td>
-      <td>0.809238</td>
+      <td>0.258131</td>
+      <td>0.196753</td>
+      <td>0.907973</td>
+      <td>0.630891</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.143167</td>
-      <td>0.606652</td>
-      <td>0.719483</td>
-      <td>0.554343</td>
+      <td>0.875165</td>
+      <td>0.115059</td>
+      <td>0.086661</td>
+      <td>0.981448</td>
     </tr>
   </tbody>
 </table>
@@ -2524,38 +2524,38 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>95</th>
-      <td>0.946483</td>
-      <td>0.273499</td>
-      <td>0.314605</td>
-      <td>0.374853</td>
+      <td>0.151240</td>
+      <td>0.467179</td>
+      <td>0.376731</td>
+      <td>0.339006</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>0.074875</td>
-      <td>0.652072</td>
-      <td>0.733643</td>
-      <td>0.877961</td>
+      <td>0.008528</td>
+      <td>0.922004</td>
+      <td>0.959180</td>
+      <td>0.421091</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>0.053563</td>
-      <td>0.956502</td>
-      <td>0.993544</td>
-      <td>0.899147</td>
+      <td>0.272156</td>
+      <td>0.243721</td>
+      <td>0.420740</td>
+      <td>0.970420</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>0.506856</td>
-      <td>0.372678</td>
-      <td>0.342533</td>
-      <td>0.174572</td>
+      <td>0.620014</td>
+      <td>0.308638</td>
+      <td>0.354781</td>
+      <td>0.676179</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.095987</td>
-      <td>0.294016</td>
-      <td>0.455393</td>
-      <td>0.982569</td>
+      <td>0.542053</td>
+      <td>0.543275</td>
+      <td>0.912296</td>
+      <td>0.597950</td>
     </tr>
   </tbody>
 </table>
@@ -2603,43 +2603,43 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.117294</td>
-      <td>-0.036012</td>
-      <td>0.031675</td>
-      <td>0.010618</td>
-      <td>0.146906</td>
+      <td>0.106358</td>
+      <td>-0.098685</td>
+      <td>-0.082488</td>
+      <td>0.088319</td>
+      <td>0.086711</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.036012</td>
-      <td>0.018675</td>
-      <td>-0.003100</td>
-      <td>-0.011854</td>
-      <td>-0.055185</td>
+      <td>-0.098685</td>
+      <td>0.097685</td>
+      <td>0.077782</td>
+      <td>-0.081665</td>
+      <td>-0.080943</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.031675</td>
-      <td>-0.003100</td>
-      <td>0.149855</td>
-      <td>0.077394</td>
-      <td>-0.005510</td>
+      <td>-0.082488</td>
+      <td>0.077782</td>
+      <td>0.092480</td>
+      <td>-0.056231</td>
+      <td>-0.042393</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.010618</td>
-      <td>-0.011854</td>
-      <td>0.077394</td>
-      <td>0.098960</td>
-      <td>-0.005674</td>
+      <td>0.088319</td>
+      <td>-0.081665</td>
+      <td>-0.056231</td>
+      <td>0.104718</td>
+      <td>0.114338</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.146906</td>
-      <td>-0.055185</td>
-      <td>-0.005510</td>
-      <td>-0.005674</td>
-      <td>0.208904</td>
+      <td>0.086711</td>
+      <td>-0.080943</td>
+      <td>-0.042393</td>
+      <td>0.114338</td>
+      <td>0.130982</td>
     </tr>
   </tbody>
 </table>
@@ -2684,41 +2684,41 @@ Name: Country, dtype: object
     <tr>
       <th>0</th>
       <td>1.000000</td>
-      <td>-0.769442</td>
-      <td>0.238915</td>
-      <td>0.098557</td>
-      <td>0.938488</td>
+      <td>-0.968168</td>
+      <td>-0.831730</td>
+      <td>0.836872</td>
+      <td>0.734655</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.769442</td>
+      <td>-0.968168</td>
       <td>1.000000</td>
-      <td>-0.058604</td>
-      <td>-0.275750</td>
-      <td>-0.883514</td>
+      <td>0.818358</td>
+      <td>-0.807445</td>
+      <td>-0.715582</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.238915</td>
-      <td>-0.058604</td>
+      <td>-0.831730</td>
+      <td>0.818358</td>
       <td>1.000000</td>
-      <td>0.635540</td>
-      <td>-0.031139</td>
+      <td>-0.571405</td>
+      <td>-0.385176</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.098557</td>
-      <td>-0.275750</td>
-      <td>0.635540</td>
+      <td>0.836872</td>
+      <td>-0.807445</td>
+      <td>-0.571405</td>
       <td>1.000000</td>
-      <td>-0.039462</td>
+      <td>0.976274</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.938488</td>
-      <td>-0.883514</td>
-      <td>-0.031139</td>
-      <td>-0.039462</td>
+      <td>0.734655</td>
+      <td>-0.715582</td>
+      <td>-0.385176</td>
+      <td>0.976274</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -2735,11 +2735,11 @@ Name: Country, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.451353
-1    0.767241
-2    0.466375
-3    0.504630
-4    0.487970
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.603965
+1    0.303609
+2    0.457843
+3    0.621654
+4    0.549185
 dtype: float64
 </pre></div>
 </div>
@@ -2752,11 +2752,11 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.256766
-1    3.836204
-2    2.331877
-3    2.523150
-4    2.439852
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    3.019824
+1    1.518044
+2    2.289215
+3    3.108271
+4    2.745927
 dtype: float64
 </pre></div>
 </div>
@@ -2805,59 +2805,59 @@ dtype: float64
     </tr>
     <tr>
       <th>mean</th>
-      <td>0.451353</td>
-      <td>0.767241</td>
-      <td>0.466375</td>
-      <td>0.504630</td>
-      <td>0.487970</td>
+      <td>0.603965</td>
+      <td>0.303609</td>
+      <td>0.457843</td>
+      <td>0.621654</td>
+      <td>0.549185</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.342483</td>
-      <td>0.136657</td>
-      <td>0.387111</td>
-      <td>0.314579</td>
-      <td>0.457061</td>
+      <td>0.326126</td>
+      <td>0.312546</td>
+      <td>0.304105</td>
+      <td>0.323602</td>
+      <td>0.361915</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>0.055796</td>
-      <td>0.593626</td>
-      <td>0.039832</td>
-      <td>0.107695</td>
-      <td>0.007131</td>
+      <td>0.090522</td>
+      <td>0.091267</td>
+      <td>0.186086</td>
+      <td>0.229115</td>
+      <td>0.173194</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>0.107103</td>
-      <td>0.697835</td>
-      <td>0.139596</td>
-      <td>0.331827</td>
-      <td>0.015262</td>
+      <td>0.490222</td>
+      <td>0.098026</td>
+      <td>0.266961</td>
+      <td>0.342689</td>
+      <td>0.188620</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>0.643558</td>
-      <td>0.778413</td>
-      <td>0.470622</td>
-      <td>0.465009</td>
-      <td>0.596017</td>
+      <td>0.757510</td>
+      <td>0.171454</td>
+      <td>0.327548</td>
+      <td>0.719439</td>
+      <td>0.579506</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>0.664630</td>
-      <td>0.803355</td>
-      <td>0.718190</td>
-      <td>0.706374</td>
-      <td>0.833753</td>
+      <td>0.759767</td>
+      <td>0.319198</td>
+      <td>0.571457</td>
+      <td>0.828439</td>
+      <td>0.868774</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>0.785679</td>
-      <td>0.962976</td>
-      <td>0.963636</td>
-      <td>0.912245</td>
-      <td>0.987689</td>
+      <td>0.921803</td>
+      <td>0.838098</td>
+      <td>0.937163</td>
+      <td>0.988590</td>
+      <td>0.935833</td>
     </tr>
   </tbody>
 </table>
@@ -2980,43 +2980,43 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.593949</td>
+      <td>0.448077</td>
       <td>NaN</td>
-      <td>0.659313</td>
-      <td>0.043354</td>
-      <td>0.534708</td>
+      <td>0.176137</td>
+      <td>0.238045</td>
+      <td>0.866006</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.354906</td>
-      <td>0.570483</td>
-      <td>0.202709</td>
-      <td>0.484917</td>
-      <td>0.340319</td>
+      <td>0.697194</td>
+      <td>0.939803</td>
+      <td>0.663765</td>
+      <td>0.798067</td>
+      <td>0.790091</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.719212</td>
-      <td>0.236356</td>
+      <td>0.264479</td>
+      <td>0.168939</td>
       <td>NaN</td>
-      <td>0.552122</td>
-      <td>0.186200</td>
+      <td>0.837008</td>
+      <td>0.348536</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.266150</td>
+      <td>0.397227</td>
       <td>NaN</td>
-      <td>0.396036</td>
+      <td>0.211946</td>
       <td>NaN</td>
-      <td>0.329758</td>
+      <td>0.966816</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.574396</td>
-      <td>0.910991</td>
-      <td>0.191219</td>
-      <td>0.090720</td>
-      <td>0.034858</td>
+      <td>0.321375</td>
+      <td>0.859747</td>
+      <td>0.955439</td>
+      <td>0.983199</td>
+      <td>0.677265</td>
     </tr>
   </tbody>
 </table>
@@ -3291,43 +3291,43 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.593949</td>
+      <td>0.448077</td>
       <td>0.000000</td>
-      <td>0.659313</td>
-      <td>0.043354</td>
-      <td>0.534708</td>
+      <td>0.176137</td>
+      <td>0.238045</td>
+      <td>0.866006</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.354906</td>
-      <td>0.570483</td>
-      <td>0.202709</td>
-      <td>0.484917</td>
-      <td>0.340319</td>
+      <td>0.697194</td>
+      <td>0.939803</td>
+      <td>0.663765</td>
+      <td>0.798067</td>
+      <td>0.790091</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.719212</td>
-      <td>0.236356</td>
+      <td>0.264479</td>
+      <td>0.168939</td>
       <td>0.000000</td>
-      <td>0.552122</td>
-      <td>0.186200</td>
+      <td>0.837008</td>
+      <td>0.348536</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.266150</td>
+      <td>0.397227</td>
       <td>0.000000</td>
-      <td>0.396036</td>
+      <td>0.211946</td>
       <td>0.000000</td>
-      <td>0.329758</td>
+      <td>0.966816</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.574396</td>
-      <td>0.910991</td>
-      <td>0.191219</td>
-      <td>0.090720</td>
-      <td>0.034858</td>
+      <td>0.321375</td>
+      <td>0.859747</td>
+      <td>0.955439</td>
+      <td>0.983199</td>
+      <td>0.677265</td>
     </tr>
   </tbody>
 </table>
@@ -3371,43 +3371,43 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.593949</td>
+      <td>0.448077</td>
       <td>NaN</td>
-      <td>0.659313</td>
-      <td>0.043354</td>
-      <td>0.534708</td>
+      <td>0.176137</td>
+      <td>0.238045</td>
+      <td>0.866006</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.354906</td>
-      <td>0.570483</td>
-      <td>0.202709</td>
-      <td>0.484917</td>
-      <td>0.340319</td>
+      <td>0.697194</td>
+      <td>0.939803</td>
+      <td>0.663765</td>
+      <td>0.798067</td>
+      <td>0.790091</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.719212</td>
-      <td>0.236356</td>
+      <td>0.264479</td>
+      <td>0.168939</td>
       <td>NaN</td>
-      <td>0.552122</td>
-      <td>0.186200</td>
+      <td>0.837008</td>
+      <td>0.348536</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.266150</td>
+      <td>0.397227</td>
       <td>NaN</td>
-      <td>0.396036</td>
+      <td>0.211946</td>
       <td>NaN</td>
-      <td>0.329758</td>
+      <td>0.966816</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.574396</td>
-      <td>0.910991</td>
-      <td>0.191219</td>
-      <td>0.090720</td>
-      <td>0.034858</td>
+      <td>0.321375</td>
+      <td>0.859747</td>
+      <td>0.955439</td>
+      <td>0.983199</td>
+      <td>0.677265</td>
     </tr>
   </tbody>
 </table>
@@ -3448,43 +3448,43 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.593949</td>
+      <td>0.448077</td>
       <td>NaN</td>
-      <td>0.659313</td>
-      <td>0.043354</td>
-      <td>0.534708</td>
+      <td>0.176137</td>
+      <td>0.238045</td>
+      <td>0.866006</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.354906</td>
-      <td>0.570483</td>
-      <td>0.202709</td>
-      <td>0.484917</td>
-      <td>0.340319</td>
+      <td>0.697194</td>
+      <td>0.939803</td>
+      <td>0.663765</td>
+      <td>0.798067</td>
+      <td>0.790091</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.719212</td>
-      <td>0.236356</td>
-      <td>0.202709</td>
-      <td>0.552122</td>
-      <td>0.186200</td>
+      <td>0.264479</td>
+      <td>0.168939</td>
+      <td>0.663765</td>
+      <td>0.837008</td>
+      <td>0.348536</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.266150</td>
-      <td>0.236356</td>
-      <td>0.396036</td>
-      <td>0.552122</td>
-      <td>0.329758</td>
+      <td>0.397227</td>
+      <td>0.168939</td>
+      <td>0.211946</td>
+      <td>0.837008</td>
+      <td>0.966816</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.574396</td>
-      <td>0.910991</td>
-      <td>0.191219</td>
-      <td>0.090720</td>
-      <td>0.034858</td>
+      <td>0.321375</td>
+      <td>0.859747</td>
+      <td>0.955439</td>
+      <td>0.983199</td>
+      <td>0.677265</td>
     </tr>
   </tbody>
 </table>
@@ -3531,19 +3531,19 @@ dtype: float64
   <tbody>
     <tr>
       <th>1</th>
-      <td>0.354906</td>
-      <td>0.570483</td>
-      <td>0.202709</td>
-      <td>0.484917</td>
-      <td>0.340319</td>
+      <td>0.697194</td>
+      <td>0.939803</td>
+      <td>0.663765</td>
+      <td>0.798067</td>
+      <td>0.790091</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.574396</td>
-      <td>0.910991</td>
-      <td>0.191219</td>
-      <td>0.090720</td>
-      <td>0.034858</td>
+      <td>0.321375</td>
+      <td>0.859747</td>
+      <td>0.955439</td>
+      <td>0.983199</td>
+      <td>0.677265</td>
     </tr>
   </tbody>
 </table>
@@ -4022,7 +4022,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>Pandas</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>What is Pandas?</p>
             </div>
         </a>
     </div>
@@ -4030,7 +4030,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
         <a class="right-next" href="pandas-advanced.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">2.2. </span>Advanced</p>
+                <p class="prevnext-title"><span class="section-number">2.2. </span>Pandas tutorial (Advanced)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
