@@ -10,6 +10,7 @@
 
 import pandas as pd
 import numpy as np
+np.random.seed(0)
 
 
 # ## Hierarchical indexing (MultiIndex)
@@ -48,9 +49,9 @@ df = pd.DataFrame(np.random.randn(3, 4), index=idx)
 df
 
 
-# ```pd.MultiIndex.from_tuples```, ```pd.MultiIndex.from_frame```
+# You can  use `pd.MultiIndex.from_tuples()`, `pd.MultiIndex.from_frame()` to create a MultiIndex
 
-# ### Get index for multiindex
+# ### Get single index for a MultiIndex
 
 # In[6]:
 
@@ -140,36 +141,204 @@ for n,subdf in df.groupby(by=["factor"]):
 df.groupby(by=["factor"]).mean()
 
 
-# ## Table Visualization
+# The dataframe generated is daily rainfall of Changi station in 2020. The columns and index represent no. of month and day, respectively.
 
 # In[15]:
 
 
-np.random.seed(0)
-df2 = pd.DataFrame(np.random.randn(10,4), columns=['A','B','C','D'])
-df2.style
-def style_negative(v, props=''):
-    return props if v < 0 else None
-s2 = df2.style.applymap(style_negative, props='color:red;')              .applymap(lambda v: 'opacity: 20%;' if (v < 0.3) and (v > -0.3) else None)
-s2
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+df = pd.concat([i[1].reset_index(drop=True) for i in df.loc['2020',:].groupby(pd.Grouper(freq='M'))], axis=1)
+df.columns = range(1, 13)
+df.index = range(1, 32)
+df.columns.name = 'month'
+df.index.name = 'day'
+df
 
+
+# The dataframe generated is monthly rainfall of Changi station from 2010 to 2020. The columns and index represent no. of year and month, respectively.
 
 # In[16]:
 
 
-def highlight_max(s, props=''):
-    return np.where(s == np.nanmax(s.values), props, '')
-s2.apply(highlight_max, props='color:white;background-color:darkblue', axis=0)
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+df = df.resample('M').sum()
+df = pd.concat([i[1].reset_index(drop=True) for i in df.loc['2015':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
+df.columns = range(2015, 2021)
+df.index = range(1, 13)
+df.columns.name = 'year'
+df.index.name = 'month'
+df
 
 
-# ## Tooltips and Captions
+# ## Table Visualization
+
+# ### Styler Functions
 
 # In[17]:
 
 
-# s.set_caption("Confusion matrix for multiple cancer prediction models.")\
-#  .set_table_styles([{
-#      'selector': 'caption',
-#      'props': 'caption-side: bottom; font-size:1.25em;'
-#  }], overwrite=False)
+# highlight monthly rainfall which is greater than 200 mm and less than 50 mm
+def highlight_G200(s, props=''):
+    return props if s>200 else None
+def highlight_L50(s, props=''):
+    return props if s<50 else None
+s = df.style
+s.precision = 1
+s.applymap(highlight_G200, props='color:#3333ff')
+s.applymap(highlight_L50, props='color:#ff3333')
 
+
+# In[18]:
+
+
+def highlight_max(s, props=''):
+    return np.where(s == np.nanmax(s.values), 'background-color:#3399ff', '')
+def highlight_min(s, props=''):
+    return np.where(s == np.nanmin(s.values), 'background-color:#c0c0c0', '')
+s = df.style
+s.precision = 1
+s.apply(highlight_max, axis=0)
+s.apply(highlight_min, axis=0)
+
+
+# In[19]:
+
+
+# since version 1.3.0
+v = pd.__version__.split('.') 
+if int(v[0]) >= 1 and int(v[1]) >= 3:
+    pass
+else:
+    raise Exception('Please make sure your pandas version >= 1.3.0, Current version is {}'.format(pd.__version__))
+tt = pd.DataFrame([['A typhoon landed this month!',
+                    "There was a severe drought this month!"]],
+                  index=[3,12], columns=[2016,2017])
+s.set_tooltips(tt, props='visibility: hidden; position: absolute; z-index: 1; border: 1px solid #000066;'
+                         'background-color: white; color: #000066; font-size: 0.8em;'
+                         'transform: translate(0px, -24px); padding: 0.6em; border-radius: 0.5em;')
+# move mouse over (3,2016) and (12,2017)
+
+
+# ### Builtin Styles
+
+# #### Highlight maximum and minmum
+
+# In[20]:
+
+
+s = df.style.highlight_max(axis=0, color='#3399ff')
+s.precision = 1
+s.highlight_min(axis=0, color='#c0c0c0')
+
+
+# #### Bar charts
+
+# In[21]:
+
+
+s = df.style.bar(color='#3399ff')
+s.precision = 1
+s
+
+
+# ## Chart Visualization
+
+# Plots of this section are  based on the `matplotlib` which will be introduced in the following tutorial in this book. You can call `Series.plot()` or `DataFrame.plot()` directly plot and make different charts by setting `kind` argument. 
+
+# ### line plot
+
+# In[22]:
+
+
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+df.loc['2020',:].plot(title='Daily rainfall of Changi station', color='#3399ff')
+
+
+# ### bar plot
+
+# In[23]:
+
+
+import matplotlib.dates as mdates
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, 
+                 parse_dates=True).loc['2020',:]
+ax = df.plot(title='Daily rainfall of Changi station in 2020', kind='bar', xticks=[])
+
+
+# ### Histograms
+
+# In[24]:
+
+
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+ax = df.loc['2020',:].plot(title='Daily rainfall of Changi station in 2020', kind='hist', alpha=0.5)
+
+
+# ### Box plots
+
+# In[25]:
+
+
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+df = df.resample('M').sum()
+df = pd.concat([i[1].reset_index(drop=True) for i in df.loc['1981':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
+df.columns = range(1981, 2021)
+df.index = range(1, 13)
+df.columns.name = 'year'
+df.index.name = 'month'
+ax = df.plot(title='Monthly rainfall of Changi station in from 1981 to 2020', xlabel='year', 
+             ylabel='Monthly rainfall (mm)', kind='box', figsize=(15,5))
+ax.set_xticklabels(df.columns,rotation=45)
+ax.set_xlabel('year')
+
+
+# ### Area plot
+
+# In[26]:
+
+
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+ax = df.loc['2020',:].resample('M').sum().plot(title='Daily rainfall of Changi station in 2020',
+                                               kind='area', alpha=0.5)
+
+
+# ### Scatter plot
+
+# You need to specify the `x` and `y` arguments for scatter plot.
+
+# In[27]:
+
+
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+df = df.loc['2020',:].resample('M').sum().reset_index()
+df.head()
+
+
+# In[28]:
+
+
+df.plot(x='Date', y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
+                                               kind='scatter')
+
+
+# ### Pie plot
+
+# In[29]:
+
+
+df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
+df = df.loc['2020',:].resample('M').sum()
+df.index = df.index.month
+df.head()
+
+
+# In[30]:
+
+
+df.plot(y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
+                                               kind='pie')
+
+
+# ## References
+# + [Pandas documentation](https://pandas.pydata.org/docs/).
+# + [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html)

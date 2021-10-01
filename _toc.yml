@@ -23,7 +23,14 @@ parts:
       title: Tutorial (Basic)
     - file: chapters/data-analytics/pandas-advanced
       title: Tutorial (Advanced)
+    - file: chapters/data-analytics/pandas-exercise
+      title: Exercise
   - file: chapters/data-analytics/scipy
+  - file: chapters/data-analytics/xarray
+    title: Xarray
+    sections:
+    - file: chapters/data-analytics/xarray-basic
+      title: Tutorial
 - caption: Data visualization
   numbered: true
   chapters:
