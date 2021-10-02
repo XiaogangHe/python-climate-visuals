@@ -11,7 +11,11 @@
 # In[1]:
 
 
-import xarray as xr
+try:
+    import xarray as xr
+except ModuleNotFoundError:
+    get_ipython().system('pip install xarray')
+    import xarray as xr
 
 print(xr.__version__)
 

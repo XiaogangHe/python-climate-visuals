@@ -12,6 +12,6 @@ xarray (formerly xray) is an open source project and Python package that makes w
 * Plotting: Labeled data enables expressive computations. These same labels can also be used to easily create informative plots;
 * Integrates well with other libraries: Xarray leverage first-class external libraries for core features of xarray (e.g., NumPy for ndarrays, pandas for indexing, dask for parallel computing). Xarray expose internal abstractions to users, which facilitates extending xarray in various ways;
 * Widely used: The dominant use-case for xarray is for the analysis of gridded datasets in the geosciences and physical sciences, and also is used in a variety of other domains, including finance, probabilistic programming, and genomics;
-* A domain agnostic solution: Xarray focus on providing a flexible set of functionality related labeled multidimensional arrays, rather than solving particular problems. This facilitates collaboration between users with different needs, and helps us attract a broad community of contributers. Importantly, this retains flexibility, for use cases that don’t fit particularly well into existing frameworks;
+* A domain agnostic solution: Xarray focus on providing a flexible set of functionality related labeled multidimensional arrays, rather than solving particular problems. This facilitates collaboration between users with different needs, and helps us attract a broad community of contributers. Importantly, this retains flexibility, for use cases that don’t fit particularly well into existing frameworks.
 ```
 
