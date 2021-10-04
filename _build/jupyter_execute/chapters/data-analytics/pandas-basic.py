@@ -58,11 +58,11 @@ print(s1)
 # In[3]:
 
 
-s3 = pd.Series([-1, 3, 8], index=['x', 'y', 'z']) # specify the index by 'index' option
-print(s3)
-
-s2 = pd.Series({"a":-1, "b":3, "c":8}) # dictionary
+s2 = pd.Series([-1, 3, 8], index=['x', 'y', 'z']) # specify the index by 'index' option
 print(s2)
+
+s3 = pd.Series({"a":-1, "b":3, "c":8}) # dictionary
+print(s3)
 
 
 # Specify the argument `data` as a `array` object of `Numpy`.
@@ -100,8 +100,8 @@ print(s4)
 # In[6]:
 
 
-print(s.values)
-print(s.index)
+print(s4.values)
+print(s4.index)
 
 
 # ### Selecting the Internal Elements
@@ -111,8 +111,8 @@ print(s.index)
 # In[7]:
 
 
-s2 = pd.Series({"a":-1,"b":3,"c":8})
-s2[1]
+s = pd.Series({"a":-1,"b":3,"c":8})
+s[1]
 
 
 # Or you can specify the label corresponding to the position of the index.
@@ -120,7 +120,7 @@ s2[1]
 # In[8]:
 
 
-s2['a']
+s['a']
 
 
 # In the same way, you select multiple items in a `Numpy` array, you can specify slices as following:
@@ -128,19 +128,19 @@ s2['a']
 # In[9]:
 
 
-s2[0:2]
+s[0:2]
 
 
 # In[10]:
 
 
-s2['a':'c']
+s['a':'c']
 
 
 # In[11]:
 
 
-s2[['a','c']]
+s[['a','c']]
 
 
 # ### Assigning Values to the Elements
@@ -148,8 +148,8 @@ s2[['a','c']]
 # In[12]:
 
 
-s1['a'] = 100
-s1
+s['a'] = 100
+s
 
 
 # ### Filtering Values
@@ -170,7 +170,6 @@ s[s>4] # greater than 4
 
 
 # According to Boolean value to filter
-s = pd.Series([1, 3, 5, 2, 10])
 print(s.isin([2, 5]))
 print(s[s.isin([2, 5])])
 
@@ -270,7 +269,7 @@ print(df)
 df = pd.DataFrame({"Country":["Malaysia", "Singapore", "Vietnam"],
                    "Capital":["Kuala Lumpur", "Singapore", "Hanoi"],
               "Population":[32365999, 5850342, 97338579],
-              "Isdeveloped":[False, True, True]})
+              "Isdeveloped":[False, True, True]}, index=["a", "b", "c"])
 df
 
 
@@ -281,34 +280,23 @@ df
 # In[22]:
 
 
-df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
-              ["Singapore", "Singapore", 5850342, True],
-              ["Vietnam", "Hanoi", 97338579, True]],
-              columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a", "b", "c"])
-df
+# use ':' to represent select all
+df.iloc[:,0:2]
 
 
 # In[23]:
 
 
-# use ':' to represent select all
-df.iloc[:,0:2]
+df.loc[:, "Country":"Population"]
 
 
 # In[24]:
 
 
-df.loc[:, "Country":"Population"]
-
-
-# In[25]:
-
-
 df.loc["a", ["Country", "Population"]]
 
 
-# In[26]:
+# In[25]:
 
 
 df.iloc[[0, 1]] # If you omit number of columns, all columns will be selected 
@@ -316,19 +304,19 @@ df.iloc[[0, 1]] # If you omit number of columns, all columns will be selected
 
 # Use ```columns```,```index``` and ```values``` atrributes to obtain corresponding object value.
 
-# In[27]:
+# In[26]:
 
 
 df.index
 
 
-# In[28]:
+# In[27]:
 
 
 df.columns
 
 
-# In[29]:
+# In[28]:
 
 
 df.values
@@ -336,31 +324,31 @@ df.values
 
 # Select corresponding column according the label or number of columns.
 
-# In[30]:
+# In[29]:
 
 
 df["Country"]
 
 
-# In[31]:
+# In[30]:
 
 
 df[["Country", "Population"]] # Use list to select multiple columns  
 
 
-# In[32]:
+# In[31]:
 
 
 df.Country # Also support as atrribute to select
 
 
-# In[33]:
+# In[32]:
 
 
 df["a":"b"] # When select multiple rows, do not use list   
 
 
-# In[34]:
+# In[33]:
 
 
 df[0:2] # When select multiple rows, do not use list
@@ -368,72 +356,68 @@ df[0:2] # When select multiple rows, do not use list
 
 # ### Assigning value
 
+# In[34]:
+
+
+df1 = df.copy(True)
+df1.loc["c", "Country"] = "Japan"
+df1.loc["c", "Capital"] = "Tokyo"
+df1.loc["c", "Population"] = 126476461
+df1.loc["c", "Isdeveloped"] = True
+df1
+
+
 # In[35]:
 
 
-df.loc["c", "Country"] = "Japan"
-df.loc["c", "Capital"] = "Tokyo"
-df.loc["c", "Population"] = 126476461
-df.loc["c", "Isdeveloped"] = True
-df
-
-
-# In[36]:
-
-
-df.loc["c"] = ["Japan", "Tokyo", 126476461, True]
+df1.loc["c"] = ["Japan", "Tokyo", 126476461, True]
 df
 
 
 # ### Assigning index, columns, and name of index and columns
 
-# In[37]:
+# In[36]:
 
 
-df.index = ["e", "f", "g"]
-df.index.name = "label"
-df.columns.name = "atributes"
-df.columns = ["Coun", "Cap", "Pop", "ID"]
-df
+df1.index = ["e", "f", "g"]
+df1.index.name = "label"
+df1.columns.name = "atributes"
+df1.columns = ["Coun", "Cap", "Pop", "ID"]
+df1
 
 
 # ### Delete columns from dataframe
 
-# In[38]:
+# In[37]:
 
 
-del df["ID"]
-df
+del df1["ID"]
+df1
 
 
 # ### Filtering
 # Same as ```Series()``` mentioned above.
 
-# In[39]:
+# In[38]:
 
 
-df = pd.DataFrame(np.array([[14, 35, 35, 35],
+df2 = pd.DataFrame(np.array([[14, 35, 35, 35],
                             [19, 34, 57, 34],
                             [42, 74, 49, 59]]))
 # filtering lesser than 30
-df[df<30]
+df2[df2<30]
 
 
-# In[40]:
+# In[39]:
 
 
-df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
-              ["Singapore", "Singapore", 5850342, True],
-              ["Vietnam", "Hanoi", 97338579, True]],
-              columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a", "b", "c"])
 # Filtering accroding to conditions of one column
 df[df["Population"]<50000000]
 
 
 # You can filter the `DataFrame` according to conditions of multiple columns like following:
 
-# In[41]:
+# In[40]:
 
 
 df[(df["Population"] < 50000000) & (df["Isdeveloped"]==True)]
@@ -442,25 +426,20 @@ df[(df["Population"] < 50000000) & (df["Isdeveloped"]==True)]
 # ### Transposition  of a Dataframe
 # Same as `Numpy` array, `Dataframe` can transpose. `Columns` changes to `Index` and `Index` changes to `Columns`.
 
-# In[42]:
+# In[41]:
 
 
-df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
-              ["Singapore", "Singapore", 5850342, True],
-              ["Vietnam", "Hanoi", 97338579, True]],
-              columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a", "b", "c"])
 df1 = df.T
 df1
 
 
-# In[43]:
+# In[42]:
 
 
 df1.index
 
 
-# In[44]:
+# In[43]:
 
 
 df1.columns
@@ -469,7 +448,7 @@ df1.columns
 # ### Merge of Dataframe
 # Call `concat()`, `append()` functions to merge the multiple dataframes.
 
-# In[45]:
+# In[44]:
 
 
 df1 = pd.DataFrame(np.random.rand(3,4))
@@ -478,7 +457,7 @@ df3 = pd.DataFrame(np.random.rand(6,4))
 df4 = pd.DataFrame(np.random.rand(3,6))
 
 
-# In[46]:
+# In[45]:
 
 
 # Vertical merging by default.
@@ -489,7 +468,7 @@ pd.concat([df1, df2, df3, df4])
 # As you see, when the shape of multiple dataframe don't match. blank position will be filled using `NaN` value.
 # :::
 
-# In[47]:
+# In[46]:
 
 
 result = df1.append(df2)
@@ -498,7 +477,7 @@ result
 
 # Horizontal merging by specifying `axis` argument as 'columns' or 1. 
 
-# In[48]:
+# In[47]:
 
 
 pd.concat([df1, df2, df3, df4], axis='columns')
@@ -508,139 +487,134 @@ pd.concat([df1, df2, df3, df4], axis='columns')
 
 # ### View data
 
+# In[48]:
+
+
+df1 = pd.DataFrame(np.random.rand(100,4))
+df1.head(2)
+
+
 # In[49]:
 
 
-df = pd.DataFrame(np.random.rand(100,4))
-df.head(2)
-
-
-# In[50]:
-
-
-df.tail(3)
+df1.tail(3)
 
 
 # ### Computational tools
 
 # Compute quickly covariance and *Pearson correlation coefficients* of different columns.
 
+# In[50]:
+
+
+df1 = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'], 
+                 columns=['c1', 'c2', 'c3', 'c4', 'c5'])
+df1.cov()
+
+
 # In[51]:
 
 
-df = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'], 
-                 columns=['c1', 'c2', 'c3', 'c4', 'c5'])
-df.cov()
+df1.corr() # method = pearson (default), optional: kendall, spearman
 
 
 # In[52]:
 
 
-df.corr() # method = pearson (default), optional: kendall, spearman
-
-
-# In[53]:
-
-
-df.corr(method='kendall')
+df1.corr(method='kendall')
 
 
 # Compute quickly average value, maximum, mimmum and sum of different columns or rows.
 
-# In[54]:
+# In[53]:
 
 
 # compute average value of each column by default.
-df.mean()
+df1.mean()
 
 
 # Compute the sum of each row by specifying the `axis` argument as 'columns' or 1.
 
-# In[55]:
+# In[54]:
 
 
-df.sum(axis=1)
+df1.sum(axis=1)
 
 
 # Display a summary of the characteristics of the dataframe
 
-# In[56]:
+# In[55]:
 
 
-df.describe()
+df1.describe()
 
 
 # ### Data ranking
 
-# In[57]:
+# In[56]:
 
 
-df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
-              ["Singapore", "Singapore", 5850342, True],
-              ["Vietnam", "Hanoi", 97338579, True],
-                  ["Japan", "Tokyo", None, True]],
-              columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a", "b", "c", "d"])
-df.sort_values(by=['Population', 'Country'], ascending=False, na_position='first')
+df1 = df.copy(deep=True)
+df1.sort_values(by=['Population', 'Country'], ascending=False, na_position='first')
 
 
 # ## NaN value
 
+# In[57]:
+
+
+df1 = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'], 
+                 columns=['c1', 'c2', 'c3', 'c4', 'c5'])
+df1.iloc[0,1] = np.nan
+df1.iloc[2,2] = np.nan
+df1.iloc[3,1] = np.nan
+df1.iloc[3,3] = np.nan
+df1
+
+
 # In[58]:
 
 
-df = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'], 
-                 columns=['c1', 'c2', 'c3', 'c4', 'c5'])
-df.iloc[0,1] = np.nan
-df.iloc[2,2] = np.nan
-df.iloc[3,1] = np.nan
-df.iloc[3,3] = np.nan
-df
-
-
-# In[59]:
-
-
 # detecting nan value
-print(df.isnull())
-print(df.notnull())
-print(df.isna())
+print(df1.isnull())
+print(df1.notnull())
+print(df1.isna())
 
 
 # With dataframe with full Boolean values generated above, you can easily get the number of Nan values
 
-# In[60]:
+# In[59]:
 
 
 # False:0, True:1
-df.isnull().sum(axis=1)
+df1.isnull().sum(axis=1)
 
 
 # Fill `NaN` with a specific value or a value generated by some rules
 
-# In[61]:
+# In[60]:
 
 
 # fill NaN value using a specific value
-df.fillna(value=0)
+df1.fillna(value=0)
+
+
+# In[61]:
+
+
+# fill NaN value using a method
+# set inplace to True, the changes will act on dataframe
+df1.fillna(method="ffill") # other method: ‘backfill’, ‘bfill’, ‘pad’
+df1
 
 
 # In[62]:
 
 
-# fill NaN value using a method
-# set inplace to True, the changes will act on dataframe
-df.fillna(method="ffill") # other method: ‘backfill’, ‘bfill’, ‘pad’
-df
+df1.fillna(method="pad")
 
 
 # In[63]:
-
-
-df.fillna(method="pad")
-
-
-# In[64]:
 
 
 # delete NaN value
@@ -649,14 +623,14 @@ df.fillna(method="pad")
 
 # 0, or ‘index’ : Drop rows which contain missing values.
 # 1, or ‘columns’ : Drop columns which contain missing value.
-df.dropna(axis="index", how="any")
+df1.dropna(axis="index", how="any")
 
 
 # ## Date index
 
 # Data index is very useful for you to deal with time series. You can create a data index by the `date_range` function. The date index mentioned here usually is discrete with equal intervals and it usually has three features: begin date,  end date, and frequency (or intervals).
 
-# In[65]:
+# In[64]:
 
 
 dti = pd.date_range("2018-01-01", periods=3, freq="H")
@@ -667,7 +641,7 @@ print(dti)
 
 # Manipulating and converting date times with timezone information
 
-# In[66]:
+# In[65]:
 
 
 dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
@@ -675,7 +649,7 @@ dti = dti.tz_localize("UTC")
 dti
 
 
-# In[67]:
+# In[66]:
 
 
 dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
@@ -685,7 +659,7 @@ dti
 
 # Using the `origin` option, one can specify an alternative starting point for the creation of a `DatetimeIndex`. For example, to use 1900-01-01 00:00:00 as the starting time and hour as the unit period length:
 
-# In[68]:
+# In[67]:
 
 
 pd.to_datetime([100, 101, 102], unit="h", origin=pd.Timestamp("1900-01-01 00:00:00"))
@@ -703,7 +677,7 @@ pd.to_datetime([100, 101, 102], unit="h", origin=pd.Timestamp("1900-01-01 00:00:
 # * Downsampling: Ddecrease the frequency of the samples by aggregation, such as from months to years.
 # 
 
-# In[69]:
+# In[68]:
 
 
 # prepare data, this section will be introduced in the next tutorial
@@ -712,36 +686,36 @@ data = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, h
 data.head()
 
 
-# In[70]:
+# In[69]:
 
 
 # Downsampling: Convert monthly data to yearly data by sum and max
-df = data
+df = data.copy(deep=True)
 dfsum = df.resample("Y").sum()
 dfsum.head()
 
 
-# In[71]:
+# In[70]:
 
 
 dfmax = df.resample("Y").max()
 dfmax.head()
 
 
-# In[72]:
+# In[71]:
 
 
 # Upsampling: Convert monthly data to yearly data by sum and max
 dfmax.resample('10D').asfreq()[0:5]
 
 
-# In[73]:
+# In[72]:
 
 
 dfmax.resample('10D').pad()[0:5]
 
 
-# In[74]:
+# In[73]:
 
 
 dfmax.resample('D').ffill(limit=2)[0:5]
@@ -751,7 +725,7 @@ dfmax.resample('D').ffill(limit=2)[0:5]
 
 # Typically, you can read data from files ending in ". Xlsx" and ". CSV" using `read_excel()` and `read_csv()` functions , respectively. The `index_col` and `header` arguments are used to specify which column and row are used as `index` and `columns` of dataframe. You can also set `parse_dates` as `True` to parse `index` as the date format. If your date format is uncommon, you can specify the `date_parser` argument which is a function to use for converting a sequence of string columns to an array of datetime instances.
 
-# In[75]:
+# In[74]:
 
 
 df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, 
@@ -759,7 +733,7 @@ df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, hea
 df.head()
 
 
-# In[76]:
+# In[75]:
 
 
 custom_dateparse = lambda x: pd.to_datetime(x, format='%Y-%m-%d')
@@ -770,7 +744,7 @@ df.head()
 
 # You can also specify the `parse_dates` argument as a `list` to parse a column as a date format.
 
-# In[77]:
+# In[76]:
 
 
 df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, 

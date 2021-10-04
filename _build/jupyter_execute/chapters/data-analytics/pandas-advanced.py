@@ -124,11 +124,6 @@ df.applymap(func_range)
 # In[13]:
 
 
-iterables = [
-    ["temperature","rainfall","runoff"],
-    ["site1","site2","site3"],
-]
-idx = pd.MultiIndex.from_product(iterables, names=["factor", "method"])
 df = pd.DataFrame(np.random.randn(9, 4), index=idx)
 for n,subdf in df.groupby(by=["factor"]):
     print(n)
@@ -147,12 +142,13 @@ df.groupby(by=["factor"]).mean()
 
 
 df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
-df = pd.concat([i[1].reset_index(drop=True) for i in df.loc['2020',:].groupby(pd.Grouper(freq='M'))], axis=1)
-df.columns = range(1, 13)
-df.index = range(1, 32)
-df.columns.name = 'month'
-df.index.name = 'day'
-df
+df1 = df.copy(deep=True)
+df1 = pd.concat([i[1].reset_index(drop=True) for i in df1.loc['2020',:].groupby(pd.Grouper(freq='M'))], axis=1)
+df1.columns = range(1, 13)
+df1.index = range(1, 32)
+df1.columns.name = 'month'
+df1.index.name = 'day'
+df1
 
 
 # The dataframe generated is monthly rainfall of Changi station from 2010 to 2020. The columns and index represent no. of year and month, respectively.
@@ -160,14 +156,13 @@ df
 # In[16]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
-df = df.resample('M').sum()
-df = pd.concat([i[1].reset_index(drop=True) for i in df.loc['2015':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
-df.columns = range(2015, 2021)
-df.index = range(1, 13)
-df.columns.name = 'year'
-df.index.name = 'month'
-df
+dfmonth = df.resample('M').sum()
+dfmonth = pd.concat([i[1].reset_index(drop=True) for i in dfmonth.loc['2015':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
+dfmonth.columns = range(2015, 2021)
+dfmonth.index = range(1, 13)
+dfmonth.columns.name = 'year'
+dfmonth.index.name = 'month'
+dfmonth
 
 
 # ## Table Visualization
@@ -182,7 +177,7 @@ def highlight_G200(s, props=''):
     return props if s>200 else None
 def highlight_L50(s, props=''):
     return props if s<50 else None
-s = df.style
+s = dfmonth.style
 s.precision = 1
 s.applymap(highlight_G200, props='color:#3333ff')
 s.applymap(highlight_L50, props='color:#ff3333')
@@ -195,7 +190,7 @@ def highlight_max(s, props=''):
     return np.where(s == np.nanmax(s.values), 'background-color:#3399ff', '')
 def highlight_min(s, props=''):
     return np.where(s == np.nanmin(s.values), 'background-color:#c0c0c0', '')
-s = df.style
+s = dfmonth.style
 s.precision = 1
 s.apply(highlight_max, axis=0)
 s.apply(highlight_min, axis=0)
@@ -226,7 +221,7 @@ s.set_tooltips(tt, props='visibility: hidden; position: absolute; z-index: 1; bo
 # In[20]:
 
 
-s = df.style.highlight_max(axis=0, color='#3399ff')
+s = dfmonth.style.highlight_max(axis=0, color='#3399ff')
 s.precision = 1
 s.highlight_min(axis=0, color='#c0c0c0')
 
@@ -236,7 +231,7 @@ s.highlight_min(axis=0, color='#c0c0c0')
 # In[21]:
 
 
-s = df.style.bar(color='#3399ff')
+s = dfmonth.style.bar(color='#3399ff')
 s.precision = 1
 s
 
@@ -250,7 +245,6 @@ s
 # In[22]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
 df.loc['2020',:].plot(title='Daily rainfall of Changi station', color='#3399ff')
 
 
@@ -260,9 +254,8 @@ df.loc['2020',:].plot(title='Daily rainfall of Changi station', color='#3399ff')
 
 
 import matplotlib.dates as mdates
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, 
-                 parse_dates=True).loc['2020',:]
-ax = df.plot(title='Daily rainfall of Changi station in 2020', kind='bar', xticks=[])
+df1 = df.loc['2020',:]
+ax = df1.plot(title='Daily rainfall of Changi station in 2020', kind='bar', xticks=[])
 
 
 # ### Histograms
@@ -270,8 +263,7 @@ ax = df.plot(title='Daily rainfall of Changi station in 2020', kind='bar', xtick
 # In[24]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
-ax = df.loc['2020',:].plot(title='Daily rainfall of Changi station in 2020', kind='hist', alpha=0.5)
+ax = df1.plot(title='Daily rainfall of Changi station in 2020', kind='hist', alpha=0.5)
 
 
 # ### Box plots
@@ -279,16 +271,15 @@ ax = df.loc['2020',:].plot(title='Daily rainfall of Changi station in 2020', kin
 # In[25]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
-df = df.resample('M').sum()
-df = pd.concat([i[1].reset_index(drop=True) for i in df.loc['1981':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
-df.columns = range(1981, 2021)
-df.index = range(1, 13)
-df.columns.name = 'year'
-df.index.name = 'month'
-ax = df.plot(title='Monthly rainfall of Changi station in from 1981 to 2020', xlabel='year', 
+dfmonth = df.resample('M').sum()
+dfmonth = pd.concat([i[1].reset_index(drop=True) for i in dfmonth.loc['1981':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
+dfmonth.columns = range(1981, 2021)
+dfmonth.index = range(1, 13)
+dfmonth.columns.name = 'year'
+dfmonth.index.name = 'month'
+ax = dfmonth.plot(title='Monthly rainfall of Changi station in from 1981 to 2020', xlabel='year', 
              ylabel='Monthly rainfall (mm)', kind='box', figsize=(15,5))
-ax.set_xticklabels(df.columns,rotation=45)
+ax.set_xticklabels(dfmonth.columns,rotation=45)
 ax.set_xlabel('year')
 
 
@@ -297,7 +288,6 @@ ax.set_xlabel('year')
 # In[26]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
 ax = df.loc['2020',:].resample('M').sum().plot(title='Daily rainfall of Changi station in 2020',
                                                kind='area', alpha=0.5)
 
@@ -309,15 +299,14 @@ ax = df.loc['2020',:].resample('M').sum().plot(title='Daily rainfall of Changi s
 # In[27]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
-df = df.loc['2020',:].resample('M').sum().reset_index()
-df.head()
+df1 = df.loc['2020',:].resample('M').sum().reset_index()
+df1.head()
 
 
 # In[28]:
 
 
-df.plot(x='Date', y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
+df1.plot(x='Date', y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
                                                kind='scatter')
 
 
@@ -326,16 +315,15 @@ df.plot(x='Date', y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi
 # In[29]:
 
 
-df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
-df = df.loc['2020',:].resample('M').sum()
-df.index = df.index.month
-df.head()
+df1 = df.loc['2020',:].resample('M').sum()
+df1.index = df1.index.month
+df1.head()
 
 
 # In[30]:
 
 
-df.plot(y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
+df1.plot(y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
                                                kind='pie')
 
 
