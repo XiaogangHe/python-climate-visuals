@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. What is NumPy?" href="numpy.html" />
+    <link rel="next" title="1.2. Python Exercise" href="python-exercise.html" />
     <link rel="prev" title="1. What is Python?" href="python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -106,6 +106,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      1.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-exercise.html">
+     1.2. Exercise
     </a>
    </li>
   </ul>
@@ -383,8 +388,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-modules">
+   1.1.7. Import modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#look-for-documentation-of-packages">
+   1.1.8. Look for documentation of packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.1.7. References
+   1.1.9. References
   </a>
  </li>
 </ul>
@@ -400,7 +415,7 @@
                 
   <div class="section" id="python-tutorial">
 <h1><span class="section-number">1.1. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this headline">¶</a></h1>
-<p>Python is a high-level, dynamically typed multiparadigm programming language. Python code is often said to be almost like pseudocode, since it allows you to express very powerful ideas in very few lines of code while being very readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
+<p>Python is a high-level, dynamically typed multiparadigm programming language. Python code is often said to be almost like pseudocode since it allows you to express very powerful ideas in very few lines of code while being very readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -422,7 +437,7 @@
 </div>
 </div>
 </div>
-<p>If you are already familar with Python, you may choose to skip this tutorial; however, if not, this tutorial will serve as a quick crash course on the Python programming language as the basis for subsequent tutorials on scientific computing and visualization.</p>
+<p>If you are already familiar with Python, you may choose to skip this tutorial; however, if not, this tutorial will serve as a quick crash course on the Python programming language as the basis for subsequent tutorials on scientific computing and visualization.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
 <li><p>Basic Python: Basic data types, Containers, Control Flow (Conditions and Loops), Functions and Classes</p></li>
@@ -430,7 +445,7 @@
 <div class="section" id="jupyter-notebooks">
 <h2><span class="section-number">1.1.1. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>Before we dive into Python, we’d like to briefly talk about <em>notebooks</em>.
-A Jupyter notebook lets you write and execute Python code <em>locally</em> in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason they are widely used in scientific computing.</p>
+A Jupyter notebook lets you write and execute Python code <em>locally</em> in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason, they are widely used in scientific computing.</p>
 <p>The Binder service powered by BinderHub allows us to run entirely in the <em>cloud</em>. Binder is basically Jupyter notebook on steroids: it’s free, requires no setup, comes preinstalled with many packages, is easy to share with the world, and benefits from free access to hardware resources.</p>
 <ul class="simple">
 <li><p><strong>Run Tutorial in Binder (recommended)</strong>.
@@ -438,13 +453,13 @@ If you wish to run this tutorial entirely in Binder, click the rocket logo and b
 <li><p><strong>Run Tutorial in Jupyter Notebook</strong>.
 If you wish to run the notebook locally with Jupyter, make sure your virtual environment is installed correctly, activate it, then run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code> to install Jupyter notebook. Next, open the notebook and download it to a directory of your choice by right-clicking on the page and selecting <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Page</span> <span class="pre">As</span></code>. Then run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. This should automatically launch a notebook server at <code class="docutils literal notranslate"><span class="pre">http://localhost:8888</span></code>. Find the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> jupyter notebook you just downloaded and open it. Now, you will get the same page as Binder.</p></li>
 </ul>
-<p>As of Janurary 1, 2020, Python has <a class="reference external" href="https://www.python.org/doc/sunset-python-2/">officially dropped support</a> for <code class="docutils literal notranslate"><span class="pre">python2</span></code>. We’ll be using Python 3.7 for this iteration of the course. In Jupyter notebook, we can check the Python version by clicking <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">About</span></code>.</p>
+<p>As of January 1, 2020, Python has <a class="reference external" href="https://www.python.org/doc/sunset-python-2/">officially dropped support</a> for <code class="docutils literal notranslate"><span class="pre">python2</span></code>. We’ll be using Python 3.7 for this iteration of the course. In Jupyter notebook, we can check the Python version by clicking <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">About</span></code>.</p>
 </div>
 <div class="section" id="basic-data-types">
 <h2><span class="section-number">1.1.2. </span>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="numbers">
 <h3><span class="section-number">1.1.2.1. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h3>
-<p>Integers and floats work as you would expect from other languages. When initialzing variables, Python would assign proper data types. Python has a built-in function <code class="docutils literal notranslate"><span class="pre">type()</span></code> to look at the type</p>
+<p>Integers and floats work as you would expect from other languages. When initializing variables, Python would assign proper data types. Python has a built-in function <code class="docutils literal notranslate"><span class="pre">type()</span></code> to look at the type</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
@@ -645,7 +660,7 @@ bar [3, 1, &#39;foo&#39;]
 <ul class="simple">
 <li><p><strong>Indexing</strong></p></li>
 </ul>
-<p>Each of element in lists can be accessed by calling its index value. Note that in python, <strong>indexing starts from 0</strong>. Indexing can also be <strong>in reverse order using negative values</strong> (that is the last element can be accessed first with indexing -1).</p>
+<p>Each element in lists can be accessed by calling its index value. Note that in python, <strong>indexing starts from 0</strong>. Indexing can also be <strong>in reverse order using negative values</strong> (that is the last element can be accessed first with indexing -1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>     <span class="c1"># Indexing 3rd element; list indexing starts from 0</span>
@@ -663,7 +678,7 @@ foo
 <ul class="simple">
 <li><p><strong>Slicing</strong></p></li>
 </ul>
-<p>Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form as parentlist <code class="docutils literal notranslate"><span class="pre">[a:b]</span></code>. <strong>Note that b is not included in the resulting slicing</strong>. If a (or b) is not defined then the slicing will start from the first (or end to the last).</p>
+<p>Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form of parentlist <code class="docutils literal notranslate"><span class="pre">[a:b]</span></code>. <strong>Note that b is not included in the resulting slicing</strong>. If a (or b) is not defined then the slicing will start from the first (or end to the last).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># range() is a built-in function that creates a list of integers</span>
@@ -703,11 +718,11 @@ foo
 </div>
 </div>
 </div>
-<p>We will meet slicing again in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <span class="xref myst">tutorial</span>.</p>
+<p>We will meet slicing again in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <a class="reference internal" href="numpy-basic.html"><span class="doc std std-doc">tutorial</span></a>.</p>
 </div>
 <div class="section" id="dictionaries">
 <h3><span class="section-number">1.1.3.2. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
-<p>A dictionary stores pairs of key and value in the form of braces <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value}</span></code>. Dictionaries are more used like a database because here you can index a particular sequence with your user defined string.</p>
+<p>A dictionary stores pairs of key and value in the form of braces <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value}</span></code>. Dictionaries are more used like a database because here you can index a particular sequence with your user-defined string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cat&#39;</span><span class="p">:</span> <span class="s1">&#39;cute&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">:</span> <span class="s1">&#39;furry&#39;</span><span class="p">}</span>  <span class="c1"># Create a new dictionary with some data</span>
@@ -736,7 +751,7 @@ True
 </div>
 </div>
 </div>
-<p>One useful built-in method of dictionaries is <code class="docutils literal notranslate"><span class="pre">get</span></code> where you can get the value with a default for the cases when the key does not exists.</p>
+<p>One useful built-in method of dictionaries is <code class="docutils literal notranslate"><span class="pre">get</span></code> where you can get the value with a default for the cases when the key does not exist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;monkey&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">))</span>  <span class="c1"># Get a value with a default</span>
@@ -800,7 +815,7 @@ Group A Group B
 <h2><span class="section-number">1.1.4. </span>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="conditions-if-elif-else">
 <h3><span class="section-number">1.1.4.1. </span>Conditions: if-elif-else<a class="headerlink" href="#conditions-if-elif-else" title="Permalink to this headline">¶</a></h3>
-<p>Control flow of conditions is used to execuate different algorithms under different conditions. Next is an example. <strong>Note that there should be incidents of four blanks for each section of algorithms.</strong></p>
+<p>Control flow of conditions is used to execute different algorithms under different conditions. Next is an example. <strong>Note that there should be incidents of four blanks for each section of algorithms.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
@@ -832,7 +847,7 @@ Group A Group B
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
 <span class="k">for</span> <span class="n">list1</span> <span class="ow">in</span> <span class="n">list_of_lists</span><span class="p">:</span>  <span class="c1"># Iterate over elements in list_of_lists</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>         <span class="c1"># Four blanks before the algorithm</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>         <span class="c1"># Four blanks before the algorithm</span>
 </pre></div>
 </div>
 </div>
@@ -924,10 +939,11 @@ Bye
 </div>
 <div class="section" id="functions">
 <h2><span class="section-number">1.1.5. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. For example:</p>
+<p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. Here is an example function which return the sign of a value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># Define a function</span>
+    <span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;positive&#39;</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -935,8 +951,8 @@ Bye
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;zero&#39;</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># Execuate the function</span>
 </pre></div>
 </div>
 </div>
@@ -948,7 +964,8 @@ positive
 </div>
 </div>
 </div>
-<p>We will often define functions to take optional keyword arguments, like this:</p>
+<p>The above codes could be read as: a function by name <code class="docutils literal notranslate"><span class="pre">sign</span></code> is defined, which accepts arguments <code class="docutils literal notranslate"><span class="pre">x</span></code>. The statements of this function is an if-elif-else condition flow. For example, if <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, then this function <code class="docutils literal notranslate"><span class="pre">return</span></code> a string <code class="docutils literal notranslate"><span class="pre">positive</span></code>.</p>
+<p>We often define functions to take optional keyword arguments, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">loud</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -984,9 +1001,9 @@ HELLO, FRED
     <span class="c1"># Instance method</span>
     <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loud</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">loud</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;HELLO, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;HELLO, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
         <span class="k">else</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">Greeter</span><span class="p">(</span><span class="s1">&#39;Fred&#39;</span><span class="p">)</span>  <span class="c1"># Construct an instance of the Greeter class</span>
 <span class="n">g</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span>            <span class="c1"># Call an instance method</span>
@@ -1002,10 +1019,139 @@ HELLO, FRED
 </div>
 </div>
 </div>
+<div class="section" id="import-modules">
+<h2><span class="section-number">1.1.7. </span>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">¶</a></h2>
+<p>It is very often that we import modules to introduce their functions and variables into Python. The following tutuorials of our course will laverage the modules of <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and so on.</p>
+<p>We could import modules by a statement of <code class="docutils literal notranslate"><span class="pre">import</span></code>. To access one of the functions, you have to specify the name of the module and the name of the function, separated by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="c1"># import NumPy module</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># arange function generates evenly spaced values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/opt/anaconda3/lib/python3.8/site-packages/numpy/__init__.py&#39;&gt;
+[1 2 3 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, in order to facilitate scripting we may wish to assign a short alias to the module name; we may also directly import specific functions or subpackages so that we could use it without the module name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Assign a short alias to make it easier for us to use it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1">#Directly import a specific funtion</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[1 2 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="look-for-documentation-of-packages">
+<h2><span class="section-number">1.1.8. </span>Look for documentation of packages<a class="headerlink" href="#look-for-documentation-of-packages" title="Permalink to this headline">¶</a></h2>
+<p>We may need instant documentation of specific modules and their functions. The instant documentation could be printed out using built-in function <code class="docutils literal notranslate"><span class="pre">help</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)</span> <span class="c1"># Look for documentation of arange funcion in Numpy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function arange in module numpy:
+
+arange(...)
+    arange([start,] stop[, step,], dtype=None, *, like=None)
+    
+    Return evenly spaced values within a given interval.
+    
+    Values are generated within the half-open interval ``[start, stop)``
+    (in other words, the interval including `start` but excluding `stop`).
+    For integer arguments the function is equivalent to the Python built-in
+    `range` function, but returns an ndarray rather than a list.
+    
+    When using a non-integer step, such as 0.1, the results will often not
+    be consistent.  It is better to use `numpy.linspace` for these cases.
+    
+    Parameters
+    ----------
+    start : integer or real, optional
+        Start of interval.  The interval includes this value.  The default
+        start value is 0.
+    stop : integer or real
+        End of interval.  The interval does not include this value, except
+        in some cases where `step` is not an integer and floating point
+        round-off affects the length of `out`.
+    step : integer or real, optional
+        Spacing between values.  For any output `out`, this is the distance
+        between two adjacent values, ``out[i+1] - out[i]``.  The default
+        step size is 1.  If `step` is specified as a position argument,
+        `start` must also be given.
+    dtype : dtype
+        The type of the output array.  If `dtype` is not given, infer the data
+        type from the other input arguments.
+    like : array_like
+        Reference object to allow the creation of arrays which are not
+        NumPy arrays. If an array-like passed in as ``like`` supports
+        the ``__array_function__`` protocol, the result will be defined
+        by it. In this case, it ensures the creation of an array object
+        compatible with that passed in via this argument.
+    
+        .. note::
+            The ``like`` keyword is an experimental feature pending on
+            acceptance of :ref:`NEP 35 &lt;NEP35&gt;`.
+    
+        .. versionadded:: 1.20.0
+    
+    Returns
+    -------
+    arange : ndarray
+        Array of evenly spaced values.
+    
+        For floating point arguments, the length of the result is
+        ``ceil((stop - start)/step)``.  Because of floating point overflow,
+        this rule may result in the last element of `out` being greater
+        than `stop`.
+    
+    See Also
+    --------
+    numpy.linspace : Evenly spaced numbers with careful handling of endpoints.
+    numpy.ogrid: Arrays of evenly spaced numbers in N-dimensions.
+    numpy.mgrid: Grid-shaped arrays of evenly spaced numbers in N-dimensions.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; np.arange(3)
+    array([0, 1, 2])
+    &gt;&gt;&gt; np.arange(3.0)
+    array([ 0.,  1.,  2.])
+    &gt;&gt;&gt; np.arange(3,7)
+    array([3, 4, 5, 6])
+    &gt;&gt;&gt; np.arange(3,7,2)
+    array([3, 5])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
-<h2><span class="section-number">1.1.7. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a> and <a class="reference external" href="https://github.com/rajathkmp/Python-Lectures">Rajath Kumar’s Python Lectures</a>.</p></li>
+<li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a> and <a class="reference external" href="https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master">Andreas Ernst’s Python4Maths</a>.</p></li>
 <li><p>This tutorial only touched basic things about Python that you need to know. You may refer to official documentation of <a class="reference external" href="https://docs.python.org/3.7/library/index.html">Python Standard Library</a> for detailed information when necessary.</p></li>
 </ul>
 </div>
@@ -1050,10 +1196,10 @@ HELLO, FRED
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="numpy.html" title="next page">
+        <a class="right-next" href="python-exercise.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>What is NumPy?</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Python Exercise</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
