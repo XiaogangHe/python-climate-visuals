@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. What is Python?</title>
+    <title>1.2. Python Exercise</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,12 +50,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/python.html" />
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/python-exercise.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.1. Python tutorial" href="python-basic.html" />
-    <link rel="prev" title="Python Climate Visuals" href="../../intro.html" />
+    <link rel="next" title="2. What is NumPy?" href="numpy.html" />
+    <link rel="prev" title="1.1. Python tutorial" href="python-basic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +94,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="python.html">
    1. Python
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -102,14 +102,14 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="python-basic.html">
      1.1. Tutorial
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python-exercise.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      1.2. Exercise
     </a>
    </li>
@@ -246,9 +246,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/python.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/python-exercise.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -279,11 +279,51 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/python-exercise.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-containers">
+   1.2.1. Task 1 (Containers)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-control-flows">
+   1.2.2. Task 2 (Control flows)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-functions">
+   1.2.3. Task 3 (Functions)
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -292,15 +332,50 @@
         
               <div>
                 
-  <div class="section" id="what-is-python">
-<h1><span class="section-number">1. </span>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this headline">¶</a></h1>
-<p>Python is a general-purpose programming language on its own, but with the help of a few popular libraries (Numpy, Scipy, Pandas, Matplotlib, etc.)
-it becomes a powerful tool for scientific computing and visualization.</p>
-<div class="wrapper" >
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Y8Tko2YC5hA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="section" id="python-exercise">
+<h1><span class="section-number">1.2. </span>Python Exercise<a class="headerlink" href="#python-exercise" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-containers">
+<h2><span class="section-number">1.2.1. </span>Task 1 (Containers)<a class="headerlink" href="#task-1-containers" title="Permalink to this headline">¶</a></h2>
+<p>For a list which contains three sublists <code class="docutils literal notranslate"><span class="pre">precipitation</span> <span class="pre">=</span> <span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">3.0],</span> <span class="pre">[1.1,</span> <span class="pre">4.8,</span> <span class="pre">0],</span> <span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code>, write a program to find the maximum for each sublist and print it as a dictionary whose key is <code class="docutils literal notranslate"><span class="pre">sublist_n</span></code> (where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the index of sublist) and value is the corresponding maximum.</p>
+<p>Hint: use <code class="docutils literal notranslate"><span class="pre">max()</span></code> to obtain the maximum of a list. You could also try to use dictionary comprehension to accomplish this within one line of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+<span class="n">precipitation</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
 </div>
-<p align="center"><b>A short video about Python and why it is so popular</b></p>
-<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+<div class="section" id="task-2-control-flows">
+<h2><span class="section-number">1.2.2. </span>Task 2 (Control flows)<a class="headerlink" href="#task-2-control-flows" title="Permalink to this headline">¶</a></h2>
+<p>Write a program to print all prime numbers within the range <code class="docutils literal notranslate"><span class="pre">range(25,</span> <span class="pre">50)</span></code>.</p>
+<p>Hint: A prime number is a number that cannot be made by multiplying other whole numbers. A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers. You may wish to use the following statements:</p>
+<ul class="simple">
+<li><p>use <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">num</span> <span class="pre">in</span> <span class="pre">range(25,</span> <span class="pre">50)</span></code> to iterate over all numbers;</p></li>
+<li><p>for a specific number, use <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(2,</span> <span class="pre">num)</span></code> to iterate over potential factors except 1;</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">(num</span> <span class="pre">%</span> <span class="pre">i)</span> <span class="pre">==</span> <span class="pre">0</span></code> to determine whether <code class="docutils literal notranslate"><span class="pre">i</span></code> is truly a factor of <code class="docutils literal notranslate"><span class="pre">num</span></code> (if it is true, <code class="docutils literal notranslate"><span class="pre">num</span></code> is not a prime number); and</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">break</span></code> to stop one iter loop.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-3-functions">
+<h2><span class="section-number">1.2.3. </span>Task 3 (Functions)<a class="headerlink" href="#task-3-functions" title="Permalink to this headline">¶</a></h2>
+<p>Following Task 2, define a function that returns the list of prime numbers for a specified range. Then, use this function to print the prime numbers within the ranges <code class="docutils literal notranslate"><span class="pre">range(25,</span> <span class="pre">50)</span></code> and <code class="docutils literal notranslate"><span class="pre">range(50,</span> <span class="pre">100)</span></code> respectively.</p>
+<p>Hint: in the function, you may define an empty list <code class="docutils literal notranslate"><span class="pre">prime_num</span> <span class="pre">=</span> <span class="pre">[]</span></code> at first and use the <code class="docutils literal notranslate"><span class="pre">append</span></code> method to add prime numbers. The list</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -334,19 +409,19 @@ it becomes a powerful tool for scientific computing and visualization.</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../../intro.html" title="previous page">
+        <a class="left-prev" href="python-basic.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Python Climate Visuals</p>
+                <p class="prevnext-title"><span class="section-number">1.1. </span>Python tutorial</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="python-basic.html" title="next page">
+        <a class="right-next" href="numpy.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1.1. </span>Python tutorial</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>What is NumPy?</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

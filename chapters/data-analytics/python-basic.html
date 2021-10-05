@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. What is NumPy?" href="numpy.html" />
+    <link rel="next" title="1.2. Python Exercise" href="python-exercise.html" />
     <link rel="prev" title="1. What is Python?" href="python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -106,6 +106,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      1.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-exercise.html">
+     1.2. Exercise
     </a>
    </li>
   </ul>
@@ -383,8 +388,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-modules">
+   1.1.7. Import modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#look-for-documentation-of-packages">
+   1.1.8. Look for documentation of packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   1.1.7. References
+   1.1.9. References
   </a>
  </li>
 </ul>
@@ -832,7 +847,7 @@ Group A Group B
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
 <span class="k">for</span> <span class="n">list1</span> <span class="ow">in</span> <span class="n">list_of_lists</span><span class="p">:</span>  <span class="c1"># Iterate over elements in list_of_lists</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>         <span class="c1"># Four blanks before the algorithm</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>         <span class="c1"># Four blanks before the algorithm</span>
 </pre></div>
 </div>
 </div>
@@ -924,10 +939,11 @@ Bye
 </div>
 <div class="section" id="functions">
 <h2><span class="section-number">1.1.5. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. For example:</p>
+<p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. Here is an example function which return the sign of a value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># Define a function</span>
+    <span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;positive&#39;</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -935,8 +951,8 @@ Bye
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;zero&#39;</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># Execuate the function</span>
 </pre></div>
 </div>
 </div>
@@ -948,7 +964,8 @@ positive
 </div>
 </div>
 </div>
-<p>We will often define functions to take optional keyword arguments, like this:</p>
+<p>The above codes could be read as: a function by name <code class="docutils literal notranslate"><span class="pre">sign</span></code> is defined, which accepts arguments <code class="docutils literal notranslate"><span class="pre">x</span></code>. The statements of this function is an if-elif-else condition flow. For example, if <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, then this function <code class="docutils literal notranslate"><span class="pre">return</span></code> a string <code class="docutils literal notranslate"><span class="pre">positive</span></code>.</p>
+<p>We often define functions to take optional keyword arguments, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">loud</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -1002,10 +1019,139 @@ HELLO, FRED
 </div>
 </div>
 </div>
+<div class="section" id="import-modules">
+<h2><span class="section-number">1.1.7. </span>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">¶</a></h2>
+<p>It is very often that we import modules to introduce their functions and variables into Python. The following tutuorials of our course will laverage the modules of <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and so on.</p>
+<p>We could import modules by a statement of <code class="docutils literal notranslate"><span class="pre">import</span></code>. To access one of the functions, you have to specify the name of the module and the name of the function, separated by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="c1"># import NumPy module</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># arange function generates evenly spaced values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/opt/anaconda3/lib/python3.8/site-packages/numpy/__init__.py&#39;&gt;
+[1 2 3 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, in order to facilitate scripting we may wish to assign a short alias to the module name; we may also directly import specific functions or subpackages so that we could use it without the module name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Assign a short alias to make it easier for us to use it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1">#Directly import a specific funtion</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[1 2 3]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="look-for-documentation-of-packages">
+<h2><span class="section-number">1.1.8. </span>Look for documentation of packages<a class="headerlink" href="#look-for-documentation-of-packages" title="Permalink to this headline">¶</a></h2>
+<p>We may need instant documentation of specific modules and their functions. The instant documentation could be printed out using built-in function <code class="docutils literal notranslate"><span class="pre">help</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)</span> <span class="c1"># Look for documentation of arange funcion in Numpy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function arange in module numpy:
+
+arange(...)
+    arange([start,] stop[, step,], dtype=None, *, like=None)
+    
+    Return evenly spaced values within a given interval.
+    
+    Values are generated within the half-open interval ``[start, stop)``
+    (in other words, the interval including `start` but excluding `stop`).
+    For integer arguments the function is equivalent to the Python built-in
+    `range` function, but returns an ndarray rather than a list.
+    
+    When using a non-integer step, such as 0.1, the results will often not
+    be consistent.  It is better to use `numpy.linspace` for these cases.
+    
+    Parameters
+    ----------
+    start : integer or real, optional
+        Start of interval.  The interval includes this value.  The default
+        start value is 0.
+    stop : integer or real
+        End of interval.  The interval does not include this value, except
+        in some cases where `step` is not an integer and floating point
+        round-off affects the length of `out`.
+    step : integer or real, optional
+        Spacing between values.  For any output `out`, this is the distance
+        between two adjacent values, ``out[i+1] - out[i]``.  The default
+        step size is 1.  If `step` is specified as a position argument,
+        `start` must also be given.
+    dtype : dtype
+        The type of the output array.  If `dtype` is not given, infer the data
+        type from the other input arguments.
+    like : array_like
+        Reference object to allow the creation of arrays which are not
+        NumPy arrays. If an array-like passed in as ``like`` supports
+        the ``__array_function__`` protocol, the result will be defined
+        by it. In this case, it ensures the creation of an array object
+        compatible with that passed in via this argument.
+    
+        .. note::
+            The ``like`` keyword is an experimental feature pending on
+            acceptance of :ref:`NEP 35 &lt;NEP35&gt;`.
+    
+        .. versionadded:: 1.20.0
+    
+    Returns
+    -------
+    arange : ndarray
+        Array of evenly spaced values.
+    
+        For floating point arguments, the length of the result is
+        ``ceil((stop - start)/step)``.  Because of floating point overflow,
+        this rule may result in the last element of `out` being greater
+        than `stop`.
+    
+    See Also
+    --------
+    numpy.linspace : Evenly spaced numbers with careful handling of endpoints.
+    numpy.ogrid: Arrays of evenly spaced numbers in N-dimensions.
+    numpy.mgrid: Grid-shaped arrays of evenly spaced numbers in N-dimensions.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; np.arange(3)
+    array([0, 1, 2])
+    &gt;&gt;&gt; np.arange(3.0)
+    array([ 0.,  1.,  2.])
+    &gt;&gt;&gt; np.arange(3,7)
+    array([3, 4, 5, 6])
+    &gt;&gt;&gt; np.arange(3,7,2)
+    array([3, 5])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="references">
-<h2><span class="section-number">1.1.7. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a> and <a class="reference external" href="https://github.com/rajathkmp/Python-Lectures">Rajath Kumar’s Python Lectures</a>.</p></li>
+<li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a> and <a class="reference external" href="https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master">Andreas Ernst’s Python4Maths</a>.</p></li>
 <li><p>This tutorial only touched basic things about Python that you need to know. You may refer to official documentation of <a class="reference external" href="https://docs.python.org/3.7/library/index.html">Python Standard Library</a> for detailed information when necessary.</p></li>
 </ul>
 </div>
@@ -1050,10 +1196,10 @@ HELLO, FRED
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="numpy.html" title="next page">
+        <a class="right-next" href="python-exercise.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>What is NumPy?</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Python Exercise</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
