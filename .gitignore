@@ -4,3 +4,4 @@
 *~
 *.swp
 *.doctrees
+*.ipynb_checkpoints
