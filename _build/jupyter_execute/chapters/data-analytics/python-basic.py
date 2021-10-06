@@ -3,7 +3,7 @@
 
 # # Python tutorial
 
-# Python is a high-level, dynamically typed multiparadigm programming language. Python code is often said to be almost like pseudocode, since it allows you to express very powerful ideas in very few lines of code while being very readable. As an example, here is an implementation of the classic quicksort algorithm in Python:
+# Python is a high-level, dynamically typed multiparadigm programming language. Python code is often said to be almost like pseudocode since it allows you to express very powerful ideas in very few lines of code while being very readable. As an example, here is an implementation of the classic quicksort algorithm in Python:
 
 # In[1]:
 
@@ -20,7 +20,7 @@ def quicksort(arr):
 print(quicksort([3,6,8,10,1,2,1]))
 
 
-# If you are already familar with Python, you may choose to skip this tutorial; however, if not, this tutorial will serve as a quick crash course on the Python programming language as the basis for subsequent tutorials on scientific computing and visualization.
+# If you are already familiar with Python, you may choose to skip this tutorial; however, if not, this tutorial will serve as a quick crash course on the Python programming language as the basis for subsequent tutorials on scientific computing and visualization.
 # 
 # In this tutorial, we will cover:
 # 
@@ -29,7 +29,7 @@ print(quicksort([3,6,8,10,1,2,1]))
 # ## Jupyter Notebooks
 # 
 # Before we dive into Python, we'd like to briefly talk about *notebooks*.
-# A Jupyter notebook lets you write and execute Python code *locally* in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason they are widely used in scientific computing.
+# A Jupyter notebook lets you write and execute Python code *locally* in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason, they are widely used in scientific computing.
 # 
 # The Binder service powered by BinderHub allows us to run entirely in the *cloud*. Binder is basically Jupyter notebook on steroids: it's free, requires no setup, comes preinstalled with many packages, is easy to share with the world, and benefits from free access to hardware resources.
 # 
@@ -39,13 +39,13 @@ print(quicksort([3,6,8,10,1,2,1]))
 # + **Run Tutorial in Jupyter Notebook**.
 # If you wish to run the notebook locally with Jupyter, make sure your virtual environment is installed correctly, activate it, then run `pip install notebook` to install Jupyter notebook. Next, open the notebook and download it to a directory of your choice by right-clicking on the page and selecting `Save Page As`. Then run `jupyter notebook`. This should automatically launch a notebook server at `http://localhost:8888`. Find the `.ipynb` jupyter notebook you just downloaded and open it. Now, you will get the same page as Binder.
 
-# As of Janurary 1, 2020, Python has [officially dropped support](https://www.python.org/doc/sunset-python-2/) for `python2`. We'll be using Python 3.7 for this iteration of the course. In Jupyter notebook, we can check the Python version by clicking `Help -> About`.
+# As of January 1, 2020, Python has [officially dropped support](https://www.python.org/doc/sunset-python-2/) for `python2`. We'll be using Python 3.7 for this iteration of the course. In Jupyter notebook, we can check the Python version by clicking `Help -> About`.
 
 # ## Basic data types
 
 # ### Numbers
 
-# Integers and floats work as you would expect from other languages. When initialzing variables, Python would assign proper data types. Python has a built-in function `type()` to look at the type
+# Integers and floats work as you would expect from other languages. When initializing variables, Python would assign proper data types. Python has a built-in function `type()` to look at the type
 
 # In[2]:
 
@@ -169,7 +169,7 @@ print(x, xs)
 
 # + **Indexing**
 # 
-# Each of element in lists can be accessed by calling its index value. Note that in python, **indexing starts from 0**. Indexing can also be **in reverse order using negative values** (that is the last element can be accessed first with indexing -1).
+# Each element in lists can be accessed by calling its index value. Note that in python, **indexing starts from 0**. Indexing can also be **in reverse order using negative values** (that is the last element can be accessed first with indexing -1).
 
 # In[13]:
 
@@ -180,7 +180,7 @@ print(xs[-1])    # Negative indices count from the end of the list
 
 # + **Slicing**
 # 
-# Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form as parentlist `[a:b]`. **Note that b is not included in the resulting slicing**. If a (or b) is not defined then the slicing will start from the first (or end to the last).
+# Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form of parentlist `[a:b]`. **Note that b is not included in the resulting slicing**. If a (or b) is not defined then the slicing will start from the first (or end to the last).
 
 # In[14]:
 
@@ -204,11 +204,11 @@ print(nums[:-1:2])  # Get a slice from index 0 to -1 (exclusive) in a step lengt
 print(nums[::-1])   # Get a slice of whole list in reverse order
 
 
-# We will meet slicing again in `numpy` [tutorial]().
+# We will meet slicing again in `numpy` [tutorial](./numpy-basic.ipynb).
 
 # ### Dictionaries
 
-# A dictionary stores pairs of key and value in the form of braces `{key: value}`. Dictionaries are more used like a database because here you can index a particular sequence with your user defined string.
+# A dictionary stores pairs of key and value in the form of braces `{key: value}`. Dictionaries are more used like a database because here you can index a particular sequence with your user-defined string.
 
 # In[16]:
 
@@ -225,7 +225,7 @@ d['fish'] = 'wet'   # Set a new entry in a dictionary
 print('fish' in d)
 
 
-# One useful built-in method of dictionaries is `get` where you can get the value with a default for the cases when the key does not exists.
+# One useful built-in method of dictionaries is `get` where you can get the value with a default for the cases when the key does not exist.
 
 # In[18]:
 
@@ -265,7 +265,7 @@ print(d[t1], d[(7, 8)])
 # ## Control Flow
 
 # ### Conditions: if-elif-else
-# Control flow of conditions is used to execuate different algorithms under different conditions. Next is an example. **Note that there should be incidents of four blanks for each section of algorithms.**
+# Control flow of conditions is used to execute different algorithms under different conditions. Next is an example. **Note that there should be incidents of four blanks for each section of algorithms.**
 
 # In[22]:
 
@@ -292,7 +292,7 @@ else:
 
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for list1 in list_of_lists:  # Iterate over elements in list_of_lists
-        print(list1)         # Four blanks before the algorithm
+    print(list1)         # Four blanks before the algorithm
 
 
 # For dictionaries, we could also iterate over pairs of key and value.
@@ -335,7 +335,7 @@ print(even_squares)
 
 # Similarly, for dictionaries, we could use dictionary comprehension to create a new dictionary based on an existing list.
 
-# In[27]:
+# In[6]:
 
 
 nums = [0, 1, 2, 3, 4]
@@ -345,12 +345,13 @@ print(even_num_to_square)
 
 # ## Functions
 
-# Python functions are defined using the `def` keyword. For example:
+# Python functions are defined using the `def` keyword. Here is an example function which return the sign of a value.
 
 # In[28]:
 
 
-def sign(x):
+def sign(x): # Define a function
+    '''determine the sign of a single value'''
     if x > 0:
         return 'positive'
     elif x < 0:
@@ -358,11 +359,13 @@ def sign(x):
     else:
         return 'zero'
 
-for x in [-1, 0, 1]:
-    print(sign(x))
+for x in [-1, 0, 1]: 
+    print(sign(x)) # Execuate the function
 
 
-# We will often define functions to take optional keyword arguments, like this:
+# The above codes could be read as: a function by name `sign` is defined, which accepts arguments `x`. The statements of this function is an if-elif-else condition flow. For example, if `x > 0`, then this function `return` a string `positive`.
+
+# We often define functions to take optional keyword arguments, like this:
 
 # In[29]:
 
@@ -393,15 +396,56 @@ class Greeter:
     # Instance method
     def greet(self, loud=False):
         if loud:
-          print('HELLO, {}'.format(self.name.upper()))
+            print('HELLO, {}'.format(self.name.upper()))
         else:
-          print('Hello, {}!'.format(self.name))
+            print('Hello, {}!'.format(self.name))
 
 g = Greeter('Fred')  # Construct an instance of the Greeter class
 g.greet()            # Call an instance method
 g.greet(loud=True)   # Call an instance method
 
 
+# ## Import modules
+
+# It is very often that we import modules to introduce their functions and variables into Python. The following tutuorials of our course will laverage the modules of `numpy`, `pandas`, `scipy`, `matplotlib` and so on.
+# 
+# We could import modules by a statement of `import`. To access one of the functions, you have to specify the name of the module and the name of the function, separated by a dot `.`.
+
+# In[31]:
+
+
+import numpy  # import NumPy module
+
+print(numpy)
+print(numpy.arange(1,5)) # arange function generates evenly spaced values
+
+
+# Sometimes, in order to facilitate scripting we may wish to assign a short alias to the module name; we may also directly import specific functions or subpackages so that we could use it without the module name.
+
+# In[32]:
+
+
+#Assign a short alias to make it easier for us to use it
+import numpy as np
+print(np.arange(1, 4))
+
+#Directly import a specific funtion
+from numpy import arange
+print(arange(1, 4))
+
+
+# ## Look for documentation of packages
+
+# We may need instant documentation of specific modules and their functions. The instant documentation could be printed out using built-in function `help`.
+
+# In[33]:
+
+
+import numpy as np
+
+help(np.arange) # Look for documentation of arange funcion in Numpy
+
+
 # ## References
-# + This tutorial was edited based on the [Python Numpy Tutorial](https://cs231n.github.io/python-numpy-tutorial) and [Rajath Kumar's Python Lectures](https://github.com/rajathkmp/Python-Lectures).
+# + This tutorial was edited based on the [Python Numpy Tutorial](https://cs231n.github.io/python-numpy-tutorial) and [Andreas Ernst's Python4Maths](https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master).
 # + This tutorial only touched basic things about Python that you need to know. You may refer to official documentation of [Python Standard Library](https://docs.python.org/3.7/library/index.html) for detailed information when necessary.

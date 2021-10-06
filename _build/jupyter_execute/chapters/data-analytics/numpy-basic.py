@@ -2,11 +2,11 @@
 # coding: utf-8
 
 # # NumPy tutorial
-# [`NumPy`](http://www.numpy.org/) is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays.
+# [`NumPy`](http://www.numpy.org/) is the core library for scientific computing in Python. It provides a high-performance multidimensional array object and tools for working with these arrays.
 
 # In this tutorial, we will cover:
 # 
-# * `Numpy`: Array, Array indexing, Array math & Boardcasting.
+# * `Numpy`: Array, Array indexing, Array math & Broadcasting.
 # 
 # To use NumPy, we need to import the `numpy` package at first:
 
@@ -18,9 +18,9 @@ print(np.__version__)
 
 
 # ## Array
-# A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension.
+# A NumPy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension.
 
-# We can initialize `numpy` arrays from nested Python lists using the `array` function, and we can access elements using square brackets with interger indexing. Each `numpy` array has several attributes that allow us to know some basic information about it, such as `ndim` for the number of dimnsions of the array and `shape` for the sizes of all dimensions.
+# We can initialize `numpy` arrays from nested Python lists using the `array` function, and we can access elements using square brackets with integer indexing. Each `numpy` array has several attributes that allow us to know some basic information about it, such as `ndim` for the number of dimensions of the array and `shape` for the sizes of all dimensions.
 
 # In[2]:
 
@@ -51,7 +51,7 @@ print(c, c.shape, c[0, 1, 1])
 d = np.zeros((2,2))   # Create an array of all zeros
 d = np.ones((1,2))    # Create an array of all ones
 d = np.full((2,2), 7) # Create a constant array
-d = np.eye(2)         # Create a identity square matrix
+d = np.eye(2)         # Create an identity square matrix
 d = np.random.random((2,2)) # Create an array filled with random values
 
 
@@ -87,7 +87,7 @@ print(a[0, 1])
 # 
 # When you index into numpy arrays using slicing, the resulting array will always be a subarray of the original array. In contrast, integer indexing allows you to index arbitrary elements in the array by separately assign the indexing for each dimension. Note that as the resulting array in this way is not subarray, modifying it will **not** modify the original.
 
-# In[7]:
+# In[8]:
 
 
 a = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
@@ -100,7 +100,7 @@ print(np.array([a[0, 0], a[1, 1], a[2, 0]]))
 
 # This method is useful when we want to conduct an operation on a series of specific elements in the array.
 
-# In[8]:
+# In[9]:
 
 
 # Create arrays for indices of rows and columns separately
@@ -228,9 +228,9 @@ print(v @ w)
 print(x @ y)
 
 
-# Apart from computing mathematical functions using arrays, we frequently need to manipulate the shape of arrays, such transposing a matrix or converting to one dimension. To transpose a matrix, simply use the `T` attribute of an array object. To manipulate the shape of arrays, simply use the `reshape` funcion.
+# Apart from computing mathematical functions using arrays, we frequently need to manipulate the shape of arrays, such as transposing a matrix or converting it to one dimension. To transpose a matrix, simply use the `T` attribute of an array object. To manipulate the shape of arrays, simply use the `reshape` function.
 
-# In[18]:
+# In[21]:
 
 
 print(x)
@@ -238,7 +238,7 @@ print("transpose\n", x.T)
 print("reshape\n", x.reshape(4))
 
 
-# In[19]:
+# In[22]:
 
 
 v = np.array([[1, 2, 3, 4]])  # Note that dimensions matter when transpose
@@ -248,7 +248,7 @@ print("transpose\n", v.T)
 
 # `Numpy` provides many useful functions for performing computations on arrays; one of the most useful is `sum`:
 
-# In[20]:
+# In[23]:
 
 
 x = np.array([[1, 2], [3, 4]])
@@ -264,9 +264,9 @@ print(np.sum(x, axis=1))  # Compute sum of each row
 
 # Broadcasting is a powerful mechanism that allows `numpy` to work with arrays of different shapes when performing arithmetic operations. Frequently we have a smaller array and a larger array, and we want to use the smaller array multiple times to perform some operations on the larger array.
 # 
-# For example, suppose that we want to add a constant vector to each row of a matrix. At the very begining, we may use a loop to do operations for each element as follows.
+# For example, suppose that we want to add a constant vector to each row of a matrix. At the very beginning, we may use a loop to do operations for each element as follows.
 
-# In[21]:
+# In[24]:
 
 
 # We will add the vector v to each row of the matrix x,
@@ -283,7 +283,7 @@ print(y)
 
 # This works; however computing an explicit loop in Python could be slow, especially when `x` is very large. In `numpy`, we could use its elementwise math operations: forming a matrix `vv` by stacking multiple copies of `v` vertically, then performing elementwise addition of `x` and `vv`.
 
-# In[22]:
+# In[25]:
 
 
 vv = np.tile(v, (4, 1))  # Stack 4 copies of v on top of each other
@@ -294,7 +294,7 @@ print(y)
 
 # Even more conveniently, `Numpy` **broadcasting** allows us to perform this computation within one step.
 
-# In[23]:
+# In[27]:
 
 
 y = x + v  # Add v to each row of x using broadcasting
@@ -303,7 +303,7 @@ print(y)
 
 # The line `y = x + v` works even though `x` has shape `(4, 3)` and `v` has shape `(3,)` due to broadcasting; this line works as if v actually had shape `(4, 3)`, where each row was a copy of `v`, and the sum was performed elementwise.
 # 
-# Broadcasting two arrays together follows these rules:
+# Broadcasting two arrays together follow these rules:
 # 
 # 1. If the arrays do not have the same rank, prepend the shape of the lower rank array with 1s until both shapes have the same length.
 # 2. The two arrays are said to be compatible in one dimension if they have the same size in this dimension, or if one of the arrays has size 1 in that dimension.
@@ -315,7 +315,7 @@ print(y)
 # 
 # Functions that support broadcasting are known as universal functions. You can find the list of all universal functions in the [documentation](http://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs). Here are some other applications of broadcasting:
 
-# In[24]:
+# In[28]:
 
 
 # Compute outer product of vectors
@@ -328,7 +328,7 @@ w = np.array([4, 5])     # w has shape (2,)
 print(np.reshape(v, (3, 1)) * w)
 
 
-# In[25]:
+# In[29]:
 
 
 # Add a vector to each column of a matrix
@@ -347,7 +347,7 @@ print(x + np.reshape(w, (2, 1)))
 # Broadcasting typically makes your code more concise and faster, so you should strive to use it where possible.
 
 # ## References
-# + This tutorial was edited based on the [Python Numpy Tutorial](https://cs231n.github.io/python-numpy-tutorial).
+# + [pandas-dev/pandas: Pandas](https://cs231n.github.io/python-numpy-tutorial).
 # + This tutorial has touched on many of the important things that you need to know about `numpy`, but is far from complete. Check out the [numpy reference](http://docs.scipy.org/doc/numpy/reference/) to find out more.
 # + If you are already familiar with MATLAB, you might find this [tutorial](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html) useful to get started with `numpy`.
 # + If you are already familiar with R, you might refer to this [tutorial](http://www.data-analysis-in-python.org/python_for_r.html) to get started with `numpy`.

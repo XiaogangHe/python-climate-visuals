@@ -344,10 +344,10 @@
                 
   <div class="section" id="numpy-tutorial">
 <h1><span class="section-number">2.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://www.numpy.org/"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a> is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays.</p>
+<p><a class="reference external" href="http://www.numpy.org/"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a> is the core library for scientific computing in Python. It provides a high-performance multidimensional array object and tools for working with these arrays.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: Array, Array indexing, Array math &amp; Boardcasting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: Array, Array indexing, Array math &amp; Broadcasting.</p></li>
 </ul>
 <p>To use NumPy, we need to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package at first:</p>
 <div class="cell docutils container">
@@ -365,8 +365,8 @@
 </div>
 <div class="section" id="array">
 <h2><span class="section-number">2.1.1. </span>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
-<p>A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension.</p>
-<p>We can initialize <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays from nested Python lists using the <code class="docutils literal notranslate"><span class="pre">array</span></code> function, and we can access elements using square brackets with interger indexing. Each <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array has several attributes that allow us to know some basic information about it, such as <code class="docutils literal notranslate"><span class="pre">ndim</span></code> for the number of dimnsions of the array and <code class="docutils literal notranslate"><span class="pre">shape</span></code> for the sizes of all dimensions.</p>
+<p>A NumPy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the rank of the array; the shape of an array is a tuple of integers giving the size of the array along each dimension.</p>
+<p>We can initialize <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays from nested Python lists using the <code class="docutils literal notranslate"><span class="pre">array</span></code> function, and we can access elements using square brackets with integer indexing. Each <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array has several attributes that allow us to know some basic information about it, such as <code class="docutils literal notranslate"><span class="pre">ndim</span></code> for the number of dimensions of the array and <code class="docutils literal notranslate"><span class="pre">shape</span></code> for the sizes of all dimensions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -416,7 +416,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>   <span class="c1"># Create an array of all zeros</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>    <span class="c1"># Create an array of all ones</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># Create a constant array</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>         <span class="c1"># Create a identity square matrix</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>         <span class="c1"># Create an identity square matrix</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Create an array filled with random values</span>
 </pre></div>
 </div>
@@ -699,7 +699,7 @@
 </div>
 </div>
 </div>
-<p>Apart from computing mathematical functions using arrays, we frequently need to manipulate the shape of arrays, such transposing a matrix or converting to one dimension. To transpose a matrix, simply use the <code class="docutils literal notranslate"><span class="pre">T</span></code> attribute of an array object. To manipulate the shape of arrays, simply use the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> funcion.</p>
+<p>Apart from computing mathematical functions using arrays, we frequently need to manipulate the shape of arrays, such as transposing a matrix or converting it to one dimension. To transpose a matrix, simply use the <code class="docutils literal notranslate"><span class="pre">T</span></code> attribute of an array object. To manipulate the shape of arrays, simply use the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -763,7 +763,7 @@ transpose
 <div class="section" id="broadcasting">
 <h2><span class="section-number">2.1.5. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h2>
 <p>Broadcasting is a powerful mechanism that allows <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to work with arrays of different shapes when performing arithmetic operations. Frequently we have a smaller array and a larger array, and we want to use the smaller array multiple times to perform some operations on the larger array.</p>
-<p>For example, suppose that we want to add a constant vector to each row of a matrix. At the very begining, we may use a loop to do operations for each element as follows.</p>
+<p>For example, suppose that we want to add a constant vector to each row of a matrix. At the very beginning, we may use a loop to do operations for each element as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We will add the vector v to each row of the matrix x,</span>
@@ -829,7 +829,7 @@ transpose
 </div>
 </div>
 <p>The line <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">v</span></code> works even though <code class="docutils literal notranslate"><span class="pre">x</span></code> has shape <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">3)</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> has shape <code class="docutils literal notranslate"><span class="pre">(3,)</span></code> due to broadcasting; this line works as if v actually had shape <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">3)</span></code>, where each row was a copy of <code class="docutils literal notranslate"><span class="pre">v</span></code>, and the sum was performed elementwise.</p>
-<p>Broadcasting two arrays together follows these rules:</p>
+<p>Broadcasting two arrays together follow these rules:</p>
 <ol class="simple">
 <li><p>If the arrays do not have the same rank, prepend the shape of the lower rank array with 1s until both shapes have the same length.</p></li>
 <li><p>The two arrays are said to be compatible in one dimension if they have the same size in this dimension, or if one of the arrays has size 1 in that dimension.</p></li>
@@ -890,7 +890,7 @@ transpose
 <div class="section" id="references">
 <h2><span class="section-number">2.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a>.</p></li>
+<li><p><a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">pandas-dev/pandas: Pandas</a>.</p></li>
 <li><p>This tutorial has touched on many of the important things that you need to know about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but is far from complete. Check out the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/">numpy reference</a> to find out more.</p></li>
 <li><p>If you are already familiar with MATLAB, you might find this <a class="reference external" href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">tutorial</a> useful to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
 <li><p>If you are already familiar with R, you might refer to this <a class="reference external" href="http://www.data-analysis-in-python.org/python_for_r.html">tutorial</a> to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>

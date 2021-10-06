@@ -11,6 +11,8 @@ parts:
     sections:
     - file: chapters/data-analytics/python-basic
       title: Tutorial
+    - file: chapters/data-analytics/python-exercise
+      title: Exercise
   - file: chapters/data-analytics/numpy
     title: NumPy
     sections:
