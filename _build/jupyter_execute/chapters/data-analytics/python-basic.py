@@ -24,34 +24,38 @@ print(quicksort([3,6,8,10,1,2,1]))
 # 
 # In this tutorial, we will cover:
 # 
-# * Basic Python: Basic data types, Containers, Control Flow (Conditions and Loops), Functions and Classes
+# * Basic data types
+# * Containers
+# * Control Flow (Conditions and Loops)
+# * Functions and Classes
 
 # ## Jupyter Notebooks
 # 
 # Before we dive into Python, we'd like to briefly talk about *notebooks*.
-# A Jupyter notebook lets you write and execute Python code *locally* in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason, they are widely used in scientific computing.
+# A Jupyter notebook allows you to write and execute Python code *locally* in your web browser. Jupyter notebooks make it very easy to tinker with code and execute it in bits and pieces; for this reason, they are widely used in scientific computing.
 # 
-# The Binder service powered by BinderHub allows us to run entirely in the *cloud*. Binder is basically Jupyter notebook on steroids: it's free, requires no setup, comes preinstalled with many packages, is easy to share with the world, and benefits from free access to hardware resources.
+# The Binder service powered by BinderHub allows us to run Python codes entirely in the *cloud*. Binder is basically Jupyter notebook on steroids: it's free, requires no setup, comes preinstalled with many packages, is easy to share with the world, and benefits from free access to hardware resources.
 # 
-# + **Run Tutorial in Binder (recommended)**.
+# + **Run Tutorials in Binder (recommended)**.
 # If you wish to run this tutorial entirely in Binder, click the rocket logo and binder at the very top of pages.
 # 
-# + **Run Tutorial in Jupyter Notebook**.
+# + **Run Tutorials in Jupyter Notebook**.
 # If you wish to run the notebook locally with Jupyter, make sure your virtual environment is installed correctly, activate it, then run `pip install notebook` to install Jupyter notebook. Next, open the notebook and download it to a directory of your choice by right-clicking on the page and selecting `Save Page As`. Then run `jupyter notebook`. This should automatically launch a notebook server at `http://localhost:8888`. Find the `.ipynb` jupyter notebook you just downloaded and open it. Now, you will get the same page as Binder.
 
-# As of January 1, 2020, Python has [officially dropped support](https://www.python.org/doc/sunset-python-2/) for `python2`. We'll be using Python 3.7 for this iteration of the course. In Jupyter notebook, we can check the Python version by clicking `Help -> About`.
+# As of January 1, 2020, Python has [officially dropped support](https://www.python.org/doc/sunset-python-2/) for `python2`. We'll be using Python 3.7 throughout the course. In Jupyter notebook, we can check the Python version by clicking `Help -> About`.
 
 # ## Basic data types
 
 # ### Numbers
 
-# Integers and floats work as you would expect from other languages. When initializing variables, Python would assign proper data types. Python has a built-in function `type()` to look at the type
+# Integers and floats work as you would expect from other languages. When initializing variables, Python would assign proper data types. Python has a built-in function `type()` to look at the type.
 
 # In[2]:
 
 
 x = 3
 y = 1.0
+
 print(x, type(x))  #print() is a Python built-in function for printing 
 print(y, type(y))
 
@@ -73,6 +77,7 @@ print(x // 2)  # Floor division
 
 x += 1
 print(x)
+
 x *= 2
 print(x)
 
@@ -85,6 +90,7 @@ print(x)
 
 
 t, f = True, False
+
 print(type(t), type(f))
 
 
@@ -106,6 +112,7 @@ print(t != f)  # Logical XOR;
 
 hello = 'hello'   # String literals can use single quotes
 world = "world"   # or double quotes
+
 print(hello, len(hello))
 
 
@@ -113,6 +120,7 @@ print(hello, len(hello))
 
 
 hw = hello + ' ' + world  # String concatenation
+
 print(hw)
 
 
@@ -120,6 +128,7 @@ print(hw)
 
 
 hw12 = '{} {} {}'.format(hello, world, 12)  # string formatting
+
 print(hw12)
 
 
@@ -129,6 +138,7 @@ print(hw12)
 
 
 s = "hello"
+
 print(s.capitalize())  # Capitalize a string
 print(s.upper())       # Convert a string to uppercase; prints "HELLO"
 print(s.rjust(7))      # Right-justify a string, padding with spaces
@@ -140,22 +150,23 @@ print('  world '.strip())  # Strip leading and trailing whitespace
 
 # ## Containers
 
-# Python includes several built-in container types. **lists**, **dictionaries**, **sets**, and **tuples**.
+# Python includes several built-in container types: **lists**, **dictionaries**, **sets**, and **tuples**.
 
 # ### Lists
 
-# Lists are the most commonly used data structure. Think of it as a sequence of data that is enclosed in square brackets `[]` and data are separated by a comma `,`. Note that elements in Python lists could have different data types.
+# List is the most commonly used data structure. Think of it as a sequence of data that is enclosed in square brackets `[]` and data are separated by a comma `,`. Note that elements in Python lists could have different data types.
 
 # In[11]:
 
 
 x = [3, 1, 2]     # Create a list
 print(x)
+
 s = [3, 1, 'foo'] # Lists can contain elements of different types
 print(s, len(s))  # Built-in function len() return the number of elements
 
 
-# There are some useful built-in methods of lists, such as `append` (to add elements at the end of lists) and `pop` (to remove a specific element from lists).
+# There are some useful built-in methods of lists, such as `append` (to add elements to the end of lists) and `pop` (to remove a specific element from lists).
 
 # In[12]:
 
@@ -163,6 +174,7 @@ print(s, len(s))  # Built-in function len() return the number of elements
 xs = [3, 1, 'foo']
 xs.append('bar') # Add a new element to the end of the list
 print(xs)
+
 x = xs.pop()     # Remove and return the last element of the list
 print(x, xs)
 
@@ -180,7 +192,7 @@ print(xs[-1])    # Negative indices count from the end of the list
 
 # + **Slicing**
 # 
-# Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form of parentlist `[a:b]`. **Note that b is not included in the resulting slicing**. If a (or b) is not defined then the slicing will start from the first (or end to the last).
+# Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form of parentlist `[a:b]`. **Note that b is not included in the resulting slicing**. If a (or b) is not defined then the slicing will start from the first (or end with the last).
 
 # In[14]:
 
@@ -208,7 +220,7 @@ print(nums[::-1])   # Get a slice of whole list in reverse order
 
 # ### Dictionaries
 
-# A dictionary stores pairs of key and value in the form of braces `{key: value}`. Dictionaries are more used like a database because here you can index a particular sequence with your user-defined string.
+# A dictionary stores pairs of `key` and `value` in the form of braces `{key: value}`. Dictionaries are more used like a database because here you can index a particular sequence with your user-defined string.
 
 # In[16]:
 
@@ -251,6 +263,7 @@ print(d.get('fish', 'N/A')) # "fish" is no longer a key
 t1 = (5, 6)       # Create a tuple
 t2 = (7, 8)
 d = {t1:'Group A', t2:'Group B'}
+
 print(d)
 print(type(t1))
 print(d[t1], d[(7, 8)])       
@@ -265,13 +278,14 @@ print(d[t1], d[(7, 8)])
 # ## Control Flow
 
 # ### Conditions: if-elif-else
-# Control flow of conditions is used to execute different algorithms under different conditions. Next is an example. **Note that there should be incidents of four blanks for each section of algorithms.**
+# Control flow of conditions is used to execute different algorithms under different conditions. Next is an example. **Note that there should be indentation with four blanks for each section of algorithms.**
 
 # In[22]:
 
 
 x = 10
 y = 12
+
 if x > y:
     print("x>y")  # Four blanks before the algorithm
 elif x < y:
@@ -291,6 +305,7 @@ else:
 
 
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
 for list1 in list_of_lists:  # Iterate over elements in list_of_lists
     print(list1)         # Four blanks before the algorithm
 
@@ -301,6 +316,7 @@ for list1 in list_of_lists:  # Iterate over elements in list_of_lists
 
 
 d = {'person': 2, 'cat': 4, 'spider': 8}
+
 for animal, legs in d.items():
     print('A {} has {} legs'.format(animal, legs))
 
@@ -316,10 +332,11 @@ i = 1
 while i < 3:    # Iterate when i smaller than 3
     print(i**2) # Four blanks before each line of algorithm
     i += 1      # Four blanks before
+
 print('Bye')    # This is not a part of iterations
 
 
-# ### List Comprehensions
+# ### List comprehensions
 # List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list. We can employ control flows of other lists in the initialization of a new list.
 
 # In[26]:
@@ -335,11 +352,12 @@ print(even_squares)
 
 # Similarly, for dictionaries, we could use dictionary comprehension to create a new dictionary based on an existing list.
 
-# In[6]:
+# In[27]:
 
 
 nums = [0, 1, 2, 3, 4]
 even_num_to_square = {x: x ** 2 for x in nums if x % 2 == 0}
+
 print(even_num_to_square)
 
 
@@ -425,20 +443,27 @@ print(numpy.arange(1,5)) # arange function generates evenly spaced values
 # In[32]:
 
 
-#Assign a short alias to make it easier for us to use it
+# Assign a short alias to make it easier for us to use it
 import numpy as np
 print(np.arange(1, 4))
 
-#Directly import a specific funtion
+# Directly import a specific funtion
 from numpy import arange
 print(arange(1, 4))
+
+
+# In[33]:
+
+
+# try this!
+import antigravity
 
 
 # ## Look for documentation of packages
 
 # We may need instant documentation of specific modules and their functions. The instant documentation could be printed out using built-in function `help`.
 
-# In[33]:
+# In[34]:
 
 
 import numpy as np
@@ -448,4 +473,4 @@ help(np.arange) # Look for documentation of arange funcion in Numpy
 
 # ## References
 # + This tutorial was edited based on the [Python Numpy Tutorial](https://cs231n.github.io/python-numpy-tutorial) and [Andreas Ernst's Python4Maths](https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master).
-# + This tutorial only touched basic things about Python that you need to know. You may refer to official documentation of [Python Standard Library](https://docs.python.org/3.7/library/index.html) for detailed information when necessary.
+# + This tutorial only touched  Python basics that you need to know. You may refer to the official documentation of [Python Standard Library](https://docs.python.org/3.7/library/index.html) for detailed information when necessary.

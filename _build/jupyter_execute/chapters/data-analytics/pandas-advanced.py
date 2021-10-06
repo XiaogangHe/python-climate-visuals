@@ -205,8 +205,9 @@ if int(v[0]) >= 1 and int(v[1]) >= 3:
     pass
 else:
     raise Exception('Please make sure your pandas version >= 1.3.0, Current version is {}'.format(pd.__version__))
-tt = pd.DataFrame([['A typhoon landed this month!',
-                    "There was a severe drought this month!"]],
+# The following hover information is hypothetical and is only an example of adding hover information for a table
+tt = pd.DataFrame([['There was a severe drought this month!',
+                    'A typhoon landed this month!']],
                   index=[3,12], columns=[2016,2017])
 s.set_tooltips(tt, props='visibility: hidden; position: absolute; z-index: 1; border: 1px solid #000066;'
                          'background-color: white; color: #000066; font-size: 0.8em;'
