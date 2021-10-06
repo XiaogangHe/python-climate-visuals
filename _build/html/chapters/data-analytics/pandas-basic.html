@@ -537,11 +537,11 @@ dtype: int64
 <p>In general, it is best to create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object with meaningful labels to distinguish and identify each value. During the constructor call, the labels are added by specifying the value of the <code class="docutils literal notranslate"><span class="pre">index</span></code> option or directly specifying the argument <code class="docutils literal notranslate"><span class="pre">data</span></code> as a <code class="docutils literal notranslate"><span class="pre">dict</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">])</span> <span class="c1"># specify the index by &#39;index&#39; option</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
-
-<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span> <span class="c1"># dictionary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">])</span> <span class="c1"># specify the index by &#39;index&#39; option</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+<span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span> <span class="c1"># dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -608,14 +608,14 @@ also modified the corresponding element in the <code class="docutils literal not
 <p>If you want to individually see the two arrays that make up this data structure, you can call the two attributes of the series as follows: index and values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s4</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s4</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1  3  8]
-RangeIndex(start=0, stop=3, step=1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100  20 -40]
+Index([&#39;x&#39;, &#39;y&#39;, &#39;z&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -626,8 +626,8 @@ RangeIndex(start=0, stop=3, step=1)
 <p>You can select individual elements as ordinary <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> arrays, specifying the key.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span>
-<span class="n">s2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -640,7 +640,7 @@ RangeIndex(start=0, stop=3, step=1)
 <p>Or you can specify the label corresponding to the position of the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -653,7 +653,7 @@ RangeIndex(start=0, stop=3, step=1)
 <p>In the same way, you select multiple items in a <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> array, you can specify slices as following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -667,7 +667,7 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -682,7 +682,7 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -699,16 +699,15 @@ dtype: int64
 <h3><span class="section-number">3.1.3.3. </span>Assigning Values to the Elements<a class="headerlink" href="#assigning-values-to-the-elements" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">s1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">s</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     -1
-1      3
-2      8
-a    100
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    100
+b      3
+c      8
 dtype: int64
 </pre></div>
 </div>
@@ -738,7 +737,6 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># According to Boolean value to filter</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">])])</span>
 </pre></div>
@@ -948,7 +946,7 @@ dtype: float64
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Country&quot;</span><span class="p">:[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Vietnam&quot;</span><span class="p">],</span>
                    <span class="s2">&quot;Capital&quot;</span><span class="p">:[</span><span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">],</span>
               <span class="s2">&quot;Population&quot;</span><span class="p">:[</span><span class="mi">32365999</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">],</span>
-              <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">:[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]})</span>
+              <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">:[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -964,72 +962,6 @@ b  Singapore     Singapore     5850342         True
 c    Vietnam         Hanoi    97338579         True
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>Capital</th>
-      <th>Population</th>
-      <th>Isdeveloped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Malaysia</td>
-      <td>Kuala Lumpur</td>
-      <td>32365999</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Singapore</td>
-      <td>Singapore</td>
-      <td>5850342</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Vietnam</td>
-      <td>Hanoi</td>
-      <td>97338579</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</div>
-<div class="section" id="id1">
-<h3><span class="section-number">3.1.4.2. </span>Selecting the Internal Elements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Similar with <code class="docutils literal notranslate"><span class="pre">Series</span></code>, two ways can be used to select the elements from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Call <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">loc[]</span></code> to select the elements by position and label, respectively .</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="mi">32365999</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
-              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">],</span>
-              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1080,6 +1012,10 @@ c    Vietnam         Hanoi    97338579         True
 </table>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">3.1.4.2. </span>Selecting the Internal Elements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Similar with <code class="docutils literal notranslate"><span class="pre">Series</span></code>, two ways can be used to select the elements from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Call <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">loc[]</span></code> to select the elements by position and label, respectively .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use &#39;:&#39; to represent select all</span>
@@ -1471,11 +1407,12 @@ Name: Country, dtype: object
 <h3><span class="section-number">3.1.4.3. </span>Assigning value<a class="headerlink" href="#assigning-value" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Japan&quot;</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tokyo&quot;</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">126476461</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Japan&quot;</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tokyo&quot;</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">126476461</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">df1</span>
 </pre></div>
 </div>
 </div>
@@ -1532,7 +1469,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mi">126476461</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mi">126476461</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1579,9 +1516,9 @@ Name: Country, dtype: object
     </tr>
     <tr>
       <th>c</th>
-      <td>Japan</td>
-      <td>Tokyo</td>
-      <td>126476461</td>
+      <td>Vietnam</td>
+      <td>Hanoi</td>
+      <td>97338579</td>
       <td>True</td>
     </tr>
   </tbody>
@@ -1593,11 +1530,11 @@ Name: Country, dtype: object
 <h3><span class="section-number">3.1.4.4. </span>Assigning index, columns, and name of index and columns<a class="headerlink" href="#assigning-index-columns-and-name-of-index-and-columns" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;atributes&quot;</span>
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Coun&quot;</span><span class="p">,</span> <span class="s2">&quot;Cap&quot;</span><span class="p">,</span> <span class="s2">&quot;Pop&quot;</span><span class="p">,</span> <span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;atributes&quot;</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Coun&quot;</span><span class="p">,</span> <span class="s2">&quot;Cap&quot;</span><span class="p">,</span> <span class="s2">&quot;Pop&quot;</span><span class="p">,</span> <span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+<span class="n">df1</span>
 </pre></div>
 </div>
 </div>
@@ -1664,8 +1601,8 @@ Name: Country, dtype: object
 <h3><span class="section-number">3.1.4.5. </span>Delete columns from dataframe<a class="headerlink" href="#delete-columns-from-dataframe" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+<span class="n">df1</span>
 </pre></div>
 </div>
 </div>
@@ -1728,11 +1665,11 @@ Name: Country, dtype: object
 <p>Same as <code class="docutils literal notranslate"><span class="pre">Series()</span></code> mentioned above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span>
                             <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>
                             <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">59</span><span class="p">]]))</span>
 <span class="c1"># filtering lesser than 30</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1789,12 +1726,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="mi">32365999</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
-              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">],</span>
-              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
-<span class="c1"># Filtering accroding to conditions of one column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtering accroding to conditions of one column</span>
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">50000000</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1893,12 +1825,7 @@ Name: Country, dtype: object
 <p>Same as <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> array, <code class="docutils literal notranslate"><span class="pre">Dataframe</span></code> can transpose. <code class="docutils literal notranslate"><span class="pre">Columns</span></code> changes to <code class="docutils literal notranslate"><span class="pre">Index</span></code> and <code class="docutils literal notranslate"><span class="pre">Index</span></code> changes to <code class="docutils literal notranslate"><span class="pre">Columns</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="mi">32365999</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
-              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">],</span>
-              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
-<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">T</span>
 <span class="n">df1</span>
 </pre></div>
 </div>
@@ -2031,138 +1958,138 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.035189</td>
-      <td>0.952455</td>
-      <td>0.832334</td>
-      <td>0.284203</td>
+      <td>0.824465</td>
+      <td>0.061269</td>
+      <td>0.007842</td>
+      <td>0.962445</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.273924</td>
-      <td>0.683433</td>
-      <td>0.351686</td>
-      <td>0.039677</td>
+      <td>0.034729</td>
+      <td>0.341628</td>
+      <td>0.498894</td>
+      <td>0.672350</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.818468</td>
-      <td>0.294889</td>
-      <td>0.017483</td>
-      <td>0.186442</td>
+      <td>0.292557</td>
+      <td>0.880929</td>
+      <td>0.424038</td>
+      <td>0.807357</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.782208</td>
-      <td>0.844065</td>
-      <td>0.154629</td>
-      <td>0.137631</td>
+      <td>0.580514</td>
+      <td>0.789632</td>
+      <td>0.165241</td>
+      <td>0.887023</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.840998</td>
-      <td>0.084557</td>
-      <td>0.370950</td>
-      <td>0.268967</td>
+      <td>0.345508</td>
+      <td>0.171248</td>
+      <td>0.336142</td>
+      <td>0.072900</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.662613</td>
-      <td>0.157986</td>
-      <td>0.433846</td>
-      <td>0.636929</td>
+      <td>0.613163</td>
+      <td>0.825258</td>
+      <td>0.049523</td>
+      <td>0.160503</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.575530</td>
-      <td>0.185950</td>
-      <td>0.196095</td>
-      <td>0.735374</td>
+      <td>0.453745</td>
+      <td>0.397672</td>
+      <td>0.159139</td>
+      <td>0.402271</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.421032</td>
-      <td>0.747025</td>
-      <td>0.349576</td>
-      <td>0.663201</td>
+      <td>0.138178</td>
+      <td>0.280639</td>
+      <td>0.475266</td>
+      <td>0.924148</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.259200</td>
-      <td>0.029259</td>
-      <td>0.233054</td>
-      <td>0.445444</td>
+      <td>0.980677</td>
+      <td>0.361188</td>
+      <td>0.852833</td>
+      <td>0.717641</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.886176</td>
-      <td>0.533255</td>
-      <td>0.184438</td>
-      <td>0.677293</td>
+      <td>0.252228</td>
+      <td>0.206957</td>
+      <td>0.327893</td>
+      <td>0.757994</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.785720</td>
-      <td>0.395151</td>
-      <td>0.405073</td>
-      <td>0.599226</td>
+      <td>0.647123</td>
+      <td>0.883544</td>
+      <td>0.883150</td>
+      <td>0.921213</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.410462</td>
-      <td>0.980039</td>
-      <td>0.293598</td>
-      <td>0.608530</td>
+      <td>0.955014</td>
+      <td>0.797765</td>
+      <td>0.268096</td>
+      <td>0.797848</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.847506</td>
-      <td>0.120076</td>
-      <td>0.286810</td>
-      <td>0.601173</td>
-      <td>0.769567</td>
-      <td>0.842559</td>
+      <td>0.072101</td>
+      <td>0.522838</td>
+      <td>0.959452</td>
+      <td>0.136435</td>
+      <td>0.582178</td>
+      <td>0.508520</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.604071</td>
-      <td>0.018982</td>
-      <td>0.845244</td>
-      <td>0.377570</td>
-      <td>0.697689</td>
-      <td>0.988924</td>
+      <td>0.380552</td>
+      <td>0.090256</td>
+      <td>0.069158</td>
+      <td>0.663493</td>
+      <td>0.287814</td>
+      <td>0.033877</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.349190</td>
-      <td>0.809465</td>
-      <td>0.277346</td>
-      <td>0.039608</td>
-      <td>0.570399</td>
-      <td>0.201759</td>
+      <td>0.270242</td>
+      <td>0.766005</td>
+      <td>0.986034</td>
+      <td>0.429153</td>
+      <td>0.975471</td>
+      <td>0.256247</td>
     </tr>
   </tbody>
 </table>
@@ -2207,45 +2134,45 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.035189</td>
-      <td>0.952455</td>
-      <td>0.832334</td>
-      <td>0.284203</td>
+      <td>0.824465</td>
+      <td>0.061269</td>
+      <td>0.007842</td>
+      <td>0.962445</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.273924</td>
-      <td>0.683433</td>
-      <td>0.351686</td>
-      <td>0.039677</td>
+      <td>0.034729</td>
+      <td>0.341628</td>
+      <td>0.498894</td>
+      <td>0.672350</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.818468</td>
-      <td>0.294889</td>
-      <td>0.017483</td>
-      <td>0.186442</td>
+      <td>0.292557</td>
+      <td>0.880929</td>
+      <td>0.424038</td>
+      <td>0.807357</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>0.782208</td>
-      <td>0.844065</td>
-      <td>0.154629</td>
-      <td>0.137631</td>
+      <td>0.580514</td>
+      <td>0.789632</td>
+      <td>0.165241</td>
+      <td>0.887023</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.840998</td>
-      <td>0.084557</td>
-      <td>0.370950</td>
-      <td>0.268967</td>
+      <td>0.345508</td>
+      <td>0.171248</td>
+      <td>0.336142</td>
+      <td>0.072900</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.662613</td>
-      <td>0.157986</td>
-      <td>0.433846</td>
-      <td>0.636929</td>
+      <td>0.613163</td>
+      <td>0.825258</td>
+      <td>0.049523</td>
+      <td>0.160503</td>
     </tr>
   </tbody>
 </table>
@@ -2300,66 +2227,66 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.035189</td>
-      <td>0.952455</td>
-      <td>0.832334</td>
-      <td>0.284203</td>
-      <td>0.782208</td>
-      <td>0.844065</td>
-      <td>0.154629</td>
-      <td>0.137631</td>
-      <td>0.575530</td>
-      <td>0.185950</td>
-      <td>0.196095</td>
-      <td>0.735374</td>
-      <td>0.847506</td>
-      <td>0.120076</td>
-      <td>0.286810</td>
-      <td>0.601173</td>
-      <td>0.769567</td>
-      <td>0.842559</td>
+      <td>0.824465</td>
+      <td>0.061269</td>
+      <td>0.007842</td>
+      <td>0.962445</td>
+      <td>0.580514</td>
+      <td>0.789632</td>
+      <td>0.165241</td>
+      <td>0.887023</td>
+      <td>0.453745</td>
+      <td>0.397672</td>
+      <td>0.159139</td>
+      <td>0.402271</td>
+      <td>0.072101</td>
+      <td>0.522838</td>
+      <td>0.959452</td>
+      <td>0.136435</td>
+      <td>0.582178</td>
+      <td>0.508520</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.273924</td>
-      <td>0.683433</td>
-      <td>0.351686</td>
-      <td>0.039677</td>
-      <td>0.840998</td>
-      <td>0.084557</td>
-      <td>0.370950</td>
-      <td>0.268967</td>
-      <td>0.421032</td>
-      <td>0.747025</td>
-      <td>0.349576</td>
-      <td>0.663201</td>
-      <td>0.604071</td>
-      <td>0.018982</td>
-      <td>0.845244</td>
-      <td>0.377570</td>
-      <td>0.697689</td>
-      <td>0.988924</td>
+      <td>0.034729</td>
+      <td>0.341628</td>
+      <td>0.498894</td>
+      <td>0.672350</td>
+      <td>0.345508</td>
+      <td>0.171248</td>
+      <td>0.336142</td>
+      <td>0.072900</td>
+      <td>0.138178</td>
+      <td>0.280639</td>
+      <td>0.475266</td>
+      <td>0.924148</td>
+      <td>0.380552</td>
+      <td>0.090256</td>
+      <td>0.069158</td>
+      <td>0.663493</td>
+      <td>0.287814</td>
+      <td>0.033877</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.818468</td>
-      <td>0.294889</td>
-      <td>0.017483</td>
-      <td>0.186442</td>
-      <td>0.662613</td>
-      <td>0.157986</td>
-      <td>0.433846</td>
-      <td>0.636929</td>
-      <td>0.259200</td>
-      <td>0.029259</td>
-      <td>0.233054</td>
-      <td>0.445444</td>
-      <td>0.349190</td>
-      <td>0.809465</td>
-      <td>0.277346</td>
-      <td>0.039608</td>
-      <td>0.570399</td>
-      <td>0.201759</td>
+      <td>0.292557</td>
+      <td>0.880929</td>
+      <td>0.424038</td>
+      <td>0.807357</td>
+      <td>0.613163</td>
+      <td>0.825258</td>
+      <td>0.049523</td>
+      <td>0.160503</td>
+      <td>0.980677</td>
+      <td>0.361188</td>
+      <td>0.852833</td>
+      <td>0.717641</td>
+      <td>0.270242</td>
+      <td>0.766005</td>
+      <td>0.986034</td>
+      <td>0.429153</td>
+      <td>0.975471</td>
+      <td>0.256247</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2371,10 +2298,10 @@ Name: Country, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.886176</td>
-      <td>0.533255</td>
-      <td>0.184438</td>
-      <td>0.677293</td>
+      <td>0.252228</td>
+      <td>0.206957</td>
+      <td>0.327893</td>
+      <td>0.757994</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2392,10 +2319,10 @@ Name: Country, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.785720</td>
-      <td>0.395151</td>
-      <td>0.405073</td>
-      <td>0.599226</td>
+      <td>0.647123</td>
+      <td>0.883544</td>
+      <td>0.883150</td>
+      <td>0.921213</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2413,10 +2340,10 @@ Name: Country, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.410462</td>
-      <td>0.980039</td>
-      <td>0.293598</td>
-      <td>0.608530</td>
+      <td>0.955014</td>
+      <td>0.797765</td>
+      <td>0.268096</td>
+      <td>0.797848</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2434,8 +2361,8 @@ Name: Country, dtype: object
 <h3><span class="section-number">3.1.4.9. </span>View data<a class="headerlink" href="#view-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2467,17 +2394,17 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.793051</td>
-      <td>0.604828</td>
-      <td>0.132647</td>
-      <td>0.757664</td>
+      <td>0.101076</td>
+      <td>0.056062</td>
+      <td>0.128278</td>
+      <td>0.381904</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.316314</td>
-      <td>0.192280</td>
-      <td>0.151864</td>
-      <td>0.277320</td>
+      <td>0.665187</td>
+      <td>0.195123</td>
+      <td>0.591210</td>
+      <td>0.641694</td>
     </tr>
   </tbody>
 </table>
@@ -2485,7 +2412,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2517,24 +2444,24 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>97</th>
-      <td>0.432984</td>
-      <td>0.951242</td>
-      <td>0.248424</td>
-      <td>0.746849</td>
+      <td>0.818386</td>
+      <td>0.270448</td>
+      <td>0.485837</td>
+      <td>0.291244</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>0.366418</td>
-      <td>0.429724</td>
-      <td>0.265813</td>
-      <td>0.898179</td>
+      <td>0.804314</td>
+      <td>0.835975</td>
+      <td>0.649101</td>
+      <td>0.637635</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.677489</td>
-      <td>0.973459</td>
-      <td>0.620953</td>
-      <td>0.617741</td>
+      <td>0.564711</td>
+      <td>0.388643</td>
+      <td>0.010405</td>
+      <td>0.253023</td>
     </tr>
   </tbody>
 </table>
@@ -2546,9 +2473,9 @@ Name: Country, dtype: object
 <p>Compute quickly covariance and <em>Pearson correlation coefficients</em> of different columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i1&#39;</span><span class="p">,</span> <span class="s1">&#39;i2&#39;</span><span class="p">,</span> <span class="s1">&#39;i3&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i5&#39;</span><span class="p">],</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i1&#39;</span><span class="p">,</span> <span class="s1">&#39;i2&#39;</span><span class="p">,</span> <span class="s1">&#39;i3&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i5&#39;</span><span class="p">],</span> 
                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">,</span> <span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;c5&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2581,43 +2508,43 @@ Name: Country, dtype: object
   <tbody>
     <tr>
       <th>c1</th>
-      <td>0.048370</td>
-      <td>-0.022476</td>
-      <td>0.019211</td>
-      <td>0.071842</td>
-      <td>0.006492</td>
+      <td>0.031986</td>
+      <td>-0.043740</td>
+      <td>-0.023913</td>
+      <td>0.016840</td>
+      <td>0.028232</td>
     </tr>
     <tr>
       <th>c2</th>
-      <td>-0.022476</td>
-      <td>0.087275</td>
-      <td>0.015324</td>
-      <td>-0.047505</td>
-      <td>-0.001788</td>
+      <td>-0.043740</td>
+      <td>0.098145</td>
+      <td>0.028002</td>
+      <td>-0.039143</td>
+      <td>-0.046075</td>
     </tr>
     <tr>
       <th>c3</th>
-      <td>0.019211</td>
-      <td>0.015324</td>
-      <td>0.030619</td>
-      <td>0.038420</td>
-      <td>0.004704</td>
+      <td>-0.023913</td>
+      <td>0.028002</td>
+      <td>0.078744</td>
+      <td>0.023606</td>
+      <td>0.045434</td>
     </tr>
     <tr>
       <th>c4</th>
-      <td>0.071842</td>
-      <td>-0.047505</td>
-      <td>0.038420</td>
-      <td>0.122719</td>
-      <td>0.011037</td>
+      <td>0.016840</td>
+      <td>-0.039143</td>
+      <td>0.023606</td>
+      <td>0.045276</td>
+      <td>0.042808</td>
     </tr>
     <tr>
       <th>c5</th>
-      <td>0.006492</td>
-      <td>-0.001788</td>
-      <td>0.004704</td>
-      <td>0.011037</td>
-      <td>0.113107</td>
+      <td>0.028232</td>
+      <td>-0.046075</td>
+      <td>0.045434</td>
+      <td>0.042808</td>
+      <td>0.112969</td>
     </tr>
   </tbody>
 </table>
@@ -2625,7 +2552,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> <span class="c1"># method = pearson (default), optional: kendall, spearman</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> <span class="c1"># method = pearson (default), optional: kendall, spearman</span>
 </pre></div>
 </div>
 </div>
@@ -2659,41 +2586,41 @@ Name: Country, dtype: object
     <tr>
       <th>c1</th>
       <td>1.000000</td>
-      <td>-0.345921</td>
-      <td>0.499195</td>
-      <td>0.932476</td>
-      <td>0.087766</td>
+      <td>-0.780667</td>
+      <td>-0.476481</td>
+      <td>0.442525</td>
+      <td>0.469661</td>
     </tr>
     <tr>
       <th>c2</th>
-      <td>-0.345921</td>
+      <td>-0.780667</td>
       <td>1.000000</td>
-      <td>0.296439</td>
-      <td>-0.459028</td>
-      <td>-0.017995</td>
+      <td>0.318528</td>
+      <td>-0.587206</td>
+      <td>-0.437571</td>
     </tr>
     <tr>
       <th>c3</th>
-      <td>0.499195</td>
-      <td>0.296439</td>
+      <td>-0.476481</td>
+      <td>0.318528</td>
       <td>1.000000</td>
-      <td>0.626769</td>
-      <td>0.079927</td>
+      <td>0.395347</td>
+      <td>0.481714</td>
     </tr>
     <tr>
       <th>c4</th>
-      <td>0.932476</td>
-      <td>-0.459028</td>
-      <td>0.626769</td>
+      <td>0.442525</td>
+      <td>-0.587206</td>
+      <td>0.395347</td>
       <td>1.000000</td>
-      <td>0.093678</td>
+      <td>0.598569</td>
     </tr>
     <tr>
       <th>c5</th>
-      <td>0.087766</td>
-      <td>-0.017995</td>
-      <td>0.079927</td>
-      <td>0.093678</td>
+      <td>0.469661</td>
+      <td>-0.437571</td>
+      <td>0.481714</td>
+      <td>0.598569</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -2702,7 +2629,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2736,41 +2663,41 @@ Name: Country, dtype: object
     <tr>
       <th>c1</th>
       <td>1.0</td>
-      <td>-0.2</td>
-      <td>0.4</td>
+      <td>-0.8</td>
+      <td>-0.4</td>
       <td>0.4</td>
       <td>0.4</td>
     </tr>
     <tr>
       <th>c2</th>
-      <td>-0.2</td>
+      <td>-0.8</td>
       <td>1.0</td>
-      <td>0.4</td>
-      <td>-0.4</td>
-      <td>0.0</td>
+      <td>0.2</td>
+      <td>-0.6</td>
+      <td>-0.6</td>
     </tr>
     <tr>
       <th>c3</th>
-      <td>0.4</td>
-      <td>0.4</td>
-      <td>1.0</td>
+      <td>-0.4</td>
       <td>0.2</td>
+      <td>1.0</td>
+      <td>-0.2</td>
       <td>0.2</td>
     </tr>
     <tr>
       <th>c4</th>
       <td>0.4</td>
-      <td>-0.4</td>
-      <td>0.2</td>
+      <td>-0.6</td>
+      <td>-0.2</td>
       <td>1.0</td>
-      <td>0.2</td>
+      <td>0.6</td>
     </tr>
     <tr>
       <th>c5</th>
       <td>0.4</td>
-      <td>0.0</td>
+      <td>-0.6</td>
       <td>0.2</td>
-      <td>0.2</td>
+      <td>0.6</td>
       <td>1.0</td>
     </tr>
   </tbody>
@@ -2781,16 +2708,16 @@ Name: Country, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute average value of each column by default.</span>
-<span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c1    0.755507
-c2    0.553226
-c3    0.444777
-c4    0.558087
-c5    0.401913
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c1    0.424356
+c2    0.406748
+c3    0.593434
+c4    0.405068
+c5    0.528843
 dtype: float64
 </pre></div>
 </div>
@@ -2799,16 +2726,16 @@ dtype: float64
 <p>Compute the sum of each row by specifying the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument as ‘columns’ or 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i1    2.196644
-i2    3.991442
-i3    2.084726
-i4    2.465613
-i5    2.829131
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i1    3.061592
+i2    2.918823
+i3    1.637638
+i4    2.440386
+i5    1.733810
 dtype: float64
 </pre></div>
 </div>
@@ -2817,7 +2744,7 @@ dtype: float64
 <p>Display a summary of the characteristics of the dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2858,59 +2785,59 @@ dtype: float64
     </tr>
     <tr>
       <th>mean</th>
-      <td>0.755507</td>
-      <td>0.553226</td>
-      <td>0.444777</td>
-      <td>0.558087</td>
-      <td>0.401913</td>
+      <td>0.424356</td>
+      <td>0.406748</td>
+      <td>0.593434</td>
+      <td>0.405068</td>
+      <td>0.528843</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.219932</td>
-      <td>0.295424</td>
-      <td>0.174984</td>
-      <td>0.350312</td>
-      <td>0.336313</td>
+      <td>0.178846</td>
+      <td>0.313282</td>
+      <td>0.280614</td>
+      <td>0.212781</td>
+      <td>0.336108</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>0.493324</td>
-      <td>0.268362</td>
-      <td>0.268981</td>
-      <td>0.143859</td>
-      <td>0.041863</td>
+      <td>0.205112</td>
+      <td>0.095444</td>
+      <td>0.362755</td>
+      <td>0.246724</td>
+      <td>0.033699</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>0.541908</td>
-      <td>0.319825</td>
-      <td>0.294633</td>
-      <td>0.229888</td>
-      <td>0.135508</td>
+      <td>0.360568</td>
+      <td>0.219714</td>
+      <td>0.396420</td>
+      <td>0.288506</td>
+      <td>0.354370</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>0.868140</td>
-      <td>0.457401</td>
-      <td>0.408109</td>
-      <td>0.677977</td>
-      <td>0.328866</td>
+      <td>0.367661</td>
+      <td>0.254133</td>
+      <td>0.414750</td>
+      <td>0.323879</td>
+      <td>0.623482</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>0.921427</td>
-      <td>0.771557</td>
-      <td>0.594924</td>
-      <td>0.827979</td>
-      <td>0.721399</td>
+      <td>0.507953</td>
+      <td>0.619243</td>
+      <td>0.836727</td>
+      <td>0.392787</td>
+      <td>0.784642</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>0.952737</td>
-      <td>0.948987</td>
-      <td>0.657241</td>
-      <td>0.910734</td>
-      <td>0.781928</td>
+      <td>0.680488</td>
+      <td>0.845204</td>
+      <td>0.956518</td>
+      <td>0.773444</td>
+      <td>0.848023</td>
     </tr>
   </tbody>
 </table>
@@ -2921,13 +2848,8 @@ dtype: float64
 <h3><span class="section-number">3.1.4.11. </span>Data ranking<a class="headerlink" href="#data-ranking" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="mi">32365999</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-                  <span class="p">[</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
-              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">],</span>
-              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2958,31 +2880,24 @@ dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>d</th>
-      <td>Japan</td>
-      <td>Tokyo</td>
-      <td>NaN</td>
-      <td>True</td>
-    </tr>
-    <tr>
       <th>c</th>
       <td>Vietnam</td>
       <td>Hanoi</td>
-      <td>97338579.0</td>
+      <td>97338579</td>
       <td>True</td>
     </tr>
     <tr>
       <th>a</th>
       <td>Malaysia</td>
       <td>Kuala Lumpur</td>
-      <td>32365999.0</td>
+      <td>32365999</td>
       <td>False</td>
     </tr>
     <tr>
       <th>b</th>
       <td>Singapore</td>
       <td>Singapore</td>
-      <td>5850342.0</td>
+      <td>5850342</td>
       <td>True</td>
     </tr>
   </tbody>
@@ -2995,13 +2910,13 @@ dtype: float64
 <h2><span class="section-number">3.1.5. </span>NaN value<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i1&#39;</span><span class="p">,</span> <span class="s1">&#39;i2&#39;</span><span class="p">,</span> <span class="s1">&#39;i3&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i5&#39;</span><span class="p">],</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i1&#39;</span><span class="p">,</span> <span class="s1">&#39;i2&#39;</span><span class="p">,</span> <span class="s1">&#39;i3&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i5&#39;</span><span class="p">],</span> 
                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">,</span> <span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;c5&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df1</span>
 </pre></div>
 </div>
 </div>
@@ -3034,43 +2949,43 @@ dtype: float64
   <tbody>
     <tr>
       <th>i1</th>
-      <td>0.054853</td>
+      <td>0.997601</td>
       <td>NaN</td>
-      <td>0.825281</td>
-      <td>0.472390</td>
-      <td>0.566194</td>
+      <td>0.578496</td>
+      <td>0.347450</td>
+      <td>0.068541</td>
     </tr>
     <tr>
       <th>i2</th>
-      <td>0.580852</td>
-      <td>0.564462</td>
-      <td>0.394061</td>
-      <td>0.158607</td>
-      <td>0.618355</td>
+      <td>0.227203</td>
+      <td>0.911854</td>
+      <td>0.562201</td>
+      <td>0.567382</td>
+      <td>0.635848</td>
     </tr>
     <tr>
       <th>i3</th>
-      <td>0.025236</td>
-      <td>0.166887</td>
+      <td>0.842812</td>
+      <td>0.855320</td>
       <td>NaN</td>
-      <td>0.113518</td>
-      <td>0.597250</td>
+      <td>0.702465</td>
+      <td>0.787466</td>
     </tr>
     <tr>
       <th>i4</th>
-      <td>0.800339</td>
+      <td>0.144028</td>
       <td>NaN</td>
-      <td>0.078607</td>
+      <td>0.810975</td>
       <td>NaN</td>
-      <td>0.725889</td>
+      <td>0.246048</td>
     </tr>
     <tr>
       <th>i5</th>
-      <td>0.085543</td>
-      <td>0.544981</td>
-      <td>0.349425</td>
-      <td>0.616216</td>
-      <td>0.179865</td>
+      <td>0.581771</td>
+      <td>0.591982</td>
+      <td>0.134941</td>
+      <td>0.435788</td>
+      <td>0.850780</td>
     </tr>
   </tbody>
 </table>
@@ -3079,9 +2994,9 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># detecting nan value</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">isnull</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -3112,7 +3027,7 @@ i5  False  False  False  False  False
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># False:0, True:1</span>
-<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3131,7 +3046,7 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fill NaN value using a specific value</span>
-<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3164,43 +3079,43 @@ dtype: int64
   <tbody>
     <tr>
       <th>i1</th>
-      <td>0.054853</td>
+      <td>0.997601</td>
       <td>0.000000</td>
-      <td>0.825281</td>
-      <td>0.472390</td>
-      <td>0.566194</td>
+      <td>0.578496</td>
+      <td>0.347450</td>
+      <td>0.068541</td>
     </tr>
     <tr>
       <th>i2</th>
-      <td>0.580852</td>
-      <td>0.564462</td>
-      <td>0.394061</td>
-      <td>0.158607</td>
-      <td>0.618355</td>
+      <td>0.227203</td>
+      <td>0.911854</td>
+      <td>0.562201</td>
+      <td>0.567382</td>
+      <td>0.635848</td>
     </tr>
     <tr>
       <th>i3</th>
-      <td>0.025236</td>
-      <td>0.166887</td>
+      <td>0.842812</td>
+      <td>0.855320</td>
       <td>0.000000</td>
-      <td>0.113518</td>
-      <td>0.597250</td>
+      <td>0.702465</td>
+      <td>0.787466</td>
     </tr>
     <tr>
       <th>i4</th>
-      <td>0.800339</td>
+      <td>0.144028</td>
       <td>0.000000</td>
-      <td>0.078607</td>
+      <td>0.810975</td>
       <td>0.000000</td>
-      <td>0.725889</td>
+      <td>0.246048</td>
     </tr>
     <tr>
       <th>i5</th>
-      <td>0.085543</td>
-      <td>0.544981</td>
-      <td>0.349425</td>
-      <td>0.616216</td>
-      <td>0.179865</td>
+      <td>0.581771</td>
+      <td>0.591982</td>
+      <td>0.134941</td>
+      <td>0.435788</td>
+      <td>0.850780</td>
     </tr>
   </tbody>
 </table>
@@ -3210,8 +3125,8 @@ dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fill NaN value using a method</span>
 <span class="c1"># set inplace to True, the changes will act on dataframe</span>
-<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ffill&quot;</span><span class="p">)</span> <span class="c1"># other method: ‘backfill’, ‘bfill’, ‘pad’</span>
-<span class="n">df</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ffill&quot;</span><span class="p">)</span> <span class="c1"># other method: ‘backfill’, ‘bfill’, ‘pad’</span>
+<span class="n">df1</span>
 </pre></div>
 </div>
 </div>
@@ -3244,43 +3159,43 @@ dtype: int64
   <tbody>
     <tr>
       <th>i1</th>
-      <td>0.054853</td>
+      <td>0.997601</td>
       <td>NaN</td>
-      <td>0.825281</td>
-      <td>0.472390</td>
-      <td>0.566194</td>
+      <td>0.578496</td>
+      <td>0.347450</td>
+      <td>0.068541</td>
     </tr>
     <tr>
       <th>i2</th>
-      <td>0.580852</td>
-      <td>0.564462</td>
-      <td>0.394061</td>
-      <td>0.158607</td>
-      <td>0.618355</td>
+      <td>0.227203</td>
+      <td>0.911854</td>
+      <td>0.562201</td>
+      <td>0.567382</td>
+      <td>0.635848</td>
     </tr>
     <tr>
       <th>i3</th>
-      <td>0.025236</td>
-      <td>0.166887</td>
+      <td>0.842812</td>
+      <td>0.855320</td>
       <td>NaN</td>
-      <td>0.113518</td>
-      <td>0.597250</td>
+      <td>0.702465</td>
+      <td>0.787466</td>
     </tr>
     <tr>
       <th>i4</th>
-      <td>0.800339</td>
+      <td>0.144028</td>
       <td>NaN</td>
-      <td>0.078607</td>
+      <td>0.810975</td>
       <td>NaN</td>
-      <td>0.725889</td>
+      <td>0.246048</td>
     </tr>
     <tr>
       <th>i5</th>
-      <td>0.085543</td>
-      <td>0.544981</td>
-      <td>0.349425</td>
-      <td>0.616216</td>
-      <td>0.179865</td>
+      <td>0.581771</td>
+      <td>0.591982</td>
+      <td>0.134941</td>
+      <td>0.435788</td>
+      <td>0.850780</td>
     </tr>
   </tbody>
 </table>
@@ -3288,7 +3203,7 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;pad&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;pad&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3321,43 +3236,43 @@ dtype: int64
   <tbody>
     <tr>
       <th>i1</th>
-      <td>0.054853</td>
+      <td>0.997601</td>
       <td>NaN</td>
-      <td>0.825281</td>
-      <td>0.472390</td>
-      <td>0.566194</td>
+      <td>0.578496</td>
+      <td>0.347450</td>
+      <td>0.068541</td>
     </tr>
     <tr>
       <th>i2</th>
-      <td>0.580852</td>
-      <td>0.564462</td>
-      <td>0.394061</td>
-      <td>0.158607</td>
-      <td>0.618355</td>
+      <td>0.227203</td>
+      <td>0.911854</td>
+      <td>0.562201</td>
+      <td>0.567382</td>
+      <td>0.635848</td>
     </tr>
     <tr>
       <th>i3</th>
-      <td>0.025236</td>
-      <td>0.166887</td>
-      <td>0.394061</td>
-      <td>0.113518</td>
-      <td>0.597250</td>
+      <td>0.842812</td>
+      <td>0.855320</td>
+      <td>0.562201</td>
+      <td>0.702465</td>
+      <td>0.787466</td>
     </tr>
     <tr>
       <th>i4</th>
-      <td>0.800339</td>
-      <td>0.166887</td>
-      <td>0.078607</td>
-      <td>0.113518</td>
-      <td>0.725889</td>
+      <td>0.144028</td>
+      <td>0.855320</td>
+      <td>0.810975</td>
+      <td>0.702465</td>
+      <td>0.246048</td>
     </tr>
     <tr>
       <th>i5</th>
-      <td>0.085543</td>
-      <td>0.544981</td>
-      <td>0.349425</td>
-      <td>0.616216</td>
-      <td>0.179865</td>
+      <td>0.581771</td>
+      <td>0.591982</td>
+      <td>0.134941</td>
+      <td>0.435788</td>
+      <td>0.850780</td>
     </tr>
   </tbody>
 </table>
@@ -3371,7 +3286,7 @@ dtype: int64
 
 <span class="c1"># 0, or ‘index’ : Drop rows which contain missing values.</span>
 <span class="c1"># 1, or ‘columns’ : Drop columns which contain missing value.</span>
-<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3404,19 +3319,19 @@ dtype: int64
   <tbody>
     <tr>
       <th>i2</th>
-      <td>0.580852</td>
-      <td>0.564462</td>
-      <td>0.394061</td>
-      <td>0.158607</td>
-      <td>0.618355</td>
+      <td>0.227203</td>
+      <td>0.911854</td>
+      <td>0.562201</td>
+      <td>0.567382</td>
+      <td>0.635848</td>
     </tr>
     <tr>
       <th>i5</th>
-      <td>0.085543</td>
-      <td>0.544981</td>
-      <td>0.349425</td>
-      <td>0.616216</td>
-      <td>0.179865</td>
+      <td>0.581771</td>
+      <td>0.591982</td>
+      <td>0.134941</td>
+      <td>0.435788</td>
+      <td>0.850780</td>
     </tr>
   </tbody>
 </table>
@@ -3572,7 +3487,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Downsampling: Convert monthly data to yearly data by sum and max</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">dfsum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">dfsum</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
