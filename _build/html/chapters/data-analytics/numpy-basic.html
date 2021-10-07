@@ -108,6 +108,16 @@
      1.1. Tutorial
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-exercise.html">
+     1.2. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-answer.html">
+     1.3. Solution
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -605,7 +615,7 @@
 </div>
 <div class="section" id="array-math">
 <h2><span class="section-number">2.1.4. </span>Array math<a class="headerlink" href="#array-math" title="Permalink to this headline">¶</a></h2>
-<p>Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the numpy module:</p>
+<p>Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the NumPy module.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
@@ -644,7 +654,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> also supports matrix multiplication. We use the <code class="docutils literal notranslate"><span class="pre">dot</span></code> function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. <code class="docutils literal notranslate"><span class="pre">dot</span></code> is available both as a function in the numpy module and as an instance method of array objects:</p>
+<p>NumPy also supports matrix multiplication. We use the <code class="docutils literal notranslate"><span class="pre">dot</span></code> function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. <code class="docutils literal notranslate"><span class="pre">dot</span></code> is available both as a function in the numpy module and as an instance method of array objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -739,7 +749,7 @@ transpose
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> provides many useful functions for performing computations on arrays; one of the most useful is <code class="docutils literal notranslate"><span class="pre">sum</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> provides many useful functions for performing computations on arrays; one of the most useful is <code class="docutils literal notranslate"><span class="pre">sum</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
@@ -811,7 +821,7 @@ transpose
 </div>
 </div>
 </div>
-<p>Even more conveniently, <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> <strong>broadcasting</strong> allows us to perform this computation within one step.</p>
+<p>Even more conveniently, <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> <strong>broadcasting</strong> allows us to perform this computation within one step.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">v</span>  <span class="c1"># Add v to each row of x using broadcasting</span>
@@ -835,9 +845,11 @@ transpose
 <li><p>The two arrays are said to be compatible in one dimension if they have the same size in this dimension, or if one of the arrays has size 1 in that dimension.</p></li>
 <li><p>The arrays can be broadcast together if they are compatible in all dimensions.</p></li>
 <li><p>After broadcasting, each array behaves as if it had a shape equal to the elementwise maximum of shapes of the two input arrays.</p></li>
-<li><p>In any dimension where one array had size 1 and the other array had size greater than 1, the first array behaves as if it were copied along that dimension</p></li>
+<li><p>In any dimension where one array had size 1 and the other array had size greater than 1, the first array behaves as if it were copied along that dimension.</p></li>
 </ol>
 <p>If this explanation does not make sense, try reading the explanation from the <a class="reference external" href="http://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">documentation</a> or this <a class="reference external" href="http://wiki.scipy.org/EricsBroadcastingDoc">explanation</a>.</p>
+<p>This graph also shows the process of broadcasting:
+<img alt="http://scipy-lectures.org/_images/numpy_broadcasting.png" src="http://scipy-lectures.org/_images/numpy_broadcasting.png" /></p>
 <p>Functions that support broadcasting are known as universal functions. You can find the list of all universal functions in the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs">documentation</a>. Here are some other applications of broadcasting:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -890,10 +902,10 @@ transpose
 <div class="section" id="references">
 <h2><span class="section-number">2.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">pandas-dev/pandas: Pandas</a>.</p></li>
+<li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a>.</p></li>
 <li><p>This tutorial has touched on many of the important things that you need to know about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but is far from complete. Check out the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/">numpy reference</a> to find out more.</p></li>
 <li><p>If you are already familiar with MATLAB, you might find this <a class="reference external" href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">tutorial</a> useful to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
-<li><p>If you are already familiar with R, you might refer to this <a class="reference external" href="http://www.data-analysis-in-python.org/python_for_r.html">tutorial</a> to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
+<li><p>If you are already familiar with R, you might refer to this <a class="reference external" href="http://web.archive.org/web/20210308134446/http://www.data-analysis-in-python.org/python_for_r.html">tutorial</a> to get started with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
 </ul>
 </div>
 </div>

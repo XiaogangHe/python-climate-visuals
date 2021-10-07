@@ -173,7 +173,7 @@ print(a.dtype, b.dtype, c.dtype)
 
 # ## Array math
 
-# Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the numpy module:
+# Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the NumPy module.
 
 # In[13]:
 
@@ -195,7 +195,7 @@ print(np.sqrt(x))
 print(np.log(x))
 
 
-# `NumPy` also supports matrix multiplication. We use the `dot` function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. `dot` is available both as a function in the numpy module and as an instance method of array objects:
+# NumPy also supports matrix multiplication. We use the `dot` function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. `dot` is available both as a function in the numpy module and as an instance method of array objects.
 
 # In[15]:
 
@@ -246,7 +246,7 @@ print(v)
 print("transpose\n", v.T)
 
 
-# `Numpy` provides many useful functions for performing computations on arrays; one of the most useful is `sum`:
+# `Numpy` provides many useful functions for performing computations on arrays; one of the most useful is `sum`.
 
 # In[23]:
 
@@ -292,7 +292,7 @@ y = x + vv  # Add x and vv elementwise
 print(y)
 
 
-# Even more conveniently, `Numpy` **broadcasting** allows us to perform this computation within one step.
+# Even more conveniently, `NumPy` **broadcasting** allows us to perform this computation within one step.
 
 # In[27]:
 
@@ -309,9 +309,12 @@ print(y)
 # 2. The two arrays are said to be compatible in one dimension if they have the same size in this dimension, or if one of the arrays has size 1 in that dimension.
 # 3. The arrays can be broadcast together if they are compatible in all dimensions.
 # 4. After broadcasting, each array behaves as if it had a shape equal to the elementwise maximum of shapes of the two input arrays.
-# 5. In any dimension where one array had size 1 and the other array had size greater than 1, the first array behaves as if it were copied along that dimension
+# 5. In any dimension where one array had size 1 and the other array had size greater than 1, the first array behaves as if it were copied along that dimension.
 # 
 # If this explanation does not make sense, try reading the explanation from the [documentation](http://docs.scipy.org/doc/numpy/user/basics.broadcasting.html) or this [explanation](http://wiki.scipy.org/EricsBroadcastingDoc).
+# 
+# This graph also shows the process of broadcasting:
+# <img src="http://scipy-lectures.org/_images/numpy_broadcasting.png" style="zoom:70%" />
 # 
 # Functions that support broadcasting are known as universal functions. You can find the list of all universal functions in the [documentation](http://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs). Here are some other applications of broadcasting:
 
@@ -347,7 +350,7 @@ print(x + np.reshape(w, (2, 1)))
 # Broadcasting typically makes your code more concise and faster, so you should strive to use it where possible.
 
 # ## References
-# + [pandas-dev/pandas: Pandas](https://cs231n.github.io/python-numpy-tutorial).
+# + This tutorial was edited based on the [Python Numpy Tutorial](https://cs231n.github.io/python-numpy-tutorial).
 # + This tutorial has touched on many of the important things that you need to know about `numpy`, but is far from complete. Check out the [numpy reference](http://docs.scipy.org/doc/numpy/reference/) to find out more.
 # + If you are already familiar with MATLAB, you might find this [tutorial](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html) useful to get started with `numpy`.
-# + If you are already familiar with R, you might refer to this [tutorial](http://www.data-analysis-in-python.org/python_for_r.html) to get started with `numpy`.
+# + If you are already familiar with R, you might refer to this [tutorial](http://web.archive.org/web/20210308134446/http://www.data-analysis-in-python.org/python_for_r.html) to get started with `numpy`.

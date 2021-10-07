@@ -13,6 +13,8 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/python-exercise
       title: Exercise
+    - file: chapters/data-analytics/python-answer
+      title: Solution
   - file: chapters/data-analytics/numpy
     title: NumPy
     sections:
