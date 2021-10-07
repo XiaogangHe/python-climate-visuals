@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.3. Python Answer</title>
+    <title>1.3. Solutions to Python Exercise</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,7 +50,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/python-answer.html" />
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/python-solution.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -263,7 +263,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/python-answer.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/python-solution.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -301,7 +301,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/python-answer.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/python-solution.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -354,11 +354,11 @@
         
               <div>
                 
-  <div class="section" id="python-answer">
-<h1><span class="section-number">1.3. </span>Python Answer<a class="headerlink" href="#python-answer" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="solutions-to-python-exercise">
+<h1><span class="section-number">1.3. </span>Solutions to Python Exercise<a class="headerlink" href="#solutions-to-python-exercise" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><u><em>The answer to each task is not exclusive</em></u>. Depending on the purpose of our programming, we may wish our scripts to be intuitive or concise or fast or flexible. There should be a lot of ways to accomplish the following programming tasks, yet we may alter how we script to be in alignment with our purposes.:::</p>
+<p><u><em>The solution to each task is not exclusive</em></u>. Depending on the purpose of our programming, we may wish our scripts to be intuitive or concise or fast or flexible. There should be many other ways to accomplish the following programming tasks.</p>
 </div>
 <div class="section" id="task-1-containers">
 <h2><span class="section-number">1.3.1. </span>Task 1 (Containers)<a class="headerlink" href="#task-1-containers" title="Permalink to this headline">¶</a></h2>
@@ -367,7 +367,9 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+
 <span class="n">precipitation</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
 <span class="nb">print</span><span class="p">({</span><span class="s2">&quot;sublist_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="nb">max</span><span class="p">(</span><span class="n">precipitation</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">precipitation</span><span class="p">))})</span>
 </pre></div>
 </div>
@@ -380,7 +382,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">len()</span></code> is a Python built-in function that returns the number of elements in a list. We may use <code class="docutils literal notranslate"><span class="pre">help(len)</span></code> to see the description and usage of this function.:::</p>
+<p><code class="docutils literal notranslate"><span class="pre">len()</span></code> is a Python built-in function that returns the number of elements in a list. We may use <code class="docutils literal notranslate"><span class="pre">help(len)</span></code> to see the description and usage of this function.</p>
 </div>
 </div>
 <div class="section" id="task-2-control-flows">
@@ -396,6 +398,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># all prime numbers are greater than 1</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>  <span class="c1"># check for factors</span>
@@ -420,7 +423,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is not common to use <code class="docutils literal notranslate"><span class="pre">for-else</span></code> loops. <code class="docutils literal notranslate"><span class="pre">else</span></code> here means that the following algorithms will be run when the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ends. Normally, if we want to run specific algorithms after loops, we just need to script them after loops. However, if <code class="docutils literal notranslate"><span class="pre">break</span></code> exists in the loop, the algorithms in <code class="docutils literal notranslate"><span class="pre">else</span></code> will not execute when <code class="docutils literal notranslate"><span class="pre">break</span></code> happens, because the loop do not reach its end. Thus, <code class="docutils literal notranslate"><span class="pre">for-else</span></code> loops is useful only when there exists <code class="docutils literal notranslate"><span class="pre">break</span></code> statements within loops.</p>
-<p>In addition, please mind the indents before each line. Python relies on indents to identify code blocks, so a wrong slip in indents may cause errors or even unanticipated results. You may try adding an indent before <code class="docutils literal notranslate"><span class="pre">else:</span></code> and <code class="docutils literal notranslate"><span class="pre">print(num)</span></code> to see what will happen.:::</p>
+<p>In addition, please mind the indents before each line. Python relies on indents to identify code blocks, so a wrong slip in indents may cause errors or even unanticipated results. You may try adding an indent before <code class="docutils literal notranslate"><span class="pre">else:</span></code> and <code class="docutils literal notranslate"><span class="pre">print(num)</span></code> to see what will happen.</p>
 </div>
 </div>
 <div class="section" id="task-3-functions">
@@ -430,6 +433,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+
 <span class="k">def</span> <span class="nf">findprime</span><span class="p">(</span><span class="n">rangelist</span><span class="p">):</span>
     <span class="n">prime_num</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">rangelist</span><span class="p">:</span>
