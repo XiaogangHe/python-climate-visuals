@@ -13,7 +13,7 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/python-exercise
       title: Exercise
-    - file: chapters/data-analytics/python-answer
+    - file: chapters/data-analytics/python-solution
       title: Solution
   - file: chapters/data-analytics/numpy
     title: NumPy
@@ -39,6 +39,10 @@ parts:
   numbered: true
   chapters:
   - file: chapters/data-visuals/matplotlib
+    title: Matplotlib
+    sections:
+    - file: chapters/data-visuals/matplotlib-basic
+      title: Tutorial
 - caption: Others
   chapters:
   - file: chapters/others/refs
