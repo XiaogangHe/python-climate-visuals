@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="References" href="../others/refs.html" />
+    <link rel="next" title="1.2. Matplotlib tutorial (Advanced)" href="matplotlib-advanced.html" />
     <link rel="prev" title="1. What is Matplotlib?" href="matplotlib.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -208,6 +208,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      1.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib-advanced.html">
+     1.2. Tutorial (Advanced)
     </a>
    </li>
   </ul>
@@ -851,9 +856,10 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># read the dataset from csv</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./python-climate-visuals-master/assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span>
+<span class="c1"># &#39;./python-climate-visuals-master/assets/data/Changi_daily_rainfall.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># df = pd.read_csv(&#39;../../assets/data/Changi_daily_rainfall.csv&#39;, index_col=0, header=0, parse_dates=True)</span>
 <span class="c1"># only use the data in 2020</span>
 <span class="n">df_2020</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span>
 <span class="c1"># show the head of the dataframe</span>
@@ -1316,10 +1322,10 @@ Name: Daily Rainfall Total (mm), dtype: float64
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../others/refs.html" title="next page">
+        <a class="right-next" href="matplotlib-advanced.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">References</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Matplotlib tutorial (Advanced)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
