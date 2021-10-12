@@ -12,3 +12,6 @@ dependencies:
   - notebook
   - jupytext
   - plotly
+  - cartopy
+  - xarray
+  - netcdf4
