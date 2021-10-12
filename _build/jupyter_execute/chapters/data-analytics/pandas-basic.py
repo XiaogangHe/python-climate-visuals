@@ -25,7 +25,7 @@ print(pd.__version__)
 # The `Series` is designed to accommodate a sequence of one-dimensional data, and the `Dataframe` is designed to contain cases with several dimensions.
 
 # ## Series
-# As shown below, the structure of the `Series` object is simple, which is consist of two columns data that have the same length. The **Value** column holds the data (data of any `NumPy` type) to which each element is associated with a label, contained within the **index** column, called the `index`.
+# As shown below, the structure of the `Series` object is simple, which consists of two columns of data that have the same length. The **Value** column holds the data (data of any `NumPy` type) where each element is associated with a label, contained within the **index** column, called the `index`.
 # 
 # |index|Value|
 # |:---|--:|
@@ -40,17 +40,17 @@ print(pd.__version__)
 # In[2]:
 
 
-s = pd.Series(data = [-1,3,8]) # list
+s = pd.Series(data=[-1, 3, 8])  # list
 print(s)
 # 'data' is the first location parameter, usually ignore parameter name
-s1 = pd.Series(s) # from another Series
+s1 = pd.Series(s)  # from another Series
 print(s1)
 
 
 # As you can see from the output of the `Series` object, on the left column there is the `index` column, which is a series of labels, and on the right are the corresponding values.
 
 # :::{note}
-# If you do not specify any index during the definition of the series, by default, pandas will assign numerical values increasing from 0 as labels. In this case, the labels correspond to the indexes (position in the array) of the elements in the series object.
+# If you do not specify any index during the definition of the series, by default, pandas will assign numerical values increasing from 0 as labels. In this case, the labels correspond to the indexes (positions in the array) of the elements in the series object.
 # :::
 
 # In general, it is best to create a `Series` object with meaningful labels to distinguish and identify each value. During the constructor call, the labels are added by specifying the value of the `index` option or directly specifying the argument `data` as a `dict` object.
@@ -58,10 +58,10 @@ print(s1)
 # In[3]:
 
 
-s2 = pd.Series([-1, 3, 8], index=['x', 'y', 'z']) # specify the index by 'index' option
+s2 = pd.Series([-1, 3, 8], index=['x', 'y', 'z'])  # specify the index by 'index' option
 print(s2)
 
-s3 = pd.Series({"a":-1, "b":3, "c":8}) # dictionary
+s3 = pd.Series({"a": -1, "b": 3, "c": 8})  # dictionary
 print(s3)
 
 
@@ -111,7 +111,7 @@ print(s4.index)
 # In[7]:
 
 
-s = pd.Series({"a":-1,"b":3,"c":8})
+s = pd.Series({"a": -1, "b": 3, "c": 8})
 s[1]
 
 
@@ -123,7 +123,7 @@ s[1]
 s['a']
 
 
-# In the same way, you select multiple items in a `Numpy` array, you can specify slices as following:
+# In the same way that you select multiple items in a `Numpy` array, you can specify slices as following:
 
 # In[9]:
 
@@ -154,17 +154,17 @@ s
 
 # ### Filtering Values
 
-# If you need to get which elements in the series are greater than 4, you
+# If you need to get the indexes and values of the elements in the series that are greater than 4, you
 # write the following
 
 # In[13]:
 
 
 s = pd.Series([1, 3, 5, 2, 10])
-s[s>4] # greater than 4
+s[s > 4]  # greater than 4
 
 
-# Or you can get some elements whose position is `True` by specifying a Series filled in boolean values , you write the following
+# Or you can get the elements that satisfy specific conditions by writing the following
 
 # In[14]:
 
@@ -181,7 +181,7 @@ print(s[s.isin([2, 5])])
 # In[15]:
 
 
-s*2.5
+s * 2.5
 
 
 # In[16]:
@@ -192,7 +192,7 @@ np.exp(s)
 
 # ### Nan Value
 
-# The `NaN` refers to `Not a Number`, which generally is caused by the missing value. Before data analysis, the `NaN` value need to be adressed.
+# The `NaN` refers to `Not a Number`, which generally is caused by the missing value. Before data analysis, the `NaN` values need to be addressed.
 
 # In[17]:
 
@@ -226,16 +226,16 @@ print(s[s.notnull()])
 # In[20]:
 
 
-s = pd.Series({"Singapore":30, "Malaysia":23, "Vietnam":36, "Cambodia":41})
-s1 = pd.Series({"China":51, "Japan":73, "Vietnam":36, "Laos":31})
-s*s1
+s = pd.Series({"Singapore": 30, "Malaysia": 23, "Vietnam": 36, "Cambodia": 41})
+s1 = pd.Series({"China": 51, "Japan": 73, "Vietnam": 36, "Laos": 31})
+s * s1
 
 
 # As you can see, only indexes that all series have can operate. 
 
 # ## DataFrame
 
-# Compared with the `Series`, the `DataFrame` can contain multiple dimensional data. Its first column and first row are `index` and `columns`, respectively. (Only for DataFrame without multiple indexes, `DataFrame` with multiple indexes will be introduced in the `Advanced` part). Each column must be the same data type (numeric, string, boolean et al.) but different columns can have different data types.
+# Compared with the `Series`, the `DataFrame` can contain multidimensional data. Its first column and first row are `index` and `columns`, respectively. (Only for DataFrame without multiple indexes, `DataFrame` with multiple indexes will be introduced in the `Advanced` part). Each column must contain the same data type (numeric, string, boolean, etc.) but different columns can have different data types.
 # 
 # |index|numeric|string|boolean|
 # |:--|:--:|:--:|--:|
@@ -246,42 +246,42 @@ s*s1
 
 # ### Defining a DataFrame
 
-# Call `DataFrame()` function to create a `DataFrame`. The `Array`, `List`, `dict` all can taken as the input of `data` argument.
+# Call `DataFrame()` function to create a `DataFrame`. The `Array`, `List` and `dict` all can be taken as the input of `data` argument.
 
 # In[21]:
 
 
 # Array
-df = pd.DataFrame(np.array([[14, 35, 35, 35],
-                            [19, 34, 57, 34],
-                            [42, 74, 49, 59]]))
+df = pd.DataFrame(
+    np.array([[14, 35, 35, 35], [19, 34, 57, 34], [42, 74, 49, 59]]))
 print(df)
 
 # List,  use 'columns' and 'index' parameters to specify the column and index of generated dataframe.
 df = pd.DataFrame([["Malaysia", "Kuala Lumpur", 32365999, False],
-              ["Singapore", "Singapore", 5850342, True],
-              ["Vietnam", "Hanoi", 97338579, True]],
-              columns = ["Country", "Capital", "Population", "Isdeveloped"],
-              index=["a", "b", "c"])
+                   ["Singapore", "Singapore", 5850342, True],
+                   ["Vietnam", "Hanoi", 97338579, True]],
+                  columns=["Country", "Capital", "Population", "Isdeveloped"],
+                  index=["a", "b", "c"])
 print(df)
 
 # dict
-df = pd.DataFrame({"Country":["Malaysia", "Singapore", "Vietnam"],
-                   "Capital":["Kuala Lumpur", "Singapore", "Hanoi"],
-              "Population":[32365999, 5850342, 97338579],
-              "Isdeveloped":[False, True, True]}, index=["a", "b", "c"])
-df
+df = pd.DataFrame({"Country": ["Malaysia", "Singapore", "Vietnam"],
+                   "Capital": ["Kuala Lumpur", "Singapore", "Hanoi"],
+                   "Population": [32365999, 5850342, 97338579],
+                   "Isdeveloped": [False, True, True]},
+                  index=["a", "b", "c"])
+print(df)
 
 
 # ### Selecting the Internal Elements
 
-# Similar with `Series`, two ways can be used to select the elements from `DataFrame`. Call `iloc[]` and `loc[]` to select the elements by position and label, respectively .
+# Similar to `Series`, two ways can be used to select the elements from `DataFrame`. Call `iloc[]` and `loc[]` to select the elements by position and label, respectively .
 
 # In[22]:
 
 
 # use ':' to represent select all
-df.iloc[:,0:2]
+df.iloc[:, 0:2]
 
 
 # In[23]:
@@ -302,7 +302,7 @@ df.loc["a", ["Country", "Population"]]
 df.iloc[[0, 1]] # If you omit number of columns, all columns will be selected 
 
 
-# Use ```columns```,```index``` and ```values``` atrributes to obtain corresponding object value.
+# Use ```columns```,```index``` and ```values``` attributes to obtain corresponding object value.
 
 # In[26]:
 
@@ -322,7 +322,7 @@ df.columns
 df.values
 
 
-# Select corresponding column according the label or number of columns.
+# Select the corresponding column(s) according to the labels or indexes of columns.
 
 # In[29]:
 
@@ -381,7 +381,7 @@ df
 
 df1.index = ["e", "f", "g"]
 df1.index.name = "label"
-df1.columns.name = "atributes"
+df1.columns.name = "attributes"
 df1.columns = ["Coun", "Cap", "Pop", "ID"]
 df1
 
@@ -402,29 +402,29 @@ df1
 
 
 df2 = pd.DataFrame(np.array([[14, 35, 35, 35],
-                            [19, 34, 57, 34],
-                            [42, 74, 49, 59]]))
+                             [19, 34, 57, 34],
+                             [42, 74, 49, 59]]))
 # filtering lesser than 30
-df2[df2<30]
+df2[df2 < 30]
 
 
 # In[39]:
 
 
 # Filtering accroding to conditions of one column
-df[df["Population"]<50000000]
+df[df["Population"] < 50000000]
 
 
-# You can filter the `DataFrame` according to conditions of multiple columns like following:
+# You can filter the `DataFrame` according to conditions of multiple columns like the following:
 
 # In[40]:
 
 
-df[(df["Population"] < 50000000) & (df["Isdeveloped"]==True)]
+df[(df["Population"] < 50000000) & (df["Isdeveloped"] == True)]
 
 
 # ### Transposition  of a Dataframe
-# Same as `Numpy` array, `Dataframe` can transpose. `Columns` changes to `Index` and `Index` changes to `Columns`.
+# Same as `Numpy` array, `Dataframe` can be transposed. `Columns` changes to `Index` and `Index` changes to `Columns`.
 
 # In[41]:
 
@@ -507,8 +507,8 @@ df1.tail(3)
 # In[50]:
 
 
-df1 = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'], 
-                 columns=['c1', 'c2', 'c3', 'c4', 'c5'])
+df1 = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'],
+                   columns=['c1', 'c2', 'c3', 'c4', 'c5'])
 df1.cov()
 
 
@@ -563,12 +563,12 @@ df1.sort_values(by=['Population', 'Country'], ascending=False, na_position='firs
 # In[57]:
 
 
-df1 = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'], 
-                 columns=['c1', 'c2', 'c3', 'c4', 'c5'])
-df1.iloc[0,1] = np.nan
-df1.iloc[2,2] = np.nan
-df1.iloc[3,1] = np.nan
-df1.iloc[3,3] = np.nan
+df1 = pd.DataFrame(np.random.rand(5, 5), index=['i1', 'i2', 'i3', 'i4', 'i5'],
+                   columns=['c1', 'c2', 'c3', 'c4', 'c5'])
+df1.iloc[0, 1] = np.nan
+df1.iloc[2, 2] = np.nan
+df1.iloc[3, 1] = np.nan
+df1.iloc[3, 3] = np.nan
 df1
 
 
@@ -581,7 +581,7 @@ print(df1.notnull())
 print(df1.isna())
 
 
-# With dataframe with full Boolean values generated above, you can easily get the number of Nan values
+# After obtaining the dataframe with Boolean values, you can easily get the number of `NaN` values
 
 # In[59]:
 
@@ -605,7 +605,6 @@ df1.fillna(value=0)
 # fill NaN value using a method
 # set inplace to True, the changes will act on dataframe
 df1.fillna(method="ffill") # other method: ‘backfill’, ‘bfill’, ‘pad’
-df1
 
 
 # In[62]:
@@ -635,7 +634,7 @@ df1.dropna(axis="index", how="any")
 
 dti = pd.date_range("2018-01-01", periods=3, freq="H")
 print(dti)
-dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
+dti = pd.date_range(start="2021-09-28", end="2021-09-30", freq="10H")
 print(dti)
 
 
@@ -644,7 +643,7 @@ print(dti)
 # In[65]:
 
 
-dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
+dti = pd.date_range(start="2021-09-28", end="2021-09-30", freq="10H")
 dti = dti.tz_localize("UTC")
 dti
 
@@ -652,7 +651,7 @@ dti
 # In[66]:
 
 
-dti = pd.date_range(start = "2021-09-28", end="2021-09-30", freq="10H")
+dti = pd.date_range(start="2021-09-28", end="2021-09-30", freq="10H")
 dti = dti.tz_localize("Asia/Singapore")
 dti
 
@@ -665,7 +664,7 @@ dti
 pd.to_datetime([100, 101, 102], unit="h", origin=pd.Timestamp("1900-01-01 00:00:00"))
 
 
-# Supported units are: `D`:day, `h`:hour, `m`: minute, and `s`:second.
+# Supported units are `D`: day, `h`: hour, `m`: minute, and `s`: second.
 
 # :::{tip}
 # The time labels of climate products is usually given a start time point and discrete time interval, and then represented by a column of integers. In this case, we can use above way to construct time labels.
@@ -674,7 +673,7 @@ pd.to_datetime([100, 101, 102], unit="h", origin=pd.Timestamp("1900-01-01 00:00:
 # ## Upsampling and Downsampling
 
 # * Upsampling: Increase the frequency of the samples by interpolation, such as from minutes to seconds. 
-# * Downsampling: Ddecrease the frequency of the samples by aggregation, such as from months to years.
+# * Downsampling: Decrease the frequency of the samples by aggregation, such as from months to years.
 # 
 
 # In[68]:
@@ -689,9 +688,10 @@ data.head()
 # In[69]:
 
 
-# Downsampling: Convert monthly data to yearly data by sum and max
+# Downsampling: Convert monthly data to yearly data by sum or max
 df = data.copy(deep=True)
 dfsum = df.resample("Y").sum()
+dfsum.columns = ["Yearly Rainfall Total (mm)"]
 dfsum.head()
 
 
@@ -699,13 +699,15 @@ dfsum.head()
 
 
 dfmax = df.resample("Y").max()
+dfmax.columns = ["Yearly Rainfall Maximum (mm)"]
 dfmax.head()
 
 
 # In[71]:
 
 
-# Upsampling: Convert monthly data to yearly data by sum and max
+# Upsampling: Convert monthly data to 10 days' data 
+# by directly return (asfreq) or forward filling (pad/ffill)
 dfmax.resample('10D').asfreq()[0:5]
 
 
@@ -723,7 +725,7 @@ dfmax.resample('D').ffill(limit=2)[0:5]
 
 # ## Input/Output of data
 
-# Typically, you can read data from files ending in ". Xlsx" and ". CSV" using `read_excel()` and `read_csv()` functions , respectively. The `index_col` and `header` arguments are used to specify which column and row are used as `index` and `columns` of dataframe. You can also set `parse_dates` as `True` to parse `index` as the date format. If your date format is uncommon, you can specify the `date_parser` argument which is a function to use for converting a sequence of string columns to an array of datetime instances.
+# Typically, you can read data from files ending with ". Xlsx" and ". CSV" using `read_excel()` and `read_csv()` functions, respectively. The `index_col` and `header` arguments are used to specify which column and row are used as `index` and `columns` of dataframe. You can also set `parse_dates` as `True` to parse `index` as the date format. If your date format is uncommon, you can specify the `date_parser` argument which is a function to use for converting a sequence of string columns to an array of datetime instances.
 
 # In[74]:
 
@@ -752,7 +754,7 @@ df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, hea
 df.head()
 
 
-# The usage of `read_excel()` function is same as the `read_csv()`
+# The usage of `read_excel()` function is the same as the `read_csv()`
 
 # :::{tip}
 # 1. The `Series` objects can be regarded as the special `DataFrames` object. Actually, when you extract one column from the `DataFrames`, it will be converted to the `Series`.

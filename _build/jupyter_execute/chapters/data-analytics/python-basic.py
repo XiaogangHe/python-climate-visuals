@@ -40,7 +40,8 @@ print(quicksort([3,6,8,10,1,2,1]))
 # If you wish to run this tutorial entirely in Binder, click the rocket logo and binder at the very top of pages.
 # 
 # + **Run Tutorials in Jupyter Notebook**.
-# If you wish to run the notebook locally with Jupyter, make sure your virtual environment is installed correctly, activate it, then run `pip install notebook` to install Jupyter notebook. Next, open the notebook and download it to a directory of your choice by right-clicking on the page and selecting `Save Page As`. Then run `jupyter notebook`. This should automatically launch a notebook server at `http://localhost:8888`. Find the `.ipynb` jupyter notebook you just downloaded and open it. Now, you will get the same page as Binder.
+# If you wish to run the notebook locally with Jupyter, we would recommend to install [anaconda3](https://www.anaconda.com/products/individual). After the installation, you could open `Anaconda Navigator` and launch Jupyter Notebook in its home. Now, you will get the same page as Binder. 
+# If you wish, you could also try `Anaconda Prompt` (for Windows) to open jupyter notebook. After `Anaconda Prompt` is opened, just run `jupyter-notebook` in the command window. You will also get the page of Jupyter Notebook.
 
 # As of January 1, 2020, Python has [officially dropped support](https://www.python.org/doc/sunset-python-2/) for `python2`. We'll be using Python 3.7 throughout the course. In Jupyter notebook, we can check the Python version by clicking `Help -> About`.
 
@@ -110,31 +111,45 @@ print(t != f)  # Logical XOR;
 # In[7]:
 
 
-hello = 'hello'   # String literals can use single quotes
-world = "world"   # or double quotes
+h = 'hello'   # String literals can use single quotes
+w = "world"   # or double quotes
 
-print(hello, len(hello))
+print(h, len(h))
 
 
 # In[8]:
 
 
-hw = hello + ' ' + world  # String concatenation
+hw = h + ' ' + w  # String concatenation
 
 print(hw)
 
 
+# Besides fixed strings in the above, we may need to format strings based on the variables that we have declared. There are multiple ways to format strings in Python. One common way is to use `%` in the string inserting values that come after. This is quite similar to C, Matlab, etc.
+
 # In[9]:
 
 
-hw12 = '{} {} {}'.format(hello, world, 12)  # string formatting
+hw1 = "%s %-10s! Number: %d"%(h, w, 1) # String formatting
 
-print(hw12)
+print(hw1)
+
+
+# The above way requires that values are inserted in the order they appear. Another way to format strings is to use the `format()` method of strings. This allows us to insert values in different orders or even use a value multiple times. Distinct to the above method, this method uses `{}` as placeholders.
+
+# In[10]:
+
+
+hw2 = '{} {}! Number: {}'.format(h, w, 2)  # String formatting
+print(hw2)
+
+hw3 = '{1} {0}! Number: {2:.2f}'.format(h, w, 3)  # String formatting
+print(hw3)
 
 
 # String objects have a bunch of useful methods; for example:
 
-# In[10]:
+# In[11]:
 
 
 s = "hello"
@@ -156,7 +171,7 @@ print('  world '.strip())  # Strip leading and trailing whitespace
 
 # List is the most commonly used data structure. Think of it as a sequence of data that is enclosed in square brackets `[]` and data are separated by a comma `,`. Note that elements in Python lists could have different data types.
 
-# In[11]:
+# In[12]:
 
 
 x = [3, 1, 2]     # Create a list
@@ -168,7 +183,7 @@ print(s, len(s))  # Built-in function len() return the number of elements
 
 # There are some useful built-in methods of lists, such as `append` (to add elements to the end of lists) and `pop` (to remove a specific element from lists).
 
-# In[12]:
+# In[13]:
 
 
 xs = [3, 1, 'foo']
@@ -183,7 +198,7 @@ print(x, xs)
 # 
 # Each element in lists can be accessed by calling its index value. Note that in python, **indexing starts from 0**. Indexing can also be **in reverse order using negative values** (that is the last element can be accessed first with indexing -1).
 
-# In[13]:
+# In[14]:
 
 
 print(xs[2])     # Indexing 3rd element; list indexing starts from 0
@@ -194,7 +209,7 @@ print(xs[-1])    # Negative indices count from the end of the list
 # 
 # Indexing was only limited to accessing a single element, but slicing on the other hand accesses a sequence of data inside the list. Slicing is done by defining the index values of the first element (a) and the last element (b) in the form of parentlist `[a:b]`. **Note that b is not included in the resulting slicing**. If a (or b) is not defined then the slicing will start from the first (or end with the last).
 
-# In[14]:
+# In[15]:
 
 
 nums = list(range(6))  # range() is a built-in function that creates a list of integers
@@ -209,7 +224,7 @@ print(nums)
 
 # You can also slice a parent list with a fixed step length (c): `[a:b:c]`.
 
-# In[15]:
+# In[16]:
 
 
 print(nums[:-1:2])  # Get a slice from index 0 to -1 (exclusive) in a step length of 2
@@ -222,7 +237,7 @@ print(nums[::-1])   # Get a slice of whole list in reverse order
 
 # A dictionary stores pairs of `key` and `value` in the form of braces `{key: value}`. Dictionaries are more used like a database because here you can index a particular sequence with your user-defined string.
 
-# In[16]:
+# In[17]:
 
 
 d = {'cat': 'cute', 'dog': 'furry'}  # Create a new dictionary with some data
@@ -230,7 +245,7 @@ print(d['cat'])       # Get an value from a dictionary
 print('cat' in d)     # Check if a dictionary has a given key
 
 
-# In[17]:
+# In[18]:
 
 
 d['fish'] = 'wet'   # Set a new entry in a dictionary
@@ -239,14 +254,14 @@ print('fish' in d)
 
 # One useful built-in method of dictionaries is `get` where you can get the value with a default for the cases when the key does not exist.
 
-# In[18]:
+# In[19]:
 
 
 print(d.get('monkey', 'N/A'))  # Get a value with a default
 print(d.get('fish', 'N/A'))    # Get a value with a default
 
 
-# In[19]:
+# In[20]:
 
 
 del d['fish']               # Remove an element from a dictionary
@@ -257,7 +272,7 @@ print(d.get('fish', 'N/A')) # "fish" is no longer a key
 
 # A tuple is an (immutable) ordered list of values in the form of parentheses `()`. A tuple is in many ways similar to a list; one of the most important differences is that tuples can be used as keys in dictionaries and as elements of sets, while lists cannot.
 
-# In[20]:
+# In[21]:
 
 
 t1 = (5, 6)       # Create a tuple
@@ -269,7 +284,7 @@ print(type(t1))
 print(d[t1], d[(7, 8)])       
 
 
-# In[21]:
+# In[22]:
 
 
 # t[0] = 1  # Tuple is immutable after its initialization; 
@@ -280,7 +295,7 @@ print(d[t1], d[(7, 8)])
 # ### Conditions: if-elif-else
 # Control flow of conditions is used to execute different algorithms under different conditions. Next is an example. **Note that there should be indentation with four blanks for each section of algorithms.**
 
-# In[22]:
+# In[23]:
 
 
 x = 10
@@ -301,7 +316,7 @@ else:
 # 
 # Here is an example that iterates over elements in lists.
 
-# In[23]:
+# In[24]:
 
 
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -310,9 +325,9 @@ for list1 in list_of_lists:  # Iterate over elements in list_of_lists
     print(list1)         # Four blanks before the algorithm
 
 
-# For dictionaries, we could also iterate over pairs of key and value.
+# For dictionaries, we could also iterate over pairs of keys and values.
 
-# In[24]:
+# In[25]:
 
 
 d = {'person': 2, 'cat': 4, 'spider': 8}
@@ -325,7 +340,7 @@ for animal, legs in d.items():
 # 
 # Here is an example that iterates under a specific condition.
 
-# In[25]:
+# In[26]:
 
 
 i = 1
@@ -339,7 +354,7 @@ print('Bye')    # This is not a part of iterations
 # ### List comprehensions
 # List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list. We can employ control flows of other lists in the initialization of a new list.
 
-# In[26]:
+# In[27]:
 
 
 nums = [0, 1, 3, 4, 6]
@@ -352,7 +367,7 @@ print(even_squares)
 
 # Similarly, for dictionaries, we could use dictionary comprehension to create a new dictionary based on an existing list.
 
-# In[27]:
+# In[28]:
 
 
 nums = [0, 1, 2, 3, 4]
@@ -365,7 +380,7 @@ print(even_num_to_square)
 
 # Python functions are defined using the `def` keyword. Here is an example function which return the sign of a value.
 
-# In[28]:
+# In[29]:
 
 
 def sign(x): # Define a function
@@ -385,7 +400,7 @@ for x in [-1, 0, 1]:
 
 # We often define functions to take optional keyword arguments, like this:
 
-# In[29]:
+# In[30]:
 
 
 def hello(name, loud=False):
@@ -402,7 +417,7 @@ hello('Fred', loud=True)
 
 # The syntax for defining classes in Python is straightforward. `__init__` is defined as the initialization method of classes.
 
-# In[30]:
+# In[31]:
 
 
 class Greeter:
@@ -429,7 +444,7 @@ g.greet(loud=True)   # Call an instance method
 # 
 # We could import modules by a statement of `import`. To access one of the functions, you have to specify the name of the module and the name of the function, separated by a dot `.`.
 
-# In[31]:
+# In[32]:
 
 
 import numpy  # import NumPy module
@@ -440,7 +455,7 @@ print(numpy.arange(1,5)) # arange function generates evenly spaced values
 
 # Sometimes, in order to facilitate scripting we may wish to assign a short alias to the module name; we may also directly import specific functions or subpackages so that we could use it without the module name.
 
-# In[32]:
+# In[33]:
 
 
 # Assign a short alias to make it easier for us to use it
@@ -452,7 +467,7 @@ from numpy import arange
 print(arange(1, 4))
 
 
-# In[33]:
+# In[34]:
 
 
 # try this!
@@ -461,9 +476,9 @@ import antigravity
 
 # ## Look for documentation of packages
 
-# We may need instant documentation of specific modules and their functions. The instant documentation could be printed out using built-in function `help`.
+# We may need instant documentation of specific modules and their functions when necessary. The instant documentation could be printed out using the built-in function `help`.
 
-# In[34]:
+# In[35]:
 
 
 import numpy as np
