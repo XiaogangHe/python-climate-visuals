@@ -461,8 +461,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span><span class="s2">&quot;rainfall&quot;</span><span class="p">,</span><span class="s2">&quot;runoff&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;rainfall&quot;</span><span class="p">,</span> <span class="s2">&quot;runoff&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">],</span>
 <span class="p">]</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">(</span><span class="n">iterables</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;factor&quot;</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">])</span>
 <span class="n">idx</span>
@@ -682,15 +682,15 @@
 </table>
 </div></div></div>
 </div>
-<p>You can  use <code class="docutils literal notranslate"><span class="pre">pd.MultiIndex.from_tuples()</span></code>, <code class="docutils literal notranslate"><span class="pre">pd.MultiIndex.from_frame()</span></code> to create a MultiIndex</p>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">pd.MultiIndex.from_tuples()</span></code>, <code class="docutils literal notranslate"><span class="pre">pd.MultiIndex.from_frame()</span></code> to create a MultiIndex.</p>
 </div>
 <div class="section" id="get-single-index-for-a-multiindex">
 <h3><span class="section-number">3.2.1.2. </span>Get single index for a MultiIndex<a class="headerlink" href="#get-single-index-for-a-multiindex" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span><span class="s2">&quot;rainfall&quot;</span><span class="p">,</span><span class="s2">&quot;runoff&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;rainfall&quot;</span><span class="p">,</span> <span class="s2">&quot;runoff&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">],</span>
 <span class="p">]</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">(</span><span class="n">iterables</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;factor&quot;</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">])</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
@@ -807,64 +807,23 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.488252</td>
-      <td>1.895889</td>
-      <td>1.178780</td>
-      <td>0.179925</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.070753</td>
-      <td>1.054452</td>
-      <td>0.403177</td>
-      <td>1.222445</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.208275</td>
-      <td>0.976639</td>
-      <td>0.356366</td>
-      <td>0.706573</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.208592
+1    1.308993
+2    0.377323
+3    0.583031
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func_x3</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="c1"># lambda functiodn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func_x3</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>  <span class="c1"># lambda function</span>
 <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func_x3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -922,15 +881,16 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function don&#39;t have specific meaning. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function does not have specific meaning.</span>
 <span class="c1"># It only defines a complex operation for each element of dataframe.</span>
 <span class="k">def</span> <span class="nf">func_range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">elif</span> <span class="n">x</span><span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
 <span class="n">df</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">func_range</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -993,7 +953,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">subdf</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;factor&quot;</span><span class="p">]):</span>
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">subdf</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;factor&quot;</span><span class="p">]):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">subdf</span><span class="p">)</span>
 </pre></div>
@@ -1091,7 +1051,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;month&#39;</span>
@@ -1622,7 +1582,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmonth</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">dfmonth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dfmonth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2015&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span>
@@ -1789,9 +1749,13 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># highlight monthly rainfall which is greater than 200 mm and less than 50 mm</span>
 <span class="k">def</span> <span class="nf">highlight_G200</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">props</span> <span class="k">if</span> <span class="n">s</span><span class="o">&gt;</span><span class="mi">200</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">props</span> <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="mi">200</span> <span class="k">else</span> <span class="kc">None</span>
+
+
 <span class="k">def</span> <span class="nf">highlight_L50</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">props</span> <span class="k">if</span> <span class="n">s</span><span class="o">&lt;</span><span class="mi">50</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">props</span> <span class="k">if</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="k">else</span> <span class="kc">None</span>
+
+
 <span class="n">s</span> <span class="o">=</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">style</span>
 <span class="n">s</span><span class="o">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">s</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">highlight_G200</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="s1">&#39;color:#3333ff&#39;</span><span class="p">)</span>
@@ -1801,14 +1765,14 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_66d5f_row0_col3, #T_66d5f_row3_col2, #T_66d5f_row4_col5, #T_66d5f_row5_col5, #T_66d5f_row9_col3, #T_66d5f_row10_col1, #T_66d5f_row10_col2, #T_66d5f_row10_col5, #T_66d5f_row11_col0, #T_66d5f_row11_col1, #T_66d5f_row11_col2, #T_66d5f_row11_col4, #T_66d5f_row11_col5 {
+#T_f5739_row0_col3, #T_f5739_row3_col2, #T_f5739_row4_col5, #T_f5739_row5_col5, #T_f5739_row9_col3, #T_f5739_row10_col1, #T_f5739_row10_col2, #T_f5739_row10_col5, #T_f5739_row11_col0, #T_f5739_row11_col1, #T_f5739_row11_col2, #T_f5739_row11_col4, #T_f5739_row11_col5 {
   color: #3333ff;
 }
-#T_66d5f_row1_col0, #T_66d5f_row1_col3, #T_66d5f_row1_col4, #T_66d5f_row2_col1, #T_66d5f_row2_col3, #T_66d5f_row6_col4, #T_66d5f_row7_col4, #T_66d5f_row8_col4 {
+#T_f5739_row1_col0, #T_f5739_row1_col3, #T_f5739_row1_col4, #T_f5739_row2_col1, #T_f5739_row2_col3, #T_f5739_row6_col4, #T_f5739_row7_col4, #T_f5739_row8_col4 {
   color: #ff3333;
 }
 </style>
-<table id="T_66d5f_">
+<table id="T_f5739_">
   <thead>
     <tr>
       <th class="index_name level0" >year</th>
@@ -1831,112 +1795,112 @@ temperature max     0.010500  1.785870  0.126912  0.401989
   </thead>
   <tbody>
     <tr>
-      <th id="T_66d5f_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_66d5f_row0_col0" class="data row0 col0" >79.600000</td>
-      <td id="T_66d5f_row0_col1" class="data row0 col1" >127.000000</td>
-      <td id="T_66d5f_row0_col2" class="data row0 col2" >197.800000</td>
-      <td id="T_66d5f_row0_col3" class="data row0 col3" >287.000000</td>
-      <td id="T_66d5f_row0_col4" class="data row0 col4" >63.600000</td>
-      <td id="T_66d5f_row0_col5" class="data row0 col5" >88.400000</td>
+      <th id="T_f5739_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_f5739_row0_col0" class="data row0 col0" >79.600000</td>
+      <td id="T_f5739_row0_col1" class="data row0 col1" >127.000000</td>
+      <td id="T_f5739_row0_col2" class="data row0 col2" >197.800000</td>
+      <td id="T_f5739_row0_col3" class="data row0 col3" >287.000000</td>
+      <td id="T_f5739_row0_col4" class="data row0 col4" >63.600000</td>
+      <td id="T_f5739_row0_col5" class="data row0 col5" >88.400000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_66d5f_row1_col0" class="data row1 col0" >18.800000</td>
-      <td id="T_66d5f_row1_col1" class="data row1 col1" >186.000000</td>
-      <td id="T_66d5f_row1_col2" class="data row1 col2" >159.200000</td>
-      <td id="T_66d5f_row1_col3" class="data row1 col3" >14.800000</td>
-      <td id="T_66d5f_row1_col4" class="data row1 col4" >31.600000</td>
-      <td id="T_66d5f_row1_col5" class="data row1 col5" >65.000000</td>
+      <th id="T_f5739_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_f5739_row1_col0" class="data row1 col0" >18.800000</td>
+      <td id="T_f5739_row1_col1" class="data row1 col1" >186.000000</td>
+      <td id="T_f5739_row1_col2" class="data row1 col2" >159.200000</td>
+      <td id="T_f5739_row1_col3" class="data row1 col3" >14.800000</td>
+      <td id="T_f5739_row1_col4" class="data row1 col4" >31.600000</td>
+      <td id="T_f5739_row1_col5" class="data row1 col5" >65.000000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_66d5f_row2_col0" class="data row2 col0" >84.400000</td>
-      <td id="T_66d5f_row2_col1" class="data row2 col1" >6.200000</td>
-      <td id="T_66d5f_row2_col2" class="data row2 col2" >136.600000</td>
-      <td id="T_66d5f_row2_col3" class="data row2 col3" >44.600000</td>
-      <td id="T_66d5f_row2_col4" class="data row2 col4" >72.200000</td>
-      <td id="T_66d5f_row2_col5" class="data row2 col5" >108.800000</td>
+      <th id="T_f5739_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_f5739_row2_col0" class="data row2 col0" >84.400000</td>
+      <td id="T_f5739_row2_col1" class="data row2 col1" >6.200000</td>
+      <td id="T_f5739_row2_col2" class="data row2 col2" >136.600000</td>
+      <td id="T_f5739_row2_col3" class="data row2 col3" >44.600000</td>
+      <td id="T_f5739_row2_col4" class="data row2 col4" >72.200000</td>
+      <td id="T_f5739_row2_col5" class="data row2 col5" >108.800000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_66d5f_row3_col0" class="data row3 col0" >73.200000</td>
-      <td id="T_66d5f_row3_col1" class="data row3 col1" >89.800000</td>
-      <td id="T_66d5f_row3_col2" class="data row3 col2" >210.400000</td>
-      <td id="T_66d5f_row3_col3" class="data row3 col3" >61.200000</td>
-      <td id="T_66d5f_row3_col4" class="data row3 col4" >174.800000</td>
-      <td id="T_66d5f_row3_col5" class="data row3 col5" >188.000000</td>
+      <th id="T_f5739_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_f5739_row3_col0" class="data row3 col0" >73.200000</td>
+      <td id="T_f5739_row3_col1" class="data row3 col1" >89.800000</td>
+      <td id="T_f5739_row3_col2" class="data row3 col2" >210.400000</td>
+      <td id="T_f5739_row3_col3" class="data row3 col3" >61.200000</td>
+      <td id="T_f5739_row3_col4" class="data row3 col4" >174.800000</td>
+      <td id="T_f5739_row3_col5" class="data row3 col5" >188.000000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_66d5f_row4_col0" class="data row4 col0" >89.000000</td>
-      <td id="T_66d5f_row4_col1" class="data row4 col1" >193.800000</td>
-      <td id="T_66d5f_row4_col2" class="data row4 col2" >191.400000</td>
-      <td id="T_66d5f_row4_col3" class="data row4 col3" >132.200000</td>
-      <td id="T_66d5f_row4_col4" class="data row4 col4" >69.000000</td>
-      <td id="T_66d5f_row4_col5" class="data row4 col5" >255.600000</td>
+      <th id="T_f5739_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_f5739_row4_col0" class="data row4 col0" >89.000000</td>
+      <td id="T_f5739_row4_col1" class="data row4 col1" >193.800000</td>
+      <td id="T_f5739_row4_col2" class="data row4 col2" >191.400000</td>
+      <td id="T_f5739_row4_col3" class="data row4 col3" >132.200000</td>
+      <td id="T_f5739_row4_col4" class="data row4 col4" >69.000000</td>
+      <td id="T_f5739_row4_col5" class="data row4 col5" >255.600000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_66d5f_row5_col0" class="data row5 col0" >95.800000</td>
-      <td id="T_66d5f_row5_col1" class="data row5 col1" >163.200000</td>
-      <td id="T_66d5f_row5_col2" class="data row5 col2" >106.000000</td>
-      <td id="T_66d5f_row5_col3" class="data row5 col3" >182.600000</td>
-      <td id="T_66d5f_row5_col4" class="data row5 col4" >173.800000</td>
-      <td id="T_66d5f_row5_col5" class="data row5 col5" >233.800000</td>
+      <th id="T_f5739_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_f5739_row5_col0" class="data row5 col0" >95.800000</td>
+      <td id="T_f5739_row5_col1" class="data row5 col1" >163.200000</td>
+      <td id="T_f5739_row5_col2" class="data row5 col2" >106.000000</td>
+      <td id="T_f5739_row5_col3" class="data row5 col3" >182.600000</td>
+      <td id="T_f5739_row5_col4" class="data row5 col4" >173.800000</td>
+      <td id="T_f5739_row5_col5" class="data row5 col5" >233.800000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_66d5f_row6_col0" class="data row6 col0" >116.800000</td>
-      <td id="T_66d5f_row6_col1" class="data row6 col1" >168.600000</td>
-      <td id="T_66d5f_row6_col2" class="data row6 col2" >80.000000</td>
-      <td id="T_66d5f_row6_col3" class="data row6 col3" >143.200000</td>
-      <td id="T_66d5f_row6_col4" class="data row6 col4" >12.200000</td>
-      <td id="T_66d5f_row6_col5" class="data row6 col5" >140.800000</td>
+      <th id="T_f5739_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_f5739_row6_col0" class="data row6 col0" >116.800000</td>
+      <td id="T_f5739_row6_col1" class="data row6 col1" >168.600000</td>
+      <td id="T_f5739_row6_col2" class="data row6 col2" >80.000000</td>
+      <td id="T_f5739_row6_col3" class="data row6 col3" >143.200000</td>
+      <td id="T_f5739_row6_col4" class="data row6 col4" >12.200000</td>
+      <td id="T_f5739_row6_col5" class="data row6 col5" >140.800000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row7" class="row_heading level0 row7" >8</th>
-      <td id="T_66d5f_row7_col0" class="data row7 col0" >185.800000</td>
-      <td id="T_66d5f_row7_col1" class="data row7 col1" >139.200000</td>
-      <td id="T_66d5f_row7_col2" class="data row7 col2" >84.200000</td>
-      <td id="T_66d5f_row7_col3" class="data row7 col3" >121.600000</td>
-      <td id="T_66d5f_row7_col4" class="data row7 col4" >11.800000</td>
-      <td id="T_66d5f_row7_col5" class="data row7 col5" >103.400000</td>
+      <th id="T_f5739_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_f5739_row7_col0" class="data row7 col0" >185.800000</td>
+      <td id="T_f5739_row7_col1" class="data row7 col1" >139.200000</td>
+      <td id="T_f5739_row7_col2" class="data row7 col2" >84.200000</td>
+      <td id="T_f5739_row7_col3" class="data row7 col3" >121.600000</td>
+      <td id="T_f5739_row7_col4" class="data row7 col4" >11.800000</td>
+      <td id="T_f5739_row7_col5" class="data row7 col5" >103.400000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row8" class="row_heading level0 row8" >9</th>
-      <td id="T_66d5f_row8_col0" class="data row8 col0" >61.600000</td>
-      <td id="T_66d5f_row8_col1" class="data row8 col1" >118.900000</td>
-      <td id="T_66d5f_row8_col2" class="data row8 col2" >125.200000</td>
-      <td id="T_66d5f_row8_col3" class="data row8 col3" >144.400000</td>
-      <td id="T_66d5f_row8_col4" class="data row8 col4" >22.800000</td>
-      <td id="T_66d5f_row8_col5" class="data row8 col5" >150.200000</td>
+      <th id="T_f5739_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_f5739_row8_col0" class="data row8 col0" >61.600000</td>
+      <td id="T_f5739_row8_col1" class="data row8 col1" >118.900000</td>
+      <td id="T_f5739_row8_col2" class="data row8 col2" >125.200000</td>
+      <td id="T_f5739_row8_col3" class="data row8 col3" >144.400000</td>
+      <td id="T_f5739_row8_col4" class="data row8 col4" >22.800000</td>
+      <td id="T_f5739_row8_col5" class="data row8 col5" >150.200000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row9" class="row_heading level0 row9" >10</th>
-      <td id="T_66d5f_row9_col0" class="data row9 col0" >87.200000</td>
-      <td id="T_66d5f_row9_col1" class="data row9 col1" >181.000000</td>
-      <td id="T_66d5f_row9_col2" class="data row9 col2" >121.600000</td>
-      <td id="T_66d5f_row9_col3" class="data row9 col3" >234.400000</td>
-      <td id="T_66d5f_row9_col4" class="data row9 col4" >176.800000</td>
-      <td id="T_66d5f_row9_col5" class="data row9 col5" >78.800000</td>
+      <th id="T_f5739_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_f5739_row9_col0" class="data row9 col0" >87.200000</td>
+      <td id="T_f5739_row9_col1" class="data row9 col1" >181.000000</td>
+      <td id="T_f5739_row9_col2" class="data row9 col2" >121.600000</td>
+      <td id="T_f5739_row9_col3" class="data row9 col3" >234.400000</td>
+      <td id="T_f5739_row9_col4" class="data row9 col4" >176.800000</td>
+      <td id="T_f5739_row9_col5" class="data row9 col5" >78.800000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row10" class="row_heading level0 row10" >11</th>
-      <td id="T_66d5f_row10_col0" class="data row10 col0" >72.600000</td>
-      <td id="T_66d5f_row10_col1" class="data row10 col1" >290.200000</td>
-      <td id="T_66d5f_row10_col2" class="data row10 col2" >271.000000</td>
-      <td id="T_66d5f_row10_col3" class="data row10 col3" >169.600000</td>
-      <td id="T_66d5f_row10_col4" class="data row10 col4" >137.400000</td>
-      <td id="T_66d5f_row10_col5" class="data row10 col5" >220.600000</td>
+      <th id="T_f5739_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_f5739_row10_col0" class="data row10 col0" >72.600000</td>
+      <td id="T_f5739_row10_col1" class="data row10 col1" >290.200000</td>
+      <td id="T_f5739_row10_col2" class="data row10 col2" >271.000000</td>
+      <td id="T_f5739_row10_col3" class="data row10 col3" >169.600000</td>
+      <td id="T_f5739_row10_col4" class="data row10 col4" >137.400000</td>
+      <td id="T_f5739_row10_col5" class="data row10 col5" >220.600000</td>
     </tr>
     <tr>
-      <th id="T_66d5f_level0_row11" class="row_heading level0 row11" >12</th>
-      <td id="T_66d5f_row11_col0" class="data row11 col0" >302.000000</td>
-      <td id="T_66d5f_row11_col1" class="data row11 col1" >292.600000</td>
-      <td id="T_66d5f_row11_col2" class="data row11 col2" >371.200000</td>
-      <td id="T_66d5f_row11_col3" class="data row11 col3" >172.600000</td>
-      <td id="T_66d5f_row11_col4" class="data row11 col4" >421.500000</td>
-      <td id="T_66d5f_row11_col5" class="data row11 col5" >253.200000</td>
+      <th id="T_f5739_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_f5739_row11_col0" class="data row11 col0" >302.000000</td>
+      <td id="T_f5739_row11_col1" class="data row11 col1" >292.600000</td>
+      <td id="T_f5739_row11_col2" class="data row11 col2" >371.200000</td>
+      <td id="T_f5739_row11_col3" class="data row11 col3" >172.600000</td>
+      <td id="T_f5739_row11_col4" class="data row11 col4" >421.500000</td>
+      <td id="T_f5739_row11_col5" class="data row11 col5" >253.200000</td>
     </tr>
   </tbody>
 </table>
@@ -1946,8 +1910,12 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">highlight_max</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="s1">&#39;background-color:#3399ff&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
 <span class="k">def</span> <span class="nf">highlight_min</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="s1">&#39;background-color:#c0c0c0&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
 <span class="n">s</span> <span class="o">=</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">style</span>
 <span class="n">s</span><span class="o">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">s</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1957,14 +1925,14 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_3d1a9_row0_col3, #T_3d1a9_row4_col5, #T_3d1a9_row11_col0, #T_3d1a9_row11_col1, #T_3d1a9_row11_col2, #T_3d1a9_row11_col4 {
+#T_603b2_row0_col3, #T_603b2_row4_col5, #T_603b2_row11_col0, #T_603b2_row11_col1, #T_603b2_row11_col2, #T_603b2_row11_col4 {
   background-color: #3399ff;
 }
-#T_3d1a9_row1_col0, #T_3d1a9_row1_col3, #T_3d1a9_row1_col5, #T_3d1a9_row2_col1, #T_3d1a9_row6_col2, #T_3d1a9_row7_col4 {
+#T_603b2_row1_col0, #T_603b2_row1_col3, #T_603b2_row1_col5, #T_603b2_row2_col1, #T_603b2_row6_col2, #T_603b2_row7_col4 {
   background-color: #c0c0c0;
 }
 </style>
-<table id="T_3d1a9_">
+<table id="T_603b2_">
   <thead>
     <tr>
       <th class="index_name level0" >year</th>
@@ -1987,112 +1955,112 @@ temperature max     0.010500  1.785870  0.126912  0.401989
   </thead>
   <tbody>
     <tr>
-      <th id="T_3d1a9_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_3d1a9_row0_col0" class="data row0 col0" >79.600000</td>
-      <td id="T_3d1a9_row0_col1" class="data row0 col1" >127.000000</td>
-      <td id="T_3d1a9_row0_col2" class="data row0 col2" >197.800000</td>
-      <td id="T_3d1a9_row0_col3" class="data row0 col3" >287.000000</td>
-      <td id="T_3d1a9_row0_col4" class="data row0 col4" >63.600000</td>
-      <td id="T_3d1a9_row0_col5" class="data row0 col5" >88.400000</td>
+      <th id="T_603b2_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_603b2_row0_col0" class="data row0 col0" >79.600000</td>
+      <td id="T_603b2_row0_col1" class="data row0 col1" >127.000000</td>
+      <td id="T_603b2_row0_col2" class="data row0 col2" >197.800000</td>
+      <td id="T_603b2_row0_col3" class="data row0 col3" >287.000000</td>
+      <td id="T_603b2_row0_col4" class="data row0 col4" >63.600000</td>
+      <td id="T_603b2_row0_col5" class="data row0 col5" >88.400000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_3d1a9_row1_col0" class="data row1 col0" >18.800000</td>
-      <td id="T_3d1a9_row1_col1" class="data row1 col1" >186.000000</td>
-      <td id="T_3d1a9_row1_col2" class="data row1 col2" >159.200000</td>
-      <td id="T_3d1a9_row1_col3" class="data row1 col3" >14.800000</td>
-      <td id="T_3d1a9_row1_col4" class="data row1 col4" >31.600000</td>
-      <td id="T_3d1a9_row1_col5" class="data row1 col5" >65.000000</td>
+      <th id="T_603b2_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_603b2_row1_col0" class="data row1 col0" >18.800000</td>
+      <td id="T_603b2_row1_col1" class="data row1 col1" >186.000000</td>
+      <td id="T_603b2_row1_col2" class="data row1 col2" >159.200000</td>
+      <td id="T_603b2_row1_col3" class="data row1 col3" >14.800000</td>
+      <td id="T_603b2_row1_col4" class="data row1 col4" >31.600000</td>
+      <td id="T_603b2_row1_col5" class="data row1 col5" >65.000000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_3d1a9_row2_col0" class="data row2 col0" >84.400000</td>
-      <td id="T_3d1a9_row2_col1" class="data row2 col1" >6.200000</td>
-      <td id="T_3d1a9_row2_col2" class="data row2 col2" >136.600000</td>
-      <td id="T_3d1a9_row2_col3" class="data row2 col3" >44.600000</td>
-      <td id="T_3d1a9_row2_col4" class="data row2 col4" >72.200000</td>
-      <td id="T_3d1a9_row2_col5" class="data row2 col5" >108.800000</td>
+      <th id="T_603b2_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_603b2_row2_col0" class="data row2 col0" >84.400000</td>
+      <td id="T_603b2_row2_col1" class="data row2 col1" >6.200000</td>
+      <td id="T_603b2_row2_col2" class="data row2 col2" >136.600000</td>
+      <td id="T_603b2_row2_col3" class="data row2 col3" >44.600000</td>
+      <td id="T_603b2_row2_col4" class="data row2 col4" >72.200000</td>
+      <td id="T_603b2_row2_col5" class="data row2 col5" >108.800000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_3d1a9_row3_col0" class="data row3 col0" >73.200000</td>
-      <td id="T_3d1a9_row3_col1" class="data row3 col1" >89.800000</td>
-      <td id="T_3d1a9_row3_col2" class="data row3 col2" >210.400000</td>
-      <td id="T_3d1a9_row3_col3" class="data row3 col3" >61.200000</td>
-      <td id="T_3d1a9_row3_col4" class="data row3 col4" >174.800000</td>
-      <td id="T_3d1a9_row3_col5" class="data row3 col5" >188.000000</td>
+      <th id="T_603b2_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_603b2_row3_col0" class="data row3 col0" >73.200000</td>
+      <td id="T_603b2_row3_col1" class="data row3 col1" >89.800000</td>
+      <td id="T_603b2_row3_col2" class="data row3 col2" >210.400000</td>
+      <td id="T_603b2_row3_col3" class="data row3 col3" >61.200000</td>
+      <td id="T_603b2_row3_col4" class="data row3 col4" >174.800000</td>
+      <td id="T_603b2_row3_col5" class="data row3 col5" >188.000000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_3d1a9_row4_col0" class="data row4 col0" >89.000000</td>
-      <td id="T_3d1a9_row4_col1" class="data row4 col1" >193.800000</td>
-      <td id="T_3d1a9_row4_col2" class="data row4 col2" >191.400000</td>
-      <td id="T_3d1a9_row4_col3" class="data row4 col3" >132.200000</td>
-      <td id="T_3d1a9_row4_col4" class="data row4 col4" >69.000000</td>
-      <td id="T_3d1a9_row4_col5" class="data row4 col5" >255.600000</td>
+      <th id="T_603b2_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_603b2_row4_col0" class="data row4 col0" >89.000000</td>
+      <td id="T_603b2_row4_col1" class="data row4 col1" >193.800000</td>
+      <td id="T_603b2_row4_col2" class="data row4 col2" >191.400000</td>
+      <td id="T_603b2_row4_col3" class="data row4 col3" >132.200000</td>
+      <td id="T_603b2_row4_col4" class="data row4 col4" >69.000000</td>
+      <td id="T_603b2_row4_col5" class="data row4 col5" >255.600000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_3d1a9_row5_col0" class="data row5 col0" >95.800000</td>
-      <td id="T_3d1a9_row5_col1" class="data row5 col1" >163.200000</td>
-      <td id="T_3d1a9_row5_col2" class="data row5 col2" >106.000000</td>
-      <td id="T_3d1a9_row5_col3" class="data row5 col3" >182.600000</td>
-      <td id="T_3d1a9_row5_col4" class="data row5 col4" >173.800000</td>
-      <td id="T_3d1a9_row5_col5" class="data row5 col5" >233.800000</td>
+      <th id="T_603b2_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_603b2_row5_col0" class="data row5 col0" >95.800000</td>
+      <td id="T_603b2_row5_col1" class="data row5 col1" >163.200000</td>
+      <td id="T_603b2_row5_col2" class="data row5 col2" >106.000000</td>
+      <td id="T_603b2_row5_col3" class="data row5 col3" >182.600000</td>
+      <td id="T_603b2_row5_col4" class="data row5 col4" >173.800000</td>
+      <td id="T_603b2_row5_col5" class="data row5 col5" >233.800000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_3d1a9_row6_col0" class="data row6 col0" >116.800000</td>
-      <td id="T_3d1a9_row6_col1" class="data row6 col1" >168.600000</td>
-      <td id="T_3d1a9_row6_col2" class="data row6 col2" >80.000000</td>
-      <td id="T_3d1a9_row6_col3" class="data row6 col3" >143.200000</td>
-      <td id="T_3d1a9_row6_col4" class="data row6 col4" >12.200000</td>
-      <td id="T_3d1a9_row6_col5" class="data row6 col5" >140.800000</td>
+      <th id="T_603b2_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_603b2_row6_col0" class="data row6 col0" >116.800000</td>
+      <td id="T_603b2_row6_col1" class="data row6 col1" >168.600000</td>
+      <td id="T_603b2_row6_col2" class="data row6 col2" >80.000000</td>
+      <td id="T_603b2_row6_col3" class="data row6 col3" >143.200000</td>
+      <td id="T_603b2_row6_col4" class="data row6 col4" >12.200000</td>
+      <td id="T_603b2_row6_col5" class="data row6 col5" >140.800000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row7" class="row_heading level0 row7" >8</th>
-      <td id="T_3d1a9_row7_col0" class="data row7 col0" >185.800000</td>
-      <td id="T_3d1a9_row7_col1" class="data row7 col1" >139.200000</td>
-      <td id="T_3d1a9_row7_col2" class="data row7 col2" >84.200000</td>
-      <td id="T_3d1a9_row7_col3" class="data row7 col3" >121.600000</td>
-      <td id="T_3d1a9_row7_col4" class="data row7 col4" >11.800000</td>
-      <td id="T_3d1a9_row7_col5" class="data row7 col5" >103.400000</td>
+      <th id="T_603b2_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_603b2_row7_col0" class="data row7 col0" >185.800000</td>
+      <td id="T_603b2_row7_col1" class="data row7 col1" >139.200000</td>
+      <td id="T_603b2_row7_col2" class="data row7 col2" >84.200000</td>
+      <td id="T_603b2_row7_col3" class="data row7 col3" >121.600000</td>
+      <td id="T_603b2_row7_col4" class="data row7 col4" >11.800000</td>
+      <td id="T_603b2_row7_col5" class="data row7 col5" >103.400000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row8" class="row_heading level0 row8" >9</th>
-      <td id="T_3d1a9_row8_col0" class="data row8 col0" >61.600000</td>
-      <td id="T_3d1a9_row8_col1" class="data row8 col1" >118.900000</td>
-      <td id="T_3d1a9_row8_col2" class="data row8 col2" >125.200000</td>
-      <td id="T_3d1a9_row8_col3" class="data row8 col3" >144.400000</td>
-      <td id="T_3d1a9_row8_col4" class="data row8 col4" >22.800000</td>
-      <td id="T_3d1a9_row8_col5" class="data row8 col5" >150.200000</td>
+      <th id="T_603b2_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_603b2_row8_col0" class="data row8 col0" >61.600000</td>
+      <td id="T_603b2_row8_col1" class="data row8 col1" >118.900000</td>
+      <td id="T_603b2_row8_col2" class="data row8 col2" >125.200000</td>
+      <td id="T_603b2_row8_col3" class="data row8 col3" >144.400000</td>
+      <td id="T_603b2_row8_col4" class="data row8 col4" >22.800000</td>
+      <td id="T_603b2_row8_col5" class="data row8 col5" >150.200000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row9" class="row_heading level0 row9" >10</th>
-      <td id="T_3d1a9_row9_col0" class="data row9 col0" >87.200000</td>
-      <td id="T_3d1a9_row9_col1" class="data row9 col1" >181.000000</td>
-      <td id="T_3d1a9_row9_col2" class="data row9 col2" >121.600000</td>
-      <td id="T_3d1a9_row9_col3" class="data row9 col3" >234.400000</td>
-      <td id="T_3d1a9_row9_col4" class="data row9 col4" >176.800000</td>
-      <td id="T_3d1a9_row9_col5" class="data row9 col5" >78.800000</td>
+      <th id="T_603b2_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_603b2_row9_col0" class="data row9 col0" >87.200000</td>
+      <td id="T_603b2_row9_col1" class="data row9 col1" >181.000000</td>
+      <td id="T_603b2_row9_col2" class="data row9 col2" >121.600000</td>
+      <td id="T_603b2_row9_col3" class="data row9 col3" >234.400000</td>
+      <td id="T_603b2_row9_col4" class="data row9 col4" >176.800000</td>
+      <td id="T_603b2_row9_col5" class="data row9 col5" >78.800000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row10" class="row_heading level0 row10" >11</th>
-      <td id="T_3d1a9_row10_col0" class="data row10 col0" >72.600000</td>
-      <td id="T_3d1a9_row10_col1" class="data row10 col1" >290.200000</td>
-      <td id="T_3d1a9_row10_col2" class="data row10 col2" >271.000000</td>
-      <td id="T_3d1a9_row10_col3" class="data row10 col3" >169.600000</td>
-      <td id="T_3d1a9_row10_col4" class="data row10 col4" >137.400000</td>
-      <td id="T_3d1a9_row10_col5" class="data row10 col5" >220.600000</td>
+      <th id="T_603b2_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_603b2_row10_col0" class="data row10 col0" >72.600000</td>
+      <td id="T_603b2_row10_col1" class="data row10 col1" >290.200000</td>
+      <td id="T_603b2_row10_col2" class="data row10 col2" >271.000000</td>
+      <td id="T_603b2_row10_col3" class="data row10 col3" >169.600000</td>
+      <td id="T_603b2_row10_col4" class="data row10 col4" >137.400000</td>
+      <td id="T_603b2_row10_col5" class="data row10 col5" >220.600000</td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row11" class="row_heading level0 row11" >12</th>
-      <td id="T_3d1a9_row11_col0" class="data row11 col0" >302.000000</td>
-      <td id="T_3d1a9_row11_col1" class="data row11 col1" >292.600000</td>
-      <td id="T_3d1a9_row11_col2" class="data row11 col2" >371.200000</td>
-      <td id="T_3d1a9_row11_col3" class="data row11 col3" >172.600000</td>
-      <td id="T_3d1a9_row11_col4" class="data row11 col4" >421.500000</td>
-      <td id="T_3d1a9_row11_col5" class="data row11 col5" >253.200000</td>
+      <th id="T_603b2_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_603b2_row11_col0" class="data row11 col0" >302.000000</td>
+      <td id="T_603b2_row11_col1" class="data row11 col1" >292.600000</td>
+      <td id="T_603b2_row11_col2" class="data row11 col2" >371.200000</td>
+      <td id="T_603b2_row11_col3" class="data row11 col3" >172.600000</td>
+      <td id="T_603b2_row11_col4" class="data row11 col4" >421.500000</td>
+      <td id="T_603b2_row11_col5" class="data row11 col5" >253.200000</td>
     </tr>
   </tbody>
 </table>
@@ -2107,9 +2075,9 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Please make sure your pandas version &gt;= 1.3.0, Current version is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
 <span class="c1"># The following hover information is hypothetical and is only an example of adding hover information for a table</span>
-<span class="n">tt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">&#39;There was a severe drought this month!&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;A typhoon landed this month!&#39;</span><span class="p">]],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span><span class="mi">2017</span><span class="p">])</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">&#39;There was a severe drought in this month!&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;A typhoon landed in this month!&#39;</span><span class="p">]],</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">])</span>
 <span class="n">s</span><span class="o">.</span><span class="n">set_tooltips</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="s1">&#39;visibility: hidden; position: absolute; z-index: 1; border: 1px solid #000066;&#39;</span>
                          <span class="s1">&#39;background-color: white; color: #000066; font-size: 0.8em;&#39;</span>
                          <span class="s1">&#39;transform: translate(0px, -24px); padding: 0.6em; border-radius: 0.5em;&#39;</span><span class="p">)</span>
@@ -2119,7 +2087,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_3d1a9_ .pd-t {
+#T_603b2_ .pd-t {
   visibility: hidden;
   position: absolute;
   z-index: 1;
@@ -2131,38 +2099,38 @@ temperature max     0.010500  1.785870  0.126912  0.401989
   padding: 0.6em;
   border-radius: 0.5em;
 }
-#T_3d1a9_ #T_3d1a9_row2_col1:hover .pd-t {
+#T_603b2_ #T_603b2_row2_col1:hover .pd-t {
   visibility: visible;
 }
-#T_3d1a9_ #T_3d1a9_row2_col1 .pd-t::after {
-  content: "There was a severe drought this month!";
+#T_603b2_ #T_603b2_row2_col1 .pd-t::after {
+  content: "There was a severe drought in this month!";
 }
-#T_3d1a9_ #T_3d1a9_row2_col2:hover .pd-t {
+#T_603b2_ #T_603b2_row2_col2:hover .pd-t {
   visibility: visible;
 }
-#T_3d1a9_ #T_3d1a9_row2_col2 .pd-t::after {
-  content: "A typhoon landed this month!";
+#T_603b2_ #T_603b2_row2_col2 .pd-t::after {
+  content: "A typhoon landed in this month!";
 }
-#T_3d1a9_ #T_3d1a9_row11_col1:hover .pd-t {
+#T_603b2_ #T_603b2_row11_col1:hover .pd-t {
   visibility: visible;
 }
-#T_3d1a9_ #T_3d1a9_row11_col1 .pd-t::after {
-  content: "There was a severe drought this month!";
+#T_603b2_ #T_603b2_row11_col1 .pd-t::after {
+  content: "There was a severe drought in this month!";
 }
-#T_3d1a9_ #T_3d1a9_row11_col2:hover .pd-t {
+#T_603b2_ #T_603b2_row11_col2:hover .pd-t {
   visibility: visible;
 }
-#T_3d1a9_ #T_3d1a9_row11_col2 .pd-t::after {
-  content: "A typhoon landed this month!";
+#T_603b2_ #T_603b2_row11_col2 .pd-t::after {
+  content: "A typhoon landed in this month!";
 }
-#T_3d1a9_row0_col3, #T_3d1a9_row4_col5, #T_3d1a9_row11_col0, #T_3d1a9_row11_col1, #T_3d1a9_row11_col2, #T_3d1a9_row11_col4 {
+#T_603b2_row0_col3, #T_603b2_row4_col5, #T_603b2_row11_col0, #T_603b2_row11_col1, #T_603b2_row11_col2, #T_603b2_row11_col4 {
   background-color: #3399ff;
 }
-#T_3d1a9_row1_col0, #T_3d1a9_row1_col3, #T_3d1a9_row1_col5, #T_3d1a9_row2_col1, #T_3d1a9_row6_col2, #T_3d1a9_row7_col4 {
+#T_603b2_row1_col0, #T_603b2_row1_col3, #T_603b2_row1_col5, #T_603b2_row2_col1, #T_603b2_row6_col2, #T_603b2_row7_col4 {
   background-color: #c0c0c0;
 }
 </style>
-<table id="T_3d1a9_">
+<table id="T_603b2_">
   <thead>
     <tr>
       <th class="index_name level0" >year</th>
@@ -2185,112 +2153,112 @@ temperature max     0.010500  1.785870  0.126912  0.401989
   </thead>
   <tbody>
     <tr>
-      <th id="T_3d1a9_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_3d1a9_row0_col0" class="data row0 col0" >79.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row0_col1" class="data row0 col1" >127.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row0_col2" class="data row0 col2" >197.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row0_col3" class="data row0 col3" >287.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row0_col4" class="data row0 col4" >63.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row0_col5" class="data row0 col5" >88.400000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_603b2_row0_col0" class="data row0 col0" >79.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row0_col1" class="data row0 col1" >127.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row0_col2" class="data row0 col2" >197.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row0_col3" class="data row0 col3" >287.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row0_col4" class="data row0 col4" >63.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row0_col5" class="data row0 col5" >88.400000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_3d1a9_row1_col0" class="data row1 col0" >18.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row1_col1" class="data row1 col1" >186.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row1_col2" class="data row1 col2" >159.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row1_col3" class="data row1 col3" >14.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row1_col4" class="data row1 col4" >31.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row1_col5" class="data row1 col5" >65.000000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_603b2_row1_col0" class="data row1 col0" >18.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row1_col1" class="data row1 col1" >186.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row1_col2" class="data row1 col2" >159.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row1_col3" class="data row1 col3" >14.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row1_col4" class="data row1 col4" >31.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row1_col5" class="data row1 col5" >65.000000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_3d1a9_row2_col0" class="data row2 col0" >84.400000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row2_col1" class="data row2 col1" >6.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row2_col2" class="data row2 col2" >136.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row2_col3" class="data row2 col3" >44.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row2_col4" class="data row2 col4" >72.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row2_col5" class="data row2 col5" >108.800000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_603b2_row2_col0" class="data row2 col0" >84.400000<span class="pd-t"></span></td>
+      <td id="T_603b2_row2_col1" class="data row2 col1" >6.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row2_col2" class="data row2 col2" >136.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row2_col3" class="data row2 col3" >44.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row2_col4" class="data row2 col4" >72.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row2_col5" class="data row2 col5" >108.800000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_3d1a9_row3_col0" class="data row3 col0" >73.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row3_col1" class="data row3 col1" >89.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row3_col2" class="data row3 col2" >210.400000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row3_col3" class="data row3 col3" >61.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row3_col4" class="data row3 col4" >174.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row3_col5" class="data row3 col5" >188.000000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_603b2_row3_col0" class="data row3 col0" >73.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row3_col1" class="data row3 col1" >89.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row3_col2" class="data row3 col2" >210.400000<span class="pd-t"></span></td>
+      <td id="T_603b2_row3_col3" class="data row3 col3" >61.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row3_col4" class="data row3 col4" >174.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row3_col5" class="data row3 col5" >188.000000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_3d1a9_row4_col0" class="data row4 col0" >89.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row4_col1" class="data row4 col1" >193.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row4_col2" class="data row4 col2" >191.400000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row4_col3" class="data row4 col3" >132.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row4_col4" class="data row4 col4" >69.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row4_col5" class="data row4 col5" >255.600000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_603b2_row4_col0" class="data row4 col0" >89.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row4_col1" class="data row4 col1" >193.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row4_col2" class="data row4 col2" >191.400000<span class="pd-t"></span></td>
+      <td id="T_603b2_row4_col3" class="data row4 col3" >132.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row4_col4" class="data row4 col4" >69.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row4_col5" class="data row4 col5" >255.600000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_3d1a9_row5_col0" class="data row5 col0" >95.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row5_col1" class="data row5 col1" >163.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row5_col2" class="data row5 col2" >106.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row5_col3" class="data row5 col3" >182.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row5_col4" class="data row5 col4" >173.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row5_col5" class="data row5 col5" >233.800000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_603b2_row5_col0" class="data row5 col0" >95.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row5_col1" class="data row5 col1" >163.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row5_col2" class="data row5 col2" >106.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row5_col3" class="data row5 col3" >182.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row5_col4" class="data row5 col4" >173.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row5_col5" class="data row5 col5" >233.800000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_3d1a9_row6_col0" class="data row6 col0" >116.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row6_col1" class="data row6 col1" >168.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row6_col2" class="data row6 col2" >80.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row6_col3" class="data row6 col3" >143.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row6_col4" class="data row6 col4" >12.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row6_col5" class="data row6 col5" >140.800000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_603b2_row6_col0" class="data row6 col0" >116.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row6_col1" class="data row6 col1" >168.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row6_col2" class="data row6 col2" >80.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row6_col3" class="data row6 col3" >143.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row6_col4" class="data row6 col4" >12.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row6_col5" class="data row6 col5" >140.800000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row7" class="row_heading level0 row7" >8</th>
-      <td id="T_3d1a9_row7_col0" class="data row7 col0" >185.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row7_col1" class="data row7 col1" >139.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row7_col2" class="data row7 col2" >84.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row7_col3" class="data row7 col3" >121.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row7_col4" class="data row7 col4" >11.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row7_col5" class="data row7 col5" >103.400000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_603b2_row7_col0" class="data row7 col0" >185.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row7_col1" class="data row7 col1" >139.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row7_col2" class="data row7 col2" >84.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row7_col3" class="data row7 col3" >121.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row7_col4" class="data row7 col4" >11.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row7_col5" class="data row7 col5" >103.400000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row8" class="row_heading level0 row8" >9</th>
-      <td id="T_3d1a9_row8_col0" class="data row8 col0" >61.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row8_col1" class="data row8 col1" >118.900000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row8_col2" class="data row8 col2" >125.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row8_col3" class="data row8 col3" >144.400000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row8_col4" class="data row8 col4" >22.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row8_col5" class="data row8 col5" >150.200000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_603b2_row8_col0" class="data row8 col0" >61.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row8_col1" class="data row8 col1" >118.900000<span class="pd-t"></span></td>
+      <td id="T_603b2_row8_col2" class="data row8 col2" >125.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row8_col3" class="data row8 col3" >144.400000<span class="pd-t"></span></td>
+      <td id="T_603b2_row8_col4" class="data row8 col4" >22.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row8_col5" class="data row8 col5" >150.200000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row9" class="row_heading level0 row9" >10</th>
-      <td id="T_3d1a9_row9_col0" class="data row9 col0" >87.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row9_col1" class="data row9 col1" >181.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row9_col2" class="data row9 col2" >121.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row9_col3" class="data row9 col3" >234.400000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row9_col4" class="data row9 col4" >176.800000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row9_col5" class="data row9 col5" >78.800000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_603b2_row9_col0" class="data row9 col0" >87.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row9_col1" class="data row9 col1" >181.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row9_col2" class="data row9 col2" >121.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row9_col3" class="data row9 col3" >234.400000<span class="pd-t"></span></td>
+      <td id="T_603b2_row9_col4" class="data row9 col4" >176.800000<span class="pd-t"></span></td>
+      <td id="T_603b2_row9_col5" class="data row9 col5" >78.800000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row10" class="row_heading level0 row10" >11</th>
-      <td id="T_3d1a9_row10_col0" class="data row10 col0" >72.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row10_col1" class="data row10 col1" >290.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row10_col2" class="data row10 col2" >271.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row10_col3" class="data row10 col3" >169.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row10_col4" class="data row10 col4" >137.400000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row10_col5" class="data row10 col5" >220.600000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_603b2_row10_col0" class="data row10 col0" >72.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row10_col1" class="data row10 col1" >290.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row10_col2" class="data row10 col2" >271.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row10_col3" class="data row10 col3" >169.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row10_col4" class="data row10 col4" >137.400000<span class="pd-t"></span></td>
+      <td id="T_603b2_row10_col5" class="data row10 col5" >220.600000<span class="pd-t"></span></td>
     </tr>
     <tr>
-      <th id="T_3d1a9_level0_row11" class="row_heading level0 row11" >12</th>
-      <td id="T_3d1a9_row11_col0" class="data row11 col0" >302.000000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row11_col1" class="data row11 col1" >292.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row11_col2" class="data row11 col2" >371.200000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row11_col3" class="data row11 col3" >172.600000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row11_col4" class="data row11 col4" >421.500000<span class="pd-t"></span></td>
-      <td id="T_3d1a9_row11_col5" class="data row11 col5" >253.200000<span class="pd-t"></span></td>
+      <th id="T_603b2_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_603b2_row11_col0" class="data row11 col0" >302.000000<span class="pd-t"></span></td>
+      <td id="T_603b2_row11_col1" class="data row11 col1" >292.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row11_col2" class="data row11 col2" >371.200000<span class="pd-t"></span></td>
+      <td id="T_603b2_row11_col3" class="data row11 col3" >172.600000<span class="pd-t"></span></td>
+      <td id="T_603b2_row11_col4" class="data row11 col4" >421.500000<span class="pd-t"></span></td>
+      <td id="T_603b2_row11_col5" class="data row11 col5" >253.200000<span class="pd-t"></span></td>
     </tr>
   </tbody>
 </table>
@@ -2311,14 +2279,14 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_13a0d_row0_col3, #T_13a0d_row4_col5, #T_13a0d_row11_col0, #T_13a0d_row11_col1, #T_13a0d_row11_col2, #T_13a0d_row11_col4 {
+#T_033e2_row0_col3, #T_033e2_row4_col5, #T_033e2_row11_col0, #T_033e2_row11_col1, #T_033e2_row11_col2, #T_033e2_row11_col4 {
   background-color: #3399ff;
 }
-#T_13a0d_row1_col0, #T_13a0d_row1_col3, #T_13a0d_row1_col5, #T_13a0d_row2_col1, #T_13a0d_row6_col2, #T_13a0d_row7_col4 {
+#T_033e2_row1_col0, #T_033e2_row1_col3, #T_033e2_row1_col5, #T_033e2_row2_col1, #T_033e2_row6_col2, #T_033e2_row7_col4 {
   background-color: #c0c0c0;
 }
 </style>
-<table id="T_13a0d_">
+<table id="T_033e2_">
   <thead>
     <tr>
       <th class="index_name level0" >year</th>
@@ -2341,112 +2309,112 @@ temperature max     0.010500  1.785870  0.126912  0.401989
   </thead>
   <tbody>
     <tr>
-      <th id="T_13a0d_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_13a0d_row0_col0" class="data row0 col0" >79.600000</td>
-      <td id="T_13a0d_row0_col1" class="data row0 col1" >127.000000</td>
-      <td id="T_13a0d_row0_col2" class="data row0 col2" >197.800000</td>
-      <td id="T_13a0d_row0_col3" class="data row0 col3" >287.000000</td>
-      <td id="T_13a0d_row0_col4" class="data row0 col4" >63.600000</td>
-      <td id="T_13a0d_row0_col5" class="data row0 col5" >88.400000</td>
+      <th id="T_033e2_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_033e2_row0_col0" class="data row0 col0" >79.600000</td>
+      <td id="T_033e2_row0_col1" class="data row0 col1" >127.000000</td>
+      <td id="T_033e2_row0_col2" class="data row0 col2" >197.800000</td>
+      <td id="T_033e2_row0_col3" class="data row0 col3" >287.000000</td>
+      <td id="T_033e2_row0_col4" class="data row0 col4" >63.600000</td>
+      <td id="T_033e2_row0_col5" class="data row0 col5" >88.400000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_13a0d_row1_col0" class="data row1 col0" >18.800000</td>
-      <td id="T_13a0d_row1_col1" class="data row1 col1" >186.000000</td>
-      <td id="T_13a0d_row1_col2" class="data row1 col2" >159.200000</td>
-      <td id="T_13a0d_row1_col3" class="data row1 col3" >14.800000</td>
-      <td id="T_13a0d_row1_col4" class="data row1 col4" >31.600000</td>
-      <td id="T_13a0d_row1_col5" class="data row1 col5" >65.000000</td>
+      <th id="T_033e2_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_033e2_row1_col0" class="data row1 col0" >18.800000</td>
+      <td id="T_033e2_row1_col1" class="data row1 col1" >186.000000</td>
+      <td id="T_033e2_row1_col2" class="data row1 col2" >159.200000</td>
+      <td id="T_033e2_row1_col3" class="data row1 col3" >14.800000</td>
+      <td id="T_033e2_row1_col4" class="data row1 col4" >31.600000</td>
+      <td id="T_033e2_row1_col5" class="data row1 col5" >65.000000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_13a0d_row2_col0" class="data row2 col0" >84.400000</td>
-      <td id="T_13a0d_row2_col1" class="data row2 col1" >6.200000</td>
-      <td id="T_13a0d_row2_col2" class="data row2 col2" >136.600000</td>
-      <td id="T_13a0d_row2_col3" class="data row2 col3" >44.600000</td>
-      <td id="T_13a0d_row2_col4" class="data row2 col4" >72.200000</td>
-      <td id="T_13a0d_row2_col5" class="data row2 col5" >108.800000</td>
+      <th id="T_033e2_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_033e2_row2_col0" class="data row2 col0" >84.400000</td>
+      <td id="T_033e2_row2_col1" class="data row2 col1" >6.200000</td>
+      <td id="T_033e2_row2_col2" class="data row2 col2" >136.600000</td>
+      <td id="T_033e2_row2_col3" class="data row2 col3" >44.600000</td>
+      <td id="T_033e2_row2_col4" class="data row2 col4" >72.200000</td>
+      <td id="T_033e2_row2_col5" class="data row2 col5" >108.800000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_13a0d_row3_col0" class="data row3 col0" >73.200000</td>
-      <td id="T_13a0d_row3_col1" class="data row3 col1" >89.800000</td>
-      <td id="T_13a0d_row3_col2" class="data row3 col2" >210.400000</td>
-      <td id="T_13a0d_row3_col3" class="data row3 col3" >61.200000</td>
-      <td id="T_13a0d_row3_col4" class="data row3 col4" >174.800000</td>
-      <td id="T_13a0d_row3_col5" class="data row3 col5" >188.000000</td>
+      <th id="T_033e2_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_033e2_row3_col0" class="data row3 col0" >73.200000</td>
+      <td id="T_033e2_row3_col1" class="data row3 col1" >89.800000</td>
+      <td id="T_033e2_row3_col2" class="data row3 col2" >210.400000</td>
+      <td id="T_033e2_row3_col3" class="data row3 col3" >61.200000</td>
+      <td id="T_033e2_row3_col4" class="data row3 col4" >174.800000</td>
+      <td id="T_033e2_row3_col5" class="data row3 col5" >188.000000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_13a0d_row4_col0" class="data row4 col0" >89.000000</td>
-      <td id="T_13a0d_row4_col1" class="data row4 col1" >193.800000</td>
-      <td id="T_13a0d_row4_col2" class="data row4 col2" >191.400000</td>
-      <td id="T_13a0d_row4_col3" class="data row4 col3" >132.200000</td>
-      <td id="T_13a0d_row4_col4" class="data row4 col4" >69.000000</td>
-      <td id="T_13a0d_row4_col5" class="data row4 col5" >255.600000</td>
+      <th id="T_033e2_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_033e2_row4_col0" class="data row4 col0" >89.000000</td>
+      <td id="T_033e2_row4_col1" class="data row4 col1" >193.800000</td>
+      <td id="T_033e2_row4_col2" class="data row4 col2" >191.400000</td>
+      <td id="T_033e2_row4_col3" class="data row4 col3" >132.200000</td>
+      <td id="T_033e2_row4_col4" class="data row4 col4" >69.000000</td>
+      <td id="T_033e2_row4_col5" class="data row4 col5" >255.600000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_13a0d_row5_col0" class="data row5 col0" >95.800000</td>
-      <td id="T_13a0d_row5_col1" class="data row5 col1" >163.200000</td>
-      <td id="T_13a0d_row5_col2" class="data row5 col2" >106.000000</td>
-      <td id="T_13a0d_row5_col3" class="data row5 col3" >182.600000</td>
-      <td id="T_13a0d_row5_col4" class="data row5 col4" >173.800000</td>
-      <td id="T_13a0d_row5_col5" class="data row5 col5" >233.800000</td>
+      <th id="T_033e2_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_033e2_row5_col0" class="data row5 col0" >95.800000</td>
+      <td id="T_033e2_row5_col1" class="data row5 col1" >163.200000</td>
+      <td id="T_033e2_row5_col2" class="data row5 col2" >106.000000</td>
+      <td id="T_033e2_row5_col3" class="data row5 col3" >182.600000</td>
+      <td id="T_033e2_row5_col4" class="data row5 col4" >173.800000</td>
+      <td id="T_033e2_row5_col5" class="data row5 col5" >233.800000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_13a0d_row6_col0" class="data row6 col0" >116.800000</td>
-      <td id="T_13a0d_row6_col1" class="data row6 col1" >168.600000</td>
-      <td id="T_13a0d_row6_col2" class="data row6 col2" >80.000000</td>
-      <td id="T_13a0d_row6_col3" class="data row6 col3" >143.200000</td>
-      <td id="T_13a0d_row6_col4" class="data row6 col4" >12.200000</td>
-      <td id="T_13a0d_row6_col5" class="data row6 col5" >140.800000</td>
+      <th id="T_033e2_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_033e2_row6_col0" class="data row6 col0" >116.800000</td>
+      <td id="T_033e2_row6_col1" class="data row6 col1" >168.600000</td>
+      <td id="T_033e2_row6_col2" class="data row6 col2" >80.000000</td>
+      <td id="T_033e2_row6_col3" class="data row6 col3" >143.200000</td>
+      <td id="T_033e2_row6_col4" class="data row6 col4" >12.200000</td>
+      <td id="T_033e2_row6_col5" class="data row6 col5" >140.800000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row7" class="row_heading level0 row7" >8</th>
-      <td id="T_13a0d_row7_col0" class="data row7 col0" >185.800000</td>
-      <td id="T_13a0d_row7_col1" class="data row7 col1" >139.200000</td>
-      <td id="T_13a0d_row7_col2" class="data row7 col2" >84.200000</td>
-      <td id="T_13a0d_row7_col3" class="data row7 col3" >121.600000</td>
-      <td id="T_13a0d_row7_col4" class="data row7 col4" >11.800000</td>
-      <td id="T_13a0d_row7_col5" class="data row7 col5" >103.400000</td>
+      <th id="T_033e2_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_033e2_row7_col0" class="data row7 col0" >185.800000</td>
+      <td id="T_033e2_row7_col1" class="data row7 col1" >139.200000</td>
+      <td id="T_033e2_row7_col2" class="data row7 col2" >84.200000</td>
+      <td id="T_033e2_row7_col3" class="data row7 col3" >121.600000</td>
+      <td id="T_033e2_row7_col4" class="data row7 col4" >11.800000</td>
+      <td id="T_033e2_row7_col5" class="data row7 col5" >103.400000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row8" class="row_heading level0 row8" >9</th>
-      <td id="T_13a0d_row8_col0" class="data row8 col0" >61.600000</td>
-      <td id="T_13a0d_row8_col1" class="data row8 col1" >118.900000</td>
-      <td id="T_13a0d_row8_col2" class="data row8 col2" >125.200000</td>
-      <td id="T_13a0d_row8_col3" class="data row8 col3" >144.400000</td>
-      <td id="T_13a0d_row8_col4" class="data row8 col4" >22.800000</td>
-      <td id="T_13a0d_row8_col5" class="data row8 col5" >150.200000</td>
+      <th id="T_033e2_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_033e2_row8_col0" class="data row8 col0" >61.600000</td>
+      <td id="T_033e2_row8_col1" class="data row8 col1" >118.900000</td>
+      <td id="T_033e2_row8_col2" class="data row8 col2" >125.200000</td>
+      <td id="T_033e2_row8_col3" class="data row8 col3" >144.400000</td>
+      <td id="T_033e2_row8_col4" class="data row8 col4" >22.800000</td>
+      <td id="T_033e2_row8_col5" class="data row8 col5" >150.200000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row9" class="row_heading level0 row9" >10</th>
-      <td id="T_13a0d_row9_col0" class="data row9 col0" >87.200000</td>
-      <td id="T_13a0d_row9_col1" class="data row9 col1" >181.000000</td>
-      <td id="T_13a0d_row9_col2" class="data row9 col2" >121.600000</td>
-      <td id="T_13a0d_row9_col3" class="data row9 col3" >234.400000</td>
-      <td id="T_13a0d_row9_col4" class="data row9 col4" >176.800000</td>
-      <td id="T_13a0d_row9_col5" class="data row9 col5" >78.800000</td>
+      <th id="T_033e2_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_033e2_row9_col0" class="data row9 col0" >87.200000</td>
+      <td id="T_033e2_row9_col1" class="data row9 col1" >181.000000</td>
+      <td id="T_033e2_row9_col2" class="data row9 col2" >121.600000</td>
+      <td id="T_033e2_row9_col3" class="data row9 col3" >234.400000</td>
+      <td id="T_033e2_row9_col4" class="data row9 col4" >176.800000</td>
+      <td id="T_033e2_row9_col5" class="data row9 col5" >78.800000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row10" class="row_heading level0 row10" >11</th>
-      <td id="T_13a0d_row10_col0" class="data row10 col0" >72.600000</td>
-      <td id="T_13a0d_row10_col1" class="data row10 col1" >290.200000</td>
-      <td id="T_13a0d_row10_col2" class="data row10 col2" >271.000000</td>
-      <td id="T_13a0d_row10_col3" class="data row10 col3" >169.600000</td>
-      <td id="T_13a0d_row10_col4" class="data row10 col4" >137.400000</td>
-      <td id="T_13a0d_row10_col5" class="data row10 col5" >220.600000</td>
+      <th id="T_033e2_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_033e2_row10_col0" class="data row10 col0" >72.600000</td>
+      <td id="T_033e2_row10_col1" class="data row10 col1" >290.200000</td>
+      <td id="T_033e2_row10_col2" class="data row10 col2" >271.000000</td>
+      <td id="T_033e2_row10_col3" class="data row10 col3" >169.600000</td>
+      <td id="T_033e2_row10_col4" class="data row10 col4" >137.400000</td>
+      <td id="T_033e2_row10_col5" class="data row10 col5" >220.600000</td>
     </tr>
     <tr>
-      <th id="T_13a0d_level0_row11" class="row_heading level0 row11" >12</th>
-      <td id="T_13a0d_row11_col0" class="data row11 col0" >302.000000</td>
-      <td id="T_13a0d_row11_col1" class="data row11 col1" >292.600000</td>
-      <td id="T_13a0d_row11_col2" class="data row11 col2" >371.200000</td>
-      <td id="T_13a0d_row11_col3" class="data row11 col3" >172.600000</td>
-      <td id="T_13a0d_row11_col4" class="data row11 col4" >421.500000</td>
-      <td id="T_13a0d_row11_col5" class="data row11 col5" >253.200000</td>
+      <th id="T_033e2_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_033e2_row11_col0" class="data row11 col0" >302.000000</td>
+      <td id="T_033e2_row11_col1" class="data row11 col1" >292.600000</td>
+      <td id="T_033e2_row11_col2" class="data row11 col2" >371.200000</td>
+      <td id="T_033e2_row11_col3" class="data row11 col3" >172.600000</td>
+      <td id="T_033e2_row11_col4" class="data row11 col4" >421.500000</td>
+      <td id="T_033e2_row11_col5" class="data row11 col5" >253.200000</td>
     </tr>
   </tbody>
 </table>
@@ -2465,307 +2433,307 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_8f507_row0_col0 {
+#T_3b08b_row0_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 21.5%, transparent 21.5%);
 }
-#T_8f507_row0_col1 {
+#T_3b08b_row0_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 42.2%, transparent 42.2%);
 }
-#T_8f507_row0_col2 {
+#T_3b08b_row0_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 40.5%, transparent 40.5%);
 }
-#T_8f507_row0_col3, #T_8f507_row4_col5, #T_8f507_row11_col0, #T_8f507_row11_col1, #T_8f507_row11_col2, #T_8f507_row11_col4 {
+#T_3b08b_row0_col3, #T_3b08b_row4_col5, #T_3b08b_row11_col0, #T_3b08b_row11_col1, #T_3b08b_row11_col2, #T_3b08b_row11_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 100.0%, transparent 100.0%);
 }
-#T_8f507_row0_col4 {
+#T_3b08b_row0_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 12.6%, transparent 12.6%);
 }
-#T_8f507_row0_col5 {
+#T_3b08b_row0_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 12.3%, transparent 12.3%);
 }
-#T_8f507_row1_col0, #T_8f507_row1_col3, #T_8f507_row1_col5, #T_8f507_row2_col1, #T_8f507_row6_col2, #T_8f507_row7_col4 {
+#T_3b08b_row1_col0, #T_3b08b_row1_col3, #T_3b08b_row1_col5, #T_3b08b_row2_col1, #T_3b08b_row6_col2, #T_3b08b_row7_col4 {
   width: 10em;
   height: 80%;
 }
-#T_8f507_row1_col1 {
+#T_3b08b_row1_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 62.8%, transparent 62.8%);
 }
-#T_8f507_row1_col2, #T_8f507_row5_col0 {
+#T_3b08b_row1_col2, #T_3b08b_row5_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 27.2%, transparent 27.2%);
 }
-#T_8f507_row1_col4 {
+#T_3b08b_row1_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 4.8%, transparent 4.8%);
 }
-#T_8f507_row2_col0 {
+#T_3b08b_row2_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 23.2%, transparent 23.2%);
 }
-#T_8f507_row2_col2 {
+#T_3b08b_row2_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 19.4%, transparent 19.4%);
 }
-#T_8f507_row2_col3 {
+#T_3b08b_row2_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 10.9%, transparent 10.9%);
 }
-#T_8f507_row2_col4 {
+#T_3b08b_row2_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 14.7%, transparent 14.7%);
 }
-#T_8f507_row2_col5 {
+#T_3b08b_row2_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 23.0%, transparent 23.0%);
 }
-#T_8f507_row3_col0 {
+#T_3b08b_row3_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 19.2%, transparent 19.2%);
 }
-#T_8f507_row3_col1 {
+#T_3b08b_row3_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 29.2%, transparent 29.2%);
 }
-#T_8f507_row3_col2 {
+#T_3b08b_row3_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 44.8%, transparent 44.8%);
 }
-#T_8f507_row3_col3 {
+#T_3b08b_row3_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 17.0%, transparent 17.0%);
 }
-#T_8f507_row3_col4, #T_8f507_row6_col5 {
+#T_3b08b_row3_col4, #T_3b08b_row6_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 39.8%, transparent 39.8%);
 }
-#T_8f507_row3_col5 {
+#T_3b08b_row3_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 64.5%, transparent 64.5%);
 }
-#T_8f507_row4_col0 {
+#T_3b08b_row4_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 24.8%, transparent 24.8%);
 }
-#T_8f507_row4_col1 {
+#T_3b08b_row4_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 65.5%, transparent 65.5%);
 }
-#T_8f507_row4_col2 {
+#T_3b08b_row4_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 38.3%, transparent 38.3%);
 }
-#T_8f507_row4_col3 {
+#T_3b08b_row4_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 43.1%, transparent 43.1%);
 }
-#T_8f507_row4_col4 {
+#T_3b08b_row4_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 14.0%, transparent 14.0%);
 }
-#T_8f507_row5_col1 {
+#T_3b08b_row5_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 54.8%, transparent 54.8%);
 }
-#T_8f507_row5_col2 {
+#T_3b08b_row5_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 8.9%, transparent 8.9%);
 }
-#T_8f507_row5_col3 {
+#T_3b08b_row5_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 61.6%, transparent 61.6%);
 }
-#T_8f507_row5_col4 {
+#T_3b08b_row5_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 39.5%, transparent 39.5%);
 }
-#T_8f507_row5_col5 {
+#T_3b08b_row5_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 88.6%, transparent 88.6%);
 }
-#T_8f507_row6_col0 {
+#T_3b08b_row6_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 34.6%, transparent 34.6%);
 }
-#T_8f507_row6_col1 {
+#T_3b08b_row6_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 56.7%, transparent 56.7%);
 }
-#T_8f507_row6_col3 {
+#T_3b08b_row6_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 47.2%, transparent 47.2%);
 }
-#T_8f507_row6_col4 {
+#T_3b08b_row6_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 0.1%, transparent 0.1%);
 }
-#T_8f507_row7_col0 {
+#T_3b08b_row7_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 59.0%, transparent 59.0%);
 }
-#T_8f507_row7_col1 {
+#T_3b08b_row7_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 46.4%, transparent 46.4%);
 }
-#T_8f507_row7_col2 {
+#T_3b08b_row7_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 1.4%, transparent 1.4%);
 }
-#T_8f507_row7_col3 {
+#T_3b08b_row7_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 39.2%, transparent 39.2%);
 }
-#T_8f507_row7_col5 {
+#T_3b08b_row7_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 20.1%, transparent 20.1%);
 }
-#T_8f507_row8_col0 {
+#T_3b08b_row8_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 15.1%, transparent 15.1%);
 }
-#T_8f507_row8_col1 {
+#T_3b08b_row8_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 39.4%, transparent 39.4%);
 }
-#T_8f507_row8_col2 {
+#T_3b08b_row8_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 15.5%, transparent 15.5%);
 }
-#T_8f507_row8_col3 {
+#T_3b08b_row8_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 47.6%, transparent 47.6%);
 }
-#T_8f507_row8_col4 {
+#T_3b08b_row8_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 2.7%, transparent 2.7%);
 }
-#T_8f507_row8_col5 {
+#T_3b08b_row8_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 44.7%, transparent 44.7%);
 }
-#T_8f507_row9_col0 {
+#T_3b08b_row9_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 24.2%, transparent 24.2%);
 }
-#T_8f507_row9_col1 {
+#T_3b08b_row9_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 61.0%, transparent 61.0%);
 }
-#T_8f507_row9_col2 {
+#T_3b08b_row9_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 14.3%, transparent 14.3%);
 }
-#T_8f507_row9_col3 {
+#T_3b08b_row9_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 80.7%, transparent 80.7%);
 }
-#T_8f507_row9_col4 {
+#T_3b08b_row9_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 40.3%, transparent 40.3%);
 }
-#T_8f507_row9_col5 {
+#T_3b08b_row9_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 7.2%, transparent 7.2%);
 }
-#T_8f507_row10_col0 {
+#T_3b08b_row10_col0 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 19.0%, transparent 19.0%);
 }
-#T_8f507_row10_col1 {
+#T_3b08b_row10_col1 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 99.2%, transparent 99.2%);
 }
-#T_8f507_row10_col2 {
+#T_3b08b_row10_col2 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 65.6%, transparent 65.6%);
 }
-#T_8f507_row10_col3 {
+#T_3b08b_row10_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 56.9%, transparent 56.9%);
 }
-#T_8f507_row10_col4 {
+#T_3b08b_row10_col4 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 30.7%, transparent 30.7%);
 }
-#T_8f507_row10_col5 {
+#T_3b08b_row10_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 81.6%, transparent 81.6%);
 }
-#T_8f507_row11_col3 {
+#T_3b08b_row11_col3 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 58.0%, transparent 58.0%);
 }
-#T_8f507_row11_col5 {
+#T_3b08b_row11_col5 {
   width: 10em;
   height: 80%;
   background: linear-gradient(90deg,#3399ff 98.7%, transparent 98.7%);
 }
 </style>
-<table id="T_8f507_">
+<table id="T_3b08b_">
   <thead>
     <tr>
       <th class="index_name level0" >year</th>
@@ -2788,112 +2756,112 @@ temperature max     0.010500  1.785870  0.126912  0.401989
   </thead>
   <tbody>
     <tr>
-      <th id="T_8f507_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_8f507_row0_col0" class="data row0 col0" >79.600000</td>
-      <td id="T_8f507_row0_col1" class="data row0 col1" >127.000000</td>
-      <td id="T_8f507_row0_col2" class="data row0 col2" >197.800000</td>
-      <td id="T_8f507_row0_col3" class="data row0 col3" >287.000000</td>
-      <td id="T_8f507_row0_col4" class="data row0 col4" >63.600000</td>
-      <td id="T_8f507_row0_col5" class="data row0 col5" >88.400000</td>
+      <th id="T_3b08b_level0_row0" class="row_heading level0 row0" >1</th>
+      <td id="T_3b08b_row0_col0" class="data row0 col0" >79.600000</td>
+      <td id="T_3b08b_row0_col1" class="data row0 col1" >127.000000</td>
+      <td id="T_3b08b_row0_col2" class="data row0 col2" >197.800000</td>
+      <td id="T_3b08b_row0_col3" class="data row0 col3" >287.000000</td>
+      <td id="T_3b08b_row0_col4" class="data row0 col4" >63.600000</td>
+      <td id="T_3b08b_row0_col5" class="data row0 col5" >88.400000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_8f507_row1_col0" class="data row1 col0" >18.800000</td>
-      <td id="T_8f507_row1_col1" class="data row1 col1" >186.000000</td>
-      <td id="T_8f507_row1_col2" class="data row1 col2" >159.200000</td>
-      <td id="T_8f507_row1_col3" class="data row1 col3" >14.800000</td>
-      <td id="T_8f507_row1_col4" class="data row1 col4" >31.600000</td>
-      <td id="T_8f507_row1_col5" class="data row1 col5" >65.000000</td>
+      <th id="T_3b08b_level0_row1" class="row_heading level0 row1" >2</th>
+      <td id="T_3b08b_row1_col0" class="data row1 col0" >18.800000</td>
+      <td id="T_3b08b_row1_col1" class="data row1 col1" >186.000000</td>
+      <td id="T_3b08b_row1_col2" class="data row1 col2" >159.200000</td>
+      <td id="T_3b08b_row1_col3" class="data row1 col3" >14.800000</td>
+      <td id="T_3b08b_row1_col4" class="data row1 col4" >31.600000</td>
+      <td id="T_3b08b_row1_col5" class="data row1 col5" >65.000000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_8f507_row2_col0" class="data row2 col0" >84.400000</td>
-      <td id="T_8f507_row2_col1" class="data row2 col1" >6.200000</td>
-      <td id="T_8f507_row2_col2" class="data row2 col2" >136.600000</td>
-      <td id="T_8f507_row2_col3" class="data row2 col3" >44.600000</td>
-      <td id="T_8f507_row2_col4" class="data row2 col4" >72.200000</td>
-      <td id="T_8f507_row2_col5" class="data row2 col5" >108.800000</td>
+      <th id="T_3b08b_level0_row2" class="row_heading level0 row2" >3</th>
+      <td id="T_3b08b_row2_col0" class="data row2 col0" >84.400000</td>
+      <td id="T_3b08b_row2_col1" class="data row2 col1" >6.200000</td>
+      <td id="T_3b08b_row2_col2" class="data row2 col2" >136.600000</td>
+      <td id="T_3b08b_row2_col3" class="data row2 col3" >44.600000</td>
+      <td id="T_3b08b_row2_col4" class="data row2 col4" >72.200000</td>
+      <td id="T_3b08b_row2_col5" class="data row2 col5" >108.800000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_8f507_row3_col0" class="data row3 col0" >73.200000</td>
-      <td id="T_8f507_row3_col1" class="data row3 col1" >89.800000</td>
-      <td id="T_8f507_row3_col2" class="data row3 col2" >210.400000</td>
-      <td id="T_8f507_row3_col3" class="data row3 col3" >61.200000</td>
-      <td id="T_8f507_row3_col4" class="data row3 col4" >174.800000</td>
-      <td id="T_8f507_row3_col5" class="data row3 col5" >188.000000</td>
+      <th id="T_3b08b_level0_row3" class="row_heading level0 row3" >4</th>
+      <td id="T_3b08b_row3_col0" class="data row3 col0" >73.200000</td>
+      <td id="T_3b08b_row3_col1" class="data row3 col1" >89.800000</td>
+      <td id="T_3b08b_row3_col2" class="data row3 col2" >210.400000</td>
+      <td id="T_3b08b_row3_col3" class="data row3 col3" >61.200000</td>
+      <td id="T_3b08b_row3_col4" class="data row3 col4" >174.800000</td>
+      <td id="T_3b08b_row3_col5" class="data row3 col5" >188.000000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_8f507_row4_col0" class="data row4 col0" >89.000000</td>
-      <td id="T_8f507_row4_col1" class="data row4 col1" >193.800000</td>
-      <td id="T_8f507_row4_col2" class="data row4 col2" >191.400000</td>
-      <td id="T_8f507_row4_col3" class="data row4 col3" >132.200000</td>
-      <td id="T_8f507_row4_col4" class="data row4 col4" >69.000000</td>
-      <td id="T_8f507_row4_col5" class="data row4 col5" >255.600000</td>
+      <th id="T_3b08b_level0_row4" class="row_heading level0 row4" >5</th>
+      <td id="T_3b08b_row4_col0" class="data row4 col0" >89.000000</td>
+      <td id="T_3b08b_row4_col1" class="data row4 col1" >193.800000</td>
+      <td id="T_3b08b_row4_col2" class="data row4 col2" >191.400000</td>
+      <td id="T_3b08b_row4_col3" class="data row4 col3" >132.200000</td>
+      <td id="T_3b08b_row4_col4" class="data row4 col4" >69.000000</td>
+      <td id="T_3b08b_row4_col5" class="data row4 col5" >255.600000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_8f507_row5_col0" class="data row5 col0" >95.800000</td>
-      <td id="T_8f507_row5_col1" class="data row5 col1" >163.200000</td>
-      <td id="T_8f507_row5_col2" class="data row5 col2" >106.000000</td>
-      <td id="T_8f507_row5_col3" class="data row5 col3" >182.600000</td>
-      <td id="T_8f507_row5_col4" class="data row5 col4" >173.800000</td>
-      <td id="T_8f507_row5_col5" class="data row5 col5" >233.800000</td>
+      <th id="T_3b08b_level0_row5" class="row_heading level0 row5" >6</th>
+      <td id="T_3b08b_row5_col0" class="data row5 col0" >95.800000</td>
+      <td id="T_3b08b_row5_col1" class="data row5 col1" >163.200000</td>
+      <td id="T_3b08b_row5_col2" class="data row5 col2" >106.000000</td>
+      <td id="T_3b08b_row5_col3" class="data row5 col3" >182.600000</td>
+      <td id="T_3b08b_row5_col4" class="data row5 col4" >173.800000</td>
+      <td id="T_3b08b_row5_col5" class="data row5 col5" >233.800000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_8f507_row6_col0" class="data row6 col0" >116.800000</td>
-      <td id="T_8f507_row6_col1" class="data row6 col1" >168.600000</td>
-      <td id="T_8f507_row6_col2" class="data row6 col2" >80.000000</td>
-      <td id="T_8f507_row6_col3" class="data row6 col3" >143.200000</td>
-      <td id="T_8f507_row6_col4" class="data row6 col4" >12.200000</td>
-      <td id="T_8f507_row6_col5" class="data row6 col5" >140.800000</td>
+      <th id="T_3b08b_level0_row6" class="row_heading level0 row6" >7</th>
+      <td id="T_3b08b_row6_col0" class="data row6 col0" >116.800000</td>
+      <td id="T_3b08b_row6_col1" class="data row6 col1" >168.600000</td>
+      <td id="T_3b08b_row6_col2" class="data row6 col2" >80.000000</td>
+      <td id="T_3b08b_row6_col3" class="data row6 col3" >143.200000</td>
+      <td id="T_3b08b_row6_col4" class="data row6 col4" >12.200000</td>
+      <td id="T_3b08b_row6_col5" class="data row6 col5" >140.800000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row7" class="row_heading level0 row7" >8</th>
-      <td id="T_8f507_row7_col0" class="data row7 col0" >185.800000</td>
-      <td id="T_8f507_row7_col1" class="data row7 col1" >139.200000</td>
-      <td id="T_8f507_row7_col2" class="data row7 col2" >84.200000</td>
-      <td id="T_8f507_row7_col3" class="data row7 col3" >121.600000</td>
-      <td id="T_8f507_row7_col4" class="data row7 col4" >11.800000</td>
-      <td id="T_8f507_row7_col5" class="data row7 col5" >103.400000</td>
+      <th id="T_3b08b_level0_row7" class="row_heading level0 row7" >8</th>
+      <td id="T_3b08b_row7_col0" class="data row7 col0" >185.800000</td>
+      <td id="T_3b08b_row7_col1" class="data row7 col1" >139.200000</td>
+      <td id="T_3b08b_row7_col2" class="data row7 col2" >84.200000</td>
+      <td id="T_3b08b_row7_col3" class="data row7 col3" >121.600000</td>
+      <td id="T_3b08b_row7_col4" class="data row7 col4" >11.800000</td>
+      <td id="T_3b08b_row7_col5" class="data row7 col5" >103.400000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row8" class="row_heading level0 row8" >9</th>
-      <td id="T_8f507_row8_col0" class="data row8 col0" >61.600000</td>
-      <td id="T_8f507_row8_col1" class="data row8 col1" >118.900000</td>
-      <td id="T_8f507_row8_col2" class="data row8 col2" >125.200000</td>
-      <td id="T_8f507_row8_col3" class="data row8 col3" >144.400000</td>
-      <td id="T_8f507_row8_col4" class="data row8 col4" >22.800000</td>
-      <td id="T_8f507_row8_col5" class="data row8 col5" >150.200000</td>
+      <th id="T_3b08b_level0_row8" class="row_heading level0 row8" >9</th>
+      <td id="T_3b08b_row8_col0" class="data row8 col0" >61.600000</td>
+      <td id="T_3b08b_row8_col1" class="data row8 col1" >118.900000</td>
+      <td id="T_3b08b_row8_col2" class="data row8 col2" >125.200000</td>
+      <td id="T_3b08b_row8_col3" class="data row8 col3" >144.400000</td>
+      <td id="T_3b08b_row8_col4" class="data row8 col4" >22.800000</td>
+      <td id="T_3b08b_row8_col5" class="data row8 col5" >150.200000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row9" class="row_heading level0 row9" >10</th>
-      <td id="T_8f507_row9_col0" class="data row9 col0" >87.200000</td>
-      <td id="T_8f507_row9_col1" class="data row9 col1" >181.000000</td>
-      <td id="T_8f507_row9_col2" class="data row9 col2" >121.600000</td>
-      <td id="T_8f507_row9_col3" class="data row9 col3" >234.400000</td>
-      <td id="T_8f507_row9_col4" class="data row9 col4" >176.800000</td>
-      <td id="T_8f507_row9_col5" class="data row9 col5" >78.800000</td>
+      <th id="T_3b08b_level0_row9" class="row_heading level0 row9" >10</th>
+      <td id="T_3b08b_row9_col0" class="data row9 col0" >87.200000</td>
+      <td id="T_3b08b_row9_col1" class="data row9 col1" >181.000000</td>
+      <td id="T_3b08b_row9_col2" class="data row9 col2" >121.600000</td>
+      <td id="T_3b08b_row9_col3" class="data row9 col3" >234.400000</td>
+      <td id="T_3b08b_row9_col4" class="data row9 col4" >176.800000</td>
+      <td id="T_3b08b_row9_col5" class="data row9 col5" >78.800000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row10" class="row_heading level0 row10" >11</th>
-      <td id="T_8f507_row10_col0" class="data row10 col0" >72.600000</td>
-      <td id="T_8f507_row10_col1" class="data row10 col1" >290.200000</td>
-      <td id="T_8f507_row10_col2" class="data row10 col2" >271.000000</td>
-      <td id="T_8f507_row10_col3" class="data row10 col3" >169.600000</td>
-      <td id="T_8f507_row10_col4" class="data row10 col4" >137.400000</td>
-      <td id="T_8f507_row10_col5" class="data row10 col5" >220.600000</td>
+      <th id="T_3b08b_level0_row10" class="row_heading level0 row10" >11</th>
+      <td id="T_3b08b_row10_col0" class="data row10 col0" >72.600000</td>
+      <td id="T_3b08b_row10_col1" class="data row10 col1" >290.200000</td>
+      <td id="T_3b08b_row10_col2" class="data row10 col2" >271.000000</td>
+      <td id="T_3b08b_row10_col3" class="data row10 col3" >169.600000</td>
+      <td id="T_3b08b_row10_col4" class="data row10 col4" >137.400000</td>
+      <td id="T_3b08b_row10_col5" class="data row10 col5" >220.600000</td>
     </tr>
     <tr>
-      <th id="T_8f507_level0_row11" class="row_heading level0 row11" >12</th>
-      <td id="T_8f507_row11_col0" class="data row11 col0" >302.000000</td>
-      <td id="T_8f507_row11_col1" class="data row11 col1" >292.600000</td>
-      <td id="T_8f507_row11_col2" class="data row11 col2" >371.200000</td>
-      <td id="T_8f507_row11_col3" class="data row11 col3" >172.600000</td>
-      <td id="T_8f507_row11_col4" class="data row11 col4" >421.500000</td>
-      <td id="T_8f507_row11_col5" class="data row11 col5" >253.200000</td>
+      <th id="T_3b08b_level0_row11" class="row_heading level0 row11" >12</th>
+      <td id="T_3b08b_row11_col0" class="data row11 col0" >302.000000</td>
+      <td id="T_3b08b_row11_col1" class="data row11 col1" >292.600000</td>
+      <td id="T_3b08b_row11_col2" class="data row11 col2" >371.200000</td>
+      <td id="T_3b08b_row11_col3" class="data row11 col3" >172.600000</td>
+      <td id="T_3b08b_row11_col4" class="data row11 col4" >421.500000</td>
+      <td id="T_3b08b_row11_col5" class="data row11 col5" >253.200000</td>
     </tr>
   </tbody>
 </table>
@@ -2909,7 +2877,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <h3><span class="section-number">3.2.5.1. </span>line plot<a class="headerlink" href="#line-plot" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3399ff&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3399ff&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2926,7 +2894,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
-<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station in 2020&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[])</span>
 </pre></div>
 </div>
@@ -2954,13 +2922,13 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmonth</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">dfmonth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;1981&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dfmonth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;1981&#39;</span><span class="p">:</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">))],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1981</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span>
 <span class="n">dfmonth</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;month&#39;</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">dfmonth</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Monthly rainfall of Changi station in from 1981 to 2020&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> 
-             <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Monthly rainfall (mm)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+                  <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Monthly rainfall (mm)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">dfmonth</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
 </pre></div>
@@ -2978,8 +2946,8 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <h3><span class="section-number">3.2.5.5. </span>Area plot<a class="headerlink" href="#area-plot" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station in 2020&#39;</span><span class="p">,</span>
-                                               <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;area&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station in 2020&#39;</span><span class="p">,</span>
+                                                <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;area&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2993,7 +2961,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <p>You need to specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> arguments for scatter plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3053,8 +3021,9 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Daily Rainfall Total (mm)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station in 2020&#39;</span><span class="p">,</span>
-                                               <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Daily Rainfall Total (mm)&#39;</span><span class="p">,</span>
+         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station in 2020&#39;</span><span class="p">,</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3070,7 +3039,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <h3><span class="section-number">3.2.5.7. </span>Pie plot<a class="headerlink" href="#pie-plot" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,:]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -3130,7 +3099,7 @@ temperature max     0.010500  1.785870  0.126912  0.401989
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Daily Rainfall Total (mm)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Daily rainfall of Changi station in 2020&#39;</span><span class="p">,</span>
-                                               <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+         <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
