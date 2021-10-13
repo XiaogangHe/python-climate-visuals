@@ -29,6 +29,8 @@ parts:
       title: Tutorial (Advanced)
     - file: chapters/data-analytics/pandas-exercise
       title: Exercise
+    - file: chapters/data-analytics/pandas-solution
+      title: Solution
   - file: chapters/data-analytics/scipy
   - file: chapters/data-analytics/xarray
     title: Xarray
