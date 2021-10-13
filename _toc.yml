@@ -42,7 +42,7 @@ parts:
     title: Matplotlib
     sections:
     - file: chapters/data-visuals/matplotlib-basic
-      title: Tutorial
+      title: Tutorial (Basic)
     - file: chapters/data-visuals/matplotlib-advanced
       title: Tutorial (Advanced)
 - caption: Others
