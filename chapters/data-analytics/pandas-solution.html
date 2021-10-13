@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandas Solution</title>
+    <title>3.4. Pandas Solution</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Scipy" href="scipy.html" />
+    <link rel="prev" title="3.3. Pandas Exercise" href="pandas-exercise.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -90,7 +92,7 @@
   Data Analytics
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="python.html">
    1. Python
@@ -135,16 +137,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="pandas.html">
    3. Pandas
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-basic.html">
      3.1. Tutorial (Basic)
@@ -158,6 +160,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-exercise.html">
      3.3. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.4. Solution
     </a>
    </li>
   </ul>
@@ -328,12 +335,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#task-1">
-   Task 1
+   3.4.1. Task 1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#task-2">
-   Task 2
+   3.4.2. Task 2
   </a>
  </li>
 </ul>
@@ -348,10 +355,10 @@
               <div>
                 
   <div class="section" id="pandas-solution">
-<h1>Pandas Solution<a class="headerlink" href="#pandas-solution" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.4. </span>Pandas Solution<a class="headerlink" href="#pandas-solution" title="Permalink to this headline">¶</a></h1>
 <p>Create a DataFrame by reading file <em>../../assets/data/Changi_daily_rainfall.csv</em>. Perform the following two tasks with this DataFrame:</p>
 <div class="section" id="task-1">
-<h2>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Determine whether the dataframe contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values, and if so, populates the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values with 0.</p></li>
 <li><p>View the first 2 rows and the tail 2 rows, and check total length of data.</p></li>
@@ -361,7 +368,7 @@
 <p>Hint: If you complete this task in your local computer (not recommend), please modify the file path accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># no NaN value</span>
@@ -379,7 +386,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the first 2 rows:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the tail 2 rows:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total length of data:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total length of data:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -481,7 +488,7 @@ total length of data:
 </div>
 </div>
 <div class="section" id="task-2">
-<h2>Task 2<a class="headerlink" href="#task-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Upsample the DataFrame into 1-year bins and sum the values of the timestamps falling into a bin.</p></li>
 <li><p>Calculate the average value of yearly rainfall in 1981-2000 and 2001-2020 and compare them.</p></li>
@@ -558,9 +565,9 @@ total length of data:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the average value of yearly rainfall in 1981-2000:
- 2071.555
+ 2071.5549999999994
 the average value of yearly rainfall in 2001-2020:
- 2108.0950000000003
+ 2108.0949999999993
 </pre></div>
 </div>
 </div>
@@ -596,7 +603,6 @@ Date
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/pandas-solution_11_1.png" src="../../_images/pandas-solution_11_1.png" />
 </div>
 </div>
 </div>
@@ -631,6 +637,24 @@ Date
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="pandas-exercise.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">3.3. </span>Pandas Exercise</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="scipy.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">4. </span>Scipy</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
