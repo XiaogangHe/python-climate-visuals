@@ -53,7 +53,7 @@ parts:
       title: Tutorial (Advanced)
 - caption: Gallery
   chapters:
-  - file: chapters/gallery/plot_river_network_weighted
+  - file: chapters/gallery/plot_weighted_river_network
     title: River Network
 - caption: Others
   chapters:
