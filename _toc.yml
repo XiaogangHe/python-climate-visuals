@@ -32,6 +32,10 @@ parts:
     - file: chapters/data-analytics/pandas-solution
       title: Solution
   - file: chapters/data-analytics/scipy
+    title: Scipy
+    sections:
+    - file: chapters/data-analytics/scipy-basic
+      title: Tutorial (Basic)
   - file: chapters/data-analytics/xarray
     title: Xarray
     sections:
