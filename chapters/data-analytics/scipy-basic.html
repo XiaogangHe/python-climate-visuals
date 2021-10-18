@@ -680,7 +680,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.170662443123031 1.9637819405171413
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.899140804759022 1.9465523619219158
 </pre></div>
 </div>
 <img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
@@ -745,7 +745,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.700353057494126 7.705251272969022e-06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.365714690122207 2.9147588235748767e-05
 </pre></div>
 </div>
 </div>
@@ -933,19 +933,23 @@ Date
 </ul>
 <p>In the context of EVA, observations were used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case. More information and specific advantages of L-moments could be referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=the%20Wakeby%20distributions.-,Usage,-%5Bedit%5D">WikiPedia</a> page.</p>
 <p>However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
-<p>The L-moments are established based on the probability weighted moments, so in order to calculate L-moments of samples, we need to calculate probability weighted moments of samples. Assume a set of samples <span class="math notranslate nohighlight">\(X_j (X_1&gt;X_2&gt;...&gt;X_n)\)</span>, probability weighted moments of samples are as follows.
+<p>The L-moments are established based on the probability weighted moments, so in order to calculate L-moments of samples, we need to calculate probability weighted moments of samples. Assume a set of samples <span class="math notranslate nohighlight">\(X_j (X_1&gt;X_2&gt;...&gt;X_n)\)</span>, probability weighted moments of samples are as follows.</p>
+<p><span class="math notranslate nohighlight">\(
 \begin{align}
-&amp; b_0=\overline{X}\
-&amp; b_1=\sum_{j=1}^{n-1} \frac{(n-j)X_j}{n(n-1)}\
-&amp; b_2=\sum_{j=1}^{n-2} \frac{(n-j)(n-j-1)X_j}{n(n-1)(n-2)}\
+&amp; b_0=\overline{X} \\
+&amp; b_1=\sum_{j=1}^{n-1} \frac{(n-j)X_j}{n(n-1)}\\
+&amp; b_2=\sum_{j=1}^{n-2} \frac{(n-j)(n-j-1)X_j}{n(n-1)(n-2)}
 \end{align}
-where <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are the first three unbiased probability weighted moments.</p>
-<p>The relationship between the first three L-moments and probability weighted moments are
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are the first three unbiased probability weighted moments.</p>
+<p>The relationship between the first three L-moments and probability weighted moments are</p>
+<p><span class="math notranslate nohighlight">\(
 \begin{align}
-&amp; \lambda_1=b_0\
-&amp; \lambda_2=2b_1-b_0\
-&amp; \lambda_3=6b_2-6_b1+b_0\
-\end{align}</p>
+&amp; \lambda_1=b_0\\
+&amp; \lambda_2=2b_1-b_0\\
+&amp; \lambda_3=6b_2-6_b1+b_0\\
+\end{align}
+\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(\lambda_0, \lambda_1, \lambda_2\)</span> are the first three unbiased probability weighted moments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
