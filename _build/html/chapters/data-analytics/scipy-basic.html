@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.1. SciPy tutorial</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. What is Xarray?" href="xarray.html" />
+    <link rel="prev" title="4. Scipy" href="scipy.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/favicon.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Data Analytics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python.html">
+   1. Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basic.html">
+     1.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-exercise.html">
+     1.2. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-solution.html">
+     1.3. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="numpy.html">
+   2. NumPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy-basic.html">
+     2.1. Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="pandas.html">
+   3. Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas-basic.html">
+     3.1. Tutorial (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas-advanced.html">
+     3.2. Tutorial (Advanced)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas-exercise.html">
+     3.3. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas-solution.html">
+     3.4. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="scipy.html">
+   4. Scipy
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Tutorial (Basic)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="xarray.html">
+   5. Xarray
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="xarray-basic.html">
+     5.1. Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-visuals/matplotlib.html">
+   1. Matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-visuals/matplotlib-basic.html">
+     1.1. Tutorial (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-visuals/matplotlib-advanced.html">
+     1.2. Tutorial (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Gallery
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gallery/plot_river_network_weighted.html">
+   River Network
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Others
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../others/refs.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/scipy-basic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/XiaogangHe/python-climate-visuals"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/scipy-basic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-statistics">
+   4.1.1. Descriptive Statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distributions">
+   4.1.2. Distributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-tests">
+   4.1.3. Statistical Tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlations">
+   4.1.4. Correlations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extreme-value-analysis">
+   4.1.5. Extreme Value Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract-extreme-values">
+     4.1.5.1. Extract extreme values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fit-distribution-parameter-estimation">
+     4.1.5.2. Fit distribution (parameter estimation)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-with-empirical-distribution">
+     4.1.5.3. Compare with empirical distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-extreme-precipitation-for-specific-return-periods">
+     4.1.5.4. Get extreme precipitation for specific return periods
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   4.1.6. References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="scipy-tutorial">
+<h1><span class="section-number">4.1. </span>SciPy tutorial<a class="headerlink" href="#scipy-tutorial" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.scipy.org/"><code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as routines for numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> is composed of task-specific sub-modules as follows.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Submodule</p></th>
+<th class="text-align:left head"><p>Fields</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>scipy.cluster</p></td>
+<td class="text-align:left"><p>Vector quantization / Kmeans</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>scipy.constants</p></td>
+<td class="text-align:left"><p>Physical and mathematical constant</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scipy.fftpack</p></td>
+<td class="text-align:left"><p>Fourier transform</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>scipy.integrate</p></td>
+<td class="text-align:left"><p>Integration routines</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scipy.interpolate</p></td>
+<td class="text-align:left"><p>Interpolation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="http://scipy.io">scipy.io</a></p></td>
+<td class="text-align:left"><p>Data input and output</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scipy.linalg</p></td>
+<td class="text-align:left"><p>Linear algebra routines</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>scipy.ndimage</p></td>
+<td class="text-align:left"><p>n-dimensional image package</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scipy.odr</p></td>
+<td class="text-align:left"><p>Orthogonal distance regression</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>scipy.optimize</p></td>
+<td class="text-align:left"><p>Optimization</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scipy.signal</p></td>
+<td class="text-align:left"><p>Signal processing</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>scipy.sparse</p></td>
+<td class="text-align:left"><p>Sparse matrices</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>scipy.spatial</p></td>
+<td class="text-align:left"><p>Spatial data structures and algorithms</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>scipy.special</p></td>
+<td class="text-align:left"><p>Any special mathematical functions</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><u><strong>scipy.stats</strong></u></p></td>
+<td class="text-align:left"><p><u><strong>Statistics</strong></u></p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module contains a large number of summary and frequency statistics, probability distributions, correlation functions, statistical tests, kernel density estimation, quasi-Monte Carlo functionality, and more.</p>
+<p>In this tutorial, we will cover:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>: Statistics, Distributions, Statistical tests and Correlations</p></li>
+<li><p>Extreme Value Analysis</p></li>
+</ul>
+<p>All <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-modules depend on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but are mostly independent of each other. The standard way of importing NumPy and these SciPy modules is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scipy.stats
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="descriptive-statistics">
+<h2><span class="section-number">4.1.1. </span>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
+<p>When we have a new dataset in hand, we often wish to have an instant describing or summarizing view of the data. This could normally be done through two main approaches:</p>
+<ol class="simple">
+<li><p><em><strong>The quantitative approach</strong></em> describes and summarizes data numerically using statistics.</p></li>
+<li><p><em><strong>The visual approach</strong></em> illustrates data with charts, plots, histograms, and other graphs.</p></li>
+</ol>
+<p>In this tutorial, we focus on the quantitative approach using the <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> package. The visual approach will be covered in the tutorial of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<p>There are multiple ways to obtain specific discriptive statistics of the dataset. Note that <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> is established based on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and it offers additional functionality compared to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>. Common statistics already exists in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> (such as <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code> and so on). For more complicated statistics such as <code class="docutils literal notranslate"><span class="pre">iqr</span></code>, <code class="docutils literal notranslate"><span class="pre">skew</span></code>, <code class="docutils literal notranslate"><span class="pre">kurtosis</span></code> and so on, we need to use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">11.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c1"># Mean (Location Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Median (Location Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Variance (Scale Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variance: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1">#ddof=1 provides an unbiased estimator of the variance</span>
+
+<span class="c1"># IQR (Scale Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IQR: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Skewness (Shape Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skewness: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Kurtosis (Shape Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kurtosis: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[10.  14.  11.   7.   9.5]
+ [ 8.   9.  17.  14.5 12. ]
+ [15.   7.  11.5 10.  10.5]
+ [11.  11.   9.  12.  14. ]]
+Mean:  [11.    10.25  12.125 10.875 11.5  ]
+Median:  [10.5  10.   11.25 11.   11.25]
+Variance:  [ 8.66666667  8.91666667 11.72916667 10.0625      3.83333333]
+IQR:  [2.5   3.25  2.375 3.375 2.25 ]
+Skewness:  [ 0.54309084  0.24394285  0.80172768 -0.11813453  0.34616807]
+Kurtosis:  [ 1.5        -0.41610621  2.53815357 -0.32082096 -0.768431  ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we often use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to handle data, we could use the Pandas function <code class="docutils literal notranslate"><span class="pre">describe()</span></code> to have an instant look at summarizing statistics of the DataFrame (or Series). Next is an example of summarizing daily rainfall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            Daily Rainfall Total (mm)
+Date                                 
+1981-01-01                        0.0
+1981-01-02                        0.0
+1981-01-03                        0.0
+1981-01-04                        0.0
+1981-01-05                        0.0
+       Daily Rainfall Total (mm)
+count               14610.000000
+mean                    5.721629
+std                    14.194586
+min                     0.000000
+25%                     0.000000
+50%                     0.000000
+75%                     4.200000
+max                   216.200000
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could also get specific statistics by directly operating on the DataFrame. In this case, the unbiased estimator is used by default.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mean (Location Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># Median (Location Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+
+<span class="c1"># Variance (Scale Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>
+
+<span class="c1"># Skewness (Shape Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">skew</span><span class="p">())</span>
+
+<span class="c1"># Kurtosis (Shape Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Daily Rainfall Total (mm)    5.721629
+dtype: float64
+Daily Rainfall Total (mm)    0.0
+dtype: float64
+Daily Rainfall Total (mm)    201.486277
+dtype: float64
+Daily Rainfall Total (mm)    5.130516
+dtype: float64
+Daily Rainfall Total (mm)    40.832293
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="distributions">
+<h2><span class="section-number">4.1.2. </span>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains a lot of objects for specific distributions, including <strong>continuous distributions</strong> and <strong>discrete distributions</strong>.</p>
+<ul class="simple">
+<li><p><strong>continuous distributions</strong></p></li>
+</ul>
+<p>Some examples are <code class="docutils literal notranslate"><span class="pre">norm</span></code> (normal distribution), <code class="docutils literal notranslate"><span class="pre">gamma</span></code> (gamma distribution), <code class="docutils literal notranslate"><span class="pre">uniform</span></code> (uniform distribution) and so on. Each object of continuous distributions comes with many useful methods, such as its PDF (probability density function), its CDF (cumulative density function) and so on.</p>
+<p>Normally, we would directly import specific distributions into Python for convenience. Next is the example of a normal distribution whose mean is 5 and standard deviation is 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">PDF</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate PDF in bins</span>
+<span class="n">CDF</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate CDF in bins</span>
+<span class="n">SF</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate survival function (1-CDF)</span>
+<span class="n">PPF</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># obtain percent point (inverse of CDF)</span>
+<span class="n">RVS</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># generate 1000 random variates</span>
+<span class="n">MMS</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mvsk&#39;</span><span class="p">)</span>  <span class="c1"># obtain the four moments</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">PDF</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">CDF</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/scipy-basic_14_0.png" src="../../_images/scipy-basic_14_0.png" />
+<img alt="../../_images/scipy-basic_14_1.png" src="../../_images/scipy-basic_14_1.png" />
+</div>
+</div>
+<p>One common practice is to fit a dataset into a distribution. Next is an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># pesudo dataset</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;MLE&quot;</span><span class="p">)</span>  <span class="c1"># do a maximum-likelihood fit</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="c1"># Plot figure</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">mu</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Samples&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">),</span>
+         <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.093969900473891 1.9977115782351373
+</pre></div>
+</div>
+<img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The distribution objects in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> could be employed in two ways. The first is to input the distribution parameters every time, as the example above. The other way is to create a “frozen” distribution object by fixing the distribution parameters. For example, <code class="docutils literal notranslate"><span class="pre">distr</span> <span class="pre">=</span> <span class="pre">norm(loc=5,</span> <span class="pre">scale=2)</span></code>. The example in the following section of discrete distributions employs this way.</p>
+</div>
+<ul class="simple">
+<li><p><strong>discrete distributions</strong></p></li>
+</ul>
+<p>Some examples are <code class="docutils literal notranslate"><span class="pre">bernoulli</span></code> (Bernoulli distribution), <code class="docutils literal notranslate"><span class="pre">binom</span></code> (binomial distribution), <code class="docutils literal notranslate"><span class="pre">poisson</span></code> (poisson distribution) and so on. Similarly, each object of discrete distributions comes with some useful methods, such as its PMF (probability mass function), its CDF (cumulative density function) and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span>
+
+<span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.4</span>
+<span class="n">distr</span> <span class="o">=</span> <span class="n">binom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>  <span class="c1"># create an instance of binom</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">PMF</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># generate PMF in x</span>
+<span class="n">CDF</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># generate CDF in x</span>
+<span class="n">MMS</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mvsk&#39;</span><span class="p">)</span>  <span class="c1"># obtain the four moments</span>
+<span class="n">RVS</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># generate random variates</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">PMF</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PMF</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">CDF</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">CDF</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/scipy-basic_20_0.png" src="../../_images/scipy-basic_20_0.png" />
+<img alt="../../_images/scipy-basic_20_1.png" src="../../_images/scipy-basic_20_1.png" />
+</div>
+</div>
+<p>For a full list of probability distributions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, please refer to this <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official website</a>.</p>
+</div>
+<div class="section" id="statistical-tests">
+<h2><span class="section-number">4.1.3. </span>Statistical Tests<a class="headerlink" href="#statistical-tests" title="Permalink to this headline">¶</a></h2>
+<p>A statistical test is a decision indicator. <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains a lot of common statistical tests, such as <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code> (T-test for the means of two independent samples), <code class="docutils literal notranslate"><span class="pre">kstest</span></code> (Kolmogorov-Smirnov test for goodness of fit) and so on.</p>
+<p>For instance, if we have two sets of observations, that we assume are generated from Gaussian processes, we can use a T-test to decide whether the means of two sets of observations are significantly different.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Sample A</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Sample B</span>
+<span class="n">T</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>          <span class="c1"># T-test</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.7674036062454292 0.006649850309323644
+</pre></div>
+</div>
+</div>
+</div>
+<p>The resulting output in this case is composed of:</p>
+<ul class="simple">
+<li><p>T statistic value: it is a number the sign of which is proportional to the difference between the two random processes and the magnitude is related to the significance of this difference.</p></li>
+<li><p>p value: the probability of both processes being identical. If it is close to 1, the two process are almost certainly identical. The closer it is to zero, the more likely it is that the processes have different means.</p></li>
+</ul>
+<p>For a full list of supported statistical tests in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, please refer to this <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#correlation-functions">official website</a>.</p>
+</div>
+<div class="section" id="correlations">
+<h2><span class="section-number">4.1.4. </span>Correlations<a class="headerlink" href="#correlations" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains some basic correlation functions, such as <code class="docutils literal notranslate"><span class="pre">pearsonr</span></code> (Pearson correlation coefficient), <code class="docutils literal notranslate"><span class="pre">spearmanr</span></code> (KSpearman correlation coefficient), <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> (Kendall’s tau correlation measure) and so on. Next is an example of <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> for annual rainfall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">yr</span> <span class="o">=</span> <span class="n">dr</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># aggregate annual rainfall total</span>
+<span class="n">yr</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">yr</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">yr</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Yearly Rainfall Total (mm)&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">yr</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="n">tau</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kendalltau</span><span class="p">(</span><span class="n">yr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">yr</span><span class="p">)</span>
+<span class="c1"># tau is Kendall’s tau measure and p is the corresponding p-value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Yearly Rainfall Total (mm)
+Date                            
+1981                      1336.3
+1982                      1581.7
+1983                      1866.5
+1984                      2686.7
+1985                      1483.9
+-0.0358974358974359 0.7442511261559122
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more advanced regression models, you may refer to the third-party <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning">machine learning package</a> <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, which is also built on NumPy, SciPy and matplotlib. A brief beginner guide of this could also be found in <a class="reference external" href="https://realpython.com/linear-regression-in-python/">RealPython</a>.</p>
+</div>
+<div class="section" id="extreme-value-analysis">
+<h2><span class="section-number">4.1.5. </span>Extreme Value Analysis<a class="headerlink" href="#extreme-value-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Extreme value analysis (EVA) is a process primarily to estimate of the probability of events that are more extreme than any previously observed. It is widely applied in many fields such as engineering, meteorology, hydrology, finance, etc. For example, we could use EVA to estimate the probability distributions of extreme events and correspondingly estimate the magnitudes of extreme events under spscific return periods.</p>
+<p>In this section, we will take a series of streamflow as an example to show the extreme value analysis for <em><strong>annual 5-day low-flow</strong></em> in Python step by step.</p>
+<div class="section" id="extract-extreme-values">
+<h3><span class="section-number">4.1.5.1. </span>Extract extreme values<a class="headerlink" href="#extract-extreme-values" title="Permalink to this headline">¶</a></h3>
+<p>We first load the daily streamflow data from file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and calculate the 5-day moving average of streamflow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Data</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Runoff_02401390.dat&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> 
+                 <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Streamflow&quot;</span><span class="p">]</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Date&#39;</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Streamflow</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1981-01-01</th>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>1981-01-02</th>
+      <td>39.0</td>
+    </tr>
+    <tr>
+      <th>1981-01-03</th>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>1981-01-04</th>
+      <td>39.0</td>
+    </tr>
+    <tr>
+      <th>1981-01-05</th>
+      <td>37.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate 5-day flow</span>
+<span class="n">ds5day</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">ds5day</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;5-day flow&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds5day</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Extract annual low-flow</span>
+<span class="n">lowf</span> <span class="o">=</span> <span class="n">ds5day</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">lowf</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">lowf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">lowf</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lowf</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Plot annual 5-day low-flow</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lowf</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Low-flow ($m^3/s$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            5-day flow
+Date                  
+1981-01-01         NaN
+1981-01-02         NaN
+1981-01-03        39.2
+1981-01-04        38.4
+1981-01-05        39.4
+      Annual low-flow
+Date                 
+1981             11.2
+1982             19.2
+1983             19.8
+1984             17.6
+1985             25.4
+</pre></div>
+</div>
+<img alt="../../_images/scipy-basic_36_1.png" src="../../_images/scipy-basic_36_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="fit-distribution-parameter-estimation">
+<h3><span class="section-number">4.1.5.2. </span>Fit distribution (parameter estimation)<a class="headerlink" href="#fit-distribution-parameter-estimation" title="Permalink to this headline">¶</a></h3>
+<p>Next, we fit a distribution to the low-flow data. We assume that annual low-flow follows a generalized extreme value (GEV) distribution <code class="docutils literal notranslate"><span class="pre">genextreme(c,</span> <span class="pre">loc=loc,</span> <span class="pre">scale=scale)</span></code>, which has three parameters: <code class="docutils literal notranslate"><span class="pre">loc</span></code> (location paramter), <code class="docutils literal notranslate"><span class="pre">scale</span></code> (scale parameter) and <code class="docutils literal notranslate"><span class="pre">c</span></code> (shape parameter).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">genextreme</span> <span class="k">as</span> <span class="n">gev</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we introduce two methods to estimate the parameters, inluding the maximum likelihood method (MLE) and the L-moments method.</p>
+<ul class="simple">
+<li><p>maximum likelihood method (MLE)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span><span class="p">,</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">scale0</span>  <span class="o">=</span> <span class="n">gev</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;MLE&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loc0</span><span class="p">,</span> <span class="n">scale0</span><span class="p">,</span> <span class="n">c0</span><span class="p">)</span>
+<span class="n">MLEGEV</span> <span class="o">=</span> <span class="n">gev</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale0</span><span class="p">)</span>  <span class="c1"># Frozen distribution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.808425716808408 5.941316015077605 0.16158787388446866
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>method of L-moments (LMM)</p></li>
+</ul>
+<p>In the context of EVA, observations were used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case. More information and specific advantages of L-moments could be referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=the%20Wakeby%20distributions.-,Usage,-%5Bedit%5D">WikiPedia</a> page.</p>
+<p>However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
+<p>The L-moments are established based on the probability weighted moments, so in order to calculate L-moments of samples, we need to calculate probability weighted moments of samples. Assume a set of samples <span class="math notranslate nohighlight">\(X_j (X_1&gt;X_2&gt;...&gt;X_n)\)</span>, probability weighted moments of samples are as follows.
+\begin{align}
+&amp; b_0=\overline{X}\
+&amp; b_1=\sum_{j=1}^{n-1} \frac{(n-j)X_j}{n(n-1)}\
+&amp; b_2=\sum_{j=1}^{n-2} \frac{(n-j)(n-j-1)X_j}{n(n-1)(n-2)}\
+\end{align}
+where <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are the first three unbiased probability weighted moments.</p>
+<p>The relationship between the first three L-moments and probability weighted moments are
+\begin{align}
+&amp; \lambda_1=b_0\
+&amp; \lambda_2=2b_1-b_0\
+&amp; \lambda_3=6b_2-6_b1+b_0\
+\end{align}</p>
+<p>where <span class="math notranslate nohighlight">\(\lambda_0, \lambda_1, \lambda_2\)</span> are the first three unbiased probability weighted moments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate L-moments based on samples</span>
+
+<span class="k">def</span> <span class="nf">samlmom3</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    samlmom3 returns the first three L-moments of samples</span>
+<span class="sd">    sample is the 1-d array</span>
+<span class="sd">    n is the total number of the samples, j is the j_th sample</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">sample</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">lmom1</span> <span class="o">=</span> <span class="n">b0</span>
+    <span class="n">lmom2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">b0</span>
+    <span class="n">lmom3</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="n">b2</span> <span class="o">-</span> <span class="n">b1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b0</span>
+
+    <span class="k">return</span> <span class="n">lmom1</span><span class="p">,</span> <span class="n">lmom2</span><span class="p">,</span> <span class="n">lmom3</span>
+
+
+<span class="n">LMM</span> <span class="o">=</span> <span class="n">samlmom3</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LMM</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(18.5, 3.8837241379310328, 0.37207881773398555)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a relationship between the L-moments for some specific distributions. We may rely on this to obtain estimated parameters based on the sample L-moments. A numerical approximation method was proposed by <a class="reference external" href="https://www.tandfonline.com/doi/abs/10.1080/03610919608813340">Donaldson (1996)</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate GEV parameters</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">pargev</span><span class="p">(</span><span class="n">lmom</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pargev estimates the parameters of the Generalized Extreme Value </span>
+<span class="sd">    distribution given the L-moments of the data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lmom_ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">lmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    
+    <span class="n">SMALL</span> <span class="o">=</span> <span class="mf">1e-5</span>
+    <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-6</span>
+    <span class="n">maxit</span> <span class="o">=</span> <span class="mi">20</span>
+    
+    <span class="c1"># EU IS EULER&#39;S CONSTANT</span>
+    <span class="n">EU</span> <span class="o">=</span> <span class="mf">0.57721566</span>
+    <span class="n">DL2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">DL3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1"># COEFFICIENTS OF RATIONAL-FUNCTION APPROXIMATIONS FOR K</span>
+    <span class="n">A0</span> <span class="o">=</span> <span class="mf">0.28377530</span>
+    <span class="n">A1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.21096399</span>
+    <span class="n">A2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.50728214</span>
+    <span class="n">A3</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.13455566</span>
+    <span class="n">A4</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.07138022</span>
+    <span class="n">B1</span> <span class="o">=</span> <span class="mf">2.06189696</span>
+    <span class="n">B2</span> <span class="o">=</span> <span class="mf">1.31912239</span>
+    <span class="n">B3</span> <span class="o">=</span> <span class="mf">0.25077104</span>
+    <span class="n">C1</span> <span class="o">=</span> <span class="mf">1.59921491</span>
+    <span class="n">C2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.48832213</span>
+    <span class="n">C3</span> <span class="o">=</span> <span class="mf">0.01573152</span>
+    <span class="n">D1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.64363929</span>
+    <span class="n">D2</span> <span class="o">=</span> <span class="mf">0.08985247</span>
+    
+    <span class="n">T3</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">T3</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="n">A0</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">A1</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">A2</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">A3</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="n">A4</span><span class="p">))))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">B1</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">B2</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="n">B3</span><span class="p">)))</span>
+
+        <span class="k">if</span> <span class="n">T3</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">:</span>
+            <span class="n">para3</span> <span class="o">=</span> <span class="n">G</span>
+            <span class="n">GAM</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">special</span><span class="o">.</span><span class="n">gammaln</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">G</span><span class="p">))</span>
+            <span class="n">para2</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span> <span class="o">/</span> <span class="p">(</span><span class="n">GAM</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="n">G</span><span class="p">))</span>
+            <span class="n">para1</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">para2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">GAM</span><span class="p">)</span> <span class="o">/</span> <span class="n">G</span>
+            <span class="k">return</span> <span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="n">para3</span>
+        <span class="k">elif</span> <span class="n">T3</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mf">0.97</span><span class="p">:</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">T3</span><span class="p">)</span> <span class="o">/</span> <span class="n">DL2</span>
+
+        <span class="n">T0</span> <span class="o">=</span> <span class="p">(</span><span class="n">T3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="k">for</span> <span class="n">IT</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxit</span><span class="p">):</span>
+            <span class="n">X2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="n">G</span>
+            <span class="n">X3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span> <span class="o">-</span><span class="n">G</span>
+            <span class="n">XX2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">X2</span>
+            <span class="n">XX3</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">X3</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">XX3</span> <span class="o">/</span> <span class="n">XX2</span>
+            <span class="n">DERIV</span> <span class="o">=</span> <span class="p">(</span><span class="n">XX2</span> <span class="o">*</span> <span class="n">X3</span> <span class="o">*</span> <span class="n">DL3</span> <span class="o">-</span> <span class="n">XX3</span> <span class="o">*</span> <span class="n">X2</span> <span class="o">*</span> <span class="n">DL2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">XX2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">GOLD</span> <span class="o">=</span> <span class="n">G</span>
+            <span class="n">G</span> <span class="o">-=</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="n">T0</span><span class="p">)</span> <span class="o">/</span> <span class="n">DERIV</span>
+
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">G</span> <span class="o">-</span> <span class="n">GOLD</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">eps</span> <span class="o">*</span> <span class="n">G</span><span class="p">:</span>
+                <span class="n">para3</span> <span class="o">=</span> <span class="n">G</span>
+                <span class="n">GAM</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">special</span><span class="o">.</span><span class="n">gammaln</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">G</span><span class="p">))</span>
+                <span class="n">para2</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span> <span class="o">/</span> <span class="p">(</span><span class="n">GAM</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="n">G</span><span class="p">))</span>
+                <span class="n">para1</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">para2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">GAM</span><span class="p">)</span> <span class="o">/</span> <span class="n">G</span>
+                <span class="k">return</span> <span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="n">para3</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Iteration has not converged&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">T3</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="p">(</span><span class="n">C1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="p">(</span><span class="n">C2</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">C3</span><span class="p">)))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="p">(</span><span class="n">D1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">D2</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">SMALL</span><span class="p">:</span>
+            <span class="n">para2</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">DL2</span>
+            <span class="n">para1</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">EU</span> <span class="o">*</span> <span class="n">para2</span>
+            <span class="n">para3</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">para3</span> <span class="o">=</span> <span class="n">G</span>
+            <span class="n">GAM</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">special</span><span class="o">.</span><span class="n">gammaln</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">G</span><span class="p">))</span>
+            <span class="n">para2</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span> <span class="o">/</span> <span class="p">(</span><span class="n">GAM</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="n">G</span><span class="p">))</span>
+            <span class="n">para1</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">para2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">GAM</span><span class="p">)</span> <span class="o">/</span> <span class="n">G</span>
+        <span class="k">return</span> <span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="n">para3</span>
+
+
+<span class="n">loc1</span><span class="p">,</span> <span class="n">scale1</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">pargev</span><span class="p">(</span><span class="n">LMM</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loc1</span><span class="p">,</span> <span class="n">scale1</span><span class="p">,</span> <span class="n">c1</span><span class="p">)</span>
+<span class="n">LMMGEV</span> <span class="o">=</span> <span class="n">gev</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale1</span><span class="p">)</span>  <span class="c1"># Frozen distribution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.587575475184854 6.182949767501039 0.11881328920002591
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-with-empirical-distribution">
+<h3><span class="section-number">4.1.5.3. </span>Compare with empirical distribution<a class="headerlink" href="#compare-with-empirical-distribution" title="Permalink to this headline">¶</a></h3>
+<p>As we have assumed the probability distributions of annual low-flow, it is necessary to examine the performance in characterizing the observation datasets of this distribution along with estimated parameters. Here, we first examine this by directly looking at the <em><strong>probability density function (PDF)</strong></em> and <em><strong>cumulative density function (CDF)</strong></em>; then, we examine this through <em><strong>statistical inference</strong></em>.</p>
+<ul class="simple">
+<li><p>probability density function</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot empirical PDF</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Empirical PDF&#39;</span><span class="p">)</span>
+<span class="c1"># Plot estimated PDF based on maximum likelihood method</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span>
+         <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated PDF (MLE)&#39;</span><span class="p">)</span>
+<span class="c1"># Plot estimated PDF based on the method of L-moments</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span>
+         <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated PDF (LMM)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Annual 5-day Low-flow ($m^3/s$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/scipy-basic_48_0.png" src="../../_images/scipy-basic_48_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>cumulative density function</p></li>
+</ul>
+<p>Since we are often more concerned about the rare cases of extreme events (which lies at the right edge of PDF), it is also common practice to plot CDF to have a check.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot empirical CDF</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lowf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">]),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orangered&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Empirical CDF&#39;</span><span class="p">)</span>
+<span class="c1"># Plot estimated PDF based on maximum likelihood method</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
+         <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated CDF (MLE)&#39;</span><span class="p">)</span>
+<span class="c1"># Plot estimated PDF based on the method of L-moments</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
+         <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated CDF (LMM)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Annual 5-day Low-flow ($m^3/s$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/scipy-basic_50_0.png" src="../../_images/scipy-basic_50_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>statistical inference: Kolmogorov-Smirnov(KS) test</p></li>
+</ul>
+<p>There are several tests aviable to test the performances of distributon fits. Here we used the Kolmogorov-Smirnov(KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that 2 independent samples are drawn from the same continuous distribution. If the K-S statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MLEKS</span><span class="p">)</span>
+<span class="n">LMMKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LMMKS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
+KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-extreme-precipitation-for-specific-return-periods">
+<h3><span class="section-number">4.1.5.4. </span>Get extreme precipitation for specific return periods<a class="headerlink" href="#get-extreme-precipitation-for-specific-return-periods" title="Permalink to this headline">¶</a></h3>
+<p>One goal of EVA is to estimate the extreme values corresponding to some return periods. In the case of low-flow, the relationship between the non-exceedance probaility and the return period is</p>
+<div class="math notranslate nohighlight">
+\[P(X\leq x_{T})=\frac{1}{T}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{T}\)</span> is the extreme annual 5-day low-flow corresponding to the return period of <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return periods from 1 year to 1000 years</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
+
+<span class="c1"># extreme low-flow under each return period</span>
+<span class="n">LFTmle</span> <span class="o">=</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">LFTmle</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LFTmle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Annual 5-day low-flow&quot;</span><span class="p">])</span>
+<span class="n">LFTmle</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Return period&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LFTmle</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]])</span>
+
+<span class="n">LFTlmm</span> <span class="o">=</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">LFTlmm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LFTlmm</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Annual 5-day low-flow&quot;</span><span class="p">])</span>
+<span class="n">LFTlmm</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Return period&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">LFTlmm</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]])</span>
+
+<span class="c1"># Plot low-flow vs return periods</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">LFTmle</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MLE&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">LFTlmm</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LMM&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Annual 5-day low-flow ($m^3/s$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Return period (years)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               Annual 5-day low-flow
+Return period                       
+2                          17.922767
+5                          12.869493
+10                         10.503747
+100                         5.517358
+1000                        2.330862
+               Annual 5-day low-flow
+Return period                       
+2                          17.805074
+5                          12.560429
+10                         10.166638
+100                         5.234184
+1000                        2.154865
+</pre></div>
+</div>
+<img alt="../../_images/scipy-basic_55_1.png" src="../../_images/scipy-basic_55_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">4.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>This tutorial was edited based on <a class="reference external" href="https://realpython.com/python-statistics/">Python Statistics Fundamentals</a>, <a class="reference external" href="https://scipy-lectures.org/">Scipy Lecture Notes</a>, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official site</a>, <a class="reference external" href="https://github.com/royalosyin/A-Beginner-Guide-to-Carry-out-Extreme-Value-Analysis-with-Codes-in-Python">royalosyin’s guide to carry out EVA</a>.</p></li>
+<li><p>Only the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> sub-module is introduced here. If you wish to get a quick glimpse on other sub-modules of SciPy, you could refer to <a class="reference external" href="https://scipy-lectures.org/intro/scipy.html">scipy-lectures</a>.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/data-analytics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="scipy.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">4. </span>Scipy</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="xarray.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>What is Xarray?</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Xiaogang HE<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-xxx', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

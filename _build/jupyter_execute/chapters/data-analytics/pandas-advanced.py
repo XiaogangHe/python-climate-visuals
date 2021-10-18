@@ -21,8 +21,8 @@ np.random.seed(0)
 
 
 iterables = [
-    ["temperature","rainfall","runoff"],
-    ["max","mean","min"],
+    ["temperature", "rainfall", "runoff"],
+    ["max", "mean", "min"],
 ]
 idx = pd.MultiIndex.from_product(iterables, names=["factor", "method"])
 idx
@@ -49,7 +49,7 @@ df = pd.DataFrame(np.random.randn(3, 4), index=idx)
 df
 
 
-# You can  use `pd.MultiIndex.from_tuples()`, `pd.MultiIndex.from_frame()` to create a MultiIndex
+# You can also use `pd.MultiIndex.from_tuples()`, `pd.MultiIndex.from_frame()` to create a MultiIndex.
 
 # ### Get single index for a MultiIndex
 
@@ -57,8 +57,8 @@ df
 
 
 iterables = [
-    ["temperature","rainfall","runoff"],
-    ["max","mean","min"],
+    ["temperature", "rainfall", "runoff"],
+    ["max", "mean", "min"],
 ]
 idx = pd.MultiIndex.from_product(iterables, names=["factor", "method"])
 df = pd.DataFrame(np.random.randn(9, 4), index=idx)
@@ -91,41 +91,40 @@ df
 # In[10]:
 
 
-df.apply(np.abs)
+df.apply(np.mean)
 
 
 # In[11]:
 
 
-func_x3 = lambda x: x**3 # lambda functiodn
+func_x3 = lambda x: x**3  # lambda function
 df.apply(func_x3)
 
 
 # In[12]:
 
 
-# This function don't have specific meaning. 
+# This function does not have specific meaning.
 # It only defines a complex operation for each element of dataframe.
 def func_range(x):
     if x > 1:
         return 1
-    elif x< -1:
+    elif x < -1:
         return -1
     else:
         return np.abs(x)
+
 df.applymap(func_range)
 
 
 # ## Groupby
 # `Groupby()` can be used to group large amounts of data and compute operations on these groups.
-# 
-# 
 
 # In[13]:
 
 
 df = pd.DataFrame(np.random.randn(9, 4), index=idx)
-for n,subdf in df.groupby(by=["factor"]):
+for n, subdf in df.groupby(by=["factor"]):
     print(n)
     print(subdf)
 
@@ -143,7 +142,7 @@ df.groupby(by=["factor"]).mean()
 
 df = pd.read_csv('../../assets/data/Changi_daily_rainfall.csv', index_col=0, header=0, parse_dates=True)
 df1 = df.copy(deep=True)
-df1 = pd.concat([i[1].reset_index(drop=True) for i in df1.loc['2020',:].groupby(pd.Grouper(freq='M'))], axis=1)
+df1 = pd.concat([i[1].reset_index(drop=True) for i in df1.loc['2020', :].groupby(pd.Grouper(freq='M'))], axis=1)
 df1.columns = range(1, 13)
 df1.index = range(1, 32)
 df1.columns.name = 'month'
@@ -157,7 +156,7 @@ df1
 
 
 dfmonth = df.resample('M').sum()
-dfmonth = pd.concat([i[1].reset_index(drop=True) for i in dfmonth.loc['2015':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
+dfmonth = pd.concat([i[1].reset_index(drop=True) for i in dfmonth.loc['2015':'2020', :].groupby(pd.Grouper(freq='Y'))], axis=1)
 dfmonth.columns = range(2015, 2021)
 dfmonth.index = range(1, 13)
 dfmonth.columns.name = 'year'
@@ -174,9 +173,13 @@ dfmonth
 
 # highlight monthly rainfall which is greater than 200 mm and less than 50 mm
 def highlight_G200(s, props=''):
-    return props if s>200 else None
+    return props if s > 200 else None
+
+
 def highlight_L50(s, props=''):
-    return props if s<50 else None
+    return props if s < 50 else None
+
+
 s = dfmonth.style
 s.precision = 1
 s.applymap(highlight_G200, props='color:#3333ff')
@@ -188,8 +191,12 @@ s.applymap(highlight_L50, props='color:#ff3333')
 
 def highlight_max(s, props=''):
     return np.where(s == np.nanmax(s.values), 'background-color:#3399ff', '')
+
+
 def highlight_min(s, props=''):
     return np.where(s == np.nanmin(s.values), 'background-color:#c0c0c0', '')
+
+
 s = dfmonth.style
 s.precision = 1
 s.apply(highlight_max, axis=0)
@@ -206,9 +213,9 @@ if int(v[0]) >= 1 and int(v[1]) >= 3:
 else:
     raise Exception('Please make sure your pandas version >= 1.3.0, Current version is {}'.format(pd.__version__))
 # The following hover information is hypothetical and is only an example of adding hover information for a table
-tt = pd.DataFrame([['There was a severe drought this month!',
-                    'A typhoon landed this month!']],
-                  index=[3,12], columns=[2016,2017])
+tt = pd.DataFrame([['There was a severe drought in this month!',
+                    'A typhoon landed in this month!']],
+                  index=[3, 12], columns=[2016, 2017])
 s.set_tooltips(tt, props='visibility: hidden; position: absolute; z-index: 1; border: 1px solid #000066;'
                          'background-color: white; color: #000066; font-size: 0.8em;'
                          'transform: translate(0px, -24px); padding: 0.6em; border-radius: 0.5em;')
@@ -246,7 +253,7 @@ s
 # In[22]:
 
 
-df.loc['2020',:].plot(title='Daily rainfall of Changi station', color='#3399ff')
+df.loc['2020', :].plot(title='Daily rainfall of Changi station', color='#3399ff')
 
 
 # ### bar plot
@@ -255,7 +262,7 @@ df.loc['2020',:].plot(title='Daily rainfall of Changi station', color='#3399ff')
 
 
 import matplotlib.dates as mdates
-df1 = df.loc['2020',:]
+df1 = df.loc['2020', :]
 ax = df1.plot(title='Daily rainfall of Changi station in 2020', kind='bar', xticks=[])
 
 
@@ -273,13 +280,13 @@ ax = df1.plot(title='Daily rainfall of Changi station in 2020', kind='hist', alp
 
 
 dfmonth = df.resample('M').sum()
-dfmonth = pd.concat([i[1].reset_index(drop=True) for i in dfmonth.loc['1981':'2020',:].groupby(pd.Grouper(freq='Y'))], axis=1)
+dfmonth = pd.concat([i[1].reset_index(drop=True) for i in dfmonth.loc['1981':'2020', :].groupby(pd.Grouper(freq='Y'))], axis=1)
 dfmonth.columns = range(1981, 2021)
 dfmonth.index = range(1, 13)
 dfmonth.columns.name = 'year'
 dfmonth.index.name = 'month'
 ax = dfmonth.plot(title='Monthly rainfall of Changi station in from 1981 to 2020', xlabel='year', 
-             ylabel='Monthly rainfall (mm)', kind='box', figsize=(15,5))
+                  ylabel='Monthly rainfall (mm)', kind='box', figsize=(15, 5))
 ax.set_xticklabels(dfmonth.columns,rotation=45)
 ax.set_xlabel('year')
 
@@ -289,8 +296,8 @@ ax.set_xlabel('year')
 # In[26]:
 
 
-ax = df.loc['2020',:].resample('M').sum().plot(title='Daily rainfall of Changi station in 2020',
-                                               kind='area', alpha=0.5)
+ax = df.loc['2020', :].resample('M').sum().plot(title='Daily rainfall of Changi station in 2020',
+                                                kind='area', alpha=0.5)
 
 
 # ### Scatter plot
@@ -300,15 +307,16 @@ ax = df.loc['2020',:].resample('M').sum().plot(title='Daily rainfall of Changi s
 # In[27]:
 
 
-df1 = df.loc['2020',:].resample('M').sum().reset_index()
+df1 = df.loc['2020', :].resample('M').sum().reset_index()
 df1.head()
 
 
 # In[28]:
 
 
-df1.plot(x='Date', y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
-                                               kind='scatter')
+df1.plot(x='Date', y='Daily Rainfall Total (mm)',
+         title='Daily rainfall of Changi station in 2020',
+         kind='scatter')
 
 
 # ### Pie plot
@@ -316,7 +324,7 @@ df1.plot(x='Date', y='Daily Rainfall Total (mm)', title='Daily rainfall of Chang
 # In[29]:
 
 
-df1 = df.loc['2020',:].resample('M').sum()
+df1 = df.loc['2020', :].resample('M').sum()
 df1.index = df1.index.month
 df1.head()
 
@@ -325,7 +333,7 @@ df1.head()
 
 
 df1.plot(y='Daily Rainfall Total (mm)', title='Daily rainfall of Changi station in 2020',
-                                               kind='pie')
+         kind='pie')
 
 
 # ## References

@@ -17,7 +17,7 @@ def quicksort(arr):
     right = [x for x in arr if x > pivot]
     return quicksort(left) + middle + quicksort(right)
 
-print(quicksort([3,6,8,10,1,2,1]))
+print(quicksort([3, 6, 8, 10, 1, 2, 1]))
 
 
 # If you are already familiar with Python, you may choose to skip this tutorial; however, if not, this tutorial will serve as a quick crash course on the Python programming language as the basis for subsequent tutorials on scientific computing and visualization.
@@ -26,8 +26,9 @@ print(quicksort([3,6,8,10,1,2,1]))
 # 
 # * Basic data types
 # * Containers
-# * Control Flow (Conditions and Loops)
+# * Control flow (conditions and loops)
 # * Functions and Classes
+# * Module imports and Documentation printing
 
 # ## Jupyter Notebooks
 # 
@@ -66,11 +67,11 @@ print(y, type(y))
 # In[3]:
 
 
-print(x + 1)   # Addition
-print(x - 1)   # Subtraction
-print(x * 2)   # Multiplication
-print(x ** 2)  # Exponentiation
-print(x // 2)  # Floor division
+print(x + 1)  # Addition
+print(x - 1)  # Subtraction
+print(x * 2)  # Multiplication
+print(x ** 2) # Exponentiation
+print(x // 2) # Floor division
 
 
 # In[4]:
@@ -358,10 +359,10 @@ print('Bye')    # This is not a part of iterations
 
 
 nums = [0, 1, 3, 4, 6]
-squares = [x ** 2 for x in nums]
+squares = [x**2 for x in nums]
 print(squares)
 
-even_squares = [x ** 2 for x in nums if x % 2 == 0]
+even_squares = [x**2 for x in nums if x % 2 == 0]
 print(even_squares)
 
 
@@ -371,7 +372,7 @@ print(even_squares)
 
 
 nums = [0, 1, 2, 3, 4]
-even_num_to_square = {x: x ** 2 for x in nums if x % 2 == 0}
+even_num_to_square = {x: x**2 for x in nums if x % 2 == 0}
 
 print(even_num_to_square)
 
@@ -470,13 +471,13 @@ print(arange(1, 4))
 # In[34]:
 
 
-# try this!
+# Try this!!!
 import antigravity
 
 
-# ## Look for documentation of packages
+# ## Print documentation
 
-# We may need instant documentation of specific modules and their functions when necessary. The instant documentation could be printed out using the built-in function `help`.
+# We may need to look at instant documentation of specific modules and their functions when necessary. The instant documentation could be printed out using the built-in function `help`.
 
 # In[35]:
 
