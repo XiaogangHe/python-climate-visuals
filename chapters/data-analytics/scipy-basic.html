@@ -242,7 +242,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../gallery/plot_river_network_weighted.html">
+  <a class="reference internal" href="../gallery/plot_weighted_river_network.html">
    River Network
   </a>
  </li>
@@ -680,7 +680,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.093969900473891 1.9977115782351373
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.170662443123031 1.9637819405171413
 </pre></div>
 </div>
 <img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
@@ -688,12 +688,12 @@ dtype: float64
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The distribution objects in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> could be employed in two ways. The first is to input the distribution parameters every time, as the example above. The other way is to create a “frozen” distribution object by fixing the distribution parameters. For example, <code class="docutils literal notranslate"><span class="pre">distr</span> <span class="pre">=</span> <span class="pre">norm(loc=5,</span> <span class="pre">scale=2)</span></code>. The example in the following section of discrete distributions employs this way.</p>
+<p>The distribution objects in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> could be employed in two ways. The first is to input the distribution parameters every time, as in the example above. The other way is to create a “frozen” distribution object by fixing the distribution parameters. For example, <code class="docutils literal notranslate"><span class="pre">distr</span> <span class="pre">=</span> <span class="pre">norm(loc=5,</span> <span class="pre">scale=2)</span></code>. The example in the following section of discrete distributions employs this way.</p>
 </div>
 <ul class="simple">
 <li><p><strong>discrete distributions</strong></p></li>
 </ul>
-<p>Some examples are <code class="docutils literal notranslate"><span class="pre">bernoulli</span></code> (Bernoulli distribution), <code class="docutils literal notranslate"><span class="pre">binom</span></code> (binomial distribution), <code class="docutils literal notranslate"><span class="pre">poisson</span></code> (poisson distribution) and so on. Similarly, each object of discrete distributions comes with some useful methods, such as its PMF (probability mass function), its CDF (cumulative density function) and so on.</p>
+<p>Some examples are <code class="docutils literal notranslate"><span class="pre">bernoulli</span></code> (Bernoulli distribution), <code class="docutils literal notranslate"><span class="pre">binom</span></code> (binomial distribution), <code class="docutils literal notranslate"><span class="pre">poisson</span></code> (poisson distribution) and so on. Similarly, each object of discrete distributions comes with some useful methods, such as its PMF (probability mass function), its CDF (cumulative distribution function) and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span>
@@ -745,7 +745,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.7674036062454292 0.006649850309323644
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.700353057494126 7.705251272969022e-06
 </pre></div>
 </div>
 </div>
@@ -759,7 +759,7 @@ dtype: float64
 </div>
 <div class="section" id="correlations">
 <h2><span class="section-number">4.1.4. </span>Correlations<a class="headerlink" href="#correlations" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains some basic correlation functions, such as <code class="docutils literal notranslate"><span class="pre">pearsonr</span></code> (Pearson correlation coefficient), <code class="docutils literal notranslate"><span class="pre">spearmanr</span></code> (KSpearman correlation coefficient), <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> (Kendall’s tau correlation measure) and so on. Next is an example of <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> for annual rainfall.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains some basic correlation functions, such as <code class="docutils literal notranslate"><span class="pre">pearsonr</span></code> (Pearson correlation coefficient), <code class="docutils literal notranslate"><span class="pre">spearmanr</span></code> (Spearman correlation coefficient), <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> (Kendall’s tau correlation measure) and so on. Next is an example of <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> for annual rainfall.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -791,7 +791,7 @@ Date
 </div>
 <div class="section" id="extreme-value-analysis">
 <h2><span class="section-number">4.1.5. </span>Extreme Value Analysis<a class="headerlink" href="#extreme-value-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Extreme value analysis (EVA) is a process primarily to estimate of the probability of events that are more extreme than any previously observed. It is widely applied in many fields such as engineering, meteorology, hydrology, finance, etc. For example, we could use EVA to estimate the probability distributions of extreme events and correspondingly estimate the magnitudes of extreme events under spscific return periods.</p>
+<p>Extreme value analysis (EVA) is a process primarily to estimate the probability of events that are more extreme than any previously observed. It is widely applied in many fields such as engineering, meteorology, hydrology, finance, etc. For example, we could use EVA to estimate the probability distributions of extreme events and correspondingly estimate the magnitudes of extreme events under specific return periods.</p>
 <p>In this section, we will take a series of streamflow as an example to show the extreme value analysis for <em><strong>annual 5-day low-flow</strong></em> in Python step by step.</p>
 <div class="section" id="extract-extreme-values">
 <h3><span class="section-number">4.1.5.1. </span>Extract extreme values<a class="headerlink" href="#extract-extreme-values" title="Permalink to this headline">¶</a></h3>
@@ -902,7 +902,7 @@ Date
 </div>
 <div class="section" id="fit-distribution-parameter-estimation">
 <h3><span class="section-number">4.1.5.2. </span>Fit distribution (parameter estimation)<a class="headerlink" href="#fit-distribution-parameter-estimation" title="Permalink to this headline">¶</a></h3>
-<p>Next, we fit a distribution to the low-flow data. We assume that annual low-flow follows a generalized extreme value (GEV) distribution <code class="docutils literal notranslate"><span class="pre">genextreme(c,</span> <span class="pre">loc=loc,</span> <span class="pre">scale=scale)</span></code>, which has three parameters: <code class="docutils literal notranslate"><span class="pre">loc</span></code> (location paramter), <code class="docutils literal notranslate"><span class="pre">scale</span></code> (scale parameter) and <code class="docutils literal notranslate"><span class="pre">c</span></code> (shape parameter).</p>
+<p>Next, we fit a distribution to the low-flow data. We assume that annual low-flow follows a generalized extreme value (GEV) distribution <code class="docutils literal notranslate"><span class="pre">genextreme(c,</span> <span class="pre">loc=loc,</span> <span class="pre">scale=scale)</span></code>, which has three parameters: <code class="docutils literal notranslate"><span class="pre">loc</span></code> (location parameter), <code class="docutils literal notranslate"><span class="pre">scale</span></code> (scale parameter) and <code class="docutils literal notranslate"><span class="pre">c</span></code> (shape parameter).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">genextreme</span> <span class="k">as</span> <span class="n">gev</span>
@@ -1084,7 +1084,7 @@ where <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are th
 </div>
 <div class="section" id="compare-with-empirical-distribution">
 <h3><span class="section-number">4.1.5.3. </span>Compare with empirical distribution<a class="headerlink" href="#compare-with-empirical-distribution" title="Permalink to this headline">¶</a></h3>
-<p>As we have assumed the probability distributions of annual low-flow, it is necessary to examine the performance in characterizing the observation datasets of this distribution along with estimated parameters. Here, we first examine this by directly looking at the <em><strong>probability density function (PDF)</strong></em> and <em><strong>cumulative density function (CDF)</strong></em>; then, we examine this through <em><strong>statistical inference</strong></em>.</p>
+<p>As we have assumed the probability distributions of annual low-flow, it is necessary to examine the performance in characterizing the observation datasets of this distribution along with estimated parameters. Here, we first examine this by directly looking at the <em><strong>probability density function (PDF)</strong></em> and <em><strong>cumulative distribution function (CDF)</strong></em>; then, we examine this through <em><strong>statistical inference</strong></em>.</p>
 <ul class="simple">
 <li><p>probability density function</p></li>
 </ul>
@@ -1113,7 +1113,7 @@ where <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are th
 </div>
 </div>
 <ul class="simple">
-<li><p>cumulative density function</p></li>
+<li><p>cumulative distribution function</p></li>
 </ul>
 <p>Since we are often more concerned about the rare cases of extreme events (which lies at the right edge of PDF), it is also common practice to plot CDF to have a check.</p>
 <div class="cell docutils container">
@@ -1144,7 +1144,7 @@ where <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are th
 <ul class="simple">
 <li><p>statistical inference: Kolmogorov-Smirnov(KS) test</p></li>
 </ul>
-<p>There are several tests aviable to test the performances of distributon fits. Here we used the Kolmogorov-Smirnov(KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that 2 independent samples are drawn from the same continuous distribution. If the K-S statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
+<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov(KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that 2 independent samples are drawn from the same continuous distribution. If the K-S statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
@@ -1164,7 +1164,7 @@ KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
 </div>
 <div class="section" id="get-extreme-precipitation-for-specific-return-periods">
 <h3><span class="section-number">4.1.5.4. </span>Get extreme precipitation for specific return periods<a class="headerlink" href="#get-extreme-precipitation-for-specific-return-periods" title="Permalink to this headline">¶</a></h3>
-<p>One goal of EVA is to estimate the extreme values corresponding to some return periods. In the case of low-flow, the relationship between the non-exceedance probaility and the return period is</p>
+<p>One goal of EVA is to estimate the extreme values corresponding to some return periods. In the case of low-flow, the relationship between the non-exceedance probability and the return period is</p>
 <div class="math notranslate nohighlight">
 \[P(X\leq x_{T})=\frac{1}{T}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_{T}\)</span> is the extreme annual 5-day low-flow corresponding to the return period of <span class="math notranslate nohighlight">\(T\)</span>.</p>
