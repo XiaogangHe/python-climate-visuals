@@ -35,7 +35,7 @@ parts:
     title: Scipy
     sections:
     - file: chapters/data-analytics/scipy-basic
-      title: Tutorial (Basic)
+      title: Tutorial
   - file: chapters/data-analytics/xarray
     title: Xarray
     sections:
