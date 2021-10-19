@@ -517,10 +517,9 @@
 <h2><span class="section-number">4.1.1. </span>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
 <p>When we have a new dataset in hand, we need to have an descriptive or summary view of the data. This could normally be done through two main approaches:</p>
 <ol class="simple">
-<li><p><em><strong>The quantitative approach</strong></em> describes and summarizes data numerically using statistics.</p></li>
-<li><p><em><strong>The visual approach</strong></em> illustrates data with charts, plots, histograms, and other graphs.</p></li>
+<li><p><em><strong>The quantitative approach</strong></em> describes and summarizes data numerically using statistics. We focus on this approach in this <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> tutorial.</p></li>
+<li><p><em>The visual approach</em> illustrates data with charts, plots, histograms, and other graphs. This approach is covered in the tutorial of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
 </ol>
-<p>In this tutorial, we focus on the quantitative approach using the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> package. The visual approach is covered in the tutorial of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <p>There are multiple ways to obtain descriptive statistics of the dataset in Python. Note that <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> is established based on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and it offers additional functionality compared to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>. Common statistics already exist in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> (such as <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>). For more complicated statistics such as <code class="docutils literal notranslate"><span class="pre">iqr</span></code>, <code class="docutils literal notranslate"><span class="pre">skew</span></code>, <code class="docutils literal notranslate"><span class="pre">kurtosis</span></code>, we need to use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,7 +636,7 @@ dtype: float64
 <ul class="simple">
 <li><p><strong>Continuous distributions</strong></p></li>
 </ul>
-<p>Some examples are <code class="docutils literal notranslate"><span class="pre">norm</span></code> (normal distribution), <code class="docutils literal notranslate"><span class="pre">gamma</span></code> (gamma distribution), <code class="docutils literal notranslate"><span class="pre">uniform</span></code> (uniform distribution). Each object of continuous distributions comes with many useful methods, such as its PDF (probability density function), its CDF (cumulative density function) and so on.</p>
+<p>Some examples are <code class="docutils literal notranslate"><span class="pre">norm</span></code> (normal distribution), <code class="docutils literal notranslate"><span class="pre">gamma</span></code> (gamma distribution), <code class="docutils literal notranslate"><span class="pre">uniform</span></code> (uniform distribution). Each object of continuous distributions comes with many useful methods, such as its PDF (probability density function), its CDF (cumulative distribution function) and so on.</p>
 <p>Normally, we would directly import specific distributions into Python for convenience. Next is the example of a normal distribution whose mean is 5 and standard deviation is 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,7 +692,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.110232402059467 1.9417009999112191
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.026159421883833 2.002648538309104
 </pre></div>
 </div>
 <img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
@@ -758,7 +757,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.3398089011358665 0.001151552477152099
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.19024835323185 5.715357211139285e-05
 </pre></div>
 </div>
 </div>
@@ -808,11 +807,11 @@ Date
 <p>In this section, we will take a series of streamflow as an example to show the extreme value analysis for <u><strong>annual 5-day low-flow</strong></u> in Python step by step.</p>
 <div class="section" id="extract-extreme-values">
 <h3><span class="section-number">4.1.5.1. </span>Extract extreme values<a class="headerlink" href="#extract-extreme-values" title="Permalink to this headline">¶</a></h3>
-<p>We first load the daily streamflow data from file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and calculate the 5-day moving average of streamflow.</p>
+<p>We first load the daily streamflow data from the file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and calculate the 5-day moving average of streamflow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Data</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Runoff_02401390.dat&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> 
+<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Streamflow_02401390.dat&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> 
                  <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Streamflow&quot;</span><span class="p">]</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Date&#39;</span>
@@ -944,7 +943,7 @@ Date
 <ul class="simple">
 <li><p>Method of L-moments (LMM)</p></li>
 </ul>
-<p>In the context of EVA, observations were used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case (more details referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=L-moments%20are%20more%20robust%20than%20conventional%20moments%2C%20and%20existence%20of%20higher%20L-moments%20only%20requires%20that%20the%20random%20variable%20have%20finite%20mean.">WikiPedia</a>). However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
+<p>In the context of EVA, observations are used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case (more details referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=L-moments%20are%20more%20robust%20than%20conventional%20moments%2C%20and%20existence%20of%20higher%20L-moments%20only%20requires%20that%20the%20random%20variable%20have%20finite%20mean.">WikiPedia</a>). However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
 <p>The L-moments are established based on the probability weighted moments. To be specific, they are linear combinations of probability weighted moments. The probability weighted moments are defined as</p>
 <p><span class="math notranslate nohighlight">\(
 \begin{align}
@@ -1007,15 +1006,15 @@ Date
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://www.jstor.org/stable/2345653?origin=JSTOR-pdf">Hosking (1990)</a> has proven that for the GEV distribution, the relationships between the L-moments and distribution parameters are</p>
+<p><a class="reference external" href="https://www.jstor.org/stable/2345653?origin=JSTOR-pdf">Hosking (1990; Table 1)</a> has proven that for the GEV distribution, the relationships between the L-moments and distribution parameters are</p>
 <p><span class="math notranslate nohighlight">\(
 \begin{align}
-&amp; \lambda_1=\xi+\alpha[1-\Gamma(1+k)]/k\\
-&amp; \lambda_2=\alpha(1-2^{-k})\Gamma(1+k)/k \tag{4}\\
-&amp; \frac{\lambda_3}{\lambda_2}=\frac{2(1-3^{-k})}{1-2^{-k}}-3
+\lambda_1 &amp; =\mu+\sigma[1-\Gamma(1+\xi)]/\xi \\
+\lambda_2 &amp; =\sigma(1-2^{-\xi})\Gamma(1+\xi)/\xi \tag{4} \\
+\frac{\lambda_3}{\lambda_2} &amp; =\frac{2(1-3^{-\xi})}{1-2^{-\xi}}-3
 \end{align}
 \)</span></p>
-<p>where <span class="math notranslate nohighlight">\(\xi, \alpha, k\)</span> are respectively GEV’s location <code class="docutils literal notranslate"><span class="pre">loc</span></code>, scale <code class="docutils literal notranslate"><span class="pre">scale</span></code> and shape <code class="docutils literal notranslate"><span class="pre">c</span></code> parameters. Obviously, there are no explicit solutions to these equations when we plugin the sample L-moments. Luckily, we could resort to the function solver <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> in the optimization sub-module of SciPy to get numerical solutions.</p>
+<p>where <span class="math notranslate nohighlight">\(\mu, \sigma, \xi\)</span> are respectively GEV’s location <code class="docutils literal notranslate"><span class="pre">loc</span></code>, scale <code class="docutils literal notranslate"><span class="pre">scale</span></code> and shape <code class="docutils literal notranslate"><span class="pre">c</span></code> parameters. Obviously, there are no explicit solutions to these equations when we plugin the sample L-moments. Luckily, we could resort to the function solver <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> in the optimization sub-module of SciPy to get numerical solutions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate GEV parameters using the function solver</span>
@@ -1239,7 +1238,7 @@ KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
 <p>where <span class="math notranslate nohighlight">\(x_{T}\)</span> is the extreme annual 5-day low-flow corresponding to the return period of <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return periods from 2 year to 1000 years</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return periods from 2 years to 1000 years</span>
 <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
 
 <span class="c1"># extreme low-flow under each return period</span>
@@ -1289,7 +1288,7 @@ Return period
 <div class="section" id="references">
 <h2><span class="section-number">4.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>This tutorial was edited based on <a class="reference external" href="https://realpython.com/python-statistics/">Python Statistics Fundamentals</a>, <a class="reference external" href="https://scipy-lectures.org/">Scipy Lecture Notes</a>, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official site</a>, and <a class="reference external" href="https://github.com/royalosyin/A-Beginner-Guide-to-Carry-out-Extreme-Value-Analysis-with-Codes-in-Python">royalosyin’s guide to carry out EVA</a>.</p></li>
+<li><p>This tutorial was edited based on <a class="reference external" href="https://realpython.com/python-statistics/">Python Statistics Fundamentals</a>, <a class="reference external" href="https://scipy-lectures.org/">Scipy Lecture Notes</a>, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official site</a>, <a class="reference external" href="https://github.com/royalosyin/A-Beginner-Guide-to-Carry-out-Extreme-Value-Analysis-with-Codes-in-Python">royalosyin’s guide to carry out EVA</a> and <a class="reference external" href="https://github.com/OpenHydrology/lmoments3">OpenHydrology’s lmoments3 repository</a>.</p></li>
 <li><p>Only the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> sub-module is introduced here. If you wish to get a quick glimpse on other sub-modules of SciPy, you could refer to <a class="reference external" href="https://scipy-lectures.org/intro/scipy.html">scipy-lectures</a>.</p></li>
 </ul>
 </div>
