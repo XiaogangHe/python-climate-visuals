@@ -681,7 +681,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.012043800046801 1.9409906062218787
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.110232402059467 1.9417009999112191
 </pre></div>
 </div>
 <img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
@@ -746,7 +746,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.5422088053074017 0.012433449355033929
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.3398089011358665 0.001151552477152099
 </pre></div>
 </div>
 </div>
@@ -932,7 +932,7 @@ Date
 <ul class="simple">
 <li><p>Method of L-moments (LMM)</p></li>
 </ul>
-<p>In the context of EVA, observations were used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case (more details refered to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=L-moments%20are%20more%20robust%20than%20conventional%20moments%2C%20and%20existence%20of%20higher%20L-moments%20only%20requires%20that%20the%20random%20variable%20have%20finite%20mean.">WikiPedia</a>). However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
+<p>In the context of EVA, observations were used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case (more details referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=L-moments%20are%20more%20robust%20than%20conventional%20moments%2C%20and%20existence%20of%20higher%20L-moments%20only%20requires%20that%20the%20random%20variable%20have%20finite%20mean.">WikiPedia</a>). However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
 <p>The L-moments are established based on the probability weighted moments. To be specific, they are linear combinations of probability weighted moments. The probability weighted moments are defined as</p>
 <p><span class="math notranslate nohighlight">\(
 \begin{align}
@@ -959,7 +959,7 @@ Date
 &amp; \lambda_3=6b_2-6b_1+b_0\\
 \end{align}
 \)</span></p>
-<p>where <span class="math notranslate nohighlight">\(\lambda_1, \lambda_2, \lambda_3\)</span> are the first three unbiased probability weighted moments. By plugging equation (2) into equation (3), we could obtain the sample L-moments.</p>
+<p>where <span class="math notranslate nohighlight">\(\lambda_1, \lambda_2, \lambda_3\)</span> are the first three L-moments. By plugging equation (2) into equation (3), we could obtain the sample L-moments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate samples L-moments</span>
