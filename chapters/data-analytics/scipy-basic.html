@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. What is Xarray?" href="xarray.html" />
-    <link rel="prev" title="4. Scipy" href="scipy.html" />
+    <link rel="prev" title="4. What is SciPy?" href="scipy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -502,7 +502,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -692,11 +691,15 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.026159421883833 2.002648538309104
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.958541517790965 2.0137494019413795
 </pre></div>
 </div>
 <img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
 </div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Note on SciPy version</p>
+<p>If you are using SciPy locally with a version former than 1.7.0, the choice of <code class="docutils literal notranslate"><span class="pre">method</span></code> in <code class="docutils literal notranslate"><span class="pre">fit()</span></code> is not supported, which leads to the error <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">Unknown</span> <span class="pre">arguments:</span> <span class="pre">{'method':</span> <span class="pre">'MLE'}</span></code>. The solution is to remove the choice of <code class="docutils literal notranslate"><span class="pre">method</span></code> in fitting (i.e. <code class="docutils literal notranslate"><span class="pre">mu,</span> <span class="pre">sigma</span> <span class="pre">=</span> <span class="pre">norm.fit(samples)</span></code>).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -737,8 +740,8 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_20_0.png" src="../../_images/scipy-basic_20_0.png" />
-<img alt="../../_images/scipy-basic_20_1.png" src="../../_images/scipy-basic_20_1.png" />
+<img alt="../../_images/scipy-basic_21_0.png" src="../../_images/scipy-basic_21_0.png" />
+<img alt="../../_images/scipy-basic_21_1.png" src="../../_images/scipy-basic_21_1.png" />
 </div>
 </div>
 <p>For a full list of probability distributions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, please refer to this <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official website</a>.</p>
@@ -757,7 +760,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.19024835323185 5.715357211139285e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.903717533207091 0.00016522186307202223
 </pre></div>
 </div>
 </div>
@@ -908,7 +911,7 @@ Date
 1985             25.4
 </pre></div>
 </div>
-<img alt="../../_images/scipy-basic_36_1.png" src="../../_images/scipy-basic_36_1.png" />
+<img alt="../../_images/scipy-basic_37_1.png" src="../../_images/scipy-basic_37_1.png" />
 </div>
 </div>
 </div>
@@ -939,6 +942,10 @@ Date
 </pre></div>
 </div>
 </div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Note on SciPy version</p>
+<p>If you are using SciPy locally with a version former than 1.7.0, there will be accidental <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when input DataFrame for <code class="docutils literal notranslate"><span class="pre">fit()</span></code>. The solution is to only input values (NumPy Array) in fitting (i.e. <code class="docutils literal notranslate"><span class="pre">c0,</span> <span class="pre">loc0,</span> <span class="pre">scale0</span>&#160; <span class="pre">=</span> <span class="pre">gev.fit(lowf.values)</span></code>).</p>
 </div>
 <ul class="simple">
 <li><p>Method of L-moments (LMM)</p></li>
@@ -1053,7 +1060,6 @@ Date
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate GEV parameters using numerical approximations</span>
 
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">pargev</span><span class="p">(</span><span class="n">lmom</span><span class="p">):</span>
@@ -1072,7 +1078,7 @@ Date
     <span class="n">DL2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">DL3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-    <span class="c1"># COEFFICIENTS OF RATIONAL-FUNCTION APPROXIMATIONS FOR K</span>
+    <span class="c1"># COEFFICIENTS OF RATIONAL-FUNCTION APPROXIMATIONS FOR XI</span>
     <span class="n">A0</span> <span class="o">=</span> <span class="mf">0.28377530</span>
     <span class="n">A1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.21096399</span>
     <span class="n">A2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.50728214</span>
@@ -1177,7 +1183,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_51_0.png" src="../../_images/scipy-basic_51_0.png" />
+<img alt="../../_images/scipy-basic_53_0.png" src="../../_images/scipy-basic_53_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1206,7 +1212,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_53_0.png" src="../../_images/scipy-basic_53_0.png" />
+<img alt="../../_images/scipy-basic_55_0.png" src="../../_images/scipy-basic_55_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1280,7 +1286,7 @@ Return period
 1000                        2.154865
 </pre></div>
 </div>
-<img alt="../../_images/scipy-basic_58_1.png" src="../../_images/scipy-basic_58_1.png" />
+<img alt="../../_images/scipy-basic_60_1.png" src="../../_images/scipy-basic_60_1.png" />
 </div>
 </div>
 </div>
@@ -1328,7 +1334,7 @@ Return period
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4. </span>Scipy</p>
+                <p class="prevnext-title"><span class="section-number">4. </span>What is SciPy?</p>
             </div>
         </a>
     </div>
