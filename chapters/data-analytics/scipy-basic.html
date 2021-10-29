@@ -497,7 +497,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>: Statistics, Distributions, Statistical tests and Correlations</p></li>
 <li><p>Extreme Value Analysis</p></li>
 </ul>
-<p>All <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-modules depend on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but are mostly independent of each other. The standard way of importing NumPy and these SciPy modules is:</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-modules depend on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but are mostly independent of each other. The standard way of importing NumPy and these SciPy sub-modules is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -673,6 +673,10 @@ dtype: float64
 </div>
 </div>
 <p>One common practice is to fit a dataset into a distribution. Next is an example.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Note on SciPy version</p>
+<p>If you are using SciPy locally with a version former than 1.7.0, the choice of <code class="docutils literal notranslate"><span class="pre">method</span></code> in <code class="docutils literal notranslate"><span class="pre">fit()</span></code> is not supported, which leads to the error <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">Unknown</span> <span class="pre">arguments:</span> <span class="pre">{'method':</span> <span class="pre">'MLE'}</span></code> when running the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> function. The solution is to remove the choice of <code class="docutils literal notranslate"><span class="pre">method</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">mu,</span> <span class="pre">sigma</span> <span class="pre">=</span> <span class="pre">norm.fit(samples)</span></code>).</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># pesudo dataset</span>
@@ -694,12 +698,8 @@ dtype: float64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.958541517790965 2.0137494019413795
 </pre></div>
 </div>
-<img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
+<img alt="../../_images/scipy-basic_17_1.png" src="../../_images/scipy-basic_17_1.png" />
 </div>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title">Note on SciPy version</p>
-<p>If you are using SciPy locally with a version former than 1.7.0, the choice of <code class="docutils literal notranslate"><span class="pre">method</span></code> in <code class="docutils literal notranslate"><span class="pre">fit()</span></code> is not supported, which leads to the error <code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">Unknown</span> <span class="pre">arguments:</span> <span class="pre">{'method':</span> <span class="pre">'MLE'}</span></code>. The solution is to remove the choice of <code class="docutils literal notranslate"><span class="pre">method</span></code> in fitting (i.e. <code class="docutils literal notranslate"><span class="pre">mu,</span> <span class="pre">sigma</span> <span class="pre">=</span> <span class="pre">norm.fit(samples)</span></code>).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -929,6 +929,10 @@ Date
 <ul class="simple">
 <li><p>Maximum likelihood method (MLE)</p></li>
 </ul>
+<div class="margin sidebar">
+<p class="sidebar-title">Note on SciPy version</p>
+<p>If you are using SciPy locally with a version former than 1.7.0, there will be accidental <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when running the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> function. This is due to the incompatibility of <code class="docutils literal notranslate"><span class="pre">fit()</span></code> function with DataFrame in old versions. The solution is to only input values (NumPy Array) in fitting (i.e. <code class="docutils literal notranslate"><span class="pre">c0,</span> <span class="pre">loc0,</span> <span class="pre">scale0</span>&#160; <span class="pre">=</span> <span class="pre">gev.fit(lowf.values)</span></code>).</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span><span class="p">,</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">scale0</span>  <span class="o">=</span> <span class="n">gev</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;MLE&quot;</span><span class="p">)</span>
@@ -942,10 +946,6 @@ Date
 </pre></div>
 </div>
 </div>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title">Note on SciPy version</p>
-<p>If you are using SciPy locally with a version former than 1.7.0, there will be accidental <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when input DataFrame for <code class="docutils literal notranslate"><span class="pre">fit()</span></code>. The solution is to only input values (NumPy Array) in fitting (i.e. <code class="docutils literal notranslate"><span class="pre">c0,</span> <span class="pre">loc0,</span> <span class="pre">scale0</span>&#160; <span class="pre">=</span> <span class="pre">gev.fit(lowf.values)</span></code>).</p>
 </div>
 <ul class="simple">
 <li><p>Method of L-moments (LMM)</p></li>
@@ -1218,7 +1218,7 @@ Date
 <ul class="simple">
 <li><p>Statistical inference: Kolmogorov-Smirnov(KS) test</p></li>
 </ul>
-<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov(KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that 2 independent samples are drawn from the same continuous distribution. If the K-S statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
+<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov(KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that <strong>two independent samples are drawn from the same continuous distribution</strong>. If the K-S statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
