@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>References</title>
+    <title>HW#2: Visualizing Temperature Trends in Singapore</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,11 +50,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/others/refs.html" />
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/homework/homework2.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Visualizing River Network" href="../gallery/plot_weighted_river_network.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -239,7 +238,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../homework/homework1.html">
+  <a class="reference internal" href="homework1.html">
    Homework 1
   </a>
  </li>
@@ -261,9 +260,9 @@
   Others
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../others/refs.html">
    References
   </a>
  </li>
@@ -308,9 +307,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/others/refs.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/homework/homework2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -341,11 +340,51 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/homework/homework2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q1-visualize-the-time-series-of-temperature-anomaly">
+   Q1: Visualize the time series of temperature anomaly
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q2-visualize-the-trend-of-temperature-anomaly">
+   Q2: Visualize the trend of temperature anomaly
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q3-improve-the-visualization-using-the-climate-strips">
+   Q3: Improve the visualization using the climate strips
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -354,9 +393,82 @@
         
               <div>
                 
-  <div class="section" id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
-<p>TBD.</p>
+  <div class="section" id="hw-2-visualizing-temperature-trends-in-singapore">
+<h1>HW#2: Visualizing Temperature Trends in Singapore<a class="headerlink" href="#hw-2-visualizing-temperature-trends-in-singapore" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objectives</p>
+<p>This homework will help you gain a better understanding in terms of the ways how to:</p>
+<ul class="simple">
+<li><p>Visualize the time series of temperature anomalies and its trend, and</p></li>
+<li><p>Improve the data visualization.</p></li>
+</ul>
+<p>Happy coding!</p>
+</div>
+<div class="admonition-submission-guide admonition">
+<p class="admonition-title">Submission Guide</p>
+<p>Deadline: <strong>Sunday, 14th November 2021</strong>
+(Note: Late submissions will not be accepted).</p>
+<p>Please upload your solutions to LumiNUS in a Jupyter Notebook format with the name “Homework2_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Huimin WANG (<a class="reference external" href="mailto:wanghuimin&#37;&#52;&#48;u&#46;nus&#46;edu">wanghuimin<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Zhanwei LIU (<a class="reference external" href="mailto:liuzhanwei&#37;&#52;&#48;u&#46;nus&#46;edu">liuzhanwei<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill your student ID and full name below.</span>
+
+<span class="c1"># Student ID:</span>
+<span class="c1"># Full name:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Data</strong>:
+You will need to use the historical (1982-2020) daily mean air temperature at Singapore’s Changi station for this homework.
+You can create a DataFrame using Pandas by reading file “../../assets/data/Changi_daily_temperature.csv”.</p>
+<div class="section" id="q1-visualize-the-time-series-of-temperature-anomaly">
+<h2>Q1: Visualize the time series of temperature anomaly<a class="headerlink" href="#q1-visualize-the-time-series-of-temperature-anomaly" title="Permalink to this headline">¶</a></h2>
+<p>Calculate the annual mean temperature. This will result in a data set of 39 values — one per year. Then, calculate the annual temperature anomalies using the first 10-years period as the baseline. To do this, you may need to (1) calculate the mean temperature over the first 10 years (1982—1991) as the baseline and (2) calculate the anomalies of each year’s temperature to this baseline. Plot the line graph of the annual anomalies and make sure that correct  graph elements have been added, such as the title and the labels of both axes (Details on plotting in Python could be found in the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html#line-plots">tutorial</a>). (40 marks)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/homework2_5_0.png" src="../../_images/homework2_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="q2-visualize-the-trend-of-temperature-anomaly">
+<h2>Q2: Visualize the trend of temperature anomaly<a class="headerlink" href="#q2-visualize-the-trend-of-temperature-anomaly" title="Permalink to this headline">¶</a></h2>
+<p>Based on the annual temperature anomalies in Q1, plot the trend of annual temperature anomalies using the 5-year moving average (30 marks).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/homework2_7_0.png" src="../../_images/homework2_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="q3-improve-the-visualization-using-the-climate-strips">
+<h2>Q3: Improve the visualization using the climate strips<a class="headerlink" href="#q3-improve-the-visualization-using-the-climate-strips" title="Permalink to this headline">¶</a></h2>
+<p>Add a climate strip graph as the background to improve the trend plot of Q2. A reference on the code to plot climate strips could be found at <a class="reference external" href="https://github.com/josephshea/ClimateStripes/blob/master/ClimateStripes-Canada.ipynb">this repository</a> (30 marks).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/homework2_9_0.png" src="../../_images/homework2_9_0.png" />
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -372,7 +484,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/others"
+            path: "./chapters/homework"
         },
         predefinedOutput: true
     }
@@ -388,15 +500,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="../gallery/plot_weighted_river_network.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Visualizing River Network</p>
-            </div>
-        </a>
-    </div>
 
 </div>
         
