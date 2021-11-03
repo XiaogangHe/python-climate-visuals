@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HW#2: Visualizing Temperature Trends in Singapore</title>
+    <title>HW#2: Visualizing Historical Temperature Changes in Singapore</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visualizing River Network" href="../gallery/plot_weighted_river_network.html" />
+    <link rel="prev" title="HW#1: Extreme Rainfall in Singapore" href="homework1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -236,10 +238,15 @@
   Homework
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="homework1.html">
    Homework 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Homework 2
   </a>
  </li>
 </ul>
@@ -368,8 +375,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q1-visualize-the-time-series-of-temperature-anomaly">
-   Q1: Visualize the time series of temperature anomaly
+  <a class="reference internal nav-link" href="#q1-visualize-the-time-series-of-historical-temperature-anomalies-of-singapore">
+   Q1: Visualize the time series of historical temperature anomalies of Singapore
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -378,8 +385,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q3-improve-the-visualization-using-the-climate-strips">
-   Q3: Improve the visualization using the climate strips
+  <a class="reference internal nav-link" href="#q3-climate-strips-for-singapore">
+   Q3: Climate strips for Singapore
   </a>
  </li>
 </ul>
@@ -393,20 +400,20 @@
         
               <div>
                 
-  <div class="section" id="hw-2-visualizing-temperature-trends-in-singapore">
-<h1>HW#2: Visualizing Temperature Trends in Singapore<a class="headerlink" href="#hw-2-visualizing-temperature-trends-in-singapore" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hw-2-visualizing-historical-temperature-changes-in-singapore">
+<h1>HW#2: Visualizing Historical Temperature Changes in Singapore<a class="headerlink" href="#hw-2-visualizing-historical-temperature-changes-in-singapore" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Objectives</p>
-<p>This homework will help you gain a better understanding in terms of the ways how to:</p>
+<p>This homework will provide you a real-world example in terms of:</p>
 <ul class="simple">
-<li><p>Visualize the time series of temperature anomalies and its trend, and</p></li>
-<li><p>Improve the data visualization.</p></li>
+<li><p>how to visualize time series of temperature anomalies and the trend, and</p></li>
+<li><p>how to make beautiful, accessible, and understandable data visualizations.</p></li>
 </ul>
 <p>Happy coding!</p>
 </div>
 <div class="admonition-submission-guide admonition">
 <p class="admonition-title">Submission Guide</p>
-<p>Deadline: <strong>Sunday, 14th November 2021</strong>
+<p>Deadline: <strong>Sunday 11:59 pm, 14th November 2021</strong>
 (Note: Late submissions will not be accepted).</p>
 <p>Please upload your solutions to LumiNUS in a Jupyter Notebook format with the name “Homework2_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
 <p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Huimin WANG (<a class="reference external" href="mailto:wanghuimin&#37;&#52;&#48;u&#46;nus&#46;edu">wanghuimin<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Zhanwei LIU (<a class="reference external" href="mailto:liuzhanwei&#37;&#52;&#48;u&#46;nus&#46;edu">liuzhanwei<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
@@ -422,26 +429,27 @@
 </div>
 </div>
 <p><strong>Data</strong>:
-You will need to use the historical (1982-2020) daily mean air temperature at Singapore’s Changi station for this homework.
-You can create a DataFrame using Pandas by reading file “../../assets/data/Changi_daily_temperature.csv”.</p>
-<div class="section" id="q1-visualize-the-time-series-of-temperature-anomaly">
-<h2>Q1: Visualize the time series of temperature anomaly<a class="headerlink" href="#q1-visualize-the-time-series-of-temperature-anomaly" title="Permalink to this headline">¶</a></h2>
-<p>Calculate the annual mean temperature. This will result in a data set of 39 values — one per year. Then, calculate the annual temperature anomalies using the first 10-years period as the baseline. To do this, you may need to (1) calculate the mean temperature over the first 10 years (1982—1991) as the baseline and (2) calculate the anomalies of each year’s temperature to this baseline. Plot the line graph of the annual anomalies and make sure that correct  graph elements have been added, such as the title and the labels of both axes (Details on plotting in Python could be found in the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html#line-plots">tutorial</a>). (40 marks)</p>
+You will need to use the historical (1982-2020) daily mean air temperature data measured at Singapore’s Changi station for this homework.
+You can create a DataFrame using Pandas by reading the file “../../assets/data/Changi_daily_temperature.csv”.</p>
+<div class="section" id="q1-visualize-the-time-series-of-historical-temperature-anomalies-of-singapore">
+<h2>Q1: Visualize the time series of historical temperature anomalies of Singapore<a class="headerlink" href="#q1-visualize-the-time-series-of-historical-temperature-anomalies-of-singapore" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Calculate the annual mean temperature from the daily data. This will result in a data set of 39 values — one per year. (10 marks)</p></li>
+<li><p>Calculate the annual temperature anomalies using the first 10-year period as the baseline. To do this, you need to (1) calculate the decadal mean temperature over the first 10 years (1982—1991) and (2) subtract the decadal mean for each year. (15 marks)</p></li>
+<li><p>Make a line graph of these annual temperature anomalies and make sure that you have included necessary non-data elements, such as title, x/y axis labels, legend, etc (you can check the <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html#line-plots">tutorial</a> for details). (15 marks)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
 <span class="c1"># Use the + icon in the toolbar to add a cell.</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/homework2_5_0.png" src="../../_images/homework2_5_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="q2-visualize-the-trend-of-temperature-anomaly">
 <h2>Q2: Visualize the trend of temperature anomaly<a class="headerlink" href="#q2-visualize-the-trend-of-temperature-anomaly" title="Permalink to this headline">¶</a></h2>
-<p>Based on the annual temperature anomalies in Q1, plot the trend of annual temperature anomalies using the 5-year moving average (30 marks).</p>
+<p>Based on the annual temperature anomalies in Q1, visualize the trend using a 5-year moving window. (20 marks)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
@@ -449,23 +457,21 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/homework2_7_0.png" src="../../_images/homework2_7_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="q3-improve-the-visualization-using-the-climate-strips">
-<h2>Q3: Improve the visualization using the climate strips<a class="headerlink" href="#q3-improve-the-visualization-using-the-climate-strips" title="Permalink to this headline">¶</a></h2>
-<p>Add a climate strip graph as the background to improve the trend plot of Q2. A reference on the code to plot climate strips could be found at <a class="reference external" href="https://github.com/josephshea/ClimateStripes/blob/master/ClimateStripes-Canada.ipynb">this repository</a> (30 marks).</p>
+<div class="section" id="q3-climate-strips-for-singapore">
+<h2>Q3: Climate strips for Singapore<a class="headerlink" href="#q3-climate-strips-for-singapore" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Reproduce the <a class="reference external" href="https://showyourstripes.info/s/asia/singapore">climate strips</a> for Singapore using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. (20 marks)</p></li>
+<li><p>Use your generated climate strips as the background and then overlay the time series of annual anomalies (from Q1) and the trend (from Q2) on top of the climate strips. (20 marks)</p></li>
+</ul>
+<p>Tips: (1) You can refer to <a class="reference external" href="https://github.com/josephshea/ClimateStripes/blob/master/ClimateStripes-Canada.ipynb">this GitHub repository</a> to make the climate strips. (2) To make a pretty and accessible (colorblind safe) chart, you might want to fine tune the aesthetics (e.g., color palette of the diverging colorbar) of your chart.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
 <span class="c1"># Use the + icon in the toolbar to add a cell.</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/homework2_9_0.png" src="../../_images/homework2_9_0.png" />
 </div>
 </div>
 </div>
@@ -500,6 +506,24 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="homework1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">HW#1: Extreme Rainfall in Singapore</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../gallery/plot_weighted_river_network.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Visualizing River Network</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
