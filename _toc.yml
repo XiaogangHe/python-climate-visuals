@@ -55,6 +55,8 @@ parts:
   chapters:
   - file: chapters/homework/homework1
     title: Homework 1
+  - file: chapters/homework/homework2
+    title: Homework 2
 - caption: Gallery
   chapters:
   - file: chapters/gallery/plot_weighted_river_network
