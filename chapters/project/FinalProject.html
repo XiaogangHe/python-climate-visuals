@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. What is Matplotlib?</title>
+    <title>Visualizing Emerging Risks of Urban Heat Waves in Southeast Asia under Climate Change</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -43,6 +43,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -50,12 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib.html" />
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/project/FinalProject.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.1. Matplotlib tutorial (Basic)" href="matplotlib-basic.html" />
-    <link rel="prev" title="5.1. Xarray tutorial" href="../data-analytics/xarray-basic.html" />
+    <link rel="next" title="Visualizing River Network" href="../gallery/plot_weighted_river_network.html" />
+    <link rel="prev" title="HW#2: Visualizing Historical Temperature Changes in Singapore" href="../homework/homework2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -209,24 +211,24 @@
   Data visualization
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-visuals/matplotlib.html">
    1. Matplotlib
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="matplotlib-basic.html">
+    <a class="reference internal" href="../data-visuals/matplotlib-basic.html">
      1.1. Tutorial (Basic)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matplotlib-advanced.html">
+    <a class="reference internal" href="../data-visuals/matplotlib-advanced.html">
      1.2. Tutorial (Advanced)
     </a>
    </li>
@@ -255,9 +257,9 @@
   Course Project
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../project/FinalProject.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Fall 2021
   </a>
  </li>
@@ -326,9 +328,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/data-visuals/matplotlib.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/project/FinalProject.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -359,11 +361,61 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/project/FinalProject.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-description">
+   Data Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-30-marks">
+   Task 1 (30 marks)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-50-marks">
+   Task 2 (50 marks)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#short-write-ups-20-marks">
+   Short Write-ups (20 marks)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips">
+   Tips:
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -372,26 +424,87 @@
         
               <div>
                 
-  <div class="section" id="what-is-matplotlib">
-<h1><span class="section-number">1. </span>What is Matplotlib?<a class="headerlink" href="#what-is-matplotlib" title="Permalink to this headline">¶</a></h1>
-<div class="margin sidebar">
-<p class="sidebar-title">Source</p>
-<p>Matplotlib <a class="reference external" href="https://matplotlib.org/">website</a>
-<a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html">Python Data Science Handbook</a></p>
+  <div class="section" id="visualizing-emerging-risks-of-urban-heat-waves-in-southeast-asia-under-climate-change">
+<h1>Visualizing Emerging Risks of Urban Heat Waves in Southeast Asia under Climate Change<a class="headerlink" href="#visualizing-emerging-risks-of-urban-heat-waves-in-southeast-asia-under-climate-change" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Project Overview</p>
+<p>Design static visualizations to unravel the invisible risks of urban heat waves in Southeast Asia using the latest climate model simulations.</p>
 </div>
-<p>Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. It is a multi-platform data visualization library built on NumPy arrays and designed to work with the broader SciPy stack. It was conceived by John Hunter in 2002, originally as a patch to IPython for enabling interactive MATLAB-style plotting via gnuplot from the IPython command line.</p>
-<div class="admonition-matplotlib-capabilities admonition">
-<p class="admonition-title">Matplotlib capabilities</p>
+<div class="admonition-submission-guide admonition">
+<p class="admonition-title">Submission Guide</p>
+<p>Deadline: <strong>Tuesday 11:59 pm, 30th November 2021</strong>
+(Note: Late submissions will not be accepted).</p>
+<p>You must submit your project to LumiNUS. Please upload a Jupyter Notebook with the name “FinalProject_StudentID.ipynb”. You need to include your codes, figures and the required write-ups in a single Jupyter Notebook file. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Huimin WANG (<a class="reference external" href="mailto:wanghuimin&#37;&#52;&#48;u&#46;nus&#46;edu">wanghuimin<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Zhanwei LIU (<a class="reference external" href="mailto:liuzhanwei&#37;&#52;&#48;u&#46;nus&#46;edu">liuzhanwei<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill your student ID and full name below.</span>
+
+<span class="c1"># Student ID:</span>
+<span class="c1"># Full name:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="data-description">
+<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">¶</a></h2>
+<p>Each of you has been randomly assigned a city in Southeast Asia (see Figure below) according to your student ID. For this project, you only need to work on the city that we assigned to you. Simulated daily temperature (unit: K) from the latest climate models have been providied (available <a class="reference external" href="https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/">here</a>). This data have been divided into two parts: historical (1850.01.01-2014.12.31) simulations (studentID_historical.nc) and future (2015.01.01-2100.12.31)  projections (studentID_future.nc). Please note that these two files have different dimensions. Historical data is a 2-D array with 10 climate models and 60265 time steps. However, future data is a 3-D array with 10 climate models, 2 climate scenarios (ssp126: sustainable development scenario; ssp585: fossil-fuel based development; check SSP details <a class="reference external" href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change">here</a>), and 31411 time steps. Please check the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/xarray-basic.html#read-from-url">Xarray tutorial</a> for more details (e.g., how to read the data directly from the URL).</p>
+<a class="reference internal image-reference" href="../../_images/selected_city.png"><img alt="../../_images/selected_city.png" class="align-center" src="../../_images/selected_city.png" style="width: 80%;" /></a>
+</div>
+<div class="section" id="task-1-30-marks">
+<h2>Task 1 (30 marks)<a class="headerlink" href="#task-1-30-marks" title="Permalink to this headline">¶</a></h2>
+<p>Create “warming” stripes to visualize historical (1950-2014) and future (2015-2100) warming trends. You can use the annual average temperature from 1850 to 1900 as the baseline to calculate annual temperature anomalies for the required periods (1950-2014 and 2015-2100).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-2-50-marks">
+<h2>Task 2 (50 marks)<a class="headerlink" href="#task-2-50-marks" title="Permalink to this headline">¶</a></h2>
+<p>Design graphs to visualize the changing risks of heat extremes from 1950 to 2100. One possible option is to create “return period” stripes to reflect the changing frequency of heat extremes. To do this, you can:</p>
 <ul class="simple">
-<li><p><strong>CREATE</strong>: Develop publication quality plots with just a few lines of code.</p></li>
-<li><p><strong>CUSTOMIZE</strong>: Take full control of line styles, font properties, axes properties, and so on.</p></li>
-<li><p><strong>INTERACT</strong>: Use interactive figures that can zoom, pan, and update; export and embed to a number of file formats and interactive environments.</p></li>
-<li><p><strong>EXTEND</strong>: Explore tailored functionality provided by third party packages.</p></li>
-<li><p><strong>CROSS-PLATFORM</strong>: Support many operating systems and graphics backends.</p></li>
-<li><p><strong>OPEN-SOURCE</strong>: Matplotlib is developed and maintained <a class="reference external" href="https://github.com/matplotlib/matplotlib">publicly on GitHub</a> by a vibrant, responsive, and diverse community.</p></li>
+<li><p>fit a Generalized Extreme Value (GEV) distribution using annual maximum daily temperature over the baseline period (1850-1900);</p></li>
+<li><p>based on your fitted GEV, determine the return period for each year over 1950-2100 given its annual maximum temperature;</p></li>
+<li><p>use your “warming” stripes codes to create similar “return period” stripes but replace temperature anomalies with your calculated return periods.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+<div class="section" id="short-write-ups-20-marks">
+<h2>Short Write-ups (20 marks)<a class="headerlink" href="#short-write-ups-20-marks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What story are you trying to tell? (Hints: You could discuss major findings from your analysis, key takeaways, and possible implications.)</p></li>
+<li><p>Why did you choose such a design and how does it facilitate effective communication? (Hints: You could provide some rationale in terms of the choice of your chart types, your use of color, size, etc.)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tips">
+<h2>Tips:<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>For both tasks, design your visualizations to <strong>incorporate uncertainties</strong> from (1) climate models (which exist over the entire period from 1950-2100) and (2) climate scenarios (which only exist during 2015-2100).</p></li>
+<li><p>While you can create 20 (10 climate models <span class="math notranslate nohighlight">\(\times\)</span> 2 climate scenarios) similar warming stripes for Task 1 and Task 2, respectively, I hope you could come up with some creative design (e.g., layout, chart types) to visualize all information with a minimum number of graphs.</p></li>
+<li><p>You can recycle your codes from HW1 and HW2.</p></li>
+<li><p>Official IPCC visual style guide can be found <a class="reference external" href="https://www.ipcc.ch/site/assets/uploads/2019/04/IPCC-visual-style-guide.pdf">here</a>.</p></li>
+<li><p>Feel free to make your own design.</p></li>
+</ul>
 </div>
 </div>
 
@@ -408,7 +521,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/data-visuals"
+            path: "./chapters/project"
         },
         predefinedOutput: true
     }
@@ -425,19 +538,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../data-analytics/xarray-basic.html" title="previous page">
+        <a class="left-prev" href="../homework/homework2.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">5.1. </span>Xarray tutorial</p>
+                <p class="prevnext-title">HW#2: Visualizing Historical Temperature Changes in Singapore</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="matplotlib-basic.html" title="next page">
+        <a class="right-next" href="../gallery/plot_weighted_river_network.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1.1. </span>Matplotlib tutorial (Basic)</p>
+                <p class="prevnext-title">Visualizing River Network</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
