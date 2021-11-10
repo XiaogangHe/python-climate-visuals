@@ -57,6 +57,10 @@ parts:
     title: Homework 1
   - file: chapters/homework/homework2
     title: Homework 2
+- caption: Course Project
+  chapters:
+  - file: chapters/project/FinalProject
+    title: Fall 2021
 - caption: Gallery
   chapters:
   - file: chapters/gallery/plot_weighted_river_network
