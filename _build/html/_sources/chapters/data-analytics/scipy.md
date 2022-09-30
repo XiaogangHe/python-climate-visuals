@@ -1,4 +1,0 @@
-# Scipy
-
-Coming soon.
-

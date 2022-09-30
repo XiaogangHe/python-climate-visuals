@@ -5,3 +5,4 @@
 *.swp
 *.doctrees
 *.ipynb_checkpoints
+_build/
