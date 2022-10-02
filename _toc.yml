@@ -13,8 +13,6 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/python-exercise
       title: Exercise
-    - file: chapters/data-analytics/python-solution
-      title: Solution
   - file: chapters/data-analytics/numpy
     title: NumPy
     sections:
@@ -29,8 +27,6 @@ parts:
       title: Tutorial (Advanced)
     - file: chapters/data-analytics/pandas-exercise
       title: Exercise
-    - file: chapters/data-analytics/pandas-solution
-      title: Solution
   - file: chapters/data-analytics/scipy
     title: Scipy
     sections:
@@ -53,9 +49,9 @@ parts:
       title: Tutorial (Advanced)
 - caption: Homework
   chapters:
-  - file: chapters/homework/homework1-solution
+  - file: chapters/homework/homework1
     title: Homework 1
-  - file: chapters/homework/homework2-solution
+  - file: chapters/homework/homework2
     title: Homework 2
 - caption: Course Project
   chapters:
