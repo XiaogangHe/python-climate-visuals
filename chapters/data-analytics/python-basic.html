@@ -470,8 +470,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#one-more-thing-looking-for-help">
-   1.1.8. One more thing: Looking for help
+  <a class="reference internal nav-link" href="#one-more-thing-look-for-help">
+   1.1.8. One more thing: Look for help
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -542,12 +542,12 @@
 <div class="section" id="jupyter-notebooks">
 <h2><span class="section-number">1.1.1. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>Before we dive into Python, we’d like to briefly talk about <em>notebooks</em>.
-A <a class="reference external" href="https://jupyter.org/try">Jupyter notebook</a> allows you to execute Python code in your web browser, along with writing your own documentation. In Jupyter notebook, the basic unit is blocks, which categorize into two types:</p>
+A <a class="reference external" href="https://jupyter.org/try">Jupyter notebook</a> allows you to execute Python code in your web browser, along with writing your own documentation. In Jupyter notebook, the basic unit is cells, which categorize into two types:</p>
 <ol class="simple">
-<li><p><strong>Code blocks</strong>, where we write and execute Python codes, and</p></li>
-<li><p><strong>Markdown blocks</strong>, where we write our thoughts in texts.</p></li>
+<li><p><strong>Code cells</strong>, where we write and execute Python codes, and</p></li>
+<li><p><strong>Markdown cells</strong>, where we write our thoughts in texts <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">using Markdown format</a>.</p></li>
 </ol>
-<p>Jupyter makes it an excellent place to test our codes in pieces and record your excellent ideas at the same time; for this reason, it is widely used in data analytics. What’s more🤔? the <a class="reference external" href="https://mybinder.org/">Binder</a> service allows us to run Python codes entirely in the <em>cloud</em>. Binder is basically Jupyter notebook on steroids: it’s free, requires no setup, comes preinstalled with many packages, and is easy to share with the world.</p>
+<p>Jupyter makes it an excellent place to test our codes in pieces and record your excellent ideas at the same time; for this reason, it is widely used in data analytics. What’s more 🤔? the <a class="reference external" href="https://mybinder.org/">Binder</a> service allows us to run Python codes entirely in the <em>cloud</em>. Binder is basically Jupyter notebook on steroids: it’s free, requires no setup, comes preinstalled with many packages, and is easy to share with the world.</p>
 <p>We will use Jupyter notebooks through this module and all the tutorials:</p>
 <ul class="simple">
 <li><p><strong>Run Tutorials in Binder (recommended)</strong>.
@@ -578,7 +578,7 @@ If you wish to run the notebook locally, we would recommend installing <a class=
 </div>
 </div>
 </div>
-<p>Python also supports common operators for numbers, as well as assignment operators.</p>
+<p>Python also supports common operators for numbers, as well as self-assignment operators.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Addition</span>
@@ -713,7 +713,7 @@ True
 </div>
 </div>
 </div>
-<p>However, we could format strings based on other variables. One common way is to use <code class="docutils literal notranslate"><span class="pre">%</span></code> in the string inserting values that come after, quite similar to C and Matlab.</p>
+<p>However, we could format strings based on other variables. One common way is to use <code class="docutils literal notranslate"><span class="pre">%</span></code> as placeholders within the string inserting values that come after, quite similar to C and Matlab.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%-10s</span><span class="s2">! Number: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># String formatting</span>
@@ -727,7 +727,7 @@ True
 </div>
 </div>
 </div>
-<p>The above way insert values in the order they appear. Another way to format strings is to place <code class="docutils literal notranslate"><span class="pre">{}</span></code> within strings and use the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method of strings to insert values. This allows us to insert values in different orders or even use a value multiple times. Distinct to the above method, this method .</p>
+<p>The above way insert values in the order they appear. Another way to format strings is to use <code class="docutils literal notranslate"><span class="pre">{}</span></code> as placeholders within strings and then use the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method of strings to insert values. This allows us to insert values in different orders or even use a value multiple times. Distinct to the above method, this method allows specifying the sequence of variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">! Number: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># String formatting by sequence</span>
@@ -766,7 +766,7 @@ he(ell)(ell)o
 </div>
 <div class="section" id="containers">
 <h2><span class="section-number">1.1.3. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h2>
-<p>It would be really cumbersome to manage each single data with a separate variable. Python includes four built-in container types to store collections of data: <strong>lists</strong>, <strong>dictionaries</strong>, <strong>sets</strong>, and <strong>tuples</strong>.</p>
+<p>It would be really cumbersome to manage each single data with a separate variable. Python includes four built-in container types to store collections of data: <strong>lists</strong>, <strong>dictionaries</strong>, <strong>tuples</strong>, and <strong>sets</strong>.</p>
 <div class="section" id="lists">
 <h3><span class="section-number">1.1.3.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
 <p>Lists are used to store multiple items in a single variable. In Python syntax, they are enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> with data separated by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. Note that elements in Python lists can be different data types.</p>
@@ -803,9 +803,9 @@ he(ell)(ell)o
 <p>There are two ways to retrive value(s) in lists:</p>
 <ol class="simple">
 <li><p><strong>Index</strong> one item:
-Just use index number within enclosed brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Note that in python, <strong>indexing starts from 0</strong>. Indexing can also be <strong>in reverse order using negative values</strong> as following.
-<a class="reference internal" href="../../_images/python_index.png"><img alt="../../_images/python_index.png" class="align-left" src="../../_images/python_index.png" style="width: 500px;" /></a></p></li>
+Just use index number within enclosed brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Note that in python, <strong>indexing starts from 0</strong>. Indexing can also be <strong>in reverse order using negative values</strong> as following.</p></li>
 </ol>
+<a class="reference internal image-reference" href="../../_images/python_index.png"><img alt="../../_images/python_index.png" class="align-center" src="../../_images/python_index.png" style="width: 500px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>     <span class="c1"># Indexing 3rd element; list indexing starts from 0</span>
@@ -1187,7 +1187,7 @@ HELLO, FRED
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/python_class.png"><img alt="../../_images/python_class.png" class="align-left" src="../../_images/python_class.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/python_class.png"><img alt="../../_images/python_class.png" class="align-center" src="../../_images/python_class.png" style="width: 700px;" /></a>
 <p>Let’s say now I buy a new car:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1204,7 +1204,7 @@ HELLO, FRED
 </div>
 </div>
 </div>
-<p>And today I take this car out, and wish to look at distances it has already run by.</p>
+<p>And today I drive it for 5.5 km. Then I wish to glance at distances it has already run by.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_lovely_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">())</span>
@@ -1236,7 +1236,7 @@ This car has run 5.5 km.
 </div>
 <div class="section" id="import-modules">
 <h2><span class="section-number">1.1.7. </span>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">¶</a></h2>
-<p>It’s time to leverage on numerous Python-based packages to empower our codes. We could import modules by a statement of <code class="docutils literal notranslate"><span class="pre">import</span></code>. To access one of the functions, we could specify the name of the module and the name of the classes or functions, concatenating by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<p>It’s time to leverage on numerous Python-based packages to empower our codes 💪. We can import modules by a statement of <code class="docutils literal notranslate"><span class="pre">import</span></code>. To access one of the functions, we could specify the name of the module and the name of the classes or functions, concatenating by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="c1"># import third-party NumPy module</span>
@@ -1268,7 +1268,7 @@ This car has run 5.5 km.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-0.17016023155694282
+0.16243474915818268
 </pre></div>
 </div>
 </div>
@@ -1282,9 +1282,9 @@ This car has run 5.5 km.
 </div>
 </div>
 </div>
-<div class="section" id="one-more-thing-looking-for-help">
-<h2><span class="section-number">1.1.8. </span>One more thing: Looking for help<a class="headerlink" href="#one-more-thing-looking-for-help" title="Permalink to this headline">¶</a></h2>
-<p>As you may observe, coding is also a journey of DEBUG 🐞. Learning how to solve problems is also important for programmers. Here are some suggestions when you feel stuck or confused.</p>
+<div class="section" id="one-more-thing-look-for-help">
+<h2><span class="section-number">1.1.8. </span>One more thing: Look for help<a class="headerlink" href="#one-more-thing-look-for-help" title="Permalink to this headline">¶</a></h2>
+<p>Coding is also a journey of DEBUG 🐞. For programmers, it is important to learn how to solve problems. Here are some suggestions when you feel stuck or confused.</p>
 <div class="section" id="print-documentation">
 <h3><span class="section-number">1.1.8.1. </span>Print documentation<a class="headerlink" href="#print-documentation" title="Permalink to this headline">¶</a></h3>
 <p>It is almost impossible to memorize the tremendous amounts of packages and functions. Using built-in function <code class="docutils literal notranslate"><span class="pre">help()</span></code> can quickly print out the capability description of the function, as well as what are the inputs and outputs of this function:</p>
@@ -1292,7 +1292,7 @@ This car has run 5.5 km.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">)</span>  <span class="c1"># Look for documentation of ones funcion in Numpy</span>
+<span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">)</span>  <span class="c1"># Print help of ones funcion in Numpy</span>
 </pre></div>
 </div>
 </div>

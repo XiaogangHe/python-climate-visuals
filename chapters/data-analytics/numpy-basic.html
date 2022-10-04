@@ -431,10 +431,10 @@
                 
   <div class="section" id="numpy-tutorial">
 <h1><span class="section-number">2.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://www.numpy.org/"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a> is the core library for scientific computing in Python. It vastly simplifies manipulating and crunching vectors and matrices. Many of python-based leading packages rely on NumPy as a fundamental piece of their infrastructure.</p>
+<p><a class="reference external" href="http://www.numpy.org/">NumPy</a> is the core library for scientific computing in Python. It vastly simplifies manipulating and crunching vectors and matrices. Many of python-based leading packages rely on NumPy as a infrastructure piece.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: Array, Array indexing, Array math &amp; Broadcasting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: Array, Array Indexing, Array Manipulation, Array math &amp; Broadcasting.</p></li>
 </ul>
 <p>To use NumPy, we need to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package at first:</p>
 <div class="cell docutils container">
@@ -452,7 +452,7 @@
 </div>
 <div class="section" id="array-and-its-creation">
 <h2><span class="section-number">2.1.1. </span>Array and its Creation<a class="headerlink" href="#array-and-its-creation" title="Permalink to this headline">¶</a></h2>
-<p>A NumPy array (a.k.a. <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a>) is the core of this package. <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> is a grid of values, all of <strong>the same type</strong> – quite like a special version of list. We can create a NumPy array by passing a python list to it using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>. NumPy will try to guess a datatype if we do not set it explicitly. Within the ndarray object, some properties are provided for us to know the status of it, such as <code class="docutils literal notranslate"><span class="pre">shape</span></code> – sizes of all dimensions, <code class="docutils literal notranslate"><span class="pre">size</span></code> – number of elements, <code class="docutils literal notranslate"><span class="pre">dtype</span></code> – datatype, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#:~:text=array(%5B2%2C%203%5D)-,Attributes,-Tndarray">etc</a>.</p>
+<p>A NumPy array (a.k.a. <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a>) is the core of this package. <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> is a grid of values, all of <strong>the same type</strong> – quite like a special version of list. We can create a NumPy array by passing a python list to it using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>. NumPy will try to guess a datatype if we do not set it explicitly. Within the ndarray object, some properties are provided for us to know the status of it, such as <code class="docutils literal notranslate"><span class="pre">dtype</span></code> – datatype of elements, <code class="docutils literal notranslate"><span class="pre">size</span></code> – number of elements, <code class="docutils literal notranslate"><span class="pre">shape</span></code> – sizes of all dimensions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#:~:text=array(%5B2%2C%203%5D)-,Attributes,-Tndarray">etc</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># Create a rank 1 array from a list</span>
@@ -468,7 +468,7 @@
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/numpy_ndarray.png"><img alt="../../_images/numpy_ndarray.png" class="align-left" src="../../_images/numpy_ndarray.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_ndarray.png"><img alt="../../_images/numpy_ndarray.png" class="align-center" src="../../_images/numpy_ndarray.png" style="width: 500px;" /></a>
 <p>Using a list of lists with the same size, we could create 2D, 3D, or even higher dimensional arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,9 +511,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.54282562]
- [0.84675552]
- [0.72118507]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.00589455]
+ [0.16690575]
+ [0.67908009]]
 </pre></div>
 </div>
 </div>
@@ -525,7 +525,7 @@
 <ul class="simple">
 <li><p><em><strong>Slicing</strong></em></p></li>
 </ul>
-<p>We could specify an index slice in the form <code class="docutils literal notranslate"><span class="pre">start:end</span></code> or <code class="docutils literal notranslate"><span class="pre">start:end:step</span></code> for each dimension of the array, quite similar to slicing python list.</p>
+<p>We could specify an index slice in the form <code class="docutils literal notranslate"><span class="pre">start:end</span></code> or <code class="docutils literal notranslate"><span class="pre">start:end:step</span></code> for each dimension of the array to access subarrays, quite similar to slicing python list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
@@ -544,7 +544,7 @@
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/numpy_slice.png"><img alt="../../_images/numpy_slice.png" class="align-left" src="../../_images/numpy_slice.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_slice.png"><img alt="../../_images/numpy_slice.png" class="align-center" src="../../_images/numpy_slice.png" style="width: 600px;" /></a>
 <p>Note that a slice of an array is always a <em><strong>view</strong></em> of the same data, so modifying it will modify the original array. If you wish to avoid this, you could use the <code class="docutils literal notranslate"><span class="pre">copy()</span></code> method to create a soft copy when assigned to a new variable. This is also true when you assign the whole array to another variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,7 +570,7 @@
 <ul class="simple">
 <li><p><em><strong>Integer array indexing</strong></em></p></li>
 </ul>
-<p>Integer indexing allows you to index arbitrary elements in the array by separately assign the indexing for each dimension. Note that as the resulting array in this way is a copy, modifying it will <strong>not</strong> modify the original.</p>
+<p>Integer indexing allows you to index arbitrary elements in the array by separately assign the indexing for each dimension. Note that the resulting array in this way is a copy, so modifying it will <strong>not</strong> modify the original.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
@@ -655,12 +655,12 @@
 <p>We can do all of the above in a single concise statement, which is more readable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 3  4  5  6  7  8  9 10 11 12]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 9 10 11 12]
 </pre></div>
 </div>
 </div>
@@ -844,13 +844,13 @@ transpose through method
 <span class="n">d2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">d3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum over axis 0:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># Why we have this result?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum along axis 0:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d3</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># ❓: Why we have this result?</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum over axis 0:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum along axis 0:
 [[ 1  2  3  4]
  [ 5  6  7  8]
  [ 9 10 11 12]]
@@ -886,12 +886,12 @@ transpose through method
 </div>
 <a class="reference internal image-reference" href="../../_images/numpy_broadcast1.png"><img alt="../../_images/numpy_broadcast1.png" class="align-center" src="../../_images/numpy_broadcast1.png" style="width: 600px;" /></a>
 <p>We could see that when shapes of both arrays are <em>compatible</em>, NumPy would automatically stretch (replicating) arrays as above so that arithmetic calculations can be directly applied. <strong>But how can we know array shapes are compatible? 🤔</strong></p>
-<p>NumPy compares array shapes from back forward. It starts with the trailing (i.e. rightmost) dimensions and works its way left. For any dimensions, their sizes are compatible when</p>
+<p>NumPy compares array shapes from back forward. It starts with the trailing (i.e. rightmost) dimensions and works its way left. For each dimension of both arrays, their sizes are compatible when</p>
 <ol class="simple">
 <li><p>they are equal, or</p></li>
 <li><p>one of them is 1</p></li>
 </ol>
-<p>If these conditions are not met, a <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">operands</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">broadcast</span> <span class="pre">together</span></code> exception will be thrown, indicating array shapes incompatible. Maybe some compatible examples are more straightforward for us to get a sense of. Let’s say we operate between A and B with the following shapes.</p>
+<p>If these conditions are not met, a <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">operands</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">broadcast</span> <span class="pre">together</span></code> exception will be thrown, indicating array shapes incompatible. Maybe some compatible examples are more straightforward for us to get a sense of this rule. Let’s say we operate between A and B having the following shapes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>      <span class="p">(</span><span class="mi">2</span><span class="n">d</span> <span class="n">array</span><span class="p">):</span>  <span class="mi">5</span> <span class="n">x</span> <span class="mi">4</span>
 <span class="n">B</span>      <span class="p">(</span><span class="mi">1</span><span class="n">d</span> <span class="n">array</span><span class="p">):</span>      <span class="mi">1</span>
 <span class="n">Result</span> <span class="p">(</span><span class="mi">2</span><span class="n">d</span> <span class="n">array</span><span class="p">):</span>  <span class="mi">5</span> <span class="n">x</span> <span class="mi">4</span>
@@ -921,7 +921,7 @@ transpose through method
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Q: why we need reshape?</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># ❓: why we need reshape?</span>
 
 <span class="n">Result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Result</span><span class="p">)</span>
