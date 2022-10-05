@@ -18,6 +18,8 @@ parts:
     sections:
     - file: chapters/data-analytics/numpy-basic
       title: Tutorial
+    - file: chapters/data-analytics/numpy-exercise
+      title: Exercise
   - file: chapters/data-analytics/pandas
     title: Pandas
     sections:
