@@ -405,7 +405,12 @@
 <h2><span class="section-number">2.2.1. </span>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
 <p>In machine learning tasks, when we deal with data from different features, it is very common that we need to normalize data so that the different units among features would not affect the performances of machine learning algorithms.</p>
 <p>Now we have temperature and precipitation observations from 7 sites. Write a line of code to accomplish Min-Max normalization for each feature.</p>
-<p>Hint: The equation of Min-Max normalization to <span class="math notranslate nohighlight">\(x\)</span> is $<span class="math notranslate nohighlight">\(x_{norm} = \frac{x-\min(x)}{\max(x)-\min(x)}\)</span>$</p>
+<p>Hint: The equation of Min-Max normalization to <span class="math notranslate nohighlight">\(x\)</span> is
+<span class="math notranslate nohighlight">\(
+\begin{align}
+x_{norm} = \frac{x-\min(x)}{\max(x)-\min(x)}
+\end{align}
+\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
