@@ -28,7 +28,7 @@ parts:
     title: Pandas
     sections:
     - file: chapters/data-analytics/pandas-basic
-      title: Tutorial
+      title: New Tutorial
     - file: chapters/data-analytics/pandas-exercise
       title: Exercise
   - file: chapters/data-analytics/scipy
