@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.3. Pandas Exercise" href="pandas-exercise.html" />
+    <link rel="next" title="3.2. Pandas Exercise" href="pandas-exercise.html" />
     <link rel="prev" title="3. What is Pandas?" href="pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -159,12 +159,12 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.1. Pandas tutorial
+     3.1. Tutorial
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pandas-exercise.html">
-     3.3. Exercise
+     3.2. Exercise
     </a>
    </li>
   </ul>
@@ -386,153 +386,144 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.1. Pandas tutorial
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-pandas-data-structures">
+   3.1.1. Introduction to Pandas Data Structures
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduction-to-pandas-data-structures">
-     3.1.1. Introduction to Pandas Data Structures
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series">
+   3.1.2. Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-a-series">
+     3.1.2.1. Defining a Series
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#series">
-     3.1.2. Series
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#defining-a-series">
-       3.1.2.1. Defining a Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#selecting-the-elements">
-       3.1.2.2. Selecting the Elements
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assigning-values-to-the-elements">
-       3.1.2.3. Assigning Values to the Elements
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-values">
-       3.1.2.4. Filtering Values
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#operations-and-mathematical-functions">
-       3.1.2.5. Operations and Mathematical Functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nan-value">
-       3.1.2.6. Nan Value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#operations-of-multiple-series">
-       3.1.2.7. Operations of Multiple Series
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dataframe">
-     3.1.3. DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#defining-a-dataframe">
-       3.1.3.1. Defining a DataFrame
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#selecting-the-internal-elements">
-       3.1.3.2. Selecting the Internal Elements
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assigning-value">
-       3.1.3.3. Assigning value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assigning-index-columns-and-name-of-index-and-columns">
-       3.1.3.4. Assigning index, columns, and name of index and columns
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#delete-columns-from-dataframe">
-       3.1.3.5. Delete columns from dataframe
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering">
-       3.1.3.6. Filtering
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transposition-of-a-dataframe">
-       3.1.3.7. Transposition  of a Dataframe
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#merge-of-dataframe">
-       3.1.3.8. Merge of Dataframe
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#view-data">
-       3.1.3.9. View data
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#computational-tools">
-       3.1.3.10. Computational tools
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-ranking">
-       3.1.3.11. Data ranking
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     3.1.4. NaN value
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-the-elements">
+     3.1.2.2. Selecting the Elements
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#date-index">
-     3.1.5. Date index
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-values-to-the-elements">
+     3.1.2.3. Assigning Values to the Elements
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upsampling-and-downsampling">
-     3.1.6. Upsampling and Downsampling
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-values">
+     3.1.2.4. Filtering Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-and-mathematical-functions">
+     3.1.2.5. Operations and Mathematical Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nan-value">
+     3.1.2.6. Nan Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-of-multiple-series">
+     3.1.2.7. Operations of Multiple Series
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-dataframe">
-   3.2. Group DataFrame
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe">
+   3.1.3. DataFrame
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-output-of-data">
-     3.2.1. Input/Output of data
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-a-dataframe">
+     3.1.3.1. Defining a DataFrame
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     3.2.2. References
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-the-internal-elements">
+     3.1.3.2. Selecting the Internal Elements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-value">
+     3.1.3.3. Assigning value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-index-columns-and-name-of-index-and-columns">
+     3.1.3.4. Assigning index, columns, and name of index and columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#delete-columns-from-dataframe">
+     3.1.3.5. Delete columns from dataframe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering">
+     3.1.3.6. Filtering
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transposition-of-a-dataframe">
+     3.1.3.7. Transposition  of a Dataframe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merge-of-dataframe">
+     3.1.3.8. Merge of Dataframe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-data">
+     3.1.3.9. View data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-tools">
+     3.1.3.10. Computational tools
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-ranking">
+     3.1.3.11. Data ranking
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   3.1.4. NaN value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#date-index">
+   3.1.5. Date index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upsampling-and-downsampling">
+   3.1.6. Upsampling and Downsampling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-dataframe">
+   3.1.7. Group DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-output-of-data">
+   3.1.8. Input/Output of data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   3.1.9. References
+  </a>
  </li>
 </ul>
 
@@ -3875,9 +3866,8 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 </div></div></div>
 </div>
 </div>
-</div>
 <div class="section" id="group-dataframe">
-<h1><span class="section-number">3.2. </span>Group DataFrame<a class="headerlink" href="#group-dataframe" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">3.1.7. </span>Group DataFrame<a class="headerlink" href="#group-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>You can group <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> using a mapper or by a Series of columns via the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3967,8 +3957,9 @@ Climenti        16.0
 </table>
 </div></div></div>
 </div>
+</div>
 <div class="section" id="input-output-of-data">
-<h2><span class="section-number">3.2.1. </span>Input/Output of data<a class="headerlink" href="#input-output-of-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.8. </span>Input/Output of data<a class="headerlink" href="#input-output-of-data" title="Permalink to this headline">¶</a></h2>
 <p>Typically, you can read data from files ending with “. xlsx” and “. csv” using <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> and <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> functions, respectively. The <code class="docutils literal notranslate"><span class="pre">index_col</span></code> and <code class="docutils literal notranslate"><span class="pre">header</span></code> arguments are used to specify the column and row to be used as <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code> of the dataframe. You can also set <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> as <code class="docutils literal notranslate"><span class="pre">True</span></code> to parse <code class="docutils literal notranslate"><span class="pre">index</span></code> as the date format. If your date format is uncommon, you can specify the <code class="docutils literal notranslate"><span class="pre">date_parser</span></code> argument to be a function for converting a sequence of string columns to an array of datetime instances.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4159,7 +4150,7 @@ Climenti        16.0
 </div>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">3.2.2. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/">Pandas documentation</a>.</p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10 minutes to pandas</a></p></li>
@@ -4210,7 +4201,7 @@ Climenti        16.0
         <a class="right-next" href="pandas-exercise.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">3.3. </span>Pandas Exercise</p>
+                <p class="prevnext-title"><span class="section-number">3.2. </span>Pandas Exercise</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
