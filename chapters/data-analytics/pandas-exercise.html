@@ -411,19 +411,19 @@
                 
   <div class="section" id="pandas-exercise">
 <h1><span class="section-number">3.2. </span>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Permalink to this headline">¶</a></h1>
-<p>Create a DataFrame by reading file <em>../../assets/data/Changi_daily_rainfall.csv</em>. Perform the following two tasks with this DataFrame:</p>
+<p>Create a DataFrame by reading the file <em>../../assets/data/Changi_daily_rainfall.csv</em>. Perform the following two tasks with this DataFrame.</p>
 <div class="section" id="task-1">
 <h2><span class="section-number">3.2.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Determine whether the dataframe contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values, and if so, fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values with the previous day’s value.</p></li>
-<li><p>View the first 5 rows and the tail 3 rows, and check total length of data.</p></li>
-<li><p>Calculate the number of days with daily rainfall exceeding 0.1 mm and its proportion in the whole year (Multi-year average).</p></li>
-<li><p>Find out the three months with the highest monthly rainfall and the three months with the lowest monthly rainfall measured by multi-year average monthly rainfall.</p></li>
+<li><p>Determine whether the dataframe contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. If so, fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values with the previous day’s value.</p></li>
+<li><p>Show the first 5 rows and the last 3 rows. Check the data length.</p></li>
+<li><p>For each year, calculate the frequency (i.e., number of days) of rainfall events whose magnitude exceeds 0.1 mm/day.</p></li>
+<li><p>Find the three months with the highest/lowest long-term averaged monthly rainfall. Are these months within your expection (e.g., Singapore’s monsoon seasons)?</p></li>
 </ol>
-<p>Hint: If you complete this task in your local computer (not recommend), please modify the file path accordingly.</p>
+<p>Note: If you want to do this task on your local computer (not recommended), please modify the file path accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question.</span>
 <span class="c1"># using the + icon to add a cell in the toolbar.</span>
 </pre></div>
 </div>
@@ -433,14 +433,14 @@
 <div class="section" id="task-2">
 <h2><span class="section-number">3.2.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Upsample the DataFrame into 1-year bins and sum the values of the timestamps falling into a bin.</p></li>
-<li><p>Calculate the average value of yearly rainfall in 1981-2000 and 2001-2020 and compare them.</p></li>
-<li><p>Find the year with the largest annual rainfall and corresponding value, and the year with the smallest annual rainfall and corresponding value.</p></li>
-<li><p>Calculate the change rate of yearly rainfall in 1981-2020 following the following formula.</p></li>
+<li><p>Resample the DataFrame from daily time scale to annual time scale. Calculate the annual total rainfall for each year.</p></li>
+<li><p>Compare the long-term averaged annual rainfall in two periods: 1981-2000 and 2001-2020.</p></li>
+<li><p>Find the year with the largest/smallest annual rainfall and print their values.</p></li>
+<li><p>Calculate the trend of annual rainfall during 1981-2020 using the following formula:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[a = \frac{\sum{y}\sum{x^2}-\sum{x}\sum{xy}}{n\sum{x^2}-(\sum{x})^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a\)</span> = the change rate of yearly rainfall, <span class="math notranslate nohighlight">\(x\)</span> = year, <span class="math notranslate nohighlight">\(y\)</span> = yearly rainfall, <span class="math notranslate nohighlight">\(n\)</span> = the number of years.</p>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the trend of annual rainfall, <span class="math notranslate nohighlight">\(x\)</span> is year, <span class="math notranslate nohighlight">\(y\)</span> is annual rainfall, and <span class="math notranslate nohighlight">\(n\)</span> is the number of years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question</span>
