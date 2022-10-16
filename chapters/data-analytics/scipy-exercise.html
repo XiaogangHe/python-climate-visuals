@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. What is SciPy?</title>
+    <title>4.2. SciPy Exercise</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -43,6 +43,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -50,12 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy.html" />
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-exercise.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.1. SciPy tutorial" href="scipy-basic.html" />
-    <link rel="prev" title="3.3. Pandas Exercise" href="pandas-solution.html" />
+    <link rel="next" title="5. What is Xarray?" href="xarray.html" />
+    <link rel="prev" title="4.1. SciPy tutorial" href="scipy-basic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -175,7 +177,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="scipy.html">
    4. Scipy
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -183,14 +185,14 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="scipy-basic.html">
      4.1. Tutorial
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="scipy-exercise.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      4.2. Exercise
     </a>
    </li>
@@ -336,9 +338,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/scipy.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/scipy-exercise.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -369,11 +371,46 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/scipy-exercise.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1">
+   4.2.1. Task 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2">
+   4.2.2. Task 2
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -382,26 +419,42 @@
         
               <div>
                 
-  <div class="section" id="what-is-scipy">
-<h1><span class="section-number">4. </span>What is SciPy?<a class="headerlink" href="#what-is-scipy" title="Permalink to this headline">¶</a></h1>
-<div class="margin sidebar">
-<p class="sidebar-title">Source</p>
-<p>from the SciPy <a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/index.html#user-guide">website</a></p>
+  <div class="section" id="scipy-exercise">
+<h1><span class="section-number">4.2. </span>SciPy Exercise<a class="headerlink" href="#scipy-exercise" title="Permalink to this headline">¶</a></h1>
+<p>Choosing a probability distribution to fit daily precipitation depths is important for precipitation frequency analysis, stochastic precipitation modeling, and climate assessments.  Read the file ../../assets/data/Changi_daily_rainfall.csv and complete the following tasks.</p>
+<div class="section" id="task-1">
+<h2><span class="section-number">4.2.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">¶</a></h2>
+<p>Extract the wet-day series from the raw daily rainfall datasest and calculate a few descriptive statistics: mean, vairance, skewness, kurtosis, L-CV, and L-skewness. Is the distribution left-skewed or right-skewed? Is the distribution more or less peaked than the normal distribution?</p>
+<p>Note: The wet-day series should be constructed by excluding events whose magnitude is less than 0.25 mm/day (0.25 mm/day is the minimum precipitation that can be recorded by the in situ rain gauge).</p>
+<p>The L-CV is L-coefficient of variation and can be calculated as:
+$<span class="math notranslate nohighlight">\(\text{L-CV}=\tau_2=\lambda_2/\lambda_1,\)</span><span class="math notranslate nohighlight">\(
+and the L-skewness is L-coefficient of skewness, which is calculated as:
+\)</span><span class="math notranslate nohighlight">\(\text{L-skewness}=\tau_3=\lambda_3/\lambda_2,\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\lambda_1<span class="math notranslate nohighlight">\(, \)</span>\lambda_2<span class="math notranslate nohighlight">\( and \)</span>\lambda_3$ are the first three L-moments (details can be found in <code class="docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">tutorial</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+</pre></div>
 </div>
-<p>SciPy is a collection of mathematical algorithms and convenience functions built on the NumPy extension of Python. It adds significant power to the interactive Python session by providing the user with high-level commands and classes for manipulating and visualizing data. With SciPy, an interactive Python session becomes a data-processing and system-prototyping environment rivaling systems, such as MATLAB, IDL, Octave, R-Lab, and SciLab.</p>
-<div class="admonition-scipy-capabilities admonition">
-<p class="admonition-title">SciPy capabilities</p>
+</div>
+</div>
+</div>
+<div class="section" id="task-2">
+<h2><span class="section-number">4.2.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this headline">¶</a></h2>
+<p>Early studies identified the gamma (G2) distribution as a suitable distribution for wet-day precipitation based on the traditional goodness-of-fit tests. Is wet-day series of Changi follows a gamma distribuiton?
+Check the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> documentation and do the following:</p>
 <ul class="simple">
-<li><p><strong>FUNDAMENTAL ALGORITHMS</strong>: Algorithms for optimization, integration, interpolation, eigenvalue problems, algebraic equations, differential equations, statistics and many other classes of problems.</p></li>
-<li><p><strong>BROADLY APPLICABLE</strong>: The algorithms and data structures provided by SciPy are broadly applicable across domains.</p></li>
-<li><p><strong>FOUNDATIONAL</strong>: SciPy provides additional tools for array computing and provides specialized data structures.</p></li>
-<li><p><strong>PERFORMANT</strong>: Wrapping highly-optimized implementations written in low-level languages like Fortran, C and C++ makes users enjoy the flexibility of Python with the speed of compiled code.</p></li>
-<li><p><strong>EASY TO USE</strong>: SciPy’s high level syntax makes it accessible and productive for programmers from any background or experience level.</p></li>
-<li><p><strong>OPEN SOURCE</strong>: Distributed under a liberal <a class="reference external" href="https://github.com/numpy/numpy/blob/main/LICENSE.txt">BSD license</a>, SciPy is developed and maintained
-<a class="reference external" href="https://github.com/scipy/scipy">publicly on GitHub</a> by a vibrant, responsive, and diverse <a class="reference external" href="https://scipy.org/community">community</a>.</p></li>
+<li><p>fit a gamma distribution to the Changi wet-day series;</p></li>
+<li><p>print out the estimated parameters;</p></li>
+<li><p>print out the goodness-of-fit test results using KS test.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 </div>
 
@@ -435,19 +488,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="pandas-solution.html" title="previous page">
+        <a class="left-prev" href="scipy-basic.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3.3. </span>Pandas Exercise</p>
+                <p class="prevnext-title"><span class="section-number">4.1. </span>SciPy tutorial</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="scipy-basic.html" title="next page">
+        <a class="right-next" href="xarray.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">4.1. </span>SciPy tutorial</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>What is Xarray?</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

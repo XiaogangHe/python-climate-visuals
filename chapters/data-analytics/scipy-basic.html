@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. What is Xarray?" href="xarray.html" />
+    <link rel="next" title="4.2. SciPy Exercise" href="scipy-exercise.html" />
     <link rel="prev" title="4. What is SciPy?" href="scipy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -169,6 +169,11 @@
      3.2. Exercise
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas-solution.html">
+     3.3. Solution
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -184,6 +189,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      4.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="scipy-exercise.html">
+     4.2. Exercise
     </a>
    </li>
   </ul>
@@ -453,61 +463,7 @@
                 
   <div class="section" id="scipy-tutorial">
 <h1><span class="section-number">4.1. </span>SciPy tutorial<a class="headerlink" href="#scipy-tutorial" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as routines for numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> is composed of task-specific sub-modules as follows.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Submodule</p></th>
-<th class="text-align:left head"><p>Fields</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code></p></td>
-<td class="text-align:left"><p>Vector quantization / Kmeans</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code></p></td>
-<td class="text-align:left"><p>Physical and mathematical constant</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.fftpack</span></code></p></td>
-<td class="text-align:left"><p>Fourier transform</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></td>
-<td class="text-align:left"><p>Integration routines</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></p></td>
-<td class="text-align:left"><p>Interpolation</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.io</span></code></p></td>
-<td class="text-align:left"><p>Data input and output</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code></p></td>
-<td class="text-align:left"><p>Linear algebra routines</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></p></td>
-<td class="text-align:left"><p>n-dimensional image package</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.odr</span></code></p></td>
-<td class="text-align:left"><p>Orthogonal distance regression</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code></p></td>
-<td class="text-align:left"><p>Optimization</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></p></td>
-<td class="text-align:left"><p>Signal processing</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code></p></td>
-<td class="text-align:left"><p>Sparse matrices</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.spatial</span></code></p></td>
-<td class="text-align:left"><p>Spatial data structures and algorithms</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">scipy.special</span></code></p></td>
-<td class="text-align:left"><p>Any special mathematical functions</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><u><strong><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code></strong></u></p></td>
-<td class="text-align:left"><p><u><strong>Statistics</strong></u></p></td>
-</tr>
-</tbody>
-</table>
+<p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. And these routines are composed as task-specific sub-modules in <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, such as <code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code> for vector quantization/ Kmeans, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> for linear algebra routines.</p>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module contains a large number of summary and frequency statistics, probability distributions, correlation functions, statistical tests, kernel density estimation, quasi-Monte Carlo functionality, and so on.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
@@ -531,12 +487,12 @@
 </div>
 <div class="section" id="descriptive-statistics">
 <h2><span class="section-number">4.1.1. </span>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
-<p>When we have a new dataset in hand, we need to have an descriptive or summary view of the data. This could normally be done through two main approaches:</p>
+<p>When we have a new dataset in hand, we need to have a descriptive or summary view of the data. This could normally be done through two main approaches:</p>
 <ol class="simple">
 <li><p><em><strong>The quantitative approach</strong></em> describes and summarizes data numerically using statistics. We focus on this approach in this <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> tutorial.</p></li>
 <li><p><em>The visual approach</em> illustrates data with charts, plots, histograms, and other graphs. This approach is covered in the tutorial of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
 </ol>
-<p>There are multiple ways to obtain descriptive statistics of the dataset in Python. Note that <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> is established based on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and it offers additional functionality compared to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>. Common statistics already exist in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> (such as <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>). For more complicated statistics such as <code class="docutils literal notranslate"><span class="pre">iqr</span></code>, <code class="docutils literal notranslate"><span class="pre">skew</span></code>, <code class="docutils literal notranslate"><span class="pre">kurtosis</span></code>, we need to use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
+<p>There are multiple ways to obtain descriptive statistics of the dataset in Python. Note that <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> is established based on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and it offers additional functionality compared to <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>. Common statistics already exist in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> (such as <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
@@ -551,15 +507,6 @@
 
 <span class="c1"># Variance (Scale Parameter)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variance: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1">#ddof=1 provides an unbiased estimator of the variance</span>
-
-<span class="c1"># IQR (Scale Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IQR: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="c1"># Skewness (Shape Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skewness: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="c1"># Kurtosis (Shape Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kurtosis: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -571,9 +518,33 @@
 Mean:  [11.    10.25  12.125 10.875 11.5  ]
 Median:  [10.5  10.   11.25 11.   11.25]
 Variance:  [ 8.66666667  8.91666667 11.72916667 10.0625      3.83333333]
-IQR:  [2.5   3.25  2.375 3.375 2.25 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more complicated statistics such as <code class="docutils literal notranslate"><span class="pre">iqr</span></code>, <code class="docutils literal notranslate"><span class="pre">skew</span></code>, <code class="docutils literal notranslate"><span class="pre">kurtosis</span></code>, we need to use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IQR (Scale Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IQR: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Skewness (Shape Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skewness: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># Kurtosis (Shape Parameter)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kurtosis: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="c1"># You can also quickly get descriptive statistics with a single function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive statistics:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IQR:  [2.5   3.25  2.375 3.375 2.25 ]
 Skewness:  [ 0.54309084  0.24394285  0.80172768 -0.11813453  0.34616807]
 Kurtosis:  [ 1.5        -0.41610621  2.53815357 -0.32082096 -0.768431  ]
+Descriptive statistics:
+ DescribeResult(nobs=4, minmax=(array([8. , 7. , 9. , 7. , 9.5]), array([15. , 14. , 17. , 14.5, 14. ])), mean=array([11.   , 10.25 , 12.125, 10.875, 11.5  ]), variance=array([ 8.66666667,  8.91666667, 11.72916667, 10.0625    ,  3.83333333]), skewness=array([ 0.54309084,  0.24394285,  0.80172768, -0.11813453,  0.34616807]), kurtosis=array([-1.        , -1.25548083, -0.86157952, -1.24277613, -1.30245747]))
 </pre></div>
 </div>
 </div>
@@ -685,8 +656,8 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_14_0.png" src="../../_images/scipy-basic_14_0.png" />
-<img alt="../../_images/scipy-basic_14_1.png" src="../../_images/scipy-basic_14_1.png" />
+<img alt="../../_images/scipy-basic_16_0.png" src="../../_images/scipy-basic_16_0.png" />
+<img alt="../../_images/scipy-basic_16_1.png" src="../../_images/scipy-basic_16_1.png" />
 </div>
 </div>
 <p>One common practice is to fit a dataset into a distribution. Next is an example.</p>
@@ -712,10 +683,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.958541517790965 2.0137494019413795
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.995204510884709 1.9949691020671656
 </pre></div>
 </div>
-<img alt="../../_images/scipy-basic_17_1.png" src="../../_images/scipy-basic_17_1.png" />
+<img alt="../../_images/scipy-basic_19_1.png" src="../../_images/scipy-basic_19_1.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -757,8 +728,8 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_21_0.png" src="../../_images/scipy-basic_21_0.png" />
-<img alt="../../_images/scipy-basic_21_1.png" src="../../_images/scipy-basic_21_1.png" />
+<img alt="../../_images/scipy-basic_23_0.png" src="../../_images/scipy-basic_23_0.png" />
+<img alt="../../_images/scipy-basic_23_1.png" src="../../_images/scipy-basic_23_1.png" />
 </div>
 </div>
 <p>For a full list of probability distributions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, please refer to this <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official website</a>.</p>
@@ -777,7 +748,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.903717533207091 0.00016522186307202223
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.236600955307257 0.0016064413200062436
 </pre></div>
 </div>
 </div>
@@ -819,7 +790,7 @@ Date
 </div>
 </div>
 </div>
-<p>For more advanced regression models, you may refer to the third-party <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning">machine learning package</a> <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>, which is also built on NumPy, SciPy and matplotlib. A brief beginner guide of this could also be found in <a class="reference external" href="https://realpython.com/linear-regression-in-python/">RealPython</a>.</p>
+<p>For more advanced regression models, you may refer to <a class="reference external" href="https://www.statsmodels.org/stable/api.html?highlight=regression">statsmodels</a> or the <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning">machine learning package</a> <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>. A brief beginner guide of this could also be found in <a class="reference external" href="https://realpython.com/linear-regression-in-python/">RealPython</a>.</p>
 </div>
 <div class="section" id="extreme-value-analysis">
 <h2><span class="section-number">4.1.5. </span>Extreme Value Analysis<a class="headerlink" href="#extreme-value-analysis" title="Permalink to this headline">¶</a></h2>
@@ -928,7 +899,7 @@ Date
 1985             25.4
 </pre></div>
 </div>
-<img alt="../../_images/scipy-basic_37_1.png" src="../../_images/scipy-basic_37_1.png" />
+<img alt="../../_images/scipy-basic_39_1.png" src="../../_images/scipy-basic_39_1.png" />
 </div>
 </div>
 </div>
@@ -1200,7 +1171,7 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_53_0.png" src="../../_images/scipy-basic_53_0.png" />
+<img alt="../../_images/scipy-basic_55_0.png" src="../../_images/scipy-basic_55_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1229,13 +1200,13 @@ Date
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/scipy-basic_55_0.png" src="../../_images/scipy-basic_55_0.png" />
+<img alt="../../_images/scipy-basic_57_0.png" src="../../_images/scipy-basic_57_0.png" />
 </div>
 </div>
 <ul class="simple">
-<li><p>Statistical inference: Kolmogorov-Smirnov(KS) test</p></li>
+<li><p>Statistical inference: Kolmogorov-Smirnov (KS) test</p></li>
 </ul>
-<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov(KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that <strong>two independent samples are drawn from the same continuous distribution</strong>. If the K-S statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
+<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov (KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that <strong>two independent samples are drawn from the same continuous distribution</strong>. If the KS statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
@@ -1303,7 +1274,7 @@ Return period
 1000                        2.154865
 </pre></div>
 </div>
-<img alt="../../_images/scipy-basic_60_1.png" src="../../_images/scipy-basic_60_1.png" />
+<img alt="../../_images/scipy-basic_62_1.png" src="../../_images/scipy-basic_62_1.png" />
 </div>
 </div>
 </div>
@@ -1356,10 +1327,10 @@ Return period
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="xarray.html" title="next page">
+        <a class="right-next" href="scipy-exercise.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">5. </span>What is Xarray?</p>
+                <p class="prevnext-title"><span class="section-number">4.2. </span>SciPy Exercise</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

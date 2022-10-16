@@ -167,6 +167,11 @@
      3.2. Exercise
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/pandas-solution.html">
+     3.3. Solution
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -182,6 +187,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../data-analytics/scipy-basic.html">
      4.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/scipy-exercise.html">
+     4.2. Exercise
     </a>
    </li>
   </ul>
@@ -392,13 +402,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q2-determine-the-return-level">
-   Q2: Determine the return level
+  <a class="reference internal nav-link" href="#q2-estimate-the-return-period">
+   Q2: Estimate the return period
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q3-estimate-the-return-period">
-   Q3: Estimate the return period
+  <a class="reference internal nav-link" href="#q3-identify-seasonality">
+   Q3: Identify seasonality
   </a>
  </li>
 </ul>
@@ -425,10 +435,10 @@
 </div>
 <div class="admonition-submission-guide admonition">
 <p class="admonition-title">Submission Guide</p>
-<p>Deadline: <strong>Sunday, 31st October 2021</strong>
+<p>Deadline: <strong>Sunday 11:59 pm, 30th October 2022</strong>
 (Note: Late submissions will not be accepted).</p>
 <p>Please upload your solutions to LumiNUS in a Jupyter Notebook format with the name “Homework1_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
-<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Huimin WANG (<a class="reference external" href="mailto:wanghuimin&#37;&#52;&#48;u&#46;nus&#46;edu">wanghuimin<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Zhanwei LIU (<a class="reference external" href="mailto:liuzhanwei&#37;&#52;&#48;u&#46;nus&#46;edu">liuzhanwei<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Haoling CHEN (<a class="reference external" href="mailto:h&#46;chen&#37;&#52;&#48;u&#46;nus&#46;edu">h<span>&#46;</span>chen<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Meilian LI (<a class="reference external" href="mailto:limeilian&#37;&#52;&#48;u&#46;nus&#46;edu">limeilian<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -455,9 +465,9 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </div>
 </div>
 </div>
-<div class="section" id="q2-determine-the-return-level">
-<h2>Q2: Determine the return level<a class="headerlink" href="#q2-determine-the-return-level" title="Permalink to this headline">¶</a></h2>
-<p>Based on the estimated GEV parameters using L-Moments in Q1, determine the return level (i.e., magnitude of extreme rainfall) of a 20-year, 50-year and 100-year rainfall event. (30 marks).</p>
+<div class="section" id="q2-estimate-the-return-period">
+<h2>Q2: Estimate the return period<a class="headerlink" href="#q2-estimate-the-return-period" title="Permalink to this headline">¶</a></h2>
+<p>Based on the estimated GEV parameters using L-Moments in Q1, estimate the return period of an event with 300 mm daily rainfall and calculate its difference in magnitude from a 100-year rainfall event (30 marks).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
@@ -467,9 +477,9 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </div>
 </div>
 </div>
-<div class="section" id="q3-estimate-the-return-period">
-<h2>Q3: Estimate the return period<a class="headerlink" href="#q3-estimate-the-return-period" title="Permalink to this headline">¶</a></h2>
-<p>Based on the estimated GEV parameters using L-Moments in Q1, what is the return period if daily rainfall is 300 mm? (30 marks)</p>
+<div class="section" id="q3-identify-seasonality">
+<h2>Q3: Identify seasonality<a class="headerlink" href="#q3-identify-seasonality" title="Permalink to this headline">¶</a></h2>
+<p>Take a careful look at the annual maximum rainfall series identified in Q1. Which month does the annual maximum rainfall event occur most frequently? If a GEV fit is applied to monthly maximum rainfall events for this particular month (40 values - one per year but extracted only from that month), will the  distribution statistically different from that estimated by annual maximum values? (Hint: You can use the KS test to compare the underlying distributions of two samples) (30 marks)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
