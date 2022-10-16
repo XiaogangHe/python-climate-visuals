@@ -426,11 +426,13 @@
 <h2><span class="section-number">4.2.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">¶</a></h2>
 <p>Extract the wet-day series from the raw daily rainfall datasest and calculate a few descriptive statistics: mean, vairance, skewness, kurtosis, L-CV, and L-skewness. Is the distribution left-skewed or right-skewed? Is the distribution more or less peaked than the normal distribution?</p>
 <p>Note: The wet-day series should be constructed by excluding events whose magnitude is less than 0.25 mm/day (0.25 mm/day is the minimum precipitation that can be recorded by the in situ rain gauge).</p>
-<p>The L-CV is L-coefficient of variation and can be calculated as:
-$<span class="math notranslate nohighlight">\(\text{L-CV}=\tau_2=\lambda_2/\lambda_1,\)</span><span class="math notranslate nohighlight">\(
-and the L-skewness is L-coefficient of skewness, which is calculated as:
-\)</span><span class="math notranslate nohighlight">\(\text{L-skewness}=\tau_3=\lambda_3/\lambda_2,\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\lambda_1<span class="math notranslate nohighlight">\(, \)</span>\lambda_2<span class="math notranslate nohighlight">\( and \)</span>\lambda_3$ are the first three L-moments (details can be found in <code class="docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">tutorial</span></code>)</p>
+<p>The L-CV is L-coefficient of variation and can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[\text{L-CV}=\tau_2=\lambda_2/\lambda_1,\]</div>
+<p>and the L-skewness is L-coefficient of skewness, which is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[\text{L-skewness}=\tau_3=\lambda_3/\lambda_2,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span> and <span class="math notranslate nohighlight">\(\lambda_3\)</span> are the first three L-moments (details can be found in <code class="docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">tutorial</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
