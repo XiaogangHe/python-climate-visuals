@@ -463,14 +463,14 @@
                 
   <div class="section" id="scipy-tutorial">
 <h1><span class="section-number">4.1. </span>SciPy tutorial<a class="headerlink" href="#scipy-tutorial" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. And these routines are composed as task-specific sub-modules in <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, such as <code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code> for vector quantization/ Kmeans, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> for linear algebra routines.</p>
+<p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. These routines are composed as task-specific sub-modules in <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, such as <code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code> for vector quantization/ Kmeans, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> for linear algebra routines. All <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> sub-modules depend on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, but are mostly independent of each other.</p>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module contains a large number of summary and frequency statistics, probability distributions, correlation functions, statistical tests, kernel density estimation, quasi-Monte Carlo functionality, and so on.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>: Statistics, Distributions, Statistical tests and Correlations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>: Statistics, Distributions, Statistical Tests and Correlations</p></li>
 <li><p>Extreme Value Analysis</p></li>
 </ul>
-<p>All <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-modules depend on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but are mostly independent of each other. The standard way of importing NumPy and these SciPy sub-modules is:</p>
+<p>The standard way of importing NumPy and one SciPy sub-module is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -619,11 +619,11 @@ dtype: float64
 </div>
 <div class="section" id="distributions">
 <h2><span class="section-number">4.1.2. </span>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains a lot of objects for specific distributions, including <strong>continuous distributions</strong> and <strong>discrete distributions</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains a lot of objects for probability distributions, including <strong>continuous distributions</strong> and <strong>discrete distributions</strong>.</p>
 <ul class="simple">
 <li><p><strong>Continuous distributions</strong></p></li>
 </ul>
-<p>Some examples are <code class="docutils literal notranslate"><span class="pre">norm</span></code> (normal distribution), <code class="docutils literal notranslate"><span class="pre">gamma</span></code> (gamma distribution), <code class="docutils literal notranslate"><span class="pre">uniform</span></code> (uniform distribution). Each object of continuous distributions comes with many useful methods, such as its PDF (probability density function), its CDF (cumulative distribution function) and so on.</p>
+<p>Some examples are <code class="docutils literal notranslate"><span class="pre">norm</span></code> (normal distribution), <code class="docutils literal notranslate"><span class="pre">gamma</span></code> (gamma distribution), <code class="docutils literal notranslate"><span class="pre">uniform</span></code> (uniform distribution). Each object of continuous distributions comes with many useful methods, such as its PDF (probability density function), its CDF (cumulative distribution function), and so on.</p>
 <p>Normally, we would directly import specific distributions into Python for convenience. Next is the example of a normal distribution whose mean is 5 and standard deviation is 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -683,7 +683,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.995204510884709 1.9949691020671656
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.055650656764304 2.0756534192971463
 </pre></div>
 </div>
 <img alt="../../_images/scipy-basic_19_1.png" src="../../_images/scipy-basic_19_1.png" />
@@ -696,7 +696,7 @@ dtype: float64
 <ul class="simple">
 <li><p><strong>Discrete distributions</strong></p></li>
 </ul>
-<p>Some examples are <code class="docutils literal notranslate"><span class="pre">bernoulli</span></code> (Bernoulli distribution), <code class="docutils literal notranslate"><span class="pre">binom</span></code> (binomial distribution), <code class="docutils literal notranslate"><span class="pre">poisson</span></code> (poisson distribution). Similarly, each object of discrete distributions comes with some useful methods, such as its PMF (probability mass function), its CDF (cumulative distribution function) and so on.</p>
+<p>Some examples are <code class="docutils literal notranslate"><span class="pre">bernoulli</span></code> (Bernoulli distribution), <code class="docutils literal notranslate"><span class="pre">binom</span></code> (binomial distribution), <code class="docutils literal notranslate"><span class="pre">poisson</span></code> (poisson distribution). Similarly, each object of discrete distributions comes with some useful methods, such as its PMF (probability mass function), its CDF (cumulative distribution function), and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span>
@@ -737,7 +737,7 @@ dtype: float64
 <div class="section" id="statistical-tests">
 <h2><span class="section-number">4.1.3. </span>Statistical Tests<a class="headerlink" href="#statistical-tests" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains a lot of common statistical tests, such as <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code> (T-test for the means of two independent samples), <code class="docutils literal notranslate"><span class="pre">kstest</span></code> (Kolmogorov-Smirnov test for goodness of fit) and so on.</p>
-<p>For instance, if we have two sets of observations, that we assume are generated from Gaussian processes, we can use a T-test <code class="docutils literal notranslate"><span class="pre">stats.ttest_ind</span></code> to decide whether the means of two sets of observations are significantly different.</p>
+<p>For instance, if we have two sets of observations that we assume are generated from Gaussian processes, we can use a T-test <code class="docutils literal notranslate"><span class="pre">stats.ttest_ind</span></code> to decide whether the means of two sets of observations are significantly different.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Sample A</span>
@@ -748,7 +748,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.236600955307257 0.0016064413200062436
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.3344152893762242 0.0011719701545575287
 </pre></div>
 </div>
 </div>
@@ -790,15 +790,15 @@ Date
 </div>
 </div>
 </div>
-<p>For more advanced regression models, you may refer to <a class="reference external" href="https://www.statsmodels.org/stable/api.html?highlight=regression">statsmodels</a> or the <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning">machine learning package</a> <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>. A brief beginner guide of this could also be found in <a class="reference external" href="https://realpython.com/linear-regression-in-python/">RealPython</a>.</p>
+<p>For more advanced regression models, you may refer to <a class="reference external" href="https://www.statsmodels.org/stable/api.html?highlight=regression">statistical model package</a> <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> or the <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html#supervised-learning">machine learning package</a> <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>. A brief beginner guide of this could also be found in <a class="reference external" href="https://realpython.com/linear-regression-in-python/">RealPython</a>.</p>
 </div>
 <div class="section" id="extreme-value-analysis">
 <h2><span class="section-number">4.1.5. </span>Extreme Value Analysis<a class="headerlink" href="#extreme-value-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Extreme value analysis (EVA) is a process primarily to estimate the probability of events that are more extreme than any previously observed. It is widely applied in many fields such as engineering, meteorology, hydrology, finance, etc. For example, we could use EVA to estimate the probability distributions of extreme events and correspondingly estimate the magnitudes of extreme events under specific return periods.</p>
-<p>In this section, we will take a series of streamflow as an example to show the extreme value analysis for <u><strong>annual 5-day low-flow</strong></u> in Python step by step.</p>
+<p>Extreme value analysis (EVA) is a process primarily to estimate the probability of events that are more extreme than any previously observed. It is widely applied in many fields such as engineering, meteorology, hydrology, finance, etc. For example, we could use EVA to estimate the probability distributions of extreme hydrological events and correspondingly estimate the magnitudes of extreme hydrological events under specific return periods.</p>
+<p>In this section, we will take a time series of streamflow as an example to show the extreme value analysis for <u><strong>annual 5-day low-flow</strong></u> in Python step by step.</p>
 <div class="section" id="extract-extreme-values">
 <h3><span class="section-number">4.1.5.1. </span>Extract extreme values<a class="headerlink" href="#extract-extreme-values" title="Permalink to this headline">¶</a></h3>
-<p>We first load the daily streamflow data from the file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and calculate the 5-day moving average of streamflow.</p>
+<p>We first load the daily streamflow data from the file using <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and calculate the 5-day moving average of streamflow. Extreme events are collected from each year by picking the minimum 5-day low-flow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Data</span>
@@ -905,7 +905,7 @@ Date
 </div>
 <div class="section" id="fit-distribution-parameter-estimation">
 <h3><span class="section-number">4.1.5.2. </span>Fit distribution (parameter estimation)<a class="headerlink" href="#fit-distribution-parameter-estimation" title="Permalink to this headline">¶</a></h3>
-<p>Next, we fit a distribution to the low-flow data. We assume that annual low-flow follows a generalized extreme value (GEV) distribution <code class="docutils literal notranslate"><span class="pre">genextreme(c,</span> <span class="pre">loc=loc,</span> <span class="pre">scale=scale)</span></code>, which has three parameters: <code class="docutils literal notranslate"><span class="pre">loc</span></code> (location parameter), <code class="docutils literal notranslate"><span class="pre">scale</span></code> (scale parameter) and <code class="docutils literal notranslate"><span class="pre">c</span></code> (shape parameter).</p>
+<p>Next, we fit a distribution to the annual low-flow extreme events. Here, we assume that annual low-flow follows a generalized extreme value (GEV) distribution <code class="docutils literal notranslate"><span class="pre">genextreme(c,</span> <span class="pre">loc=loc,</span> <span class="pre">scale=scale)</span></code>, which has three parameters: <code class="docutils literal notranslate"><span class="pre">loc</span></code> (location parameter), <code class="docutils literal notranslate"><span class="pre">scale</span></code> (scale parameter) and <code class="docutils literal notranslate"><span class="pre">c</span></code> (shape parameter).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">genextreme</span> <span class="k">as</span> <span class="n">gev</span>
@@ -938,7 +938,7 @@ Date
 <ul class="simple">
 <li><p>Method of L-moments (LMM)</p></li>
 </ul>
-<p>In the context of EVA, observations are used to fit the distributions of extreme events, which tend to follow a distribution more complicated than the normal distribution in essence. The method of L-moments is more recommended in this case (more details referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=L-moments%20are%20more%20robust%20than%20conventional%20moments%2C%20and%20existence%20of%20higher%20L-moments%20only%20requires%20that%20the%20random%20variable%20have%20finite%20mean.">WikiPedia</a>). However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments.</p>
+<p>In the context of EVA, observations tend to follow a distribution more complicated than the normal distribution. The method of L-moments is more recommended in this case compared to MLE (more details referred to <a class="reference external" href="https://en.wikipedia.org/wiki/L-moment#:~:text=L%2Dmoments%20are%20far%20more%20meaningful%20when%20dealing%20with%20outliers%20in%20data%20than%20conventional%20moments">WikiPedia</a>). However, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> only includes the common MLE method and method of moments for parameter estimation. We need to code the method of L-moments on our own.</p>
 <p>The L-moments are established based on the probability weighted moments. To be specific, they are linear combinations of probability weighted moments. The probability weighted moments are defined as</p>
 <p><span class="math notranslate nohighlight">\(
 \begin{align}
@@ -1009,7 +1009,7 @@ Date
 \frac{\lambda_3}{\lambda_2} &amp; =\frac{2(1-3^{-\xi})}{1-2^{-\xi}}-3
 \end{align}
 \)</span></p>
-<p>where <span class="math notranslate nohighlight">\(\mu, \sigma, \xi\)</span> are respectively GEV’s location <code class="docutils literal notranslate"><span class="pre">loc</span></code>, scale <code class="docutils literal notranslate"><span class="pre">scale</span></code> and shape <code class="docutils literal notranslate"><span class="pre">c</span></code> parameters. Obviously, there are no explicit solutions to these equations when we plugin the sample L-moments. Luckily, we could resort to the function solver <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> in the optimization sub-module of SciPy to get numerical solutions.</p>
+<p>where <span class="math notranslate nohighlight">\(\mu, \sigma, \xi\)</span> are respectively GEV’s location <code class="docutils literal notranslate"><span class="pre">loc</span></code>, scale <code class="docutils literal notranslate"><span class="pre">scale</span></code>, and shape <code class="docutils literal notranslate"><span class="pre">c</span></code> parameters. Obviously, there are no explicit solutions to these equations when we plugin the sample L-moments. Luckily, we could resort to the function solver <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> in the optimization sub-module of SciPy to get numerical solutions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate GEV parameters using the function solver</span>
@@ -1146,7 +1146,7 @@ Date
 </div>
 <div class="section" id="compare-with-empirical-distribution">
 <h3><span class="section-number">4.1.5.3. </span>Compare with empirical distribution<a class="headerlink" href="#compare-with-empirical-distribution" title="Permalink to this headline">¶</a></h3>
-<p>As we have assumed the probability distributions of annual low-flow, it is necessary to examine the performance in characterizing the observation datasets of this distribution along with estimated parameters. Here, we first examine this by directly looking at the <em><strong>probability density function (PDF)</strong></em> and <em><strong>cumulative distribution function (CDF)</strong></em>; then, we examine this through <em><strong>statistical inference</strong></em>.</p>
+<p>Although we have obtained the estimated probability distribution of annual low-flow by parameter estimation, it is necessary to examine its performance in characterizing the observation datasets. Here, we first examine this by directly looking at the <em><strong>probability density function (PDF)</strong></em> and <em><strong>cumulative distribution function (CDF)</strong></em>; then, we examine this through <em><strong>statistical inference</strong></em>.</p>
 <ul class="simple">
 <li><p>Probability density function</p></li>
 </ul>
@@ -1177,7 +1177,7 @@ Date
 <ul class="simple">
 <li><p>Cumulative distribution function</p></li>
 </ul>
-<p>Since we are often more concerned about the rare cases of extreme events (which lies at the edge of PDF), it is also common practice to plot CDF to have a check.</p>
+<p>Since we are often more concerned about the rare cases of extreme events (which lay at the edge of PDF), it is also common practice to plot CDF to have a check.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot empirical CDF</span>
@@ -1206,19 +1206,19 @@ Date
 <ul class="simple">
 <li><p>Statistical inference: Kolmogorov-Smirnov (KS) test</p></li>
 </ul>
-<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov (KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that <strong>two independent samples are drawn from the same continuous distribution</strong>. If the KS statistic is small or the p-value is high, then we cannot reject the hypothesis that the distributions of the two samples are the same.</p>
+<p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov (KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that <strong>the distribution of independent samples is identical to the specified cumulative distribution</strong>. If the KS statistic is small or the p-value is high, then we cannot reject the hypothesis that samples follow the specified distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">MLEKS</span><span class="p">)</span>
-<span class="n">LMMKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+<span class="n">LMMKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">LMMKS</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
-KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KstestResult(statistic=0.16008786925974927, pvalue=0.3845846196401085)
+KstestResult(statistic=0.14516854345180497, pvalue=0.5061871580723805)
 </pre></div>
 </div>
 </div>
@@ -1247,8 +1247,8 @@ KstestResult(statistic=0.16666666666666666, pvalue=0.8079631540901643)
 <span class="nb">print</span><span class="p">(</span><span class="n">LFTlmm</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]])</span>
 
 <span class="c1"># Plot low-flow vs return periods</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">LFTmle</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MLE&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">LFTlmm</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LMM&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LFTmle</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MLE&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LFTlmm</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LMM&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Annual 5-day low-flow ($m^3/s$)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Return period (years)&#39;</span><span class="p">)</span>
@@ -1282,7 +1282,7 @@ Return period
 <div class="section" id="references">
 <h2><span class="section-number">4.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>This tutorial was edited based on <a class="reference external" href="https://realpython.com/python-statistics/">Python Statistics Fundamentals</a>, <a class="reference external" href="https://scipy-lectures.org/">Scipy Lecture Notes</a>, <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#probability-distributions">official site</a>, <a class="reference external" href="https://github.com/royalosyin/A-Beginner-Guide-to-Carry-out-Extreme-Value-Analysis-with-Codes-in-Python">royalosyin’s guide to carry out EVA</a> and <a class="reference external" href="https://github.com/OpenHydrology/lmoments3">OpenHydrology’s lmoments3 repository</a>.</p></li>
+<li><p>This tutorial was edited based on <a class="reference external" href="https://realpython.com/python-statistics/">Python Statistics Fundamentals</a>, <a class="reference external" href="https://scipy-lectures.org/">Scipy Lecture Notes</a>, <a class="reference external" href="https://github.com/royalosyin/A-Beginner-Guide-to-Carry-out-Extreme-Value-Analysis-with-Codes-in-Python">royalosyin’s guide to carry out EVA</a> and <a class="reference external" href="https://github.com/OpenHydrology/lmoments3">OpenHydrology’s lmoments3 repository</a>.</p></li>
 <li><p>Only the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> sub-module is introduced here. If you wish to get a quick glimpse on other sub-modules of SciPy, you could refer to <a class="reference external" href="https://scipy-lectures.org/intro/scipy.html">scipy-lectures</a>.</p></li>
 </ul>
 </div>
