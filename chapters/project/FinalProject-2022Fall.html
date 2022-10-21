@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visualizing Emerging Risks of Urban Heat Waves in Southeast Asia under Climate Change</title>
+    <title>Visualizing Urban Heat Stress and Labor Productivity Loss in Southeast Asia under Climate Change</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -454,8 +454,8 @@
         
               <div>
                 
-  <div class="section" id="visualizing-emerging-risks-of-urban-heat-waves-in-southeast-asia-under-climate-change">
-<h1>Visualizing Emerging Risks of Urban Heat Waves in Southeast Asia under Climate Change<a class="headerlink" href="#visualizing-emerging-risks-of-urban-heat-waves-in-southeast-asia-under-climate-change" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="visualizing-urban-heat-stress-and-labor-productivity-loss-in-southeast-asia-under-climate-change">
+<h1>Visualizing Urban Heat Stress and Labor Productivity Loss in Southeast Asia under Climate Change<a class="headerlink" href="#visualizing-urban-heat-stress-and-labor-productivity-loss-in-southeast-asia-under-climate-change" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Project Overview</p>
 <p>Design static visualizations to unravel the invisible risks of urban heat waves in Southeast Asia using the latest climate model simulations.</p>
@@ -465,7 +465,7 @@
 <p>Deadline: <strong>Tuesday 11:59 pm, 29th November 2022</strong>
 (Note: Late submissions will not be accepted).</p>
 <p>You must submit your project to LumiNUS. Please upload a Jupyter Notebook with the name “FinalProject_StudentID.ipynb”. You need to include your codes, figures and the required write-ups in a single Jupyter Notebook file. Make sure to write down your student ID and full name in the cell below.</p>
-<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Haoling CHEN (<a class="reference external" href="mailto:h&#46;chen&#37;&#52;&#48;u&#46;nus&#46;edu">h<span>&#46;</span>chen<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Meilian LI (<a class="reference external" href="mailto:limeilian&#37;&#52;&#48;u&#46;nus&#46;edu">limeilian<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Haoling CHEN (<a class="reference external" href="mailto:h&#46;chen&#37;&#52;&#48;u&#46;nus&#46;edu">h<span>&#46;</span>chen<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>), or Meilian LI (<a class="reference external" href="mailto:limeilian&#37;&#52;&#48;u&#46;nus&#46;edu">limeilian<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,7 +479,7 @@
 </div>
 <div class="section" id="data-description">
 <h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">¶</a></h2>
-<p>Each of you has been randomly assigned a city in Southeast Asia (see Figure below) according to your student ID. For this project, you only need to work on the city that we assigned to you. Simulated daily temperature (unit: K) from the latest climate models have been provided (available <a class="reference external" href="https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/">here</a>). This data have been divided into two parts: historical (1850.01.01-2014.12.31) simulations (<code class="docutils literal notranslate"><span class="pre">CityName_historical.csv</span></code>) and future (2015.01.01-2099.12.31)  projections (<code class="docutils literal notranslate"><span class="pre">CityName_future.csv</span></code>). Historical data contains 12 climate models and 60265 time steps. However, future data contains 12 climate models, 2 climate scenarios (ssp126: sustainable development scenario; ssp585: fossil-fuel based development; check SSP details <a class="reference external" href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change">here</a>), and 31046 time steps. Please check the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-basic.html#input-output-of-datal">Pandas tutorial</a> for more details.</p>
+<p>Each of you has been randomly assigned a city in Southeast Asia (see Figure below) according to your student ID. For this project, you only need to work on the city that we assigned to you. Simulated daily temperature (unit: K) from the latest climate models have been provided (available <a class="reference external" href="https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/">here</a>). This data have been divided into two parts: historical (1850.01.01-2014.12.31) simulations (<code class="docutils literal notranslate"><span class="pre">CityName_historical.csv</span></code>) and future (2015.01.01-2099.12.31)  projections (<code class="docutils literal notranslate"><span class="pre">CityName_future.csv</span></code>). Historical data contains 12 climate models and 60265 time steps. However, future data contains 12 climate models, 2 climate scenarios (ssp126: sustainable development scenario; ssp585: fossil-fuel based development; check SSP details <a class="reference external" href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change">here</a>), and 31046 time steps. Please check the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-basic.html#input-output-of-datal">Pandas tutorial</a> for more details on how to read the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
 <a class="reference internal image-reference" href="../../_images/selected_city.png"><img alt="../../_images/selected_city.png" class="align-center" src="../../_images/selected_city.png" style="width: 80%;" /></a>
 </div>
 <div class="section" id="task-1-20-marks">
@@ -496,21 +496,21 @@
 </div>
 <div class="section" id="task-2-40-marks">
 <h2>Task 2 (40 marks)<a class="headerlink" href="#task-2-40-marks" title="Permalink to this headline">¶</a></h2>
-<p>Visualize the changing risks of heat extremes from 1950 to 2100. To do this, you can:</p>
+<p>Visualize the changing risks of heat extremes from 1950 to 2100. To do this, you need to:</p>
 <ul class="simple">
 <li><p>Fit Generalized Extreme Value (GEV) distributions using annual and monthly maximum daily temperature over different periods respectively (e.g., 1850-1900, 1950-2014, 2015-2099).</p></li>
-<li><p>Visualize the fitted GEV distributions for annual maximum daily temperature along the horizontal axis to represent the shift of distribution across different scenarios and periods.</p></li>
-<li><p>Visualize the fitted GEV distributions for monthly maximum daily temperature along the vertical axis to illustrate the shift in seasonality. (Hint: Something similar to the <a class="reference external" href="https://www.data-to-viz.com/graph/ridgeline.html#:~:text=Definition,presented%20with%20a%20slight%20overlap.">Ridgeline plot</a>)</p></li>
+<li><p>Visualize the shift in your fitted GEV distributions along the horizontal axis for annual maximum daily temperature across different scenarios and periods.</p></li>
+<li><p>Visualize the seasonal shift in your fitted GEV distributions along the vertical axis for monthly maximum daily temperature. (Hint: Something similar to the <a class="reference external" href="https://www.data-to-viz.com/graph/ridgeline.html#:~:text=Definition,presented%20with%20a%20slight%20overlap.">Ridgeline plot</a>)</p></li>
 </ul>
 </div>
 <div class="section" id="task-3-20-marks">
 <h2>Task 3 (20 marks)<a class="headerlink" href="#task-3-20-marks" title="Permalink to this headline">¶</a></h2>
 <p>Climate-driven extreme heat can undermine the working capacity of individuals, resulting in lower productivity. Based on the identified heatwave events in Task 2, analyze historical and future reduced labor productivity caused by extreme heat.
-To do this, you will need to:</p>
+To do this, you need to:</p>
 <ul class="simple">
 <li><p>Write your own functions to calculate the wet bulb global temperature (WBGT) using specific humidity and temperature as inputs (see Eq (1) in Appendix).</p></li>
-<li><p>Write your own functions to calculate the productivity index using labor productivity functions (see Eqs (3-4) in Appendix).</p></li>
-<li><p>Design your own graphs to visualize the heat-induced productivity loss for different scenarios and periods.</p></li>
+<li><p>Write your own functions to calculate the productivity index using the empirical labor productivity function (see Eqs (3-4) in Appendix).</p></li>
+<li><p>Design your own graphs to visualize the heat-induced productivity loss under different climate change scenarios and across different periods.</p></li>
 </ul>
 </div>
 <div class="section" id="short-write-ups-20-marks">
