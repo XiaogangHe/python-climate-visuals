@@ -54,7 +54,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualizing Emerging Risks of Urban Heat Waves in Southeast Asia under Climate Change" href="../project/FinalProject-2022Fall.html" />
+    <link rel="next" title="Visualizing Urban Heat Stress and Labor Productivity Loss in Southeast Asia under Climate Change" href="../project/FinalProject-2022Fall.html" />
     <link rel="prev" title="HW#1: Extreme Rainfall in Singapore" href="homework1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -402,18 +402,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q1-visualize-the-time-series-of-historical-temperature-anomalies-of-singapore">
-   Q1: Visualize the time series of historical temperature anomalies of Singapore
+  <a class="reference internal nav-link" href="#task-1-visualize-the-gev-distribution-30-marks">
+   Task 1: Visualize the GEV distribution (30 marks)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q2-visualize-the-trend-of-temperature-anomaly">
-   Q2: Visualize the trend of temperature anomaly
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#q3-plot-climate-stripes-for-singapore">
-   Q3: Plot climate stripes for Singapore
+  <a class="reference internal nav-link" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks">
+   Task 2: Visualize the trend of temperature anomaly ( 70 marks )
   </a>
  </li>
 </ul>
@@ -433,17 +428,18 @@
 <p class="admonition-title">Objectives</p>
 <p>This homework will provide you a real-world example in terms of:</p>
 <ul class="simple">
-<li><p>how to visualize time series of temperature anomalies and the trend, and</p></li>
-<li><p>how to make beautiful, accessible, and understandable data visualizations.</p></li>
+<li><p>how to visualize the GEV distribution</p></li>
+<li><p>how to visualize time series of temperature anomalies and the trend</p></li>
+<li><p>how to make beautiful, accessible, and understandable data visualizations</p></li>
 </ul>
 <p>Happy coding!</p>
 </div>
 <div class="admonition-submission-guide admonition">
 <p class="admonition-title">Submission Guide</p>
-<p>Deadline: <strong>Sunday 11:59 pm, 14th November 2021</strong>
+<p>Deadline: <strong>Sunday 11:59 pm, 13th November 2022</strong>
 (Note: Late submissions will not be accepted).</p>
 <p>Please upload your solutions to LumiNUS in a Jupyter Notebook format with the name “Homework2_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
-<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Huimin WANG (<a class="reference external" href="mailto:wanghuimin&#37;&#52;&#48;u&#46;nus&#46;edu">wanghuimin<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Zhanwei LIU (<a class="reference external" href="mailto:liuzhanwei&#37;&#52;&#48;u&#46;nus&#46;edu">liuzhanwei<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Haoling CHEN (<a class="reference external" href="mailto:h&#46;chen&#37;&#52;&#48;u&#46;nus&#46;edu">h<span>&#46;</span>chen<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Meilian LI (<a class="reference external" href="mailto:limeilian&#37;&#52;&#48;u&#46;nus&#46;edu">limeilian<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -458,12 +454,35 @@
 <p><strong>Data</strong>:
 You will need to use the historical (1982-2020) daily mean air temperature data measured at Singapore’s Changi station for this homework.
 You can create a DataFrame using Pandas by reading the file “../../assets/data/Changi_daily_temperature.csv”.</p>
-<div class="section" id="q1-visualize-the-time-series-of-historical-temperature-anomalies-of-singapore">
-<h2>Q1: Visualize the time series of historical temperature anomalies of Singapore<a class="headerlink" href="#q1-visualize-the-time-series-of-historical-temperature-anomalies-of-singapore" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-1-visualize-the-gev-distribution-30-marks">
+<h2>Task 1: Visualize the GEV distribution (30 marks)<a class="headerlink" href="#task-1-visualize-the-gev-distribution-30-marks" title="Permalink to this headline">¶</a></h2>
+<p>To visualize the GEV distribution, you can:</p>
+<ol class="simple">
+<li><p>Fit Generalized Extreme Value (GEV) distribution of annual maximum daily temperature. Estimate the GEV parameters using Maximum Likelihood method.</p></li>
+<li><p>Plot the PDF curve to directly represent the distribution.</p></li>
+<li><p>Calculate the return level of the 10-year event, and mark it on the figure.</p></li>
+<li><p>Fill the figure with different colors regarding the calculated return level as the dividing line.</p></li>
+<li><p>Make sure that you have included necessary non-data elements, such as title, x/y axis labels, legend, etc. Try to design by yourself. (you can check the <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html#line-plots">tutorial</a> for details).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-2-visualize-the-trend-of-temperature-anomaly-70-marks">
+<h2>Task 2: Visualize the trend of temperature anomaly ( 70 marks )<a class="headerlink" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks" title="Permalink to this headline">¶</a></h2>
+<p><strong>Q1: Visualize the time series and trend of historical temperature anomalies of Singapore (35 marks)</strong></p>
 <ul class="simple">
-<li><p>Calculate the annual mean temperature from the daily data. This will result in a data set of 39 values — one per year. (10 marks)</p></li>
-<li><p>Calculate the annual temperature anomalies using the first 10-year period as the baseline. To do this, you need to (1) calculate the decadal mean temperature over the first 10 years (1982—1991) and (2) subtract the decadal mean for each year. (15 marks)</p></li>
-<li><p>Make a line graph of these annual temperature anomalies and make sure that you have included necessary non-data elements, such as title, x/y axis labels, legend, etc (you can check the <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html#line-plots">tutorial</a> for details). (15 marks)</p></li>
+<li><p>Calculate the annual mean temperature from the daily data. This will result in a data set of 39 values — one per year. (5 marks)</p></li>
+<li><p>Calculate the annual temperature anomalies using the first 10-year period as the baseline. To do this, you need to:<br />
+(1) calculate the decadal mean temperature over the first 10 years (1982—1991)<br />
+(2) subtract the decadal mean for each year. (5 marks)</p></li>
+<li><p>Make a line graph of these annual temperature anomalies and make sure that you have included necessary non-data elements. (10 marks)</p></li>
+<li><p>Based on the annual temperature anomalies above, visualize the trend using a 5-year moving window. (15 marks)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,26 +492,16 @@ You can create a DataFrame using Pandas by reading the file “../../assets/data
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="q2-visualize-the-trend-of-temperature-anomaly">
-<h2>Q2: Visualize the trend of temperature anomaly<a class="headerlink" href="#q2-visualize-the-trend-of-temperature-anomaly" title="Permalink to this headline">¶</a></h2>
-<p>Based on the annual temperature anomalies in Q1, visualize the trend using a 5-year moving window. (20 marks)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
-<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="q3-plot-climate-stripes-for-singapore">
-<h2>Q3: Plot climate stripes for Singapore<a class="headerlink" href="#q3-plot-climate-stripes-for-singapore" title="Permalink to this headline">¶</a></h2>
+<p><strong>Q2: Add climate stripes for Singapore (35 marks)</strong></p>
 <ul class="simple">
 <li><p>Reproduce the <a class="reference external" href="https://showyourstripes.info/s/asia/singapore">climate stripes</a> for Singapore using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. (20 marks)</p></li>
-<li><p>Use your generated climate stripes as the background and then overlay the time series of annual anomalies (from Q1) and the trend (from Q2) on top of the climate strips. (20 marks)</p></li>
+<li><p>Use your generated climate stripes as the background and then overlay the time series and the trend of annual anomalies (from Q1) on top of the climate stripes. (15 marks)</p></li>
 </ul>
-<p>Tips: (1) You can refer to <a class="reference external" href="https://github.com/josephshea/ClimateStripes/blob/master/ClimateStripes-Canada.ipynb">this GitHub repository</a> to make the climate stripes. (2) To make a pretty and accessible (colorblind safe) chart, you might want to fine tune the aesthetics (e.g., color palette of the diverging colorbar) of your chart.</p>
+<p>Tips:</p>
+<ul class="simple">
+<li><p>You can refer to <a class="reference external" href="https://github.com/josephshea/ClimateStripes/blob/master/ClimateStripes-Canada.ipynb">this GitHub repository</a> to make the climate stripes.</p></li>
+<li><p>To make a pretty and accessible (colorblind safe) chart, you might want to fine tune the aesthetics (e.g., color palette of the diverging colorbar) of your chart.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
@@ -546,7 +555,7 @@ You can create a DataFrame using Pandas by reading the file “../../assets/data
         <a class="right-next" href="../project/FinalProject-2022Fall.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Visualizing Emerging Risks of Urban Heat Waves in Southeast Asia under Climate Change</p>
+                <p class="prevnext-title">Visualizing Urban Heat Stress and Labor Productivity Loss in Southeast Asia under Climate Change</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
