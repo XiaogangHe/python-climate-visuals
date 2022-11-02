@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW#1: Extreme Rainfall in Singapore</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/homework/homework1-solution.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HW#2: Visualizing Historical Temperature Changes in Singapore" href="homework2.html" />
+    <link rel="prev" title="1.2. Matplotlib tutorial (Advanced)" href="../data-visuals/matplotlib-advanced.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/favicon.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Data Analytics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-analytics/python.html">
+   1. Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/python-basic.html">
+     1.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/python-exercise.html">
+     1.2. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/python-solution.html">
+     1.3. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-analytics/numpy.html">
+   2. NumPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/numpy-basic.html">
+     2.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/numpy-exercise.html">
+     2.2. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/numpy-solution.html">
+     2.3. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-analytics/pandas.html">
+   3. Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/pandas-basic.html">
+     3.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/pandas-exercise.html">
+     3.2. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/pandas-solution.html">
+     3.3. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-analytics/scipy.html">
+   4. SciPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/scipy-basic.html">
+     4.1. Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/scipy-exercise.html">
+     4.2. Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/scipy-solution.html">
+     4.3. Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-analytics/xarray.html">
+   5. Xarray
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-analytics/xarray-basic.html">
+     5.1. Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data visualization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-visuals/matplotlib.html">
+   1. Matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-visuals/matplotlib-basic.html">
+     1.1. Tutorial (Basic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-visuals/matplotlib-advanced.html">
+     1.2. Tutorial (Advanced)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Homework
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Homework 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homework2.html">
+   Homework 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course Project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../project/FinalProject-2022Fall.html">
+   Fall 2022
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Gallery
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gallery/plot_weighted_river_network.html">
+   River Network
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Others
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../others/refs.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/homework/homework1-solution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/XiaogangHe/python-climate-visuals"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/homework/homework1-solution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q1-fit-the-gev-distribution">
+   Q1: Fit the GEV distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q2-estimate-the-return-period">
+   Q2: Estimate the return period
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#q3-identify-seasonality">
+   Q3: Identify seasonality
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-1-extreme-rainfall-in-singapore">
+<h1>HW#1: Extreme Rainfall in Singapore<a class="headerlink" href="#hw-1-extreme-rainfall-in-singapore" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objectives</p>
+<p>This homework will help you gain a better understanding in terms of the ways how to:</p>
+<ul class="simple">
+<li><p>Fit Generalized Extreme Value (GEV) distribution</p></li>
+<li><p>Estimate the return period and return level of extreme rainfall</p></li>
+</ul>
+<p>Happy coding!</p>
+</div>
+<div class="admonition-submission-guide admonition">
+<p class="admonition-title">Submission Guide</p>
+<p>Deadline: <strong>Sunday 11:59 pm, 30th October 2022</strong>
+(Note: Late submissions will not be accepted).</p>
+<p>Please upload your solutions to LumiNUS in a Jupyter Notebook format with the name “Homework1_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Haoling CHEN (<a class="reference external" href="mailto:h&#46;chen&#37;&#52;&#48;u&#46;nus&#46;edu">h<span>&#46;</span>chen<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Meilian LI (<a class="reference external" href="mailto:limeilian&#37;&#52;&#48;u&#46;nus&#46;edu">limeilian<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill your student ID and full name below.</span>
+
+<span class="c1"># Student ID:</span>
+<span class="c1"># Full name:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Data</strong>:
+You will need to use the historical (1981-2020) daily total rainfall at Singapore’s Changi station for this homework.
+You can create a DataFrame using Pandas by reading file “../../assets/data/Changi_daily_rainfall.csv”.</p>
+<div class="section" id="q1-fit-the-gev-distribution">
+<h2>Q1: Fit the GEV distribution<a class="headerlink" href="#q1-fit-the-gev-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Find the annual maximum rainfall based on the daily rainfall. This will result in a data set of 40 values - one per year. Fit the GEV distribution to the time series of annual maximum rainfall. To do this, estimate the GEV parameters using (i) Maximum Likelihood and (ii) L-Moments, respectively. Based on your results, discuss whether extreme rainfall in Singapore is bounded above or not. (Details on fitting a GEV distribution can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html">Scipy tutorial</a>). (40 marks)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># using the + icon in the toolbar to add a cell.</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">genextreme</span> <span class="k">as</span> <span class="n">gev</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># Calculate L-moments based on samples</span>
+<span class="k">def</span> <span class="nf">samlmom3</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    samlmom3 returns the first three L-moments of samples</span>
+<span class="sd">    sample is the 1-d array</span>
+<span class="sd">    n is the total number of the samples, j is the j_th sample</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">sample</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">lmom1</span> <span class="o">=</span> <span class="n">b0</span>
+    <span class="n">lmom2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">b0</span>
+    <span class="n">lmom3</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="n">b2</span> <span class="o">-</span> <span class="n">b1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b0</span>
+
+    <span class="k">return</span> <span class="n">lmom1</span><span class="p">,</span> <span class="n">lmom2</span><span class="p">,</span> <span class="n">lmom3</span>
+
+<span class="k">def</span> <span class="nf">pargev_fsolve</span><span class="p">(</span><span class="n">lmom</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pargev_fsolve estimates the parameters of the Generalized Extreme Value </span>
+<span class="sd">    distribution given the L-moments of the data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lmom_ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">lmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">t</span> 
+    <span class="n">G</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">para3</span> <span class="o">=</span> <span class="n">G</span>
+    <span class="n">GAM</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">G</span><span class="p">)</span>
+    <span class="n">para2</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span> <span class="o">/</span> <span class="p">(</span><span class="n">GAM</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="n">G</span><span class="p">))</span>
+    <span class="n">para1</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">para2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">GAM</span><span class="p">)</span> <span class="o">/</span> <span class="n">G</span>
+    <span class="k">return</span> <span class="n">para1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">para2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">para3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> 
+                 <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">shp_LME</span><span class="p">,</span> <span class="n">loc_LME</span><span class="p">,</span> <span class="n">sca_LME</span> <span class="o">=</span> <span class="n">gev</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+
+<span class="n">LMM</span> <span class="o">=</span> <span class="n">samlmom3</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+<span class="n">loc_LMM</span><span class="p">,</span> <span class="n">sca_LMM</span><span class="p">,</span> <span class="n">shp_LMM</span> <span class="o">=</span> <span class="n">pargev_fsolve</span><span class="p">(</span><span class="n">LMM</span><span class="p">)</span>
+<span class="n">LMMGEV</span> <span class="o">=</span> <span class="n">gev</span><span class="p">(</span><span class="n">shp_LMM</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc_LMM</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sca_LMM</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximum Likelihood: loc_LME=</span><span class="si">{}</span><span class="s1">, sca_LME=</span><span class="si">{}</span><span class="s1">, shp_LME=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loc_LME</span><span class="p">,</span> <span class="n">sca_LME</span><span class="p">,</span> <span class="n">shp_LME</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L-Moments: loc_LMM=</span><span class="si">{}</span><span class="s1">, sca_LMM=</span><span class="si">{}</span><span class="s1">, shp_LMM=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loc_LMM</span><span class="p">,</span> <span class="n">sca_LMM</span><span class="p">,</span> <span class="n">shp_LMM</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum Likelihood: loc_LME=101.1678211072257, sca_LME=39.24690874747871, shp_LME=0.02668390757775726
+L-Moments: loc_LMM=101.88198201624115, sca_LMM=43.00458155155795, shp_LMM=0.08500214105957563
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q2-estimate-the-return-period">
+<h2>Q2: Estimate the return period<a class="headerlink" href="#q2-estimate-the-return-period" title="Permalink to this headline">¶</a></h2>
+<p>Based on the estimated GEV parameters using L-Moments in Q1, (1) estimate the return period of an event with 300 mm daily rainfall, and (2) calculate the difference in magnitude between this event and a 100-year event (30 marks).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># using the + icon in the toolbar to add a cell.</span>
+<span class="k">def</span> <span class="nf">get_return_level</span><span class="p">(</span><span class="n">return_period</span><span class="p">,</span> <span class="n">ppf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    calculate return level using ppf given the return period.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">prob</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">return_period</span>
+    <span class="n">return_level</span> <span class="o">=</span> <span class="n">ppf</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">return_level</span>
+
+
+<span class="k">def</span> <span class="nf">get_return_period</span><span class="p">(</span><span class="n">return_level</span><span class="p">,</span> <span class="n">cdf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    calculate return period using CDF given the return level.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">cdf</span><span class="p">(</span><span class="n">return_level</span><span class="p">)</span>
+    <span class="n">return_period</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prob</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">return_period</span>
+
+<span class="n">return_period</span> <span class="o">=</span> <span class="n">get_return_period</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+
+<span class="n">LMMGEV</span> <span class="o">=</span> <span class="n">gev</span><span class="p">(</span><span class="n">shp_LMM</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc_LMM</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sca_LMM</span><span class="p">)</span>
+<span class="n">level100</span> <span class="o">=</span> <span class="n">get_return_level</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">)</span>
+<span class="n">differences</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">-</span> <span class="n">level100</span>
+<span class="n">compare</span> <span class="o">=</span> <span class="s1">&#39;larger&#39;</span> <span class="k">if</span> <span class="n">differences</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;less&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Return period of 300 mm is: </span><span class="si">{}</span><span class="s1"> year,&#39;</span>
+      <span class="s1">&#39; and it is </span><span class="si">{:.2f}</span><span class="s1"> mm </span><span class="si">{}</span><span class="s1"> than a 100-year event&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">return_period</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">differences</span><span class="p">),</span> <span class="n">compare</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Return period of 300 mm is: 346.327754435381 year, and it is 34.38 mm larger than a 100-year event
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q3-identify-seasonality">
+<h2>Q3: Identify seasonality<a class="headerlink" href="#q3-identify-seasonality" title="Permalink to this headline">¶</a></h2>
+<p>Take a careful look at the annual maximum rainfall series identified in Q1. Which month does the annual maximum rainfall event occur most frequently? If a GEV fit is applied to monthly maximum rainfall events for this particular month (40 values - one per year but extracted only from that month), will the  distribution statistically different from that estimated by annual maximum values? (Hint: You can use the KS test to compare the underlying distributions of two samples) (30 marks)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># using the + icon in the toolbar to add a cell.</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;June&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;July&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span><span class="p">]</span>
+
+<span class="n">date4max_rainfall</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)[</span><span class="s1">&#39;Daily Rainfall Total (mm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="n">month</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date4max_rainfall</span><span class="p">)</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Annual maximum rainfall events occur in </span><span class="si">%s</span><span class="s1"> most frequently&#39;</span> <span class="o">%</span> <span class="n">months</span><span class="p">[</span><span class="n">counts</span><span class="o">.</span><span class="n">argmax</span><span class="p">()])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Annual maximum rainfall events occur in December most frequently
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kstest</span>
+<span class="n">monthly_samples</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">Dec_samples</span> <span class="o">=</span> <span class="n">monthly_samples</span><span class="p">[</span><span class="n">monthly_samples</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">==</span> <span class="mi">12</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">kstest_rslt</span> <span class="o">=</span> <span class="n">kstest</span><span class="p">(</span><span class="n">Dec_samples</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">kstest_rslt</span><span class="o">.</span><span class="n">pvalue</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The ks statistics is </span><span class="si">%.2f</span><span class="s1"> and the pvalue is less than 0.05.&#39;</span>
+          <span class="s1">&#39; There is significant difference between these two samples.&#39;</span> <span class="o">%</span> <span class="n">kstest_rslt</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The KS statistics is </span><span class="si">%.2f</span><span class="s1"> and the pvalue is larger than 0.05.&#39;</span>
+          <span class="s1">&#39; There is no significant difference.&#39;</span> <span class="o">%</span> <span class="n">kstest_rslt</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The ks statistics is 0.42 and the pvalue is less than 0.05. There is significant difference between these two samples.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/homework"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../data-visuals/matplotlib-advanced.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Matplotlib tutorial (Advanced)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="homework2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">HW#2: Visualizing Historical Temperature Changes in Singapore</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Xiaogang HE<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-xxx', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
