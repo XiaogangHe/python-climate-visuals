@@ -61,7 +61,7 @@ parts:
   chapters:
   - file: chapters/homework/homework1-solution
     title: Homework 1
-  - file: chapters/homework/homework2
+  - file: chapters/homework/homework2-solution
     title: Homework 2
 - caption: Course Project
   chapters:
