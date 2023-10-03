@@ -107,6 +107,7 @@ This book project would not have been possible without the contribution of the f
 - Meilian Li
 - Xinyue Liu
 - Zhanwei Liu
+- Zhixiao Niu
 - Huimin Wang
 
 The contents of this book are licensed for free consumption under the following license:
