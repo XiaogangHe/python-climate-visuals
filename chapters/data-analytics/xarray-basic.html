@@ -1,486 +1,446 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>5.1. Xarray tutorial</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/xarray-basic';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/xarray-basic.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1. What is Matplotlib?" href="../data-visuals/matplotlib.html" />
     <link rel="prev" title="5. What is Xarray?" href="xarray.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/favicon.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p class="caption">
- <span class="caption-text">
-  Data Analytics
- </span>
-</p>
+    
+    
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="python.html">
-   1. Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python-basic.html">
-     1.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python-exercise.html">
-     1.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python-solution.html">
-     1.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="numpy.html">
-   2. NumPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="numpy-basic.html">
-     2.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="numpy-exercise.html">
-     2.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="numpy-solution.html">
-     2.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="pandas.html">
-   3. Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas-basic.html">
-     3.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas-exercise.html">
-     3.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas-solution.html">
-     3.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="scipy.html">
-   4. SciPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="scipy-basic.html">
-     4.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="scipy-exercise.html">
-     4.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="scipy-solution.html">
-     4.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="xarray.html">
-   5. Xarray
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     5.1. Tutorial
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">1. Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-basic.html">1.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-exercise.html">1.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-solution.html">1.3. Solution</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Data visualization
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-visuals/matplotlib.html">
-   1. Matplotlib
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-visuals/matplotlib-basic.html">
-     1.1. Tutorial (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-visuals/matplotlib-advanced.html">
-     1.2. Tutorial (Advanced)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numpy.html">2. NumPy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numpy-basic.html">2.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy-exercise.html">2.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy-solution.html">2.3. Solution</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Homework
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../homework/homework1-solution.html">
-   Homework 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../homework/homework2-solution.html">
-   Homework 2
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas-solution.html">3.3. Solution</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Course Project
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../project/FinalProject-2022Fall.html">
-   Fall 2022
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="scipy-basic.html">4.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipy-exercise.html">4.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipy-solution.html">4.3. Solution</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Gallery
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../gallery/plot_weighted_river_network.html">
-   River Network
-  </a>
- </li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.1. Tutorial</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Others
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../others/refs.html">
-   References
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-advanced.html">1.2. Tutorial (Advanced)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2022Fall.html">Fall 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../gallery/plot_weighted_river_network.html">River Network</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Others</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../others/refs.html">References</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/data-analytics/xarray-basic.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/XiaogangHe/python-climate-visuals"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
         
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/xarray-basic.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<a href="https://github.com/XiaogangHe/python-climate-visuals" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/xarray-basic.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/data-analytics/xarray-basic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Xarray tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-xarray">
-   5.1.1. Install xarray
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-xarray-data-structures">
-   5.1.2. Introduction to xarray Data Structures
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataarray">
-   5.1.3. DataArray
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#defining-a-dataarray">
-     5.1.3.1. Defining a DataArray
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#change-attribute">
-     5.1.3.2. Change attribute
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset">
-   5.1.4. Dataset
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-and-mathematical-functions">
-   5.1.5. Operations and Mathematical Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-data-from-netcdf-files">
-   5.1.6. Loading Data from netCDF Files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selecting-the-internal-data">
-   5.1.7. Selecting the Internal Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-from-url">
-   5.1.8. Read From URL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   5.1.9. References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-xarray">5.1.1. Install xarray</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-xarray-data-structures">5.1.2. Introduction to xarray Data Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataarray">5.1.3. DataArray</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-dataarray">5.1.3.1. Defining a DataArray</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-attribute">5.1.3.2. Change attribute</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">5.1.4. Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-and-mathematical-functions">5.1.5. Operations and Mathematical Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-from-netcdf-files">5.1.6. Loading Data from netCDF Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-the-internal-data">5.1.7. Selecting the Internal Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-from-url">5.1.8. Read From URL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.1.9. References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="xarray-tutorial">
-<h1><span class="section-number">5.1. </span>Xarray tutorial<a class="headerlink" href="#xarray-tutorial" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="xarray-tutorial">
+<h1><span class="section-number">5.1. </span>Xarray tutorial<a class="headerlink" href="#xarray-tutorial" title="Permalink to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">Xarray</span></code> is an open source project and Python package that makes working with labelled multi-dimensional arrays simple, efficient, and fun!</p>
-<div class="section" id="install-xarray">
-<h2><span class="section-number">5.1.1. </span>Install xarray<a class="headerlink" href="#install-xarray" title="Permalink to this headline">¶</a></h2>
+<section id="install-xarray">
+<h2><span class="section-number">5.1.1. </span>Install xarray<a class="headerlink" href="#install-xarray" title="Permalink to this heading">#</a></h2>
 <p>If you run code on your own computer, you need to install <code class="docutils literal notranslate"><span class="pre">xarray</span></code>. Open the console and enter <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">xarray</span></code> or execute <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">xarray</span></code> in this jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>  <span class="c1"># check whether xarray installed</span>
 <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
-    <span class="o">!</span>pip install <span class="nv">xarray</span><span class="o">==</span><span class="m">0</span>.19.0  # install xarray
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">xarray</span><span class="o">==</span><span class="m">0</span>.19.0<span class="w">  </span>#<span class="w"> </span>install<span class="w"> </span>xarray
     <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
@@ -501,18 +461,18 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="introduction-to-xarray-data-structures">
-<h2><span class="section-number">5.1.2. </span>Introduction to xarray Data Structures<a class="headerlink" href="#introduction-to-xarray-data-structures" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introduction-to-xarray-data-structures">
+<h2><span class="section-number">5.1.2. </span>Introduction to xarray Data Structures<a class="headerlink" href="#introduction-to-xarray-data-structures" title="Permalink to this heading">#</a></h2>
 <p>Like <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">xarray</span></code> has two core data structures:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DataArray</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> is designed to hold a single multi-dimensional variable and its coordinates, and the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> is designed to hold multiple variables that potentially share the same coordinates.</p>
-</div>
-<div class="section" id="dataarray">
-<h2><span class="section-number">5.1.3. </span>DataArray<a class="headerlink" href="#dataarray" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dataarray">
+<h2><span class="section-number">5.1.3. </span>DataArray<a class="headerlink" href="#dataarray" title="Permalink to this heading">#</a></h2>
 <p>DataArray has four important attributes:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> is a <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> array and stores the data.</p></li>
@@ -520,8 +480,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">coords</span></code> is a dict-like built-in data structure of xarray and includes coordinate list or 1D-array of each dimension.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">attrs</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> and you can use <code class="docutils literal notranslate"><span class="pre">attrs</span></code> to define some custom attributes.</p></li>
 </ul>
-<div class="section" id="defining-a-dataarray">
-<h3><span class="section-number">5.1.3.1. </span>Defining a DataArray<a class="headerlink" href="#defining-a-dataarray" title="Permalink to this headline">¶</a></h3>
+<section id="defining-a-dataarray">
+<h3><span class="section-number">5.1.3.1. </span>Defining a DataArray<a class="headerlink" href="#defining-a-dataarray" title="Permalink to this heading">#</a></h3>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">DataArray()</span></code> function to create a DataArray. There are 4 arguments corresponding to the four attributes above. The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument is corresponding to <code class="docutils literal notranslate"><span class="pre">values</span></code> attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1354,9 +1314,9 @@ Dimensions without coordinates: dim_0, dim_1</pre><div class='xr-wrap' hidden><d
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="change-attribute">
-<h3><span class="section-number">5.1.3.2. </span>Change attribute<a class="headerlink" href="#change-attribute" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="change-attribute">
+<h3><span class="section-number">5.1.3.2. </span>Change attribute<a class="headerlink" href="#change-attribute" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da1</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1739,12 +1699,12 @@ Attributes:
     gen:      generated by numpy randomly</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'Spatial Rainfall'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>m</span>: 2</li><li><span class='xr-has-index'>n</span>: 3</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-cc38dde0-d8b7-462f-9900-1dfc7724fe92' class='xr-array-in' type='checkbox' checked><label for='section-cc38dde0-d8b7-462f-9900-1dfc7724fe92' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.4786 0.7966 0.3888 0.4462 0.1797 0.1529</span></div><div class='xr-array-data'><pre>array([[0.47856475, 0.79661643, 0.38884127],
        [0.44622596, 0.17973351, 0.15285284]])</pre></div></div></li><li class='xr-section-item'><input id='section-15f1e6d0-e506-499d-a22d-05530bd55c38' class='xr-section-summary-in' type='checkbox'  checked><label for='section-15f1e6d0-e506-499d-a22d-05530bd55c38' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>m</span></div><div class='xr-var-dims'>(m)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>10 20</div><input id='attrs-7be06eb0-dc90-4a2b-b1f0-209495f9c1a1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-7be06eb0-dc90-4a2b-b1f0-209495f9c1a1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a4b82270-3011-46b4-938f-20ea0851bde2' class='xr-var-data-in' type='checkbox'><label for='data-a4b82270-3011-46b4-938f-20ea0851bde2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([10, 20])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>n</span></div><div class='xr-var-dims'>(n)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>10 20 30</div><input id='attrs-fe835c78-b7d3-48de-92bc-ef13016a6a30' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fe835c78-b7d3-48de-92bc-ef13016a6a30' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-db6a5be8-dea3-45fd-922b-d64a20f1941e' class='xr-var-data-in' type='checkbox'><label for='data-db6a5be8-dea3-45fd-922b-d64a20f1941e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([10, 20, 30])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-45bf39e2-879a-4bd4-a262-019d4a39daa4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-45bf39e2-879a-4bd4-a262-019d4a39daa4' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>license :</span></dt><dd>CC BY-NC-ND 4.0</dd><dt><span>gen :</span></dt><dd>generated by numpy randomly</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="dataset">
-<h2><span class="section-number">5.1.4. </span>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="dataset">
+<h2><span class="section-number">5.1.4. </span>Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">#</a></h2>
 <p>Dataset has three important attributes: <code class="docutils literal notranslate"><span class="pre">data_vars</span></code>, <code class="docutils literal notranslate"><span class="pre">coords</span></code> and <code class="docutils literal notranslate"><span class="pre">attrs</span></code>.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">data_vars</span></code> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> with each key being the name of the variable or the dimension and each value being one of:</p></li>
 </ol>
 <ul class="simple">
@@ -4344,7 +4304,7 @@ Data variables:
     v1       (x, y) int32 1 2 3 2 3 4</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-2d929def-8d6a-4e4e-b269-d43e5b72043d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2d929def-8d6a-4e4e-b269-d43e5b72043d' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>x</span>: 2</li><li><span class='xr-has-index'>y</span>: 3</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-c19d8846-1e0e-4343-9540-8972b8200e60' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c19d8846-1e0e-4343-9540-8972b8200e60' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>10 20</div><input id='attrs-f674c902-159e-4646-99dd-1cc5aab7007c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f674c902-159e-4646-99dd-1cc5aab7007c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-18fe5d16-c602-40cc-a6d5-dd0e46cbc5d3' class='xr-var-data-in' type='checkbox'><label for='data-18fe5d16-c602-40cc-a6d5-dd0e46cbc5d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([10, 20])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>10 20 30</div><input id='attrs-25648247-703a-4166-9029-66ebc4902d6d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-25648247-703a-4166-9029-66ebc4902d6d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cc99b9ca-2e75-4626-9bae-862a4619f2f7' class='xr-var-data-in' type='checkbox'><label for='data-cc99b9ca-2e75-4626-9bae-862a4619f2f7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([10, 20, 30])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e33f011c-f1bf-4336-ad2a-89f1123d9cbd' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e33f011c-f1bf-4336-ad2a-89f1123d9cbd' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>v1</span></div><div class='xr-var-dims'>(x, y)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>1 2 3 2 3 4</div><input id='attrs-0af6881a-735b-47dd-bd95-1420c62d76f8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0af6881a-735b-47dd-bd95-1420c62d76f8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-97633b8f-69f3-4a26-a07b-9d25c053408b' class='xr-var-data-in' type='checkbox'><label for='data-97633b8f-69f3-4a26-a07b-9d25c053408b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>summary :</span></dt><dd>This is a custom DataArray for tutorial</dd><dt><span>license :</span></dt><dd>CC BY-NC-ND 4.0</dd></dl></div><div class='xr-var-data'><pre>array([[1, 2, 3],
        [2, 3, 4]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7d2b9533-a87b-41be-b415-017736f6b95b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7d2b9533-a87b-41be-b415-017736f6b95b' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p><code class="docutils literal notranslate"><span class="pre">coords</span></code> is also a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. The key of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> will be the name of the dimension and the values of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> will be the coordinate of the dimension.</p></li>
 </ol>
 <div class="cell docutils container">
@@ -4717,12 +4677,12 @@ Data variables:
        [2, 5],
        [3, 6]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2726b3dd-6006-4d3e-906b-c3941dfb1036' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2726b3dd-6006-4d3e-906b-c3941dfb1036' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p><code class="docutils literal notranslate"><span class="pre">attrs</span></code> is also a <code class="docutils literal notranslate"><span class="pre">dict</span></code> that is the same as the <code class="docutils literal notranslate"><span class="pre">attrs</span></code> of <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>.</p></li>
 </ol>
-</div>
-<div class="section" id="operations-and-mathematical-functions">
-<h2><span class="section-number">5.1.5. </span>Operations and Mathematical Functions<a class="headerlink" href="#operations-and-mathematical-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="operations-and-mathematical-functions">
+<h2><span class="section-number">5.1.5. </span>Operations and Mathematical Functions<a class="headerlink" href="#operations-and-mathematical-functions" title="Permalink to this heading">#</a></h2>
 <p>Data variables can be modified through Mathematical Functions which is the same as <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4780,9 +4740,9 @@ Data variables:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="loading-data-from-netcdf-files">
-<h2><span class="section-number">5.1.6. </span>Loading Data from netCDF Files<a class="headerlink" href="#loading-data-from-netcdf-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="loading-data-from-netcdf-files">
+<h2><span class="section-number">5.1.6. </span>Loading Data from netCDF Files<a class="headerlink" href="#loading-data-from-netcdf-files" title="Permalink to this heading">#</a></h2>
 <p>NetCDF (Network Common Data Format) is a widely used format for distributing geoscience data. For more details about netCDF please access <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/docs/faq.html#whatisit">netCDF website</a>.</p>
 <p>Call <code class="docutils literal notranslate"><span class="pre">open_dataset</span></code> function to open a netCDF file. For more details about reading and writing netCDF files please access <a class="reference external" href="http://xarray.pydata.org/en/latest/user-guide/io.html#netcdf">xarray netCDF docs</a>. Below we load some ERA5 dataset which we have downloaded from online websites.</p>
 <div class="cell docutils container">
@@ -5202,9 +5162,9 @@ Attributes:
         [6.677199e-05, 4.711101e-04, 3.547812e-04],
         [6.390840e-05, 2.546231e-04, 2.184073e-04]]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-81fa78c4-ea2e-41b0-8520-d002d130f804' class='xr-section-summary-in' type='checkbox'  checked><label for='section-81fa78c4-ea2e-41b0-8520-d002d130f804' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>history :</span></dt><dd>2021-10-01 12:00:45 GMT by grib_to_netcdf-2.20.0: /opt/ecmwf/mars-client/bin/grib_to_netcdf -S param -o /cache/data1/adaptor.mars.internal-1633089645.2267637-14809-16-62ab5eb4-4a04-4049-b27b-8078f590d31c.nc /cache/tmp/62ab5eb4-4a04-4049-b27b-8078f590d31c-adaptor.mars.internal-1633089641.2883248-14809-16-tmp.grib</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="selecting-the-internal-data">
-<h2><span class="section-number">5.1.7. </span>Selecting the Internal Data<a class="headerlink" href="#selecting-the-internal-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="selecting-the-internal-data">
+<h2><span class="section-number">5.1.7. </span>Selecting the Internal Data<a class="headerlink" href="#selecting-the-internal-data" title="Permalink to this heading">#</a></h2>
 <p>You can directly access <code class="docutils literal notranslate"><span class="pre">Coordinates</span></code> and <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">variables</span></code> by their name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7880,9 +7840,9 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="read-from-url">
-<h2><span class="section-number">5.1.8. </span>Read From URL<a class="headerlink" href="#read-from-url" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="read-from-url">
+<h2><span class="section-number">5.1.8. </span>Read From URL<a class="headerlink" href="#read-from-url" title="Permalink to this heading">#</a></h2>
 <p>Data used for the CE3201 final project are simulated temperature (unit: K) from the latest climate model outputs, which have been divided into two parts: historical (1850.01.01-2014.12.31) simulations and future (2015.01.01-2100.12.31) projections. You can find these data <a class="reference external" href="https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8676,15 +8636,15 @@ Attributes:
        &#x27;2014-12-30T12:00:00.000000000&#x27;, &#x27;2014-12-31T12:00:00.000000000&#x27;],
       dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c1014875-af81-418a-a1ac-fa3f13a3e59b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c1014875-af81-418a-a1ac-fa3f13a3e59b' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(model, time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-547d4a6a-ff5a-4df9-919f-4923d4e05db8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-547d4a6a-ff5a-4df9-919f-4923d4e05db8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fd180647-b132-4437-9694-2d74562ddb77' class='xr-var-data-in' type='checkbox'><label for='data-fd180647-b132-4437-9694-2d74562ddb77' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>Near-Surface Air Temperature</dd><dt><span>standard_name :</span></dt><dd>air_temperature</dd><dt><span>comment :</span></dt><dd>near-surface (usually, 2 meter) air temperature</dd></dl></div><div class='xr-var-data'><pre>[602650 values with dtype=float64]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a7aa367f-7753-4386-9331-336f8bf6d615' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a7aa367f-7753-4386-9331-336f8bf6d615' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>latitude :</span></dt><dd>3.5896654</dd><dt><span>longitude :</span></dt><dd>98.6738261</dd><dt><span>city :</span></dt><dd>Medan</dd><dt><span>StudentID :</span></dt><dd>A0188677A</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="references">
-<h2><span class="section-number">5.1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2><span class="section-number">5.1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://earth-env-data-science.github.io/lectures/xarray/xarray.html">Xarray Fundamentals of Earth and Enrivonmental Data Science</a>.</p></li>
 <li><p><a class="reference external" href="http://xarray.pydata.org/en/latest/index.html">Xarray documentation</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -8698,7 +8658,7 @@ Attributes:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapters/data-analytics"
         },
         predefinedOutput: true
@@ -8706,66 +8666,117 @@ Attributes:
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="xarray.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">5. </span>What is Xarray?</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../data-visuals/matplotlib.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1. </span>What is Matplotlib?</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Xiaogang HE<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="xarray.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>What is Xarray?</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../data-visuals/matplotlib.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>What is Matplotlib?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-xarray">5.1.1. Install xarray</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-xarray-data-structures">5.1.2. Introduction to xarray Data Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataarray">5.1.3. DataArray</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-dataarray">5.1.3.1. Defining a DataArray</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-attribute">5.1.3.2. Change attribute</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">5.1.4. Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-and-mathematical-functions">5.1.5. Operations and Mathematical Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-from-netcdf-files">5.1.6. Loading Data from netCDF Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-the-internal-data">5.1.7. Selecting the Internal Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-from-url">5.1.8. Read From URL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.1.9. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xiaogang HE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-xxx', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

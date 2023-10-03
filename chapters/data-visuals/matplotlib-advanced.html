@@ -1,490 +1,446 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1.2. Matplotlib tutorial (Advanced)</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-visuals/matplotlib-advanced';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-advanced.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HW#1: Extreme Rainfall in Singapore" href="../homework/homework1-solution.html" />
+    <link rel="next" title="HW#1: Extreme Rainfall in Singapore" href="../homework/homework1.html" />
     <link rel="prev" title="1.1. Matplotlib tutorial (Basic)" href="matplotlib-basic.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/favicon.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p class="caption">
- <span class="caption-text">
-  Data Analytics
- </span>
-</p>
+    
+    
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-analytics/python.html">
-   1. Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/python-basic.html">
-     1.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/python-exercise.html">
-     1.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/python-solution.html">
-     1.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-analytics/numpy.html">
-   2. NumPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/numpy-basic.html">
-     2.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/numpy-exercise.html">
-     2.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/numpy-solution.html">
-     2.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-analytics/pandas.html">
-   3. Pandas
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/pandas-basic.html">
-     3.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/pandas-exercise.html">
-     3.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/pandas-solution.html">
-     3.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-analytics/scipy.html">
-   4. SciPy
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/scipy-basic.html">
-     4.1. Tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/scipy-exercise.html">
-     4.2. Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/scipy-solution.html">
-     4.3. Solution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data-analytics/xarray.html">
-   5. Xarray
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data-analytics/xarray-basic.html">
-     5.1. Tutorial
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-basic.html">1.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-exercise.html">1.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-solution.html">1.3. Solution</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Data visualization
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-basic.html">2.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-exercise.html">2.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-solution.html">2.3. Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-basic.html">3.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-solution.html">3.3. Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-basic.html">4.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-exercise.html">4.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-solution.html">4.3. Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/xarray-basic.html">5.1. Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="matplotlib.html">
-   1. Matplotlib
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="matplotlib-basic.html">
-     1.1. Tutorial (Basic)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.2. Tutorial (Advanced)
-    </a>
-   </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="matplotlib.html">1. Matplotlib</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Tutorial (Advanced)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2022Fall.html">Fall 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../gallery/plot_weighted_river_network.html">River Network</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Others</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../others/refs.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-visuals/matplotlib-advanced.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
   </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Homework
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../homework/homework1-solution.html">
-   Homework 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../homework/homework2-solution.html">
-   Homework 2
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Course Project
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../project/FinalProject-2022Fall.html">
-   Fall 2022
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Gallery
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../gallery/plot_weighted_river_network.html">
-   River Network
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Others
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../others/refs.html">
-   References
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+<a href="https://github.com/XiaogangHe/python-climate-visuals" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/data-visuals/matplotlib-advanced.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  
 </div>
-
 </div>
+              
+              
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matplotlib tutorial (Advanced)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/data-visuals/matplotlib-advanced.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/XiaogangHe/python-climate-visuals"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/XiaogangHe/python-climate-visuals/master?urlpath=tree/chapters/data-visuals/matplotlib-advanced.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plots-in-statistics-with-seaborn">
-   1.2.1. Plots in statistics with Seaborn
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#histograms">
-     1.2.1.1. Histograms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#density-plots">
-     1.2.1.2. Density plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#empirical-cumulative-distribution-functions-ecdf-plots">
-     1.2.1.3. Empirical cumulative distribution functions (ecdf) plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bar-charts">
-     1.2.1.4. Bar charts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#box-plots">
-     1.2.1.5. Box plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatter-plots">
-     1.2.1.6. Scatter plots
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-maps-with-cartopy">
-   1.2.2. Plotting maps with Cartopy
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-simple-example">
-     1.2.2.1. A simple example
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-features-to-the-map">
-     1.2.2.2. Adding features to the map
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-2d-data">
-     1.2.2.3. Plotting 2D data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   1.2.3. References
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-in-statistics-with-seaborn">1.2.1. Plots in statistics with Seaborn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">1.2.1.1. Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plots">1.2.1.2. Density plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-cumulative-distribution-functions-ecdf-plots">1.2.1.3. Empirical cumulative distribution functions (ecdf) plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">1.2.1.4. Bar charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">1.2.1.5. Box plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">1.2.1.6. Scatter plots</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-maps-with-cartopy">1.2.2. Plotting maps with Cartopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-example">1.2.2.1. A simple example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-features-to-the-map">1.2.2.2. Adding features to the map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-2d-data">1.2.2.3. Plotting 2D data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">1.2.3. References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="matplotlib-tutorial-advanced">
-<h1><span class="section-number">1.2. </span>Matplotlib tutorial (Advanced)<a class="headerlink" href="#matplotlib-tutorial-advanced" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="matplotlib-tutorial-advanced">
+<h1><span class="section-number">1.2. </span>Matplotlib tutorial (Advanced)<a class="headerlink" href="#matplotlib-tutorial-advanced" title="Permalink to this heading">#</a></h1>
 <p>This tutorial continues on plotting with Python. Two packages will be introduced: <strong>Seaborn</strong> and <strong>Cartopy</strong>. Seaborn is a Python library  for making statistical graphics based on Matplotlib and Cartopy is a Python package designed for geospatial data visualization. We will first illustrate alternative ways for plots in statistics with Seaborn, then show plotting of geospatial maps with Cartopy.</p>
 <ul class="simple">
 <li><p>Plots in statistics with Seaborn: histograms, density plots, ecdf plots, bar charts, box plots, and scatter plots</p></li>
 <li><p>Plotting maps with Cartopy: a simple example, adding features to the map, and plotting 2D data</p></li>
 </ul>
-<div class="section" id="plots-in-statistics-with-seaborn">
-<h2><span class="section-number">1.2.1. </span>Plots in statistics with Seaborn<a class="headerlink" href="#plots-in-statistics-with-seaborn" title="Permalink to this headline">¶</a></h2>
+<section id="plots-in-statistics-with-seaborn">
+<h2><span class="section-number">1.2.1. </span>Plots in statistics with Seaborn<a class="headerlink" href="#plots-in-statistics-with-seaborn" title="Permalink to this heading">#</a></h2>
 <p>Seaborn helps you explore and understand your data. Its plotting functions operate on dataframes and arrays containing whole datasets and internally perform the necessary semantic mapping and statistical aggregation to produce informative plots. Its dataset-oriented, declarative API lets you focus on what the different elements of your plots mean, rather than on the details of how to draw them. Compared with Matplotlib, Seaborn helps you save your time and efforts on customizing the figures.</p>
 <p>We first import the packages that might be used.</p>
 <div class="cell docutils container">
@@ -605,8 +561,8 @@
 </table>
 </div></div></div>
 </div>
-<div class="section" id="histograms">
-<h3><span class="section-number">1.2.1.1. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h3>
+<section id="histograms">
+<h3><span class="section-number">1.2.1.1. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
 <p>There are two functions to plot histograms in Seaborn. <code class="docutils literal notranslate"><span class="pre">displot</span></code> provides figure-level interface for drawing distribution plots. By changing the argument <code class="docutils literal notranslate"><span class="pre">kind</span></code>, you can plot histograms, kernel density plots, and empirical cumulative distribution plots. The alternative functions are <code class="docutils literal notranslate"><span class="pre">histplot()</span></code>, <code class="docutils literal notranslate"><span class="pre">kdeplot()</span></code>, and <code class="docutils literal notranslate"><span class="pre">ecdfplot()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -625,7 +581,7 @@
     <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
     <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;light:m_r&quot;</span><span class="p">,</span>
     <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;.3&quot;</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">ticker</span><span class="o">.</span><span class="n">ScalarFormatter</span><span class="p">())</span>
@@ -641,7 +597,7 @@
  &lt;matplotlib.axis.XTick at 0x2bdfcab6b50&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_6_1.png" src="../../_images/matplotlib-advanced_6_1.png" />
+<img alt="../../_images/7444ff52e97d0a45a8eefca00cf35498153e118c0895ea6c406f2ab19267a200.png" src="../../_images/7444ff52e97d0a45a8eefca00cf35498153e118c0895ea6c406f2ab19267a200.png" />
 </div>
 </div>
 <p>Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">displot()</span></code> function. The other settings are more or less similar.</p>
@@ -660,7 +616,7 @@
     <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
     <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;light:m_r&quot;</span><span class="p">,</span>
     <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;.3&quot;</span><span class="p">,</span>
-    <span class="n">linewidth</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
     <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span>
 <span class="p">)</span>
@@ -675,12 +631,12 @@
  &lt;matplotlib.axis.XTick at 0x2bd80014130&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_8_1.png" src="../../_images/matplotlib-advanced_8_1.png" />
+<img alt="../../_images/b8feadfa2f6810a9080d8769c1a75ad1a50753d539e6d94799fcff9c995ee79b.png" src="../../_images/b8feadfa2f6810a9080d8769c1a75ad1a50753d539e6d94799fcff9c995ee79b.png" />
 </div>
 </div>
-</div>
-<div class="section" id="density-plots">
-<h3><span class="section-number">1.2.1.2. </span>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="density-plots">
+<h3><span class="section-number">1.2.1.2. </span>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changes the global defaults</span>
@@ -696,7 +652,7 @@
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span><span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
     <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> 
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">ticker</span><span class="o">.</span><span class="n">ScalarFormatter</span><span class="p">())</span>
@@ -712,7 +668,7 @@
  &lt;matplotlib.axis.XTick at 0x2bdfd0f8bb0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_10_1.png" src="../../_images/matplotlib-advanced_10_1.png" />
+<img alt="../../_images/d90aadc4237629fc43d9e5f9d2288465905981674902f02618f2100f69cbde6b.png" src="../../_images/d90aadc4237629fc43d9e5f9d2288465905981674902f02618f2100f69cbde6b.png" />
 </div>
 </div>
 <p>Alternatively,</p>
@@ -729,7 +685,7 @@
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span><span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
     <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> 
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
     <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span>
 <span class="p">)</span>
@@ -740,12 +696,12 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bd80ff94f0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_12_1.png" src="../../_images/matplotlib-advanced_12_1.png" />
+<img alt="../../_images/ca49860963426cac9293ebb412d03f4b46f7a3dae0c061cd842c3699b6153f1d.png" src="../../_images/ca49860963426cac9293ebb412d03f4b46f7a3dae0c061cd842c3699b6153f1d.png" />
 </div>
 </div>
-</div>
-<div class="section" id="empirical-cumulative-distribution-functions-ecdf-plots">
-<h3><span class="section-number">1.2.1.3. </span>Empirical cumulative distribution functions (ecdf) plots<a class="headerlink" href="#empirical-cumulative-distribution-functions-ecdf-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="empirical-cumulative-distribution-functions-ecdf-plots">
+<h3><span class="section-number">1.2.1.3. </span>Empirical cumulative distribution functions (ecdf) plots<a class="headerlink" href="#empirical-cumulative-distribution-functions-ecdf-plots" title="Permalink to this heading">#</a></h3>
 <p>An ECDF represents the proportion or count of observations falling below each unique value in a dataset. It also aids direct comparisons between multiple distributions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -756,7 +712,7 @@
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
     <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span> 
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -765,7 +721,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;price&#39;, ylabel=&#39;Proportion&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_14_1.png" src="../../_images/matplotlib-advanced_14_1.png" />
+<img alt="../../_images/d88b93ca69b934ef976bc8966ed834a1b782a926f9750e05cfe53e746246ecc8.png" src="../../_images/d88b93ca69b934ef976bc8966ed834a1b782a926f9750e05cfe53e746246ecc8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -775,7 +731,7 @@
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
     <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> 
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span> 
     <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;ecdf&#39;</span>
 <span class="p">)</span>
 </pre></div>
@@ -785,19 +741,19 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bd8791c2b0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_15_1.png" src="../../_images/matplotlib-advanced_15_1.png" />
+<img alt="../../_images/f9a0a0f1c6e0a074e26be7429a8ff0a8e92e03204f709f8ef2a5eb1ac0a98e24.png" src="../../_images/f9a0a0f1c6e0a074e26be7429a8ff0a8e92e03204f709f8ef2a5eb1ac0a98e24.png" />
 </div>
 </div>
-</div>
-<div class="section" id="bar-charts">
-<h3><span class="section-number">1.2.1.4. </span>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bar-charts">
+<h3><span class="section-number">1.2.1.4. </span>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this heading">#</a></h3>
 <p>Bar charts are one of the categorical plots, which could be handled by <code class="docutils literal notranslate"><span class="pre">catplot()</span></code> with argument <code class="docutils literal notranslate"><span class="pre">kind=&quot;bar&quot;</span></code>. Besides, <code class="docutils literal notranslate"><span class="pre">catplot()</span></code> can also generate box plots, violin plots, swarm plots, and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> 
-    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">6</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span>
+    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span>
 <span class="p">)</span>
 <span class="c1"># ci: Size of confidence intervals to draw around estimated values. </span>
 
@@ -810,7 +766,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bd81649730&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_17_1.png" src="../../_images/matplotlib-advanced_17_1.png" />
+<img alt="../../_images/53277afd836beb384b24f929bc8df269771247ca9fdeefb54b980726d477f025.png" src="../../_images/53277afd836beb384b24f929bc8df269771247ca9fdeefb54b980726d477f025.png" />
 </div>
 </div>
 <p>The other way for bar charts is <code class="docutils literal notranslate"><span class="pre">barplot()</span></code> function.</p>
@@ -821,7 +777,7 @@
 <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> 
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> 
-    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">6</span>
+    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span>
 <span class="p">)</span>
 <span class="c1"># ci: Size of confidence intervals to draw around estimated values. </span>
 
@@ -830,12 +786,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/matplotlib-advanced_19_0.png" src="../../_images/matplotlib-advanced_19_0.png" />
+<img alt="../../_images/7aa289f0356a1982ec509647c1ef61b4baf81e8576f1bf7a98c6a8fa02882b29.png" src="../../_images/7aa289f0356a1982ec509647c1ef61b4baf81e8576f1bf7a98c6a8fa02882b29.png" />
 </div>
 </div>
-</div>
-<div class="section" id="box-plots">
-<h3><span class="section-number">1.2.1.5. </span>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="box-plots">
+<h3><span class="section-number">1.2.1.5. </span>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this heading">#</a></h3>
 <p>The box plot is another kind of categorical plots to show the distribution of the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -860,7 +816,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bd80377ac0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_21_1.png" src="../../_images/matplotlib-advanced_21_1.png" />
+<img alt="../../_images/b0ab7bb865e2844c9f882d912e48e94dfa42021b5837a5e54843c15f0d0490d2.png" src="../../_images/b0ab7bb865e2844c9f882d912e48e94dfa42021b5837a5e54843c15f0d0490d2.png" />
 </div>
 </div>
 <p>Alternatively,</p>
@@ -884,12 +840,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/matplotlib-advanced_23_0.png" src="../../_images/matplotlib-advanced_23_0.png" />
+<img alt="../../_images/3f87688a3ec179bed5c80c2939a7b11849d5979391d9fbe251806443875f01a7.png" src="../../_images/3f87688a3ec179bed5c80c2939a7b11849d5979391d9fbe251806443875f01a7.png" />
 </div>
 </div>
-</div>
-<div class="section" id="scatter-plots">
-<h3><span class="section-number">1.2.1.6. </span>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scatter-plots">
+<h3><span class="section-number">1.2.1.6. </span>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this heading">#</a></h3>
 <p>Scatter plots could be generated by <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code>. For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -901,7 +857,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;price&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_25_1.png" src="../../_images/matplotlib-advanced_25_1.png" />
+<img alt="../../_images/97ebed5f1bd61f02ce65bfc683f6ab44f026f022254fedc93de4a11469906bc8.png" src="../../_images/97ebed5f1bd61f02ce65bfc683f6ab44f026f022254fedc93de4a11469906bc8.png" />
 </div>
 </div>
 <p>In addition, Seaborn has a function called <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>, which shows the scatter matrix and is extremely useful for multivariate analysis. We use “penguins” dataset for this example.</p>
@@ -916,13 +872,13 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x2bd8d717040&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_27_1.png" src="../../_images/matplotlib-advanced_27_1.png" />
+<img alt="../../_images/cd1dd917f7b0d1f4d1fdc7b5db03f630de56eba4bb3b7982c2dff3af9abb7786.png" src="../../_images/cd1dd917f7b0d1f4d1fdc7b5db03f630de56eba4bb3b7982c2dff3af9abb7786.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="plotting-maps-with-cartopy">
-<h2><span class="section-number">1.2.2. </span>Plotting maps with Cartopy<a class="headerlink" href="#plotting-maps-with-cartopy" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="plotting-maps-with-cartopy">
+<h2><span class="section-number">1.2.2. </span>Plotting maps with Cartopy<a class="headerlink" href="#plotting-maps-with-cartopy" title="Permalink to this heading">#</a></h2>
 <p>Mapping is a special case of a regular plot which usually involves some of these elements:</p>
 <ul class="simple">
 <li><p>A map projection to transform data from the spherical shape of the earth to screen/paper</p></li>
@@ -930,8 +886,8 @@
 </ul>
 <p>In this section, we will demonstrate how to plot geospatial maps for climate analysis using Cartopy. Cartopy is a Python package designed for geospatial data processing in order to produce maps and other geospatial data analyses. It makes use of the powerful PROJ, NumPy and Shapely libraries and includes a programmatic interface built on top of Matplotlib for the creation of publication quality maps.</p>
 <p>We’ll first introduce a simple example to get you familiar with Cartopy.</p>
-<div class="section" id="a-simple-example">
-<h3><span class="section-number">1.2.2.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h3>
+<section id="a-simple-example">
+<h3><span class="section-number">1.2.2.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this heading">#</a></h3>
 <p>As usual, we start by importing our modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -980,7 +936,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x2bd9d0274f0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_34_1.png" src="../../_images/matplotlib-advanced_34_1.png" />
+<img alt="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" src="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" />
 </div>
 </div>
 <p>Then we move the above 2D filled-contour plot to the map.</p>
@@ -1005,7 +961,7 @@
   warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_36_2.png" src="../../_images/matplotlib-advanced_36_2.png" />
+<img alt="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" src="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" />
 </div>
 </div>
 <p>Note that to plot a map, you need to manually create an axis (which means <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> does not work anymore) and pass a <code class="docutils literal notranslate"><span class="pre">projection=...</span></code> keyword to the axis. The projection argument is used when creating plots and determines the projection of the resulting plot (i.e. what the plot looks like). The line <code class="docutils literal notranslate"><span class="pre">plt.axes(projection=ccrs.PlateCarree())</span></code> sets up a GeoAxes instance which exposes a variety of other map related methods. You may pick your own projection such as Miller, Orthographic, or Robinson.</p>
@@ -1028,11 +984,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/matplotlib-advanced_38_0.png" src="../../_images/matplotlib-advanced_38_0.png" />
-<img alt="../../_images/matplotlib-advanced_38_1.png" src="../../_images/matplotlib-advanced_38_1.png" />
-<img alt="../../_images/matplotlib-advanced_38_2.png" src="../../_images/matplotlib-advanced_38_2.png" />
-<img alt="../../_images/matplotlib-advanced_38_3.png" src="../../_images/matplotlib-advanced_38_3.png" />
-<img alt="../../_images/matplotlib-advanced_38_4.png" src="../../_images/matplotlib-advanced_38_4.png" />
+<img alt="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" src="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" />
+<img alt="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" src="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" />
+<img alt="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" src="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" />
+<img alt="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" src="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" />
+<img alt="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" src="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" />
 </div>
 </div>
 <p>If we want to plot the data in another projection, we need to pass a <code class="docutils literal notranslate"><span class="pre">transform=...</span></code> argument to the plot command. The transform argument to plotting functions tells Cartopy what coordinate system your data are defined in.</p>
@@ -1052,7 +1008,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x2bd8ef10280&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_40_1.png" src="../../_images/matplotlib-advanced_40_1.png" />
+<img alt="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" src="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" />
 </div>
 </div>
 <p>In Cartopy, we can very easily plot coastlines (<code class="docutils literal notranslate"><span class="pre">ax.coastlines()</span></code>) and gridlines (<code class="docutils literal notranslate"><span class="pre">ax.gridlines()</span></code>), which give a better context for the data than before and also show the full globe.</p>
@@ -1076,12 +1032,12 @@
   warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_42_2.png" src="../../_images/matplotlib-advanced_42_2.png" />
+<img alt="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" src="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" />
 </div>
 </div>
-</div>
-<div class="section" id="adding-features-to-the-map">
-<h3><span class="section-number">1.2.2.2. </span>Adding features to the map<a class="headerlink" href="#adding-features-to-the-map" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adding-features-to-the-map">
+<h3><span class="section-number">1.2.2.2. </span>Adding features to the map<a class="headerlink" href="#adding-features-to-the-map" title="Permalink to this heading">#</a></h3>
 <p>To give our map more styles and details, we add <code class="docutils literal notranslate"><span class="pre">cartopy.feature</span></code> objects. Many useful features are built in. These “default features” are at coarse (110m) resolution.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cartopy.feature.BORDERS</span></code>: Country boundaries</p></li>
@@ -1119,12 +1075,12 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x2bda3623a00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_44_1.png" src="../../_images/matplotlib-advanced_44_1.png" />
+<img alt="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" src="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plotting-2d-data">
-<h3><span class="section-number">1.2.2.3. </span>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plotting-2d-data">
+<h3><span class="section-number">1.2.2.3. </span>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this heading">#</a></h3>
 <p>Note that Cartopy transforms can be passed to xarray. This creates a very quick path for creating professional looking maps from netCDF data. In this section, we use the ERA5-Land reanalysis data of monthly 2m temperature in 2020 to demonstrate how to plot maps from a dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1528,7 +1484,7 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x270e9ed32e0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_48_1.png" src="../../_images/matplotlib-advanced_48_1.png" />
+<img alt="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" src="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" />
 </div>
 </div>
 <p>You may use xarray to manipulate the netCDF file. Alternatively, you can use netCDF4 package to import the dataset as in the following codes:</p>
@@ -1664,7 +1620,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_52_1.png" src="../../_images/matplotlib-advanced_52_1.png" />
+<img alt="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" src="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" />
 </div>
 </div>
 <p>For images without contours,</p>
@@ -1685,23 +1641,23 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/matplotlib-advanced_54_1.png" src="../../_images/matplotlib-advanced_54_1.png" />
+<img alt="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" src="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" />
 </div>
 </div>
 <p>Browse the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/index.html">Cartopy Gallery</a> to learn more about all the different types of data and plotting methods available.</p>
-</div>
-</div>
-<div class="section" id="references">
-<h2><span class="section-number">1.2.3. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="references">
+<h2><span class="section-number">1.2.3. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn documentation</a></p></li>
 <li><p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy documentation</a></p></li>
 <li><p><a class="reference external" href="https://machinelearningmastery.com/time-series-data-visualization-with-python/">Tutorial on plotting maps with python</a> by Julius Busecke</p></li>
 <li><p>Research computing in Earth Sciences - <a class="reference external" href="https://rabernat.github.io/research_computing_2018/maps-with-cartopy.html">Maps with Cartopy</a></p></li>
-<li><p><a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#%21/dataset/reanalysis-era5-land-monthly-means?tab=overview">ERA5-Land monthly averaged data from 1981 to present</a></p></li>
+<li><p><a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview">ERA5-Land monthly averaged data from 1981 to present</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1715,7 +1671,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapters/data-visuals"
         },
         predefinedOutput: true
@@ -1723,66 +1679,120 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="matplotlib-basic.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1.1. </span>Matplotlib tutorial (Basic)</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../homework/homework1-solution.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">HW#1: Extreme Rainfall in Singapore</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Xiaogang HE<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matplotlib-basic.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.1. </span>Matplotlib tutorial (Basic)</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../homework/homework1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">HW#1: Extreme Rainfall in Singapore</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-in-statistics-with-seaborn">1.2.1. Plots in statistics with Seaborn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">1.2.1.1. Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plots">1.2.1.2. Density plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-cumulative-distribution-functions-ecdf-plots">1.2.1.3. Empirical cumulative distribution functions (ecdf) plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">1.2.1.4. Bar charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">1.2.1.5. Box plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">1.2.1.6. Scatter plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-maps-with-cartopy">1.2.2. Plotting maps with Cartopy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-example">1.2.2.1. A simple example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-features-to-the-map">1.2.2.2. Adding features to the map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-2d-data">1.2.2.3. Plotting 2D data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">1.2.3. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xiaogang HE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-xxx', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
