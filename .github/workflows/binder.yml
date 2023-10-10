@@ -12,6 +12,6 @@ jobs:
       with:
         NO_PUSH: true
         MYBINDERORG_TAG: ${{ github.event.pull_request.head.ref }}
-        IMAGE_NAME: ${{ github.repository }}
+        IMAGE_NAME: xiaoganghe/python-climate-visuals  # fixed var because Docker not allow uppercases
         # BINDER_CACHE: true
         # PUBLIC_REGISTRY_CHECK: true
