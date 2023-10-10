@@ -429,6 +429,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-documentation">1.1.8.1. Print documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-online-official-documentation">1.1.8.2. Read online official documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-in-community-stack-overflow">1.1.8.3. Search in community: Stack Overflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-in-chatgpt">1.1.8.4. Ask in ChatGPT</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">1.1.9. References</a></li>
@@ -445,16 +446,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-tutorial">
 <h1><span class="section-number">1.1. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this heading">#</a></h1>
-<p>Since 2021 Q4, Python has become the <a class="reference external" href="https://madnight.github.io/githut/#/pull_requests/2022/1">most popular programming language</a>. Python code is often said to be almost like pseudocode as it allows you to express powerful ideas in very few codes while being readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
+<p>As of 2023 Q2, Python has become the <a class="reference external" href="https://madnight.github.io/githut/#/pull_requests/2023/2">most popular programming language</a>. Python code is often said to be almost like pseudocode as it allows you to express powerful ideas in very few codes while being readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">arr</span>
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
-    <span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>
-    <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>                    <span class="c1"># set the middle as pivot</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>          <span class="c1"># find all x smaller than pivot in arr</span>
+    <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>       <span class="c1"># find all x equal to pivot in arr</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>         <span class="c1"># find all x larger than pivot in arr</span>
     <span class="k">return</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">quicksort</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
@@ -608,7 +609,7 @@ True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>   <span class="c1"># String literals can use single quotes</span>
 <span class="n">w</span> <span class="o">=</span> <span class="s2">&quot;world&quot;</span>   <span class="c1"># or double quotes</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>  <span class="c1"># Built-in function len() return the length of elements</span>
 </pre></div>
 </div>
 </div>
@@ -618,7 +619,7 @@ True
 </div>
 </div>
 </div>
-<p>When using <code class="docutils literal notranslate"><span class="pre">+</span></code> operator for strings, it performs the concatenation; but this could not used to string and numbers.</p>
+<p>When performed on strings, <code class="docutils literal notranslate"><span class="pre">+</span></code> operator concatenate multiple string; but it cannot be used with other data types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">w</span>  <span class="c1"># String concatenation</span>
@@ -634,7 +635,7 @@ True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Cannot concatenate with numbers</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="mi">2023</span>  <span class="c1"># Cannot concatenate with numbers</span>
 </pre></div>
 </div>
 </div>
@@ -642,40 +643,27 @@ True
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hw1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hw1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="mi">2023</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
 </div>
-<p>However, we could format strings based on other variables. One common way is to use <code class="docutils literal notranslate"><span class="pre">%</span></code> as placeholders within the string inserting values that come after, quite similar to C and Matlab.</p>
+<p>However, we could format strings based on other variables. The good practice is to use <code class="docutils literal notranslate"><span class="pre">{}</span></code> as placeholders in strings and then use the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method of strings to insert variables. Python will convert number variables to strings to be inserted.</p>
+<p><code class="docutils literal notranslate"><span class="pre">format()</span></code> method also allows us to insert variables in different orders or even use a variable multiple times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%-10s</span><span class="s2">! Number: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># String formatting</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">! </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>  <span class="c1"># String formatting by sequence</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hw1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world     ! Number: 1
-</pre></div>
-</div>
-</div>
-</div>
-<p>The above way insert values in the order they appear. Another way to format strings is to use <code class="docutils literal notranslate"><span class="pre">{}</span></code> as placeholders within strings and then use the <code class="docutils literal notranslate"><span class="pre">format()</span></code> method of strings to insert values. This allows us to insert values in different orders or even use a value multiple times. Distinct to the above method, this method allows specifying the sequence of variables.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">! Number: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># String formatting by sequence</span>
+<span class="n">hw2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{1}</span><span class="s1"> </span><span class="si">{0}</span><span class="s1">! </span><span class="si">{2}</span><span class="s1"> </span><span class="si">{2:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>  <span class="c1"># String formatting by specifying orders and formats</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hw2</span><span class="p">)</span>
-<span class="n">hw3</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{1}</span><span class="s1"> </span><span class="si">{0}</span><span class="s1">! Number: </span><span class="si">{2:.2f}</span><span class="s1"> </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># String formatting by specifying orders and formats</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">hw3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world! Number: 2
-world hello! Number: 3.00 hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world! 2023
+world hello! 2023 2023.00
 </pre></div>
 </div>
 </div>
@@ -709,7 +697,7 @@ he(ell)(ell)o
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">]</span>  <span class="c1"># This list contains three elements with different types</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">))</span>  <span class="c1"># Built-in function len() return the number of elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -848,21 +836,17 @@ wet
 </section>
 <section id="tuples">
 <h3><span class="section-number">1.1.3.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h3>
-<p>A tuple is an <strong>immutable</strong> ordered version of lists in the form of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. A tuple is in many ways similar to a list; one of the most important differences is that tuples can be used as keys in dictionaries, while lists cannot.</p>
+<p>A tuple is an <strong>immutable</strong> ordered version of lists in the form of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># Create a tuple</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">t1</span><span class="p">:</span><span class="s1">&#39;Group A&#39;</span><span class="p">,</span> <span class="n">t2</span><span class="p">:</span><span class="s1">&#39;Group B&#39;</span><span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">t1</span><span class="p">],</span> <span class="n">d</span><span class="p">[(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)])</span>       
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(5, 6): &#39;Group A&#39;, (7, 8): &#39;Group B&#39;} &lt;class &#39;tuple&#39;&gt;
-Group A Group B
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 6) &lt;class &#39;tuple&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -876,7 +860,7 @@ Group A Group B
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [23],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="nn">Input In [22],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
@@ -1079,7 +1063,7 @@ HELLO, FRED
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span>  <span class="c1"># define a simple lambda funtion</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># call it</span>
+<span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>                          <span class="c1"># call it</span>
 </pre></div>
 </div>
 </div>
@@ -1124,7 +1108,7 @@ HELLO, FRED
 </div>
 </div>
 <a class="reference internal image-reference" href="../../_images/python_class.png"><img alt="../../_images/python_class.png" class="align-center" src="../../_images/python_class.png" style="width: 700px;" /></a>
-<p>Let’s say now I buy a new car:</p>
+<p>Let’s say now I buy a new <code class="docutils literal notranslate"><span class="pre">Car</span></code> and name it as <code class="docutils literal notranslate"><span class="pre">my_lovely_car</span></code>🚘:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_lovely_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s2">&quot;Tesla&quot;</span><span class="p">,</span> <span class="s2">&quot;Model 3&quot;</span><span class="p">,</span> <span class="mi">2022</span><span class="p">)</span>  <span class="c1"># calling class name would trigger __init__ to create an instance</span>
@@ -1183,7 +1167,7 @@ This car has run 5.5 km.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/Users/Shared/anaconda3/lib/python3.9/site-packages/numpy/__init__.py&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/Users/baymin/opt/anaconda3/lib/python3.9/site-packages/numpy/__init__.py&#39;&gt;
 [1 2 3 4]
 </pre></div>
 </div>
@@ -1204,7 +1188,7 @@ This car has run 5.5 km.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-0.16243474915818268
+0.7186135151017801
 </pre></div>
 </div>
 </div>
@@ -1299,7 +1283,11 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
 </section>
 <section id="search-in-community-stack-overflow">
 <h3><span class="section-number">1.1.8.3. </span>Search in community: Stack Overflow<a class="headerlink" href="#search-in-community-stack-overflow" title="Permalink to this heading">#</a></h3>
-<p>Python can also be titled as an internet-based programming language, not only because there are so many open-source third-party packages available online, but also due to actively engaged communities. <a class="reference external" href="https://stackoverflow.com">StackOverflow</a> is a great Q&amp;A website to search for similar questions from community buddies as you have. The answers supported by community the most will show at first following the question.</p>
+<p>Python can also be titled as an internet-based programming language, not only because of so many open-source third-party packages available online, but also due to actively engaged communities. <a class="reference external" href="https://stackoverflow.com">StackOverflow</a> is a great Q&amp;A website to search for similar questions from community buddies as you have. The answers supported most by community will show at first following the question.</p>
+</section>
+<section id="ask-in-chatgpt">
+<h3><span class="section-number">1.1.8.4. </span>Ask in ChatGPT<a class="headerlink" href="#ask-in-chatgpt" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://openai.com/blog/chatgpt">ChatGPT</a> is an AI-powered language model developed by OpenAI. Prompted with proper questions, ChatGPT can give suggestions on code snippets that fit your demand.</p>
 </section>
 </section>
 <section id="references">
@@ -1404,6 +1392,7 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-documentation">1.1.8.1. Print documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-online-official-documentation">1.1.8.2. Read online official documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-in-community-stack-overflow">1.1.8.3. Search in community: Stack Overflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-in-chatgpt">1.1.8.4. Ask in ChatGPT</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">1.1.9. References</a></li>
