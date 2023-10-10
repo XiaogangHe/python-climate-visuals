@@ -424,7 +424,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy-tutorial">
 <h1><span class="section-number">2.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="http://www.numpy.org/">NumPy</a> is the core library for scientific computing in Python. It vastly simplifies manipulating and crunching vectors and matrices. Many of python-based leading packages rely on NumPy as a infrastructure piece.</p>
+<p><a class="reference external" href="http://www.numpy.org/">NumPy</a> is the <strong>core</strong> package for scientific computing in Python. It vastly simplifies manipulating and crunching vectors and matrices. Many of other leading packages rely on NumPy as a infrastructure piece.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: Array, Array Indexing, Array Manipulation, Array Math &amp; Broadcasting.</p></li>
@@ -498,15 +498,15 @@ document.write(`
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># Create an array of all zeros with shape (2, 2)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>       <span class="c1"># Create an array of all ones with shape (1, 2)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Create an array of random values with shape (3, 1)</span>
-<span class="c1"># try printing them</span>
+<span class="c1"># Try printing them</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.69381927]
- [0.62248209]
- [0.41387215]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.67742525]
+ [0.0784592 ]
+ [0.6098676 ]]
 </pre></div>
 </div>
 </div>
@@ -514,7 +514,7 @@ document.write(`
 </section>
 <section id="array-indexing">
 <h2><span class="section-number">2.1.2. </span>Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this heading">#</a></h2>
-<p>There are several ways to pull out a section of arrays. The most common ways include <strong>slicing</strong>, <strong>integer array indexing</strong> and <strong>Boolean array indexing</strong>. We may choose the appropriate indexing methods for different purposes.</p>
+<p>The most common ways to pull out a section of arrays include <strong>slicing</strong>, <strong>integer array indexing</strong> and <strong>Boolean array indexing</strong>. We may choose the appropriate indexing methods for different purposes.</p>
 <ul class="simple">
 <li><p><em><strong>Slicing</strong></em></p></li>
 </ul>
@@ -604,16 +604,16 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
-<span class="n">row_r1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>    <span class="c1"># Mix integer indexing with slice indexing</span>
-<span class="n">row_r2</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Slice indexing</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">row_r1</span><span class="p">,</span> <span class="n">row_r1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># Lower rank</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">row_r2</span><span class="p">,</span> <span class="n">row_r2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">a_1row</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>     <span class="c1"># Mix integer indexing with slice indexing</span>
+<span class="n">a_2rows</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Slice indexing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_1row</span><span class="p">,</span> <span class="n">a_1row</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># Lower rank</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_2rows</span><span class="p">,</span> <span class="n">a_2rows</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4 5 6] (3,)
-[[4 5 6]] (1, 3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3] (3,)
+[[1 2 3]] (1, 3)
 </pre></div>
 </div>
 </div>
@@ -648,12 +648,12 @@ document.write(`
 <p>We can do all of the above in a single concise statement, which is more readable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 9 10 11 12]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9, 10, 11, 12])
 </pre></div>
 </div>
 </div>
@@ -744,7 +744,7 @@ transpose through method
 <h3><span class="section-number">2.1.4.1. </span>Basic Arithmetic<a class="headerlink" href="#basic-arithmetic" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="c1"># Set data types of elements by dtype</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 
 <span class="c1"># Elementwise sum; both produce an array</span>
@@ -929,7 +929,7 @@ transpose through method
 </div>
 </div>
 <a class="reference internal image-reference" href="../../_images/numpy_broadcast2.png"><img alt="../../_images/numpy_broadcast2.png" class="align-center" src="../../_images/numpy_broadcast2.png" style="width: 600px;" /></a>
-<p>Broadcasting typically makes your code more <em><strong>concise</strong></em>, <em><strong>readable</strong></em>, and more importantly, <em><strong>faster</strong></em>, so you should strive to use it where possible.</p>
+<p>Broadcasting typically makes your code more <em><strong>concise</strong></em>, <em><strong>readable</strong></em>, and more importantly, <em><strong>faster</strong></em>.</p>
 </section>
 <section id="references">
 <h2><span class="section-number">2.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
