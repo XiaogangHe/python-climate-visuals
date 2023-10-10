@@ -12,5 +12,6 @@ jobs:
       with:
         NO_PUSH: true
         MYBINDERORG_TAG: ${{ github.event.pull_request.head.ref }}
+        IMAGE_NAME: ${{ github.repository }}
         # BINDER_CACHE: true
         # PUBLIC_REGISTRY_CHECK: true
