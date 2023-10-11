@@ -1,0 +1,17 @@
+name: Build Notebook Container
+on: [push] # You may want to trigger this Action on other things than a push.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: update jupyter dependencies with repo2docker
+      uses: jupyterhub/repo2docker-action@master
+      with:
+        NO_PUSH: true
+        MYBINDERORG_TAG: ${{ github.event.pull_request.head.ref }}
+        IMAGE_NAME: xiaoganghe/python-climate-visuals  # fixed var because Docker not allow uppercases
+        # BINDER_CACHE: true
+        # PUBLIC_REGISTRY_CHECK: true
