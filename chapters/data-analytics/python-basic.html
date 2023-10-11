@@ -609,8 +609,8 @@ True
 <h3><span class="section-number">1.1.2.3. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>   <span class="c1"># String literals can use single quotes</span>
-<span class="n">w</span> <span class="o">=</span> <span class="s2">&quot;world&quot;</span>   <span class="c1"># or double quotes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>       <span class="c1"># String literals can use single quotes</span>
+<span class="n">w</span> <span class="o">=</span> <span class="s2">&quot;world&quot;</span>       <span class="c1"># or double quotes</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>  <span class="c1"># Built-in function len() return the length of elements</span>
 </pre></div>
 </div>
@@ -656,7 +656,7 @@ True
 <p><code class="docutils literal notranslate"><span class="pre">format()</span></code> method also allows us to insert variables in different orders or even use a variable multiple times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">! </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>  <span class="c1"># String formatting by sequence</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hw1</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">! </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>             <span class="c1"># String formatting by sequence</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hw1</span><span class="p">)</span>
 <span class="n">hw2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{1}</span><span class="s1"> </span><span class="si">{0}</span><span class="s1">! </span><span class="si">{2}</span><span class="s1"> </span><span class="si">{2:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>  <span class="c1"># String formatting by specifying orders and formats</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hw2</span><span class="p">)</span>
@@ -687,7 +687,7 @@ he(ell)(ell)o
 </div>
 </div>
 </div>
-<p>You can find more information about Python basic data types in the official <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html">documantion</a>, such as a list of <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#string-methods">all string methods</a>.</p>
+<p>You can find more information about Python basic data types in the official <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html">documantion</a>, such as the list of <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#string-methods">all string methods</a>.</p>
 </section>
 </section>
 <section id="containers">
@@ -908,9 +908,9 @@ wet
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
 
-<span class="k">for</span> <span class="n">list1</span> <span class="ow">in</span> <span class="n">list_of_lists</span><span class="p">:</span>  <span class="c1"># Iterate over elements in list_of_lists</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>             <span class="c1"># Four blanks before the algorithm</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">)</span>    <span class="c1"># Without four blanck, this is not a part of iterations</span>
+<span class="k">for</span> <span class="n">list1</span> <span class="ow">in</span> <span class="n">list_of_lists</span><span class="p">:</span> <span class="c1"># Iterate over elements in list_of_lists</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>            <span class="c1"># Four blanks before the algorithm</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">)</span>                <span class="c1"># Without four blanks, this is not a part of iterations</span>
 </pre></div>
 </div>
 </div>
@@ -1017,7 +1017,7 @@ A spider has 8 legs
 <p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. Here is an example function <code class="docutils literal notranslate"><span class="pre">sign(x)</span></code> which return the sign of <code class="docutils literal notranslate"><span class="pre">x</span></code>. To call a function, use the function name followed by parenthesis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># Define a function with one argument x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># four blanks before each line within the function body</span>
         <span class="k">return</span> <span class="s1">&#39;positive&#39;</span>  <span class="c1"># another four blanks within `if` expressions</span>
