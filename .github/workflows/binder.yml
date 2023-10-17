@@ -1,5 +1,9 @@
+# used to prebuild docker caching on mybinder.org to accelerate Binder launch
 name: Build Notebook Container
-on: [push] # You may want to trigger this Action on other things than a push.
+on: 
+  push:
+    branches:
+    - master  # only trigger GitHub action when master branch has push
 jobs:
   build:
     runs-on: ubuntu-latest
