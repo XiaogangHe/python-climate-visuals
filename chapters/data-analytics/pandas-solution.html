@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2. Pandas Exercise</title>
+    <title>3.3. Pandas Exercise</title>
   
   
   
@@ -71,13 +71,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/pandas-exercise';</script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-exercise.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/pandas-solution';</script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-solution.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.3. Pandas Exercise" href="pandas-solution.html" />
-    <link rel="prev" title="3.1. Pandas tutorial" href="pandas-basic.html" />
+    <link rel="next" title="4. What is SciPy?" href="scipy.html" />
+    <link rel="prev" title="3.2. Pandas Exercise" href="pandas-exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,8 +176,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas-solution.html">3.3. Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Solution</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/pandas-exercise.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/pandas-solution.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/data-analytics/pandas-exercise.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/data-analytics/pandas-solution.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -406,8 +406,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.2.1. Task 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.2.2. Task 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.3.1. Task 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.3.2. Task 2</a></li>
 </ul>
             </nav>
         </div>
@@ -420,10 +420,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-exercise">
-<h1><span class="section-number">3.2. </span>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.3. </span>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Permalink to this heading">#</a></h1>
 <p>Create a DataFrame by reading the file <em>../../assets/data/Changi_daily_rainfall.csv</em>. Perform the following two tasks with this DataFrame.</p>
 <section id="task-1">
-<h2><span class="section-number">3.2.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Determine whether the dataframe contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. If so, fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values with the previous day’s value.</p></li>
 <li><p>Show the first 5 rows and the last 3 rows. Check the data length.</p></li>
@@ -433,15 +433,201 @@ document.write(`
 <p>Note: If you want to do this task on your local computer (not recommended), please modify the file path accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question.</span>
-<span class="c1"># using the + icon to add a cell in the toolbar.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># no NaN value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the first 5 rows:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">==========&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the tail 3 rows:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">==========&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total length of data:&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the first 5 rows:
+             Daily Rainfall Total (mm)
+Date                                 
+1981-01-01                        0.0
+1981-01-02                        0.0
+1981-01-03                        0.0
+1981-01-04                        0.0
+1981-01-05                        0.0 
+==========
+the tail 3 rows:
+             Daily Rainfall Total (mm)
+Date                                 
+2020-12-29                        3.2
+2020-12-30                        0.0
+2020-12-31                        0.0 
+==========
+total length of data: 14610
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3</span>
+<span class="n">df_days</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">&gt;</span><span class="mf">0.1</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df_days</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Rainy days&#39;</span><span class="p">]</span> 
+<span class="n">df_days</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rainy days</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1981-12-31</th>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>1982-12-31</th>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>1983-12-31</th>
+      <td>138</td>
+    </tr>
+    <tr>
+      <th>1984-12-31</th>
+      <td>191</td>
+    </tr>
+    <tr>
+      <th>1985-12-31</th>
+      <td>181</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4</span>
+<span class="n">df_monthly</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df_monthly</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span> <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">df_monthly</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">df_month_mean</span> <span class="o">=</span> <span class="n">df_monthly</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_month_mean</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monthly rainfall (mm)&#39;</span><span class="p">]</span>
+<span class="n">df_month_mean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Monthly rainfall (mm)&#39;</span><span class="p">],</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="c1"># Nov, Dec and Jan have the highest average monthly rainfall.</span>
+<span class="c1"># Feb, Jun, Aug have lowest average monthly rainfall.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Monthly rainfall (mm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12</th>
+      <td>317.7400</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>250.0900</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>221.7825</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>160.2500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>158.8750</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>156.9800</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>151.6450</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>146.4150</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>144.8475</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>143.3525</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>131.2050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>106.6425</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 <section id="task-2">
-<h2><span class="section-number">3.2.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Resample the DataFrame from daily time scale to annual time scale. Calculate the annual total rainfall for each year.</p></li>
 <li><p>Compare the long-term averaged annual rainfall in two periods: 1981-2000 and 2001-2020.</p></li>
@@ -453,8 +639,101 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is the trend of annual rainfall, <span class="math notranslate nohighlight">\(x\)</span> is year, <span class="math notranslate nohighlight">\(y\)</span> is annual rainfall, and <span class="math notranslate nohighlight">\(n\)</span> is the number of years.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question</span>
-<span class="c1"># using the + icon to add a cell in the toolbar.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="n">df_yearly</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df_yearly</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Yearly Rainfall Total (mm)&#39;</span><span class="p">]</span>
+<span class="n">df_yearly</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span> <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">df_yearly</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="n">df_yearly</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Yearly Rainfall Total (mm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1981</th>
+      <td>1336.3</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>1581.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
+<span class="n">rainfall_1981_2000</span> <span class="o">=</span> <span class="n">df_yearly</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1981</span><span class="p">:</span><span class="mi">2000</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">rainfall_2001_2020</span> <span class="o">=</span> <span class="n">df_yearly</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2001</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Averaged annual rainfall during 1981-2000: </span><span class="si">%.2f</span><span class="s1"> mm</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">rainfall_1981_2000</span>.values[0], 
+      <span class="s1">&#39;Averaged annual rainfall during 1981-2000: </span><span class="si">%.2f</span><span class="s1"> mm</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">rainfall_2001_2020</span>.values[0], 
+      <span class="s1">&#39;Averaged annual rainfall increase during</span><span class="se">\n</span><span class="s1"> 2001-2020 relative to 1981-2000: </span><span class="si">%.2f</span><span class="s1"> mm&#39;</span><span class="o">%</span>
+      <span class="p">(</span><span class="n">rainfall_2001_2020</span><span class="o">-</span><span class="n">rainfall_1981_2000</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged annual rainfall during 1981-2000: 2071.55 mm
+ Averaged annual rainfall during 1981-2000: 2108.10 mm
+ Averaged annual rainfall increase during
+ 2001-2020 relative to 1981-2000: 36.54 mm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3</span>
+<span class="n">max_rainfall_year</span> <span class="o">=</span> <span class="n">df_yearly</span><span class="p">[</span><span class="n">df_yearly</span><span class="p">[</span><span class="s1">&#39;Yearly Rainfall Total (mm)&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">df_yearly</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">min_rainfall_year</span> <span class="o">=</span> <span class="n">df_yearly</span><span class="p">[</span><span class="n">df_yearly</span><span class="p">[</span><span class="s1">&#39;Yearly Rainfall Total (mm)&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">df_yearly</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The year with smallest annual rainfall:&#39;</span><span class="p">,</span> <span class="n">min_rainfall_year</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The year with largest annual rainfall:&#39;</span><span class="p">,</span> <span class="n">max_rainfall_year</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The year with smallest annual rainfall: 1997
+The year with largest annual rainfall: 2007
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df_yearly</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_yearly</span><span class="p">[</span><span class="s1">&#39;Yearly Rainfall Total (mm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Trend: </span><span class="si">%.2f</span><span class="s1"> mm/year&#39;</span><span class="o">%</span><span class="k">a</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trend: -1.37 mm/year
 </pre></div>
 </div>
 </div>
@@ -494,20 +773,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pandas-basic.html"
+       href="pandas-exercise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Pandas tutorial</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Pandas Exercise</p>
       </div>
     </a>
     <a class="right-next"
-       href="pandas-solution.html"
+       href="scipy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Pandas Exercise</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>What is SciPy?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -529,8 +808,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.2.1. Task 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.2.2. Task 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.3.1. Task 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.3.2. Task 2</a></li>
 </ul>
   </nav></div>
 
