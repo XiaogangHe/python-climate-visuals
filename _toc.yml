@@ -64,7 +64,7 @@ parts:
   #- file: chapters/homework/homework2
     #title: Homework 2
 - caption: Course Project
-  #chapters:
+  chapters:
   #- file: chapters/project/FinalProject-2022Fall
     #title: Fall 2022
 - caption: Gallery
