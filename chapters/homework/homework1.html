@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>HW#1: Extreme Rainfall in Singapore</title>
+    <title>HW#1: Extreme Rainfall Deficit in Singapore</title>
   
   
   
@@ -74,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HW#2: Visualizing Historical Temperature Changes in Singapore" href="homework2.html" />
+    <link rel="next" title="Visualizing River Network" href="../gallery/plot_weighted_river_network.html" />
     <link rel="prev" title="1.2. Matplotlib tutorial (Advanced)" href="../data-visuals/matplotlib-advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,14 +196,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework (Fall 2022)</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="homework2.html">Homework 2</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2022Fall.html">Fall 2022</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
@@ -394,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>HW#1: Extreme Rainfall in Singapore</h1>
+    <h1>HW#1: Extreme Rainfall Deficit in Singapore</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,9 +399,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-fit-the-gev-distribution">Q1: Fit the GEV distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-estimate-the-return-period">Q2: Estimate the return period</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-identify-seasonality">Q3: Identify seasonality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-calculate-extreme-rainfall-statisitics">Q1: Calculate extreme rainfall statisitics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-fit-the-gev-distribution">Q2: Fit the GEV distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-compare-differences-in-gev-distributions">Q3: Compare differences in GEV distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-estimate-the-return-level-of-the-extreme-events">Q4: Estimate the return level of the extreme events</a></li>
 </ul>
             </nav>
         </div>
@@ -418,23 +414,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hw-1-extreme-rainfall-in-singapore">
-<h1>HW#1: Extreme Rainfall in Singapore<a class="headerlink" href="#hw-1-extreme-rainfall-in-singapore" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hw-1-extreme-rainfall-deficit-in-singapore">
+<h1>HW#1: Extreme Rainfall Deficit in Singapore<a class="headerlink" href="#hw-1-extreme-rainfall-deficit-in-singapore" title="Permalink to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Objectives</p>
 <p>This homework will help you gain a better understanding in terms of the ways how to:</p>
 <ul class="simple">
 <li><p>Fit Generalized Extreme Value (GEV) distribution</p></li>
-<li><p>Estimate the return period and return level of extreme rainfall</p></li>
+<li><p>Estimate the return period and return level of extreme rainfall deficit</p></li>
 </ul>
 <p>Happy coding!</p>
 </div>
 <div class="admonition-submission-guide admonition">
 <p class="admonition-title">Submission Guide</p>
-<p>Deadline: <strong>Sunday 11:59 pm, 30th October 2022</strong>
+<p>Deadline: <strong>Sunday 11:59 pm, 5th November 2023</strong>
 (Note: Late submissions will not be accepted).</p>
-<p>Please upload your solutions to LumiNUS in a Jupyter Notebook format with the name “Homework1_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
-<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Haoling CHEN (<a class="reference external" href="mailto:h&#46;chen&#37;&#52;&#48;u&#46;nus&#46;edu">h<span>&#46;</span>chen<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Meilian LI (<a class="reference external" href="mailto:limeilian&#37;&#52;&#48;u&#46;nus&#46;edu">limeilian<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+<p>Please upload your solutions to Canvas in a Jupyter Notebook format with the name “Homework1_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), or Zhixiao NIU (<a class="reference external" href="mailto:niu&#46;zhixiao&#37;&#52;&#48;u&#46;nus&#46;edu">niu<span>&#46;</span>zhixiao<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -449,9 +445,9 @@ document.write(`
 <p><strong>Data</strong>:
 You will need to use the historical (1981-2020) daily total rainfall at Singapore’s Changi station for this homework.
 You can create a DataFrame using Pandas by reading file “../../assets/data/Changi_daily_rainfall.csv”.</p>
-<section id="q1-fit-the-gev-distribution">
-<h2>Q1: Fit the GEV distribution<a class="headerlink" href="#q1-fit-the-gev-distribution" title="Permalink to this heading">#</a></h2>
-<p>Find the annual maximum rainfall based on the daily rainfall. This will result in a data set of 40 values - one per year. Fit the GEV distribution to the time series of annual maximum rainfall. To do this, estimate the GEV parameters using (i) Maximum Likelihood and (ii) L-Moments, respectively. Based on your results, discuss whether extreme rainfall in Singapore is bounded above or not. (Details on fitting a GEV distribution can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html">Scipy tutorial</a>). (40 marks)</p>
+<section id="q1-calculate-extreme-rainfall-statisitics">
+<h2>Q1: Calculate extreme rainfall statisitics<a class="headerlink" href="#q1-calculate-extreme-rainfall-statisitics" title="Permalink to this heading">#</a></h2>
+<p>First, divide the data into the following seasons: DJF (Dec-Jan-Feb), MAM (Mar-Apr-May), JJA (Jun-Jul-Aug), and SON (Sep-Oct-Nov) using Pandas’ <code class="docutils literal notranslate"><span class="pre">filtering</span></code> methods. Calculate the following statistics of daily rainfall for each season: (i) mean; (ii) variance; (iii) skewness; and (iv) kurtosis. Based on the results, identify the driest season. (Details on the filtering method can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-basic.html">Pandas tutorial</a>). (Hint: The driest season can refer to the season with the lowest mean of daily rainfall) (10 marks)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
@@ -461,9 +457,9 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </div>
 </div>
 </section>
-<section id="q2-estimate-the-return-period">
-<h2>Q2: Estimate the return period<a class="headerlink" href="#q2-estimate-the-return-period" title="Permalink to this heading">#</a></h2>
-<p>Based on the estimated GEV parameters using L-Moments in Q1, (1) estimate the return period of an event with 300 mm daily rainfall, and (2) calculate the difference in magnitude between this event and a 100-year event (30 marks).</p>
+<section id="q2-fit-the-gev-distribution">
+<h2>Q2: Fit the GEV distribution<a class="headerlink" href="#q2-fit-the-gev-distribution" title="Permalink to this heading">#</a></h2>
+<p>For the driest season you identified in Q1, find the seasonal maximum rainfall deficit based on the 30-day moving average rainfall deficit. This will result in a data set of 40 values, one value for each year. Fit two GEV distributions of seasonal maximum rainfall deficit using data from the first 20 years (1981-2000) and the last 20 years (2001-2020) separately. To do this, estimate the GEV parameters using (i) Maximum Likelihood, and (ii) L-Moments, respectively. (Details on fitting a GEV distribution can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html">Scipy tutorial</a>). (Hint: The rainfall deficit can be obtained by subtracting the 30-day moving average rainfall from the mean rainfall calculated in Q1) (40 marks)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
@@ -473,9 +469,21 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </div>
 </div>
 </section>
-<section id="q3-identify-seasonality">
-<h2>Q3: Identify seasonality<a class="headerlink" href="#q3-identify-seasonality" title="Permalink to this heading">#</a></h2>
-<p>Take a careful look at the annual maximum rainfall series identified in Q1. Which month does the annual maximum rainfall event occur most frequently? If a GEV fit is applied to monthly maximum rainfall events for this particular month (40 values - one per year but extracted only from that month), will the  distribution statistically different from that estimated by annual maximum values? (Hint: You can use the KS test to compare the underlying distributions of two samples) (30 marks)</p>
+<section id="q3-compare-differences-in-gev-distributions">
+<h2>Q3: Compare differences in GEV distributions<a class="headerlink" href="#q3-compare-differences-in-gev-distributions" title="Permalink to this heading">#</a></h2>
+<p>Based on the estimated GEV parameters using L-Moments in Q2, discuss, for the driest season, whether there are statistical differences between the two distributions estimated from the first and last 20 years. (Hint: You can use the KS test to compare the underlying distributions of the two samples) (30 marks)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># using the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q4-estimate-the-return-level-of-the-extreme-events">
+<h2>Q4: Estimate the return level of the extreme events<a class="headerlink" href="#q4-estimate-the-return-level-of-the-extreme-events" title="Permalink to this heading">#</a></h2>
+<p>Based on the estimated GEV parameters using L-Moments in Q2, estimate the rainfall deficit for events with return periods of 50 years, 100 years, and 200 years. (Hint: You can use the GEV distribution fitted from the data of the last 20 years.) (20 marks)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
@@ -528,11 +536,11 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
       </div>
     </a>
     <a class="right-next"
-       href="homework2.html"
+       href="../gallery/plot_weighted_river_network.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">HW#2: Visualizing Historical Temperature Changes in Singapore</p>
+        <p class="prev-next-title">Visualizing River Network</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -554,9 +562,10 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-fit-the-gev-distribution">Q1: Fit the GEV distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-estimate-the-return-period">Q2: Estimate the return period</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-identify-seasonality">Q3: Identify seasonality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-calculate-extreme-rainfall-statisitics">Q1: Calculate extreme rainfall statisitics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-fit-the-gev-distribution">Q2: Fit the GEV distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-compare-differences-in-gev-distributions">Q3: Compare differences in GEV distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-estimate-the-return-level-of-the-extreme-events">Q4: Estimate the return level of the extreme events</a></li>
 </ul>
   </nav></div>
 
