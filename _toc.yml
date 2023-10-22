@@ -57,16 +57,16 @@ parts:
       title: Tutorial (Basic)
     - file: chapters/data-visuals/matplotlib-advanced
       title: Tutorial (Advanced)
-- caption: Homework (Fall 2022)
+- caption: Homework
   chapters:
   - file: chapters/homework/homework1
     title: Homework 1
-  - file: chapters/homework/homework2
-    title: Homework 2
+  #- file: chapters/homework/homework2
+    #title: Homework 2
 - caption: Course Project
-  chapters:
-  - file: chapters/project/FinalProject-2022Fall
-    title: Fall 2022
+  #chapters:
+  #- file: chapters/project/FinalProject-2022Fall
+    #title: Fall 2022
 - caption: Gallery
   chapters:
   - file: chapters/gallery/plot_weighted_river_network
