@@ -426,14 +426,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="scipy-tutorial">
 <h1><span class="section-number">4.1. </span>SciPy tutorial<a class="headerlink" href="#scipy-tutorial" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. These routines are composed as task-specific sub-modules in <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, such as <code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code> for vector quantization/ Kmeans, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> for linear algebra routines. All <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> sub-modules depend on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, but are mostly independent of each other.</p>
+<p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is the core library for scientific computing in Python. It provides many user-friendly and efficient numerical routines, such as numerical integration, interpolation, optimization, linear algebra, and <strong>statistics</strong>. These routines are composed as task-specific subpackages in <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, such as <code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code> for vector quantization/ Kmeans, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> for linear algebra routines. All <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> subpackages depend on <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, but are mostly independent of each other.</p>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module contains a large number of summary and frequency statistics, probability distributions, correlation functions, statistical tests, kernel density estimation, quasi-Monte Carlo functionality, and so on.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>: Statistics, Distributions, Statistical Tests and Correlations</p></li>
 <li><p>Extreme Value Analysis</p></li>
 </ul>
-<p>The standard way of importing NumPy and one SciPy sub-module is:</p>
+<p>The standard way of importing NumPy and one SciPy sub-package is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -972,7 +972,7 @@ Date
 \frac{\lambda_3}{\lambda_2} &amp; =\frac{2(1-3^{-\xi})}{1-2^{-\xi}}-3
 \end{align}
 \)</span></p>
-<p>where <span class="math notranslate nohighlight">\(\mu, \sigma, \xi\)</span> are respectively GEV’s location <code class="docutils literal notranslate"><span class="pre">loc</span></code>, scale <code class="docutils literal notranslate"><span class="pre">scale</span></code>, and shape <code class="docutils literal notranslate"><span class="pre">c</span></code> parameters. Obviously, there are no explicit solutions to these equations when we plugin the sample L-moments. Luckily, we could resort to the function solver <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> in the optimization sub-module of SciPy to get numerical solutions.</p>
+<p>where <span class="math notranslate nohighlight">\(\mu, \sigma, \xi\)</span> are respectively GEV’s location <code class="docutils literal notranslate"><span class="pre">loc</span></code>, scale <code class="docutils literal notranslate"><span class="pre">scale</span></code>, and shape <code class="docutils literal notranslate"><span class="pre">c</span></code> parameters. Obviously, there are no explicit solutions to these equations when we plugin the sample L-moments. Luckily, we could resort to the function solver <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> in the optimization sub-package of SciPy to get numerical solutions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate GEV parameters using the function solver</span>
@@ -1246,7 +1246,7 @@ Return period
 <h2><span class="section-number">4.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This tutorial was edited based on <a class="reference external" href="https://realpython.com/python-statistics/">Python Statistics Fundamentals</a>, <a class="reference external" href="https://scipy-lectures.org/">Scipy Lecture Notes</a>, <a class="reference external" href="https://github.com/royalosyin/A-Beginner-Guide-to-Carry-out-Extreme-Value-Analysis-with-Codes-in-Python">royalosyin’s guide to carry out EVA</a> and <a class="reference external" href="https://github.com/OpenHydrology/lmoments3">OpenHydrology’s lmoments3 repository</a>.</p></li>
-<li><p>Only the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> sub-module is introduced here. If you wish to get a quick glimpse on other sub-modules of SciPy, you could refer to <a class="reference external" href="https://scipy-lectures.org/intro/scipy.html">scipy-lectures</a>.</p></li>
+<li><p>Only the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> sub-package is introduced here. If you wish to get a quick glimpse on other subpackages of SciPy, you could refer to <a class="reference external" href="https://scipy-lectures.org/intro/scipy.html">scipy-lectures</a>.</p></li>
 </ul>
 </section>
 </section>
