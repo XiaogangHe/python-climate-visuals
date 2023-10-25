@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2. Pandas Exercise</title>
+    <title>4.3. SciPy Solution</title>
   
   
   
@@ -71,13 +71,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/pandas-exercise';</script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-exercise.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/scipy-solution';</script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-solution.html" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.3. Pandas Exercise" href="pandas-solution.html" />
-    <link rel="prev" title="3.1. Pandas tutorial" href="pandas-basic.html" />
+    <link rel="next" title="5. What is Xarray?" href="xarray.html" />
+    <link rel="prev" title="4.2. SciPy Exercise" href="scipy-exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,16 +174,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="numpy-solution.html">2.3. Solution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas-solution.html">3.3. Solution</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="scipy-basic.html">4.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scipy-exercise.html">4.2. Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scipy-solution.html">4.3. Solution</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Solution</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/pandas-exercise.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/scipy-solution.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chapters/data-analytics/pandas-exercise.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/data-analytics/scipy-solution.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pandas Exercise</h1>
+    <h1>SciPy Solution</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,8 +402,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.2.1. Task 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.2.2. Task 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">4.3.1. Task 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">4.3.2. Task 2</a></li>
 </ul>
             </nav>
         </div>
@@ -415,42 +415,117 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas-exercise">
-<h1><span class="section-number">3.2. </span>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Permalink to this heading">#</a></h1>
-<p>Create a DataFrame by reading the file <em>../../assets/data/Changi_daily_rainfall.csv</em>. Perform the following two tasks with this DataFrame.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="scipy-solution">
+<h1><span class="section-number">4.3. </span>SciPy Solution<a class="headerlink" href="#scipy-solution" title="Permalink to this heading">#</a></h1>
+<p>Choosing a probability distribution to fit daily precipitation depths is important for precipitation frequency analysis, stochastic precipitation modeling, and climate assessments.  Read the file ../../assets/data/Changi_daily_rainfall.csv and complete the following tasks.</p>
 <section id="task-1">
-<h2><span class="section-number">3.2.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Determine whether the dataframe contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. If so, fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values with the previous day’s value.</p></li>
-<li><p>Show the first 5 rows and the last 3 rows. Check the data length.</p></li>
-<li><p>For each year, calculate the frequency (i.e., number of days) of rainfall events whose magnitude exceeds 0.1 mm/day.</p></li>
-<li><p>Find the three months with the highest/lowest long-term averaged monthly rainfall. Are these months within your expection (e.g., Singapore’s monsoon seasons)?</p></li>
-</ol>
-<p>Note: If you want to do this task on your local computer (not recommended), please modify the file path accordingly.</p>
+<h2><span class="section-number">4.3.1. </span>Task 1<a class="headerlink" href="#task-1" title="Permalink to this heading">#</a></h2>
+<p>Extract the wet-day series for 2020 from the raw daily rainfall dataset and calculate a few descriptive statistics: mean, variance, skewness, kurtosis, L-CV, and L-skewness. Is the distribution left-skewed or right-skewed? Is the distribution more or less peaked than the normal distribution?</p>
+<p>Note: The wet-day series should be constructed by excluding events whose magnitude is less than 0.25 mm/day (0.25 mm/day is the minimum precipitation that can be recorded by the in situ rain gauge).</p>
+<p>The L-CV is L-coefficient of variation and can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[\text{L-CV}=\tau_2=\lambda_2/\lambda_1,\]</div>
+<p>and the L-skewness is L-coefficient of skewness, which is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[\text{L-skewness}=\tau_3=\lambda_3/\lambda_2,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span> and <span class="math notranslate nohighlight">\(\lambda_3\)</span> are the first three L-moments (details can be found in <code class="docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">tutorial</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question.</span>
-<span class="c1"># using the + icon to add a cell in the toolbar.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_sb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">]</span>
+<span class="n">wet_series</span> <span class="o">=</span> <span class="n">df_sb</span><span class="p">[</span><span class="n">df_sb</span><span class="o">&gt;</span><span class="mf">0.25</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">samlmom3</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    samlmom3 returns the first three L-moments of samples</span>
+<span class="sd">    sample is the 1-d array</span>
+<span class="sd">    n is the total number of the samples, j is the j_th sample</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+                   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">lmom1</span> <span class="o">=</span> <span class="n">b0</span>
+    <span class="n">lmom2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b1</span> <span class="o">-</span> <span class="n">b0</span>
+    <span class="n">lmom3</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="n">b2</span> <span class="o">-</span> <span class="n">b1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b0</span>
+
+    <span class="k">return</span> <span class="n">lmom1</span><span class="p">,</span> <span class="n">lmom2</span><span class="p">,</span> <span class="n">lmom3</span>
+
+
+<span class="n">lmon1</span><span class="p">,</span> <span class="n">lmon2</span><span class="p">,</span> <span class="n">lmon3</span> <span class="o">=</span> <span class="n">samlmom3</span><span class="p">(</span><span class="n">wet_series</span><span class="p">)</span>
+<span class="n">L_CV</span> <span class="o">=</span> <span class="n">lmon2</span> <span class="o">/</span> <span class="n">lmon1</span>
+<span class="n">L_skew</span> <span class="o">=</span> <span class="n">lmon3</span><span class="o">/</span><span class="n">lmon2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">wet_series</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variance </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">wet_series</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Skewness </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">wet_series</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kurtosis: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">wet_series</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L-CV: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">L_CV</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L-skewness </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">L_skew</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean: 11.42
+variance 165.47
+Skewness 1.72
+Kurtosis: 3.04
+L-CV: 0.56
+L-skewness 0.39
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the distribution is right-skewed and more peaked than the normal distribution.</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="task-2">
-<h2><span class="section-number">3.2.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Resample the DataFrame from daily time scale to annual time scale. Calculate the annual total rainfall for each year.</p></li>
-<li><p>Compare the long-term averaged annual rainfall in two periods: 1981-2000 and 2001-2020.</p></li>
-<li><p>Find the year with the largest/smallest annual rainfall and print their values.</p></li>
-<li><p>Calculate the trend of annual rainfall during 1981-2020 using the following formula:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[a = \frac{n\sum{(xy)}-\sum{x}\sum{y}}{n\sum{x^2}-(\sum{x})^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a\)</span> is the trend of annual rainfall, <span class="math notranslate nohighlight">\(x\)</span> is year, <span class="math notranslate nohighlight">\(y\)</span> is annual rainfall, and <span class="math notranslate nohighlight">\(n\)</span> is the number of years.</p>
+<h2><span class="section-number">4.3.2. </span>Task 2<a class="headerlink" href="#task-2" title="Permalink to this heading">#</a></h2>
+<p>Early studies identified the gamma (G2) distribution as a suitable distribution for wet-day precipitation based on the traditional goodness-of-fit tests. Does wet-day series of Changi follow a gamma distribution?
+Check the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> documentation and do the following:</p>
+<ul class="simple">
+<li><p>fit a gamma distribution to the Changi wet-day series;</p></li>
+<li><p>print out the estimated parameters;</p></li>
+<li><p>print out the goodness-of-fit test results using KS test.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here. Create a separate code chunk for each question</span>
-<span class="c1"># using the + icon to add a cell in the toolbar.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solution goes here.</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">kstest</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">wet_series</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+<span class="n">gamma_dist</span> <span class="o">=</span> <span class="n">gamma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">wet_series</span><span class="p">,</span> <span class="n">gamma_dist</span><span class="o">.</span><span class="n">cdf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6597146798552613 0.39999999999999997 15.511976229013442
+KstestResult(statistic=0.05634367405742169, pvalue=0.6503157533710182)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The p-value of ks-stastistic is larger than 0.05. </span>
+<span class="c1"># The wet-day series for 2020 of Changi follows a gamma distribution.</span>
 </pre></div>
 </div>
 </div>
@@ -490,20 +565,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pandas-basic.html"
+       href="scipy-exercise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Pandas tutorial</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>SciPy Exercise</p>
       </div>
     </a>
     <a class="right-next"
-       href="pandas-solution.html"
+       href="xarray.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Pandas Exercise</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>What is Xarray?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -525,8 +600,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.2.1. Task 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.2.2. Task 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">4.3.1. Task 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">4.3.2. Task 2</a></li>
 </ul>
   </nav></div>
 
