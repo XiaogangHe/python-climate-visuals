@@ -592,15 +592,16 @@ To do this, you need to:</p>
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
 <p>Exposure to heat extremes is associated with premature death. Assume the empirical relationship between temperature and excess mortality rate for the 45- to 64-year-old population can be estimated by:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \text{Mortality}=  \left\{
-\begin{array}{ll}
+\[\begin{split} 
+\text{Mortality}=  
+\begin{cases}
       -0.54 * T - 0.2,  T \le -10\\
       -0.25 * T + 2.8, -10 &lt; T \le 15 \\
-      -0.1 * T + 0.55, 15 &lt; T \le 22 \\
+      -0.1 * T + 0.55, 15 &lt; T \le 22 \tag{1} \\
       0.5 * T - 12.65, 22 &lt; T \le 25 \\
       0.75 * T - 18.9, T &gt; 25 \\
-\end{array} 
-\right. \tag{1}\end{split}\]</div>
+\end{cases}
+\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\text{Mortality}\)</span> is the excess mortality (per 100k) for the 45- to 64-year-old population and <span class="math notranslate nohighlight">\(T\)</span> is the temperature (°C).</p>
 </section>
 </section>
