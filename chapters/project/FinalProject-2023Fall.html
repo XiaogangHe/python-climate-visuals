@@ -550,7 +550,7 @@ document.write(`
 <p>Extreme heat increases the risk of a number of adverse health outcomes, worsening chronic health conditions such as heart and lung disease. Moreover, exposure to hot temperatures is associated with premature deaths. Based on the GEV distribution that you fit to the future temperature simulation, compare heat-induced excess mortality in different levels of heat extremes.
 To do this, you need to:</p>
 <ul class="simple">
-<li><p>Calculate the excess mortality rate for the 45- to 64-year-old population (see the Appendix) for the 1-in-100-year heat extreme under the ssp245 scenario.</p></li>
+<li><p>Calculate the excess mortality rate for the 45- to 64-year-old population (see Eq (1) in the Appendix) for the 1-in-100-year heat extreme under the ssp245 scenario.</p></li>
 <li><p>Repeat the above calculation for the 1-in-1000-year and 1-in-10000-year event and visualize the difference against the 1-in-100-year event.</p></li>
 <li><p>Repeat the calculation for the ssp585 scenario for all three event (i.e., 1-in-100-year, 1-in-1000-year, 1-in-10000-year) and visualize the difference against the ssp245 scenario.</p></li>
 </ul>
@@ -592,16 +592,15 @@ To do this, you need to:</p>
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
 <p>Exposure to heat extremes is associated with premature death. Assume the empirical relationship between temperature and excess mortality rate for the 45- to 64-year-old population can be estimated by:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\text{Mortality}=  
-\begin{cases}
+\[\begin{split} \text{Mortality}=  \left\{
+\begin{array}{ll}
 -0.54 * T - 0.2,  T \le -10\\
 -0.25 * T + 2.8, -10 &lt; T \le 15 \\
 -0.1 * T + 0.55, 15 &lt; T \le 22 \\
 0.5 * T - 12.65, 22 &lt; T \le 25 \\
 0.75 * T - 18.9, T &gt; 25 \\
-\end{cases} 
-\end{split}\]</div>
+\end{array} 
+\right. \tag{1}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\text{Mortality}\)</span> is the excess mortality (per 100k) for the 45- to 64-year-old population and <span class="math notranslate nohighlight">\(T\)</span> is the temperature (°C).</p>
 </section>
 </section>
