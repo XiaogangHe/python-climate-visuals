@@ -555,10 +555,10 @@ You will need to use the historical (1981-2020) daily total rainfall at Singapor
 <span class="n">DJF</span> <span class="o">=</span> <span class="n">rain</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">rain</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">rain</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">)]</span>
 
 
-<span class="n">stat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">DJF</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">DJF</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">DJF</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">DJF</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
-                     <span class="p">[</span><span class="n">MAM</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MAM</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MAM</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MAM</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
-                     <span class="p">[</span><span class="n">JJA</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">JJA</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">JJA</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">JJA</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
-                     <span class="p">[</span><span class="n">SON</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SON</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SON</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SON</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">stat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">DJF</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">DJF</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">DJF</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">DJF</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                     <span class="p">[</span><span class="n">MAM</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MAM</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">MAM</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">MAM</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                     <span class="p">[</span><span class="n">JJA</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">JJA</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">JJA</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">JJA</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+                     <span class="p">[</span><span class="n">SON</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SON</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">SON</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SON</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
                     <span class="p">],</span> 
                     <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DJF&#39;</span><span class="p">,</span> <span class="s1">&#39;MAM&#39;</span><span class="p">,</span> <span class="s1">&#39;JJA&#39;</span><span class="p">,</span> <span class="s1">&#39;SON&#39;</span><span class="p">],</span> 
                     <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Variance&#39;</span><span class="p">,</span> <span class="s1">&#39;Skewness&#39;</span><span class="p">,</span> <span class="s1">&#39;Kurtosis&#39;</span><span class="p">]</span>
@@ -598,28 +598,28 @@ You will need to use the historical (1981-2020) daily total rainfall at Singapor
     <tr>
       <th>DJF</th>
       <td>7.159723</td>
-      <td>18.339336</td>
+      <td>336.331229</td>
       <td>4.907595</td>
       <td>33.528282</td>
     </tr>
     <tr>
       <th>MAM</th>
       <td>5.117065</td>
-      <td>11.905443</td>
+      <td>141.739578</td>
       <td>3.980410</td>
       <td>22.942881</td>
     </tr>
     <tr>
       <th>JJA</th>
       <td>4.575788</td>
-      <td>11.375065</td>
+      <td>129.392105</td>
       <td>5.052307</td>
       <td>41.294758</td>
     </tr>
     <tr>
       <th>SON</th>
       <td>6.065027</td>
-      <td>14.047855</td>
+      <td>197.342220</td>
       <td>4.930091</td>
       <td>38.885941</td>
     </tr>
@@ -633,7 +633,7 @@ You will need to use the historical (1981-2020) daily total rainfall at Singapor
 </section>
 <section id="q2-fit-the-gev-distribution">
 <h2>Q2: Fit the GEV distribution<a class="headerlink" href="#q2-fit-the-gev-distribution" title="Permalink to this heading">#</a></h2>
-<p>For the driest season you identified in Q1, find the seasonal maximum rainfall deficit based on the 30-day moving average rainfall deficit. This will result in a data set of 40 values, one value for each year. Fit two GEV distributions of seasonal maximum rainfall deficit using data from the first 20 years (1981-2000) and the last 20 years (2001-2020) separately. To do this, estimate the GEV parameters using (i) Maximum Likelihood, and (ii) L-Moments, respectively. (Details on fitting a GEV distribution can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html">Scipy tutorial</a>). (Hint: The rainfall deficit can be obtained by subtracting the 30-day moving average rainfall from the mean rainfall calculated in Q1) (40 marks)</p>
+<p>For the driest season you identified in Q1, find the seasonal maximum rainfall deficit based on the 30-day moving average rainfall deficit (please use centered moving average). This will result in a data set of 40 values, one value for each year. Fit two GEV distributions of seasonal maximum rainfall deficit using data from the first 20 years (1981-2000) and the last 20 years (2001-2020) separately. To do this, estimate the GEV parameters using (i) Maximum Likelihood, and (ii) L-Moments, respectively. (Details on fitting a GEV distribution can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/scipy-basic.html">Scipy tutorial</a>). (Hint: The rainfall deficit can be obtained by subtracting the 30-day moving average rainfall from the mean rainfall calculated in Q1) (40 marks)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add &#39;Year&#39; column to denote the year of the days</span>
@@ -862,24 +862,24 @@ You will need to use the historical (1981-2020) daily total rainfall at Singapor
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Factors fitted by Maximum Likelihood (1981-2000): shape=</span><span class="si">{:.3f}</span><span class="s1">, loc=</span><span class="si">{:.3f}</span><span class="s1">, scale=</span><span class="si">{:.3f}</span><span class="se">\n</span><span class="s1">&#39;</span>
-      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">locMLE_1</span><span class="p">,</span> <span class="n">scaleMLE_1</span><span class="p">,</span> <span class="n">cMLE_1</span><span class="p">))</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cMLE_1</span><span class="p">,</span> <span class="n">locMLE_1</span><span class="p">,</span> <span class="n">scaleMLE_1</span><span class="p">,))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Factors fitted by Maximum Likelihood (2001-2020): shape=</span><span class="si">{:.3f}</span><span class="s1">, loc=</span><span class="si">{:.3f}</span><span class="s1">, scale=</span><span class="si">{:.3f}</span><span class="se">\n</span><span class="s1">&#39;</span>
-      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">locMLE_2</span><span class="p">,</span> <span class="n">scaleMLE_2</span><span class="p">,</span> <span class="n">cMLE_2</span><span class="p">))</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cMLE_2</span><span class="p">,</span> <span class="n">locMLE_2</span><span class="p">,</span> <span class="n">scaleMLE_2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Factors fitted by L-Moments (1981-2000): shape=</span><span class="si">{:.3f}</span><span class="s1">, loc=</span><span class="si">{:.3f}</span><span class="s1">, scale=</span><span class="si">{:.3f}</span><span class="se">\n</span><span class="s1">&#39;</span>
-      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">locLMM_1</span><span class="p">,</span> <span class="n">scaleLMM_1</span><span class="p">,</span> <span class="n">cLMM_1</span><span class="p">))</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cLMM_1</span><span class="p">,</span> <span class="n">locLMM_1</span><span class="p">,</span> <span class="n">scaleLMM_1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Factors fitted by L-Moments (2001-2020): shape=</span><span class="si">{:.3f}</span><span class="s1">, loc=</span><span class="si">{:.3f}</span><span class="s1">, scale=</span><span class="si">{:.3f}</span><span class="se">\n</span><span class="s1">&#39;</span>
-      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">locLMM_2</span><span class="p">,</span> <span class="n">scaleLMM_2</span><span class="p">,</span> <span class="n">cLMM_2</span><span class="p">))</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cLMM_2</span><span class="p">,</span> <span class="n">locLMM_2</span><span class="p">,</span> <span class="n">scaleLMM_2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Factors fitted by Maximum Likelihood (1981-2000): shape=2.428, loc=1.435, scale=0.740
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Factors fitted by Maximum Likelihood (1981-2000): shape=0.740, loc=2.428, scale=1.435
 
-Factors fitted by Maximum Likelihood (2001-2020): shape=2.349, loc=0.954, scale=0.380
+Factors fitted by Maximum Likelihood (2001-2020): shape=0.380, loc=2.349, scale=0.954
 
-Factors fitted by L-Moments (1981-2000): shape=2.338, loc=1.382, scale=0.611
+Factors fitted by L-Moments (1981-2000): shape=0.611, loc=2.338, scale=1.382
 
-Factors fitted by L-Moments (2001-2020): shape=2.373, loc=0.973, scale=0.442
+Factors fitted by L-Moments (2001-2020): shape=0.442, loc=2.373, scale=0.973
 </pre></div>
 </div>
 </div>
