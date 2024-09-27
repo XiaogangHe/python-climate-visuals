@@ -13,8 +13,8 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/python-exercise
       title: Exercise
-    - file: chapters/data-analytics/python-solution
-      title: Solution
+    # - file: chapters/data-analytics/python-solution
+    #   title: Solution
   - file: chapters/data-analytics/numpy
     title: NumPy
     sections:
@@ -22,8 +22,8 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/numpy-exercise
       title: Exercise
-    - file: chapters/data-analytics/numpy-solution
-      title: Solution
+    # - file: chapters/data-analytics/numpy-solution
+    #   title: Solution
   - file: chapters/data-analytics/pandas
     title: Pandas
     sections:
@@ -31,8 +31,8 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/pandas-exercise
       title: Exercise
-    - file: chapters/data-analytics/pandas-solution
-      title: Solution
+    # - file: chapters/data-analytics/pandas-solution
+    #   title: Solution
   - file: chapters/data-analytics/scipy
     title: SciPy
     sections:
@@ -40,8 +40,8 @@ parts:
       title: Tutorial
     - file: chapters/data-analytics/scipy-exercise
       title: Exercise
-    - file: chapters/data-analytics/scipy-solution
-      title: Solution
+    # - file: chapters/data-analytics/scipy-solution
+    #   title: Solution
   - file: chapters/data-analytics/xarray
     title: Xarray
     sections:
@@ -57,16 +57,16 @@ parts:
       title: Tutorial (Basic)
     - file: chapters/data-visuals/matplotlib-advanced
       title: Tutorial (Advanced)
-- caption: Homework
-  chapters:
-  - file: chapters/homework/homework1-solution
-    title: Homework 1
-  - file: chapters/homework/homework2
-    title: Homework 2
-- caption: Course Project
-  chapters:
-  - file: chapters/project/FinalProject-2023Fall
-    title: Fall 2023
+# - caption: Homework
+  # chapters:
+  # - file: chapters/homework/homework1-solution
+  #   title: Homework 1
+  # - file: chapters/homework/homework2
+  #   title: Homework 2
+# - caption: Course Project
+  # chapters:
+  # - file: chapters/project/FinalProject-2023Fall
+  #   title: Fall 2023
 - caption: Gallery
   chapters:
   - file: chapters/gallery/plot_weighted_river_network
