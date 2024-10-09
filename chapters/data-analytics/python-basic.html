@@ -437,7 +437,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-tutorial">
 <h1><span class="section-number">1.1. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this heading">#</a></h1>
-<p>As of 2023 Q2, Python has become the <a class="reference external" href="https://madnight.github.io/githut/#/pull_requests/2023/2">most popular programming language</a>. Python code is often said to be almost like pseudocode as it allows you to express powerful ideas in very few codes while being readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
+<p>As of 2024 Q1, Python has become the <a class="reference external" href="https://madnight.github.io/githut/#/pull_requests/2024/1">most popular programming language</a>. Python code is often said to be almost like pseudocode as it allows you to express powerful ideas in very few codes while being readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -633,7 +633,7 @@ True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hw1</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">w</span> <span class="o">+</span> <span class="mi">2023</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
@@ -851,7 +851,7 @@ wet
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [22],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
@@ -1009,11 +1009,12 @@ A spider has 8 legs
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># four blanks before each line within the function body</span>
-        <span class="k">return</span> <span class="s1">&#39;positive&#39;</span>  <span class="c1"># another four blanks within `if` expressions</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;positive&#39;</span>  <span class="c1"># another four blanks within `if` expressions</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;negative&#39;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;negative&#39;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;zero&#39;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;zero&#39;</span>
+    <span class="k">return</span> <span class="n">s</span>   <span class="c1"># Output of function</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>  <span class="c1"># Use parenthesis to run functions </span>
@@ -1032,20 +1033,28 @@ A spider has 8 legs
 <p>We often define functions to take optional keyword arguments, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">loud</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">loud</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;HELLO, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># four blanks before each line within the function body</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;positive&#39;</span>  <span class="c1"># another four blanks within `if` expressions</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;negative&#39;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;zero&#39;</span>
+    
+    <span class="k">if</span> <span class="n">upper</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
 
-<span class="n">hello</span><span class="p">(</span><span class="s1">&#39;Bob&#39;</span><span class="p">)</span>  <span class="c1"># Without specifin second argument, function would take default for it</span>
-<span class="n">hello</span><span class="p">(</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="n">loud</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">sign</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>  <span class="c1"># Without specific argument, function would take default for it</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">sign</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Bob!
-HELLO, FRED
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1 is negative
+-1 is NEGATIVE
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1068,7 @@ HELLO, FRED
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
 </div>
 </div>
@@ -1158,7 +1167,7 @@ This car has run 5.5 km.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/Users/baymin/opt/anaconda3/lib/python3.9/site-packages/numpy/__init__.py&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/Users/baymin/opt/anaconda3/envs/CE3201/lib/python3.9/site-packages/numpy/__init__.py&#39;&gt;
 [1 2 3 4]
 </pre></div>
 </div>
@@ -1179,7 +1188,7 @@ This car has run 5.5 km.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-0.7186135151017801
+0.5777723138166656
 </pre></div>
 </div>
 </div>
@@ -1224,7 +1233,7 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
         Whether to store multi-dimensional data in row-major
         (C-style) or column-major (Fortran-style) order in
         memory.
-    like : array_like
+    like : array_like, optional
         Reference object to allow the creation of arrays which are not
         NumPy arrays. If an array-like passed in as ``like`` supports
         the ``__array_function__`` protocol, the result will be defined
@@ -1278,7 +1287,7 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
 </section>
 <section id="ask-in-chatgpt">
 <h3><span class="section-number">1.1.8.4. </span>Ask in ChatGPT<a class="headerlink" href="#ask-in-chatgpt" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://openai.com/blog/chatgpt">ChatGPT</a> is an AI-powered language model developed by OpenAI. Prompted with proper questions, ChatGPT can give suggestions on code snippets that fit your demand.</p>
+<p><a class="reference external" href="https://openai.com/blog/chatgpt">ChatGPT</a> is an AI-powered language model developed by OpenAI. Prompted with proper questions, ChatGPT can give suggestions on code snippets that fit your demand. You can also use the <a class="reference external" href="https://github.com/features/copilot">GitHub Copilot</a> to autocomplete code lines.</p>
 </section>
 </section>
 <section id="references">
