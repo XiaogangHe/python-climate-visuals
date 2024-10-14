@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>1.2. Matplotlib tutorial (Advanced)</title>
   
@@ -15,47 +14,46 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -63,18 +61,22 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-xxx');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-visuals/matplotlib-advanced';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-advanced.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualizing River Network" href="../gallery/plot_weighted_river_network.html" />
+    <link rel="next" title="[LAST YEAR] Visualizing Emerging Risks of Heat Extremes and Premature Death Rate in Southeast Asia under Climate Change" href="../project/FinalProject-2023Fall.html" />
     <link rel="prev" title="1.1. Matplotlib tutorial (Basic)" href="matplotlib-basic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -85,19 +87,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +125,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +153,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -151,49 +169,64 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-basic.html">1.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-exercise.html">1.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-solution.html">1.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-basic.html">2.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-exercise.html">2.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-solution.html">2.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-basic.html">3.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-exercise.html">3.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-basic.html">4.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-exercise.html">4.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/xarray-basic.html">5.1. Tutorial</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="matplotlib.html">1. Matplotlib</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="matplotlib.html">1. Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Tutorial (Advanced)</a></li>
 </ul>
-</li>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2023Fall.html">Fall 2023 [LAST YEAR]</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
@@ -217,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -226,14 +259,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -258,14 +291,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-visuals/matplotlib-advanced.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -354,26 +387,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -419,17 +454,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib-tutorial-advanced">
-<h1><span class="section-number">1.2. </span>Matplotlib tutorial (Advanced)<a class="headerlink" href="#matplotlib-tutorial-advanced" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.2. </span>Matplotlib tutorial (Advanced)<a class="headerlink" href="#matplotlib-tutorial-advanced" title="Link to this heading">#</a></h1>
 <p>This tutorial continues on plotting with Python. Two packages will be introduced: <strong>Seaborn</strong> and <strong>Cartopy</strong>. Seaborn is a Python library  for making statistical graphics based on Matplotlib and Cartopy is a Python package designed for geospatial data visualization. We will first illustrate alternative ways for plots in statistics with Seaborn, then show plotting of geospatial maps with Cartopy.</p>
 <ul class="simple">
 <li><p>Plots in statistics with Seaborn: histograms, density plots, ecdf plots, bar charts, box plots, and scatter plots</p></li>
 <li><p>Plotting maps with Cartopy: a simple example, adding features to the map, and plotting 2D data</p></li>
 </ul>
 <section id="plots-in-statistics-with-seaborn">
-<h2><span class="section-number">1.2.1. </span>Plots in statistics with Seaborn<a class="headerlink" href="#plots-in-statistics-with-seaborn" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>Plots in statistics with Seaborn<a class="headerlink" href="#plots-in-statistics-with-seaborn" title="Link to this heading">#</a></h2>
 <p>Seaborn helps you explore and understand your data. Its plotting functions operate on dataframes and arrays containing whole datasets and internally perform the necessary semantic mapping and statistical aggregation to produce informative plots. Its dataset-oriented, declarative API lets you focus on what the different elements of your plots mean, rather than on the details of how to draw them. Compared with Matplotlib, Seaborn helps you save your time and efforts on customizing the figures.</p>
 <p>We first import the packages that might be used.</p>
 <div class="cell docutils container">
@@ -551,7 +586,7 @@ document.write(`
 </div></div></div>
 </div>
 <section id="histograms">
-<h3><span class="section-number">1.2.1.1. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1.1. </span>Histograms<a class="headerlink" href="#histograms" title="Link to this heading">#</a></h3>
 <p>There are two functions to plot histograms in Seaborn. <code class="docutils literal notranslate"><span class="pre">displot</span></code> provides figure-level interface for drawing distribution plots. By changing the argument <code class="docutils literal notranslate"><span class="pre">kind</span></code>, you can plot histograms, kernel density plots, and empirical cumulative distribution plots. The alternative functions are <code class="docutils literal notranslate"><span class="pre">histplot()</span></code>, <code class="docutils literal notranslate"><span class="pre">kdeplot()</span></code>, and <code class="docutils literal notranslate"><span class="pre">ecdfplot()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -625,7 +660,7 @@ document.write(`
 </div>
 </section>
 <section id="density-plots">
-<h3><span class="section-number">1.2.1.2. </span>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1.2. </span>Density plots<a class="headerlink" href="#density-plots" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changes the global defaults</span>
@@ -690,7 +725,7 @@ document.write(`
 </div>
 </section>
 <section id="empirical-cumulative-distribution-functions-ecdf-plots">
-<h3><span class="section-number">1.2.1.3. </span>Empirical cumulative distribution functions (ecdf) plots<a class="headerlink" href="#empirical-cumulative-distribution-functions-ecdf-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1.3. </span>Empirical cumulative distribution functions (ecdf) plots<a class="headerlink" href="#empirical-cumulative-distribution-functions-ecdf-plots" title="Link to this heading">#</a></h3>
 <p>An ECDF represents the proportion or count of observations falling below each unique value in a dataset. It also aids direct comparisons between multiple distributions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,7 +770,7 @@ document.write(`
 </div>
 </section>
 <section id="bar-charts">
-<h3><span class="section-number">1.2.1.4. </span>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1.4. </span>Bar charts<a class="headerlink" href="#bar-charts" title="Link to this heading">#</a></h3>
 <p>Bar charts are one of the categorical plots, which could be handled by <code class="docutils literal notranslate"><span class="pre">catplot()</span></code> with argument <code class="docutils literal notranslate"><span class="pre">kind=&quot;bar&quot;</span></code>. Besides, <code class="docutils literal notranslate"><span class="pre">catplot()</span></code> can also generate box plots, violin plots, swarm plots, and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,7 +815,7 @@ document.write(`
 </div>
 </section>
 <section id="box-plots">
-<h3><span class="section-number">1.2.1.5. </span>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1.5. </span>Box plots<a class="headerlink" href="#box-plots" title="Link to this heading">#</a></h3>
 <p>The box plot is another kind of categorical plots to show the distribution of the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -834,7 +869,7 @@ document.write(`
 </div>
 </section>
 <section id="scatter-plots">
-<h3><span class="section-number">1.2.1.6. </span>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.1.6. </span>Scatter plots<a class="headerlink" href="#scatter-plots" title="Link to this heading">#</a></h3>
 <p>Scatter plots could be generated by <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code>. For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -867,7 +902,7 @@ document.write(`
 </section>
 </section>
 <section id="plotting-maps-with-cartopy">
-<h2><span class="section-number">1.2.2. </span>Plotting maps with Cartopy<a class="headerlink" href="#plotting-maps-with-cartopy" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>Plotting maps with Cartopy<a class="headerlink" href="#plotting-maps-with-cartopy" title="Link to this heading">#</a></h2>
 <p>Mapping is a special case of a regular plot which usually involves some of these elements:</p>
 <ul class="simple">
 <li><p>A map projection to transform data from the spherical shape of the earth to screen/paper</p></li>
@@ -876,7 +911,7 @@ document.write(`
 <p>In this section, we will demonstrate how to plot geospatial maps for climate analysis using Cartopy. Cartopy is a Python package designed for geospatial data processing in order to produce maps and other geospatial data analyses. It makes use of the powerful PROJ, NumPy and Shapely libraries and includes a programmatic interface built on top of Matplotlib for the creation of publication quality maps.</p>
 <p>We’ll first introduce a simple example to get you familiar with Cartopy.</p>
 <section id="a-simple-example">
-<h3><span class="section-number">1.2.2.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.2.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Link to this heading">#</a></h3>
 <p>As usual, we start by importing our modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -925,7 +960,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x2bd9d0274f0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" src="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" />
+<a class="reference internal image-reference" href="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png"><img alt="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" src="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" style="width: 683px; height: 390px;" /></a>
 </div>
 </div>
 <p>Then we move the above 2D filled-contour plot to the map.</p>
@@ -950,7 +985,7 @@ document.write(`
   warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
-<img alt="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" src="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" />
+<a class="reference internal image-reference" href="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png"><img alt="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" src="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" style="width: 666px; height: 340px;" /></a>
 </div>
 </div>
 <p>Note that to plot a map, you need to manually create an axis (which means <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> does not work anymore) and pass a <code class="docutils literal notranslate"><span class="pre">projection=...</span></code> keyword to the axis. The projection argument is used when creating plots and determines the projection of the resulting plot (i.e. what the plot looks like). The line <code class="docutils literal notranslate"><span class="pre">plt.axes(projection=ccrs.PlateCarree())</span></code> sets up a GeoAxes instance which exposes a variety of other map related methods. You may pick your own projection such as Miller, Orthographic, or Robinson.</p>
@@ -973,11 +1008,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" src="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" />
-<img alt="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" src="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" />
-<img alt="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" src="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" />
-<img alt="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" src="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" />
-<img alt="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" src="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" />
+<a class="reference internal image-reference" href="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png"><img alt="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" src="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" style="width: 666px; height: 355px;" /></a>
+<a class="reference internal image-reference" href="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png"><img alt="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" src="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" style="width: 657px; height: 355px;" /></a>
+<a class="reference internal image-reference" href="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png"><img alt="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" src="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" style="width: 395px; height: 355px;" /></a>
+<a class="reference internal image-reference" href="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png"><img alt="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" src="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" style="width: 340px; height: 355px;" /></a>
+<a class="reference internal image-reference" href="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png"><img alt="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" src="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" style="width: 684px; height: 319px;" /></a>
 </div>
 </div>
 <p>If we want to plot the data in another projection, we need to pass a <code class="docutils literal notranslate"><span class="pre">transform=...</span></code> argument to the plot command. The transform argument to plotting functions tells Cartopy what coordinate system your data are defined in.</p>
@@ -997,7 +1032,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x2bd8ef10280&gt;
 </pre></div>
 </div>
-<img alt="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" src="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" />
+<a class="reference internal image-reference" href="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png"><img alt="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" src="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" style="width: 657px; height: 340px;" /></a>
 </div>
 </div>
 <p>In Cartopy, we can very easily plot coastlines (<code class="docutils literal notranslate"><span class="pre">ax.coastlines()</span></code>) and gridlines (<code class="docutils literal notranslate"><span class="pre">ax.gridlines()</span></code>), which give a better context for the data than before and also show the full globe.</p>
@@ -1021,12 +1056,12 @@ document.write(`
   warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
-<img alt="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" src="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" />
+<a class="reference internal image-reference" href="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png"><img alt="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" src="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" style="width: 599px; height: 340px;" /></a>
 </div>
 </div>
 </section>
 <section id="adding-features-to-the-map">
-<h3><span class="section-number">1.2.2.2. </span>Adding features to the map<a class="headerlink" href="#adding-features-to-the-map" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.2.2. </span>Adding features to the map<a class="headerlink" href="#adding-features-to-the-map" title="Link to this heading">#</a></h3>
 <p>To give our map more styles and details, we add <code class="docutils literal notranslate"><span class="pre">cartopy.feature</span></code> objects. Many useful features are built in. These “default features” are at coarse (110m) resolution.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cartopy.feature.BORDERS</span></code>: Country boundaries</p></li>
@@ -1064,12 +1099,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x2bda3623a00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" src="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" />
+<a class="reference internal image-reference" href="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png"><img alt="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" src="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" style="width: 567px; height: 340px;" /></a>
 </div>
 </div>
 </section>
 <section id="plotting-2d-data">
-<h3><span class="section-number">1.2.2.3. </span>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.2.2.3. </span>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Link to this heading">#</a></h3>
 <p>Note that Cartopy transforms can be passed to xarray. This creates a very quick path for creating professional looking maps from netCDF data. In this section, we use the ERA5-Land reanalysis data of monthly 2m temperature in 2020 to demonstrate how to plot maps from a dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1473,7 +1508,7 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x270e9ed32e0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" src="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" />
+<a class="reference internal image-reference" href="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png"><img alt="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" src="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" style="width: 487px; height: 242px;" /></a>
 </div>
 </div>
 <p>You may use xarray to manipulate the netCDF file. Alternatively, you can use netCDF4 package to import the dataset as in the following codes:</p>
@@ -1609,7 +1644,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" src="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" />
+<a class="reference internal image-reference" href="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png"><img alt="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" src="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" style="width: 535px; height: 362px;" /></a>
 </div>
 </div>
 <p>For images without contours,</p>
@@ -1630,14 +1665,14 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" src="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" />
+<a class="reference internal image-reference" href="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png"><img alt="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" src="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" style="width: 516px; height: 362px;" /></a>
 </div>
 </div>
 <p>Browse the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/index.html">Cartopy Gallery</a> to learn more about all the different types of data and plotting methods available.</p>
 </section>
 </section>
 <section id="references">
-<h2><span class="section-number">1.2.3. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn documentation</a></p></li>
 <li><p><a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy documentation</a></p></li>
@@ -1673,11 +1708,10 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="matplotlib-basic.html"
@@ -1689,18 +1723,15 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
       </div>
     </a>
     <a class="right-next"
-       href="../gallery/plot_weighted_river_network.html"
+       href="../project/FinalProject-2023Fall.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizing River Network</p>
+        <p class="prev-next-title">[LAST YEAR] Visualizing Emerging Risks of Heat Extremes and Premature Death Rate in Southeast Asia under Climate Change</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1708,6 +1739,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1752,9 +1784,10 @@ By Xiaogang HE
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1778,8 +1811,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

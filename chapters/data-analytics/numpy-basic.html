@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2.1. NumPy tutorial</title>
   
@@ -15,47 +14,46 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -63,15 +61,19 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-xxx');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/numpy-basic';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/numpy-basic.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2.2. NumPy Exercise" href="numpy-exercise.html" />
@@ -85,19 +87,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +125,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +153,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -151,49 +169,64 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">1. Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="python-basic.html">1.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-exercise.html">1.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-solution.html">1.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="numpy.html">2. NumPy</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="numpy.html">2. NumPy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy-exercise.html">2.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy-solution.html">2.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="scipy-basic.html">4.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scipy-exercise.html">4.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="xarray-basic.html">5.1. Tutorial</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-advanced.html">1.2. Tutorial (Advanced)</a></li>
 </ul>
-</li>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2023Fall.html">Fall 2023 [LAST YEAR]</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
@@ -217,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -226,14 +259,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -258,14 +291,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/numpy-basic.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -354,26 +387,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -413,10 +448,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy-tutorial">
-<h1><span class="section-number">2.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.1. </span>NumPy tutorial<a class="headerlink" href="#numpy-tutorial" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="http://www.numpy.org/">NumPy</a> is the <strong>core</strong> package for scientific computing in Python. It vastly simplifies manipulating and crunching vectors and matrices. Many of other leading packages rely on NumPy as a infrastructure piece.</p>
 <p>In this tutorial, we will cover:</p>
 <ul class="simple">
@@ -437,7 +472,7 @@ document.write(`
 </div>
 </div>
 <section id="array-and-its-creation">
-<h2><span class="section-number">2.1.1. </span>Array and its Creation<a class="headerlink" href="#array-and-its-creation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1.1. </span>Array and its Creation<a class="headerlink" href="#array-and-its-creation" title="Link to this heading">#</a></h2>
 <p>A NumPy array (a.k.a. <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></a>) is the core of this package. <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> is a grid of values, all of <strong>the same type</strong> – quite like a special version of list. We can create a NumPy array by passing a python list to it using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>. NumPy will try to guess a datatype if we do not set it explicitly. Within the ndarray object, some properties are provided for us to know the status of it, such as <code class="docutils literal notranslate"><span class="pre">dtype</span></code> – datatype of elements, <code class="docutils literal notranslate"><span class="pre">size</span></code> – number of elements, <code class="docutils literal notranslate"><span class="pre">shape</span></code> – sizes of all dimensions, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#:~:text=array(%5B2%2C%203%5D)-,Attributes,-Tndarray">etc</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -506,7 +541,7 @@ document.write(`
 </div>
 </section>
 <section id="array-indexing">
-<h2><span class="section-number">2.1.2. </span>Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1.2. </span>Array Indexing<a class="headerlink" href="#array-indexing" title="Link to this heading">#</a></h2>
 <p>The most common ways to pull out a section of arrays include <strong>slicing</strong>, <strong>integer array indexing</strong> and <strong>Boolean array indexing</strong>. We may choose the appropriate indexing methods for different purposes.</p>
 <ul class="simple">
 <li><p><em><strong>Slicing</strong></em></p></li>
@@ -654,7 +689,7 @@ document.write(`
 <p>If you want to know more fancy indexing methods you should read the <a class="reference external" href="https://numpy.org/doc/stable/user/basics.indexing.html">documentation</a>.</p>
 </section>
 <section id="array-manipulation">
-<h2><span class="section-number">2.1.3. </span>Array Manipulation<a class="headerlink" href="#array-manipulation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1.3. </span>Array Manipulation<a class="headerlink" href="#array-manipulation" title="Link to this heading">#</a></h2>
 <p>After the creation of an array, it is possible to reshape its sizes with the <code class="docutils literal notranslate"><span class="pre">reshape()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -731,10 +766,10 @@ transpose through method
 <p>Besides reshaping and joining, arrays can also be split, tiled, and rearranged in other ways. Please refer to official documention of <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.array-manipulation.html">array manipulation</a> when you need them.</p>
 </section>
 <section id="array-math">
-<h2><span class="section-number">2.1.4. </span>Array Math<a class="headerlink" href="#array-math" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1.4. </span>Array Math<a class="headerlink" href="#array-math" title="Link to this heading">#</a></h2>
 <p>The real power of NumPy is that arrays can be operated for mathematical calculations easily, along with a bunch of mathematical methods provided. Let’s see some examples.</p>
 <section id="basic-arithmetic">
-<h3><span class="section-number">2.1.4.1. </span>Basic Arithmetic<a class="headerlink" href="#basic-arithmetic" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.4.1. </span>Basic Arithmetic<a class="headerlink" href="#basic-arithmetic" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="c1"># Set data types of elements by dtype</span>
@@ -801,7 +836,7 @@ transpose through method
 </div>
 </section>
 <section id="aggregation-calculations">
-<h3><span class="section-number">2.1.4.2. </span>Aggregation Calculations<a class="headerlink" href="#aggregation-calculations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.1.4.2. </span>Aggregation Calculations<a class="headerlink" href="#aggregation-calculations" title="Link to this heading">#</a></h3>
 <p>Additional benefits NumPy gives us are aggregation functions, with which we could get basic statistics of array along different axes. These include <code class="docutils literal notranslate"><span class="pre">min()</span></code>/<code class="docutils literal notranslate"><span class="pre">max()</span></code> – get minimum/maximum value, <code class="docutils literal notranslate"><span class="pre">sum()</span></code> – summation, <code class="docutils literal notranslate"><span class="pre">mean()</span></code> – average, <code class="docutils literal notranslate"><span class="pre">std()</span></code> - standard deviation, and <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/02.04-computation-on-arrays-aggregates.html">plenty of others</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -847,7 +882,7 @@ transpose through method
 </section>
 </section>
 <section id="one-more-thing-broadcasting">
-<h2><span class="section-number">2.1.5. </span>One more thing: Broadcasting<a class="headerlink" href="#one-more-thing-broadcasting" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1.5. </span>One more thing: Broadcasting<a class="headerlink" href="#one-more-thing-broadcasting" title="Link to this heading">#</a></h2>
 <p>Broadcasting is another powerful NumPy mechanism that allows arrays of different shapes to work together when performing arithmetic operations. Let’s see an example of dividing an array by a scalar, and an example of changing signs by rows through multiplying.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -926,7 +961,7 @@ transpose through method
 <p>Broadcasting typically makes your code more <em><strong>concise</strong></em>, <em><strong>readable</strong></em>, and more importantly, <em><strong>faster</strong></em>.</p>
 </section>
 <section id="references">
-<h2><span class="section-number">2.1.6. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1.6. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a>, and referred to Jay Alammar’s <a class="reference external" href="https://jalammar.github.io/visual-numpy/">Visual Intro to NumPy</a>.</p></li>
 <li><p>This tutorial has touched on many important things you need about <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, but is far from complete. Check out more on <a class="reference external" href="https://numpy.org/doc/stable/reference/">numpy documentation</a>.</p></li>
@@ -960,11 +995,10 @@ transpose through method
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="numpy.html"
@@ -984,10 +1018,7 @@ transpose through method
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -995,6 +1026,7 @@ transpose through method
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1033,9 +1065,10 @@ By Xiaogang HE
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1059,8 +1092,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

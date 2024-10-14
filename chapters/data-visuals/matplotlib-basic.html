@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>1.1. Matplotlib tutorial (Basic)</title>
   
@@ -15,47 +14,46 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -63,17 +61,21 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-xxx');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-visuals/matplotlib-basic';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.2. Matplotlib tutorial (Advanced)" href="matplotlib-advanced.html" />
@@ -87,19 +89,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +127,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,9 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -153,49 +171,64 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-basic.html">1.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-exercise.html">1.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-solution.html">1.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-basic.html">2.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-exercise.html">2.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-solution.html">2.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-basic.html">3.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-exercise.html">3.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-basic.html">4.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-exercise.html">4.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-analytics/xarray-basic.html">5.1. Tutorial</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="matplotlib.html">1. Matplotlib</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="matplotlib.html">1. Matplotlib</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Tutorial (Basic)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="matplotlib-advanced.html">1.2. Tutorial (Advanced)</a></li>
 </ul>
-</li>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2023Fall.html">Fall 2023 [LAST YEAR]</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
@@ -219,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -228,14 +261,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -260,14 +293,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-visuals/matplotlib-basic.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -356,26 +389,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -447,10 +482,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib-tutorial-basic">
-<h1><span class="section-number">1.1. </span>Matplotlib tutorial (Basic)<a class="headerlink" href="#matplotlib-tutorial-basic" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.1. </span>Matplotlib tutorial (Basic)<a class="headerlink" href="#matplotlib-tutorial-basic" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> is a powerful and comprehensive library for creating static, animated, and interactive visualizations in Python.</p>
 <p>This tutorial covers some basic usage patterns and practices to help you get started with Matplotlib：</p>
 <ul class="simple">
@@ -461,7 +496,7 @@ document.write(`
 <li><p>2D plotting methods: images, contour plots, quiver plots, and stream plots</p></li>
 </ul>
 <section id="installation">
-<h2><span class="section-number">1.1.1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.1. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>You can install <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> either using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Open the console and run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> for <code class="docutils literal notranslate"><span class="pre">pip</span></code>, or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> for <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
 <p>To verify that <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> is successfully installed on your system, import <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> and print its version.</p>
 <div class="cell docutils container">
@@ -480,13 +515,13 @@ document.write(`
 </div>
 </section>
 <section id="matplotlib-architecture">
-<h2><span class="section-number">1.1.2. </span>Matplotlib architecture<a class="headerlink" href="#matplotlib-architecture" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.2. </span>Matplotlib architecture<a class="headerlink" href="#matplotlib-architecture" title="Link to this heading">#</a></h2>
 <p>Before diving into using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, it is necessary to figure out the <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> architecture, which can help you avoid some confusions and save your time in learning <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. There is an article explaining <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> architecture in detailed:<br />
 <em>Hunter, J., &amp; Droettboom, M. (2012). <a class="reference external" href="http://www.aosabook.org/en/matplotlib.html">matplotlib</a> in A. Brown (Ed.), The Architecture of Open Source Applications, Volume II: Structure, Scale, and a Few More Fearless Hacks (Vol. 2).</em></p>
 <p>There are three main layers in <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> architecture:
 <img alt="https://junye0798.com/post/plt-xxx-or-ax-xxx-that-is-the-question-in-matplotlib/matplotlib-structure.png" src="https://junye0798.com/post/plt-xxx-or-ax-xxx-that-is-the-question-in-matplotlib/matplotlib-structure.png" /></p>
 <section id="backend-layer">
-<h3><span class="section-number">1.1.2.1. </span>Backend Layer<a class="headerlink" href="#backend-layer" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.1. </span>Backend Layer<a class="headerlink" href="#backend-layer" title="Link to this heading">#</a></h3>
 <p>A <em><a class="reference external" href="https://matplotlib.org/stable/users/explain/backends.html">backend</a></em> is an abstraction layer which knows how to handle all the heavy works via communicating to the drawing toolkits in your machine, and target different outputs. In the Jupyter Notebook, the IPython magics are the helper functions which set up the environment so that the web based rendering can be enabled. You can show matplotlib figures directly in the notebook by using the <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> magic commands. Jupyter notebook uses <code class="docutils literal notranslate"><span class="pre">inline</span></code> backend by default. But <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> can provide an interactive environment using <code class="docutils literal notranslate"><span class="pre">nbAgg</span></code> backend.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,14 +538,14 @@ document.write(`
 </div>
 </section>
 <section id="artist-layer">
-<h3><span class="section-number">1.1.2.2. </span>Artist Layer<a class="headerlink" href="#artist-layer" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.2. </span>Artist Layer<a class="headerlink" href="#artist-layer" title="Link to this heading">#</a></h3>
 <p>The <em><a class="reference external" href="https://matplotlib.org/stable/tutorials/intermediate/artists.html">artist</a></em> layer is what we will spend most of our time working with. There are two types of <code class="docutils literal notranslate"><span class="pre">artists</span></code>: primitives and containers. The primitives represent the standard graphical objects we want to paint onto our canvas: <code class="docutils literal notranslate"><span class="pre">Line2D</span></code>, <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, <code class="docutils literal notranslate"><span class="pre">Text</span></code>, <code class="docutils literal notranslate"><span class="pre">AxesImage</span></code>, etc., and the containers are places to put them (<code class="docutils literal notranslate"><span class="pre">Axis</span></code>, <code class="docutils literal notranslate"><span class="pre">Axes</span></code> and <code class="docutils literal notranslate"><span class="pre">Figure</span></code>). The standard use is to create a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> instance, use the <code class="docutils literal notranslate"><span class="pre">Figure</span></code> to create one or more <code class="docutils literal notranslate"><span class="pre">Axes</span></code> or <code class="docutils literal notranslate"><span class="pre">Subplot</span></code> instances, and use the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> instance helper methods to create the primitives.</p>
 <table><tr>
 <td> <img src="https://aosabook.org/static/matplotlib/artists_figure.png" style="zoom:24.45%" /> </td>
 <td> <img src="https://aosabook.org/static/matplotlib/artists_tree.png" style="zoom:40%" /> </td>
 </tr></table></section>
 <section id="scripting-layer">
-<h3><span class="section-number">1.1.2.3. </span>Scripting Layer<a class="headerlink" href="#scripting-layer" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.3. </span>Scripting Layer<a class="headerlink" href="#scripting-layer" title="Link to this heading">#</a></h3>
 <p>The <em>scripting</em> layer comprises a collection of command style functions for a <strong>quick and easy generation</strong> of graphics and plots. The scripting layer we use in this tutorial is called <a class="reference external" href="https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html">pyplot</a>. It is the easiest part to start with and use, and you can create a figure, create a plotting area in the figure, and add up objects (e.g. line, text, rectangle) on top of the figure, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -534,10 +569,10 @@ plt.plot<span class="o">?</span>
 </section>
 </section>
 <section id="two-methods-of-plotting">
-<h2><span class="section-number">1.1.3. </span>Two methods of plotting<a class="headerlink" href="#two-methods-of-plotting" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.3. </span>Two methods of plotting<a class="headerlink" href="#two-methods-of-plotting" title="Link to this heading">#</a></h2>
 <p>In this section, two basic methods of plotting will be illustrated by simple examples.</p>
 <section id="plot-with-scripting-layer-plt-xxx">
-<h3><span class="section-number">1.1.3.1. </span>Plot with scripting layer: <a class="reference external" href="http://plt.xxx">plt.xxx</a>( )<a class="headerlink" href="#plot-with-scripting-layer-plt-xxx" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.3.1. </span>Plot with scripting layer: <a class="reference external" href="http://plt.xxx">plt.xxx</a>( )<a class="headerlink" href="#plot-with-scripting-layer-plt-xxx" title="Link to this heading">#</a></h3>
 <p>In this case, we can simply call one function on a module named <code class="docutils literal notranslate"><span class="pre">plot</span></code>. Then the pyplot scripting interface will manage a lot of objects for us. It keeps tracking the latest figure of subplots, and the axis objects. Moreover, it actually hides some of these behind methods of its own. The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module itself has a function which is called <code class="docutils literal notranslate"><span class="pre">plot</span></code>, but it redirects calls of this function to the current axes object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,7 +607,7 @@ plt.plot<span class="o">?</span>
 </div>
 </section>
 <section id="plot-with-artist-layer-ax-xxx">
-<h3><span class="section-number">1.1.3.2. </span>Plot with artist layer: <a class="reference external" href="http://ax.xxx">ax.xxx</a>( )<a class="headerlink" href="#plot-with-artist-layer-ax-xxx" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.3.2. </span>Plot with artist layer: <a class="reference external" href="http://ax.xxx">ax.xxx</a>( )<a class="headerlink" href="#plot-with-artist-layer-ax-xxx" title="Link to this heading">#</a></h3>
 <p>In this case, we can do more customisation by onbtaining <code class="docutils literal notranslate"><span class="pre">axes</span></code> object and operating on it directly. It is more convenient for advanced plots. Especially when handling multiple figures/axes, you will not get confused as to which one is currently active since every subplot is assign to an <code class="docutils literal notranslate"><span class="pre">axes</span></code>.</p>
 <p>We can obtain axes and figure objects with the help of <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> module, or it will be onerous. Two basic ways to do this:<br />
 (1) <code class="docutils literal notranslate"><span class="pre">fig</span> <span class="pre">=</span> <span class="pre">plt.figure()</span></code>, <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.gca()</span></code><br />
@@ -611,7 +646,7 @@ plt.plot<span class="o">?</span>
 </section>
 </section>
 <section id="workflow-example-of-visualization">
-<h2><span class="section-number">1.1.4. </span>Workflow example of visualization<a class="headerlink" href="#workflow-example-of-visualization" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.4. </span>Workflow example of visualization<a class="headerlink" href="#workflow-example-of-visualization" title="Link to this heading">#</a></h2>
 <p>This section shows a workflow of basic visualization example. This is just to give you a intuitive impression and it doesn’t mean that you should follow this workflow 100 percent. Feel free to explore more about operations to design your own visualization.</p>
 <ol class="arabic simple">
 <li><p>First, prepare data for visualization</p></li>
@@ -782,10 +817,10 @@ Also, you can specify the properties of these elements to control their location
 <p>💡 Last but not least, it is not possible to enumerate all the properties, functions and operations in this tutorial. So please explore more in Google and see yourself as a desginer to visualize all the information you want. Enjoy the journey of creaction and designing!</p>
 </section>
 <section id="plots-in-statistics">
-<h2><span class="section-number">1.1.5. </span>Plots in statistics<a class="headerlink" href="#plots-in-statistics" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.5. </span>Plots in statistics<a class="headerlink" href="#plots-in-statistics" title="Link to this heading">#</a></h2>
 <p>In this section, some commonly used plots in statistics will be introduced, including histograms, density plots, pie charts, bar charts, box plots, and scatter plots.</p>
 <section id="histograms">
-<h3><span class="section-number">1.1.5.1. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.5.1. </span>Histograms<a class="headerlink" href="#histograms" title="Link to this heading">#</a></h3>
 <p>A histogram represents the distribution of a continuous variable. The <code class="docutils literal notranslate"><span class="pre">hist()</span></code> function automatically generates histograms and returns the bin counts or probabilities.</p>
 <p>Let’s randomly generate some data with mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> to see the distribution.</p>
 <div class="cell docutils container">
@@ -825,7 +860,7 @@ Also, you can specify the properties of these elements to control their location
 </div>
 </section>
 <section id="density-plots">
-<h3><span class="section-number">1.1.5.2. </span>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.5.2. </span>Density plots<a class="headerlink" href="#density-plots" title="Link to this heading">#</a></h3>
 <p>Density plots give us an idea of the shape of the distribution of observations. This is like the histogram, except a function is used to fit the distribution of observations and a nice, smooth line is used to summarize this distribution.</p>
 <p>There are many ways to generate the density plot. Here we plot it directly by estimating the density function from the given data using the <code class="docutils literal notranslate"><span class="pre">gaussian_kde()</span></code> method from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module. Another way is to set <code class="docutils literal notranslate"><span class="pre">kind='density'</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.plot()</span></code> method, which will be discussed later in the section of Time series data visualization.</p>
 <div class="cell docutils container">
@@ -855,7 +890,7 @@ Also, you can specify the properties of these elements to control their location
 </div>
 </section>
 <section id="pie-charts">
-<h3><span class="section-number">1.1.5.3. </span>Pie charts<a class="headerlink" href="#pie-charts" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.5.3. </span>Pie charts<a class="headerlink" href="#pie-charts" title="Link to this heading">#</a></h3>
 <p>Pie charts illustrate the proportions of categorical variables. The <code class="docutils literal notranslate"><span class="pre">pie()</span></code> function automatically generates pie charts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,7 +914,7 @@ Also, you can specify the properties of these elements to control their location
 </div>
 </section>
 <section id="bar-charts">
-<h3><span class="section-number">1.1.5.4. </span>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.5.4. </span>Bar charts<a class="headerlink" href="#bar-charts" title="Link to this heading">#</a></h3>
 <p>Bar charts are useful for visualizing counts, or summary statistics with error bars. Use <code class="docutils literal notranslate"><span class="pre">bar()</span></code> or <code class="docutils literal notranslate"><span class="pre">barh()</span></code> function for bar charts or horizontal bar charts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -935,7 +970,7 @@ Also, you can specify the properties of these elements to control their location
 </div>
 </section>
 <section id="box-plots">
-<h3><span class="section-number">1.1.5.5. </span>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.5.5. </span>Box plots<a class="headerlink" href="#box-plots" title="Link to this heading">#</a></h3>
 <p>Box plots provide insight into distribution properties of the data. The <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> function makes a box and whisker plot for each column of the input. The box extends from the lower to upper quartile values of the data, with a line at the median. The whiskers extend from the box to show the range of the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -964,7 +999,7 @@ Also, you can specify the properties of these elements to control their location
 </div>
 </section>
 <section id="scatter-plots">
-<h3><span class="section-number">1.1.5.6. </span>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.5.6. </span>Scatter plots<a class="headerlink" href="#scatter-plots" title="Link to this heading">#</a></h3>
 <p>Scatter plots show the extent of correlation between two variables on horizontal and vertical axes. To make a scatter plot, use <code class="docutils literal notranslate"><span class="pre">scatter()</span></code> function. The color, size, and style of the markers could be changed according to your need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -994,7 +1029,7 @@ Also, you can specify the properties of these elements to control their location
 </section>
 </section>
 <section id="time-series-data-visualization">
-<h2><span class="section-number">1.1.6. </span>Time series data visualization<a class="headerlink" href="#time-series-data-visualization" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.6. </span>Time series data visualization<a class="headerlink" href="#time-series-data-visualization" title="Link to this heading">#</a></h2>
 <p>There are multiple ways to visualize the time series data. Here, we will take the dataset of ‘Daily rainfall of Changi station’ as an example to demonstrate some simple and useful methods.</p>
 <p>First, read the data from csv file and check the contents. Remember to set <code class="docutils literal notranslate"><span class="pre">parse_dates=True</span></code> to convert the index column to datetime. You may also parse specific column(s) by e.g. <code class="docutils literal notranslate"><span class="pre">parse_dates=[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>.</p>
 <div class="cell docutils container">
@@ -1068,7 +1103,7 @@ Also, you can specify the properties of these elements to control their location
 </div></div></div>
 </div>
 <section id="line-plots">
-<h3><span class="section-number">1.1.6.1. </span>Line plots<a class="headerlink" href="#line-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.6.1. </span>Line plots<a class="headerlink" href="#line-plots" title="Link to this heading">#</a></h3>
 <p>The Line plot is one of the most basic visualizations in time series analysis. You may use <code class="docutils literal notranslate"><span class="pre">plot_date()</span></code> function, which is similar to <code class="docutils literal notranslate"><span class="pre">plot()</span></code> where the input is x and y pair.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1139,7 +1174,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </div>
 </section>
 <section id="histograms-and-density-plots">
-<h3><span class="section-number">1.1.6.2. </span>Histograms and density plots<a class="headerlink" href="#histograms-and-density-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.6.2. </span>Histograms and density plots<a class="headerlink" href="#histograms-and-density-plots" title="Link to this heading">#</a></h3>
 <p>Generating histograms and density plots for time series data is similar to previous illustration of plots in statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1186,7 +1221,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </div>
 </section>
 <section id="id1">
-<h3><span class="section-number">1.1.6.3. </span>Box plots<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.6.3. </span>Box plots<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Here, we follow the codes in Pandas Tutorial (Advanced) to calculate the monthly cumulative rainfall and generate a box plot for monthly rainfall in different years. The <code class="docutils literal notranslate"><span class="pre">resample()</span></code> function in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is utilized. You may refer to Pandas Tutorial (Advanced) for more details.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1237,7 +1272,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </div>
 </section>
 <section id="lag-plots">
-<h3><span class="section-number">1.1.6.4. </span>Lag plots<a class="headerlink" href="#lag-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.6.4. </span>Lag plots<a class="headerlink" href="#lag-plots" title="Link to this heading">#</a></h3>
 <p>Previous observations in a time series are called lags, with the observation at the previous time step called lag1, the observation at two time steps ago lag2, and so on.</p>
 <p>A useful type of plot to explore the relationship between each observation and a lag of that observation is called the lag plot, which is a special type of scatter plot. It could be realized by the <code class="docutils literal notranslate"><span class="pre">lag_plot()</span></code> function in <code class="docutils literal notranslate"><span class="pre">pandas.plotting</span></code>.</p>
 <div class="cell docutils container">
@@ -1258,7 +1293,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 <p>The above result shows that there is no strong correlation between observations and their lag2 values, as the distribution is relatively random.</p>
 </section>
 <section id="autocorrelation-plots">
-<h3><span class="section-number">1.1.6.5. </span>Autocorrelation plots<a class="headerlink" href="#autocorrelation-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.6.5. </span>Autocorrelation plots<a class="headerlink" href="#autocorrelation-plots" title="Link to this heading">#</a></h3>
 <p>An autocorrelation plot is designed to show whether the elements of a time series are positively correlated, negatively correlated, or independent of each other. This could be realized by <code class="docutils literal notranslate"><span class="pre">autocorrelation_plot()</span></code> function.</p>
 <p>The horizontal axis of an autocorrelation plot shows the size of the lag between the elements of the time series. For example, the autocorrelation with lag 2 is the correlation between the time series elements and the corresponding elements that were observed two time periods earlier.</p>
 <p>Each spike that rises above or falls below the dashed lines is considered to be statistically significant. This means the spike has a value that is significantly different from zero. If a spike is significantly different from zero, that is evidence of autocorrelation.</p>
@@ -1281,12 +1316,12 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </section>
 </section>
 <section id="d-plotting-methods">
-<h2><span class="section-number">1.1.7. </span>2D plotting methods<a class="headerlink" href="#d-plotting-methods" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.7. </span>2D plotting methods<a class="headerlink" href="#d-plotting-methods" title="Link to this heading">#</a></h2>
 <p>In this section, we will illustrate how to produce 2D plots, including images, contour plots, quiver plots, and stream plots.</p>
 <section id="images">
-<h3><span class="section-number">1.1.7.1. </span>Images<a class="headerlink" href="#images" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.7.1. </span>Images<a class="headerlink" href="#images" title="Link to this heading">#</a></h3>
 <section id="imshow">
-<h4><span class="section-number">1.1.7.1.1. </span>Imshow<a class="headerlink" href="#imshow" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.7.1.1. </span>Imshow<a class="headerlink" href="#imshow" title="Link to this heading">#</a></h4>
 <p>The most common way to plot images in Matplotlib is with <code class="docutils literal notranslate"><span class="pre">imshow()</span></code>. You may modify multiple arguments to generate the desirable plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1324,7 +1359,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </div>
 </section>
 <section id="pcolor-pcolormesh">
-<h4><span class="section-number">1.1.7.1.2. </span>Pcolor/pcolormesh<a class="headerlink" href="#pcolor-pcolormesh" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.7.1.2. </span>Pcolor/pcolormesh<a class="headerlink" href="#pcolor-pcolormesh" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">pcolor</span></code> or <code class="docutils literal notranslate"> <span class="pre">pcolormesh</span></code> is another method to create images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1350,7 +1385,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </section>
 </section>
 <section id="contour-plots">
-<h3><span class="section-number">1.1.7.2. </span>Contour plots<a class="headerlink" href="#contour-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.7.2. </span>Contour plots<a class="headerlink" href="#contour-plots" title="Link to this heading">#</a></h3>
 <p>The following example basically plots the same thing as above. The only difference is that contours are substituted for colored pixels.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1375,7 +1410,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </div>
 </section>
 <section id="quiver-plots">
-<h3><span class="section-number">1.1.7.3. </span>Quiver plots<a class="headerlink" href="#quiver-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.7.3. </span>Quiver plots<a class="headerlink" href="#quiver-plots" title="Link to this heading">#</a></h3>
 <p>Quiver plots are for 2D fields of arrows. It is often used for vectors, such as wind velocity.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1400,7 +1435,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </div>
 </section>
 <section id="stream-plots">
-<h3><span class="section-number">1.1.7.4. </span>Stream plots<a class="headerlink" href="#stream-plots" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.7.4. </span>Stream plots<a class="headerlink" href="#stream-plots" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">streamplot()</span></code> draws streamlines of a vector flow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1420,7 +1455,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
 </section>
 </section>
 <section id="references">
-<h2><span class="section-number">1.1.8. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.8. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://matplotlib.org/stable/contents.html">Matplotlib documentation</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/">Pandas documentation</a></p></li>
@@ -1458,11 +1493,10 @@ Name: Daily Rainfall Total (mm), dtype: float64
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="matplotlib.html"
@@ -1482,10 +1516,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1493,6 +1524,7 @@ Name: Daily Rainfall Total (mm), dtype: float64
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1563,9 +1595,10 @@ By Xiaogang HE
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1589,8 +1622,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

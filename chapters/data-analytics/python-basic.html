@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>1.1. Python tutorial</title>
   
@@ -15,47 +14,46 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -63,17 +61,21 @@
                 gtag('js', new Date());
                 gtag('config', 'UA-xxx');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/python-basic';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/python-basic.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.2. Python Exercise" href="python-exercise.html" />
@@ -87,19 +89,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +127,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,9 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -153,49 +171,64 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/favicon.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="python.html">1. Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="python.html">1. Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-exercise.html">1.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-solution.html">1.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="numpy.html">2. NumPy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numpy.html">2. NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="numpy-basic.html">2.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy-exercise.html">2.2. Exercise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy-solution.html">2.3. Solution</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="scipy-basic.html">4.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scipy-exercise.html">4.2. Exercise</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="xarray-basic.html">5.1. Tutorial</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-advanced.html">1.2. Tutorial (Advanced)</a></li>
 </ul>
-</li>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2023Fall.html">Fall 2023 [LAST YEAR]</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
 <ul class="nav bd-sidenav">
@@ -219,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -228,14 +261,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -260,14 +293,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/python-basic.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -356,26 +389,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -435,10 +470,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-tutorial">
-<h1><span class="section-number">1.1. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.1. </span>Python tutorial<a class="headerlink" href="#python-tutorial" title="Link to this heading">#</a></h1>
 <p>As of 2024 Q1, Python has become the <a class="reference external" href="https://madnight.github.io/githut/#/pull_requests/2024/1">most popular programming language</a>. Python code is often said to be almost like pseudocode as it allows you to express powerful ideas in very few codes while being readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -470,7 +505,7 @@ document.write(`
 <li><p>How to look for help</p></li>
 </ul>
 <section id="jupyter-notebooks">
-<h2><span class="section-number">1.1.1. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.1. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h2>
 <p>Before we dive into Python, we’d like to briefly talk about <em>notebooks</em>.
 A <a class="reference external" href="https://jupyter.org/try">Jupyter notebook</a> allows you to execute Python code in your web browser, along with writing your own documentation. In Jupyter notebook, the basic unit is cells, which categorize into two types:</p>
 <ol class="arabic simple">
@@ -487,9 +522,9 @@ If you wish to run the notebook locally, we would recommend installing <a class=
 </ul>
 </section>
 <section id="basic-data-types">
-<h2><span class="section-number">1.1.2. </span>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.2. </span>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
 <section id="numbers">
-<h3><span class="section-number">1.1.2.1. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.1. </span>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h3>
 <p>Integers and floats work as you would expect from other languages. When initializing variables, Python would assign proper data types. Python has a built-in function <code class="docutils literal notranslate"><span class="pre">type()</span></code> to look at the type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -547,7 +582,7 @@ If you wish to run the notebook locally, we would recommend installing <a class=
 </div>
 </section>
 <section id="booleans">
-<h3><span class="section-number">1.1.2.2. </span>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.2. </span>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h3>
 <p>In Python, the two Boolean constants are written as <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,7 +632,7 @@ True
 </div>
 </section>
 <section id="strings">
-<h3><span class="section-number">1.1.2.3. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.3. </span>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>       <span class="c1"># String literals can use single quotes</span>
@@ -682,10 +717,10 @@ he(ell)(ell)o
 </section>
 </section>
 <section id="containers">
-<h2><span class="section-number">1.1.3. </span>Containers<a class="headerlink" href="#containers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.3. </span>Containers<a class="headerlink" href="#containers" title="Link to this heading">#</a></h2>
 <p>It would be really cumbersome to manage each single data with a separate variable. Python includes four built-in container types to store collections of data: <strong>lists</strong>, <strong>dictionaries</strong>, <strong>tuples</strong>, and <strong>sets</strong>.</p>
 <section id="lists">
-<h3><span class="section-number">1.1.3.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.3.1. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
 <p>Lists are used to store multiple items in a single variable. In Python syntax, they are enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> with data separated by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. Note that elements in Python lists can be different data types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -778,10 +813,10 @@ Slicing is done by defining the index values of the first element (a) and the la
 </div>
 </div>
 </div>
-<p>We will meet slicing again in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> <a class="reference internal" href="numpy-basic.html"><span class="doc std std-doc">tutorial</span></a>.</p>
+<p>We will meet slicing again in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> <a class="reference internal" href="numpy-basic.html"><span class="std std-doc">tutorial</span></a>.</p>
 </section>
 <section id="dictionaries">
-<h3><span class="section-number">1.1.3.2. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.3.2. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
 <p>A dictionary stores pairs of <code class="docutils literal notranslate"><span class="pre">key</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> in the form of braces <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value}</span></code>. Dictionaries are more like a database because here you can index a particular sequence with your user-defined string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,7 +863,7 @@ wet
 </div>
 </section>
 <section id="tuples">
-<h3><span class="section-number">1.1.3.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.3.3. </span>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h3>
 <p>A tuple is an <strong>immutable</strong> ordered version of lists in the form of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -864,9 +899,9 @@ wet
 </section>
 </section>
 <section id="control-flow">
-<h2><span class="section-number">1.1.4. </span>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.4. </span>Control Flow<a class="headerlink" href="#control-flow" title="Link to this heading">#</a></h2>
 <section id="conditions-if-elif-else">
-<h3><span class="section-number">1.1.4.1. </span>Conditions: <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#conditions-if-elif-else" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.4.1. </span>Conditions: <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#conditions-if-elif-else" title="Link to this heading">#</a></h3>
 <p>Control flow of conditions is used to specify different codes of algorithms to run under different conditions. Next is an example. <strong>Note that there should be indentation with four blanks for each section of algorithms.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -889,7 +924,7 @@ wet
 </div>
 </section>
 <section id="loops">
-<h3><span class="section-number">1.1.4.2. </span>Loops:<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.4.2. </span>Loops:<a class="headerlink" href="#loops" title="Link to this heading">#</a></h3>
 <p>Control flow of loops is used to iterate codes for each element in containers or under a specific condition.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</strong> across an <u>iterable object</u></p></li>
@@ -967,7 +1002,7 @@ A spider has 8 legs
 </div>
 </section>
 <section id="list-comprehension-and-dictionary-comprehension">
-<h3><span class="section-number">1.1.4.3. </span>List comprehension and dictionary comprehension<a class="headerlink" href="#list-comprehension-and-dictionary-comprehension" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.4.3. </span>List comprehension and dictionary comprehension<a class="headerlink" href="#list-comprehension-and-dictionary-comprehension" title="Link to this heading">#</a></h3>
 <p>As a special feature, comprehension offers a shorter loop syntax within one line. We can employ control flows of other lists for the initialization of a new list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1004,7 +1039,7 @@ A spider has 8 legs
 </section>
 </section>
 <section id="functions">
-<h2><span class="section-number">1.1.5. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.5. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. Here is an example function <code class="docutils literal notranslate"><span class="pre">sign(x)</span></code> which return the sign of <code class="docutils literal notranslate"><span class="pre">x</span></code>. To call a function, use the function name followed by parenthesis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1077,7 +1112,7 @@ A spider has 8 legs
 </div>
 </section>
 <section id="classes-and-objects">
-<h2><span class="section-number">1.1.6. </span>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.6. </span>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Link to this heading">#</a></h2>
 <p>Using the above knowledge, we can already code the process of algorithms we want. However, the real magic and power of Python are its numerous online packages, supported by evolving and active communities. Before diving into them, let’s take a very brief look at the object-oriented programming paradigm in Python, as almost all packages use this paradigm to pack their codes. TBH, almost everything in Python are objects.</p>
 <p>Object-oriented programming defines a <code class="docutils literal notranslate"><span class="pre">class</span></code> – a “blueprint” for creating objects – at first; then we create an instance (<strong>object</strong>), which will incorporate its own properties and methods as defined by <code class="docutils literal notranslate"><span class="pre">class</span></code>. Properties are the <strong>variables</strong> reflecting status of this instance, and methods are the <strong>functions</strong> we could operate on an instance. The syntax for defining classes in Python is straightforward. Note that <code class="docutils literal notranslate"><span class="pre">.</span></code> is used to assign properties, and <code class="docutils literal notranslate"><span class="pre">__init__</span></code> is required for each class as the instance initialization method.</p>
 <p><strong>Let’s try the following Car 🚗 class example:</strong></p>
@@ -1157,7 +1192,7 @@ This car has run 5.5 km.
 </div>
 </section>
 <section id="import-modules">
-<h2><span class="section-number">1.1.7. </span>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.7. </span>Import modules<a class="headerlink" href="#import-modules" title="Link to this heading">#</a></h2>
 <p>It’s time to leverage on numerous Python-based packages to empower our codes 💪. We can import modules by a statement of <code class="docutils literal notranslate"><span class="pre">import</span></code>. To access one of the functions, we could specify the name of the module and the name of the classes or functions, concatenating by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1205,10 +1240,10 @@ This car has run 5.5 km.
 </div>
 </section>
 <section id="one-more-thing-look-for-help">
-<h2><span class="section-number">1.1.8. </span>One more thing: Look for help<a class="headerlink" href="#one-more-thing-look-for-help" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.8. </span>One more thing: Look for help<a class="headerlink" href="#one-more-thing-look-for-help" title="Link to this heading">#</a></h2>
 <p>Coding is also a journey of DEBUG 🐞. For programmers, it is important to learn how to solve problems. Here are some suggestions when you feel stuck or confused.</p>
 <section id="print-documentation">
-<h3><span class="section-number">1.1.8.1. </span>Print documentation<a class="headerlink" href="#print-documentation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.8.1. </span>Print documentation<a class="headerlink" href="#print-documentation" title="Link to this heading">#</a></h3>
 <p>It is almost impossible to memorize the tremendous amounts of packages and functions. Using built-in function <code class="docutils literal notranslate"><span class="pre">help()</span></code> can quickly print out the capability description of the function, as well as what are the inputs and outputs of this function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1279,21 +1314,21 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
 </div>
 </section>
 <section id="read-online-official-documentation">
-<h3><span class="section-number">1.1.8.2. </span>Read online official documentation<a class="headerlink" href="#read-online-official-documentation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.8.2. </span>Read online official documentation<a class="headerlink" href="#read-online-official-documentation" title="Link to this heading">#</a></h3>
 <p>When learning a new package, it’s always good to briefly read its official documentation. A typical well-documented package offers <em><strong>User Guide</strong></em> (introducing the framework to work around the package), <em><strong>API references</strong></em> (listing details of each entry in the package), and <em><strong>gallery</strong></em> (showing off their good examples).</p>
 <p>Try browsing the <a class="reference external" href="https://scikit-learn.org/stable/index.html">official website of machine learning package</a> <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>! Its doc combines theory, codes, and visualization to deliver ideas.</p>
 </section>
 <section id="search-in-community-stack-overflow">
-<h3><span class="section-number">1.1.8.3. </span>Search in community: Stack Overflow<a class="headerlink" href="#search-in-community-stack-overflow" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.8.3. </span>Search in community: Stack Overflow<a class="headerlink" href="#search-in-community-stack-overflow" title="Link to this heading">#</a></h3>
 <p>Python can also be titled as an internet-based programming language, not only because of so many open-source third-party packages available online, but also due to actively engaged communities. <a class="reference external" href="https://stackoverflow.com">StackOverflow</a> is a great Q&amp;A website to search for similar questions from community buddies as you have. The answers supported most by community will show at first following the question.</p>
 </section>
 <section id="ask-in-chatgpt">
-<h3><span class="section-number">1.1.8.4. </span>Ask in ChatGPT<a class="headerlink" href="#ask-in-chatgpt" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.8.4. </span>Ask in ChatGPT<a class="headerlink" href="#ask-in-chatgpt" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://openai.com/blog/chatgpt">ChatGPT</a> is an AI-powered language model developed by OpenAI. Prompted with proper questions, ChatGPT can give suggestions on code snippets that fit your demand. You can also use the <a class="reference external" href="https://github.com/features/copilot">GitHub Copilot</a> to autocomplete code lines.</p>
 </section>
 </section>
 <section id="references">
-<h2><span class="section-number">1.1.9. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.9. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This tutorial was edited based on the <a class="reference external" href="https://cs231n.github.io/python-numpy-tutorial">Python Numpy Tutorial</a>, <a class="reference external" href="https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master">Andreas Ernst’s Python4Maths</a>, and <a class="reference external" href="https://www.w3schools.com/python/default.asp">W3Schools</a>.</p></li>
 <li><p>This tutorial only touched Python basics that you need to know. You may refer to the official documentation of <a class="reference external" href="https://docs.python.org/3.7/library/index.html">Python Standard Library</a> for detailed information when necessary.</p></li>
@@ -1326,11 +1361,10 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="python.html"
@@ -1350,10 +1384,7 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1361,6 +1392,7 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1419,9 +1451,10 @@ By Xiaogang HE
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1445,8 +1478,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
