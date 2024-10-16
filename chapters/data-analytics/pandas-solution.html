@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pandas Exercise</title>
+    <title>3.3. Pandas Exercise</title>
   
   
   
@@ -78,6 +78,8 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. What is SciPy?" href="scipy.html" />
+    <link rel="prev" title="3.2. Pandas Exercise" href="pandas-exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -140,8 +142,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -190,7 +190,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="python-basic.html">1.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-exercise.html">1.2. Exercise</a></li>
@@ -203,9 +203,10 @@
 <li class="toctree-l2"><a class="reference internal" href="numpy-solution.html">2.3. Solution</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Solution</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -431,8 +432,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.3.1. Task 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.3.2. Task 2</a></li>
 </ul>
             </nav>
         </div>
@@ -445,10 +446,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-exercise">
-<h1>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.3. </span>Pandas Exercise<a class="headerlink" href="#pandas-exercise" title="Link to this heading">#</a></h1>
 <p>Create a DataFrame by reading the file <em>../../assets/data/Changi_daily_rainfall.csv</em>. Perform the following two tasks with this DataFrame.</p>
 <section id="task-1">
-<h2>Task 1<a class="headerlink" href="#task-1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>Task 1<a class="headerlink" href="#task-1" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Determine whether the dataframe contains <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. If so, fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values with the previous day’s value.</p></li>
 <li><p>Show the first 5 rows and the last 3 rows. Check the data length.</p></li>
@@ -652,7 +653,7 @@ total length of data: 14610
 </div>
 </section>
 <section id="task-2">
-<h2>Task 2<a class="headerlink" href="#task-2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>Task 2<a class="headerlink" href="#task-2" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Resample the DataFrame from daily time scale to annual time scale. Calculate the annual total rainfall for each year.</p></li>
 <li><p>Compare the long-term averaged annual rainfall in two periods: 1981-2000 and 2001-2020.</p></li>
@@ -796,6 +797,24 @@ The year with largest annual rainfall: 2007
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="pandas-exercise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Pandas Exercise</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="scipy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>What is SciPy?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -812,8 +831,8 @@ The year with largest annual rainfall: 2007
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">3.3.1. Task 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">3.3.2. Task 2</a></li>
 </ul>
   </nav></div>
 
