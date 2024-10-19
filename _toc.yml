@@ -57,10 +57,10 @@ parts:
       title: Tutorial (Basic)
     - file: chapters/data-visuals/matplotlib-advanced
       title: Tutorial (Advanced)
-# - caption: Homework
-  # chapters:
-  # - file: chapters/homework/homework1-solution
-  #   title: Homework 1
+- caption: Homework
+  chapters:
+  - file: chapters/homework/homework1
+    title: Homework 1
   # - file: chapters/homework/homework2
   #   title: Homework 2
 - caption: Course Project
