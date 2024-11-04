@@ -61,8 +61,8 @@ parts:
   chapters:
   - file: chapters/homework/homework1
     title: Homework 1
-  # - file: chapters/homework/homework2
-  #   title: Homework 2
+  - file: chapters/homework/homework2
+    title: Homework 2
 - caption: Course Project
   chapters:
   - file: chapters/project/FinalProject-2024Fall
