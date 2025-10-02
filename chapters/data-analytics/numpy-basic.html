@@ -16,34 +16,31 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -83,7 +80,6 @@
     <link rel="prev" title="2. What is NumPy?" href="numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -99,8 +95,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -108,6 +115,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -115,8 +123,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -132,8 +140,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -163,17 +170,21 @@
     
     
     <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
-    <img src="../../_static/favicon.png" class="logo__image only-dark pst-js-only" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
@@ -217,7 +228,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 (solutions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
@@ -384,16 +395,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -448,7 +467,7 @@
 <p>To use NumPy, we need to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package at first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -477,7 +496,8 @@
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/numpy_ndarray.png"><img alt="../../_images/numpy_ndarray.png" class="align-center" src="../../_images/numpy_ndarray.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_ndarray.png"><img alt="../../_images/numpy_ndarray.png" class="align-center" src="../../_images/numpy_ndarray.png" style="width: 500px;" />
+</a>
 <p>Using a list of lists with the same size, we could create 2D, 3D, or even higher dimensional arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,7 +573,8 @@
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/numpy_slice.png"><img alt="../../_images/numpy_slice.png" class="align-center" src="../../_images/numpy_slice.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_slice.png"><img alt="../../_images/numpy_slice.png" class="align-center" src="../../_images/numpy_slice.png" style="width: 600px;" />
+</a>
 <p>Note that a slice of an array is always a <em><strong>view</strong></em> of the same data, so modifying it will modify the original array. If you wish to avoid this, you could use the <code class="docutils literal notranslate"><span class="pre">copy()</span></code> method to create a soft copy when assigned to a new variable. This is also true when you assign the whole array to another variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,7 +867,8 @@ transpose through method
 </div>
 </div>
 <p>As you may observe above, we could specify which axis to perform aggregation calculations, but sometimes we may get confused on which one to use so we get what we want, especially when it comes to higher dimensions. Hope the following figure and code help you to comprehend the axis number.</p>
-<a class="reference internal image-reference" href="../../_images/numpy_axis.png"><img alt="../../_images/numpy_axis.png" class="align-center" src="../../_images/numpy_axis.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_axis.png"><img alt="../../_images/numpy_axis.png" class="align-center" src="../../_images/numpy_axis.png" style="width: 700px;" />
+</a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -893,8 +915,10 @@ transpose through method
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/numpy_broadcast1-1.png"><img alt="../../_images/numpy_broadcast1-1.png" class="align-center" src="../../_images/numpy_broadcast1-1.png" style="width: 600px;" /></a>
-<a class="reference internal image-reference" href="../../_images/numpy_broadcast1-2.png"><img alt="../../_images/numpy_broadcast1-2.png" class="align-center" src="../../_images/numpy_broadcast1-2.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_broadcast1-1.png"><img alt="../../_images/numpy_broadcast1-1.png" class="align-center" src="../../_images/numpy_broadcast1-1.png" style="width: 600px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/numpy_broadcast1-2.png"><img alt="../../_images/numpy_broadcast1-2.png" class="align-center" src="../../_images/numpy_broadcast1-2.png" style="width: 600px;" />
+</a>
 <p>We could see that when shapes of both arrays are <em>compatible</em>, NumPy would automatically stretch (replicating) arrays as above so that arithmetic calculations can be directly applied. <strong>But how can we know array shapes are compatible? 🤔</strong></p>
 <p>NumPy compares array shapes from back forward. It starts with the trailing (i.e. rightmost) dimensions and works its way left. For each dimension of both arrays, their sizes are compatible when</p>
 <ol class="arabic simple">
@@ -945,7 +969,8 @@ transpose through method
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/numpy_broadcast2.png"><img alt="../../_images/numpy_broadcast2.png" class="align-center" src="../../_images/numpy_broadcast2.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/numpy_broadcast2.png"><img alt="../../_images/numpy_broadcast2.png" class="align-center" src="../../_images/numpy_broadcast2.png" style="width: 600px;" />
+</a>
 <p>Broadcasting typically makes your code more <em><strong>concise</strong></em>, <em><strong>readable</strong></em>, and more importantly, <em><strong>faster</strong></em>.</p>
 </section>
 <section id="references">
@@ -1013,8 +1038,7 @@ transpose through method
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1081,8 +1105,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

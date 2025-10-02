@@ -16,34 +16,31 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -85,7 +82,6 @@
     <link rel="prev" title="1. What is Python?" href="python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -101,8 +97,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -110,6 +117,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -117,8 +125,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -134,8 +142,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -165,17 +172,21 @@
     
     
     <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
-    <img src="../../_static/favicon.png" class="logo__image only-dark pst-js-only" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
@@ -219,7 +230,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 (solutions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
@@ -386,16 +397,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -465,7 +484,7 @@
 <p>As of 2024 Q1, Python has become the <a class="reference external" href="https://madnight.github.io/githut/#/pull_requests/2024/1">most popular programming language</a>. Python code is often said to be almost like pseudocode as it allows you to express powerful ideas in very few codes while being readable. As an example, here is an implementation of the classic quicksort algorithm in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">arr</span>
     <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>                    <span class="c1"># set the middle as pivot</span>
@@ -745,7 +764,8 @@ he(ell)(ell)o
 <li><p><strong>Index</strong> one item:
 Just use index number within enclosed brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Note that in python, <strong>indexing starts from 0</strong>. Indexing can also be <strong>in reverse order using negative values</strong> as following.</p></li>
 </ol>
-<a class="reference internal image-reference" href="../../_images/python_index.png"><img alt="../../_images/python_index.png" class="align-center" src="../../_images/python_index.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../_images/python_index.png"><img alt="../../_images/python_index.png" class="align-center" src="../../_images/python_index.png" style="width: 500px;" />
+</a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>     <span class="c1"># Indexing 3rd element; list indexing starts from 0</span>
@@ -1031,7 +1051,7 @@ A spider has 8 legs
 <p>Python functions are defined using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. Here is an example function <code class="docutils literal notranslate"><span class="pre">sign(x)</span></code> which return the sign of <code class="docutils literal notranslate"><span class="pre">x</span></code>. To call a function, use the function name followed by parenthesis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># four blanks before each line within the function body</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;positive&#39;</span>  <span class="c1"># another four blanks within `if` expressions</span>
@@ -1058,7 +1078,7 @@ A spider has 8 legs
 <p>We often define functions to take optional keyword arguments, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   <span class="c1"># Define a function with one argument x</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;determine the sign of a single value&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># four blanks before each line within the function body</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;positive&#39;</span>  <span class="c1"># another four blanks within `if` expressions</span>
@@ -1106,25 +1126,25 @@ A spider has 8 legs
 <p><strong>Let’s try the following Car 🚗 class example:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Car</span><span class="p">():</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">company</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>  
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">company</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>  
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;initialize the properties of a car&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">company</span> <span class="o">=</span> <span class="n">company</span>  <span class="c1"># claim one property of object</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">=</span> <span class="mi">0</span>
         
-    <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># functions are the methods of object</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># functions are the methods of object</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;return car information in a string&quot;&quot;&quot;</span>
         <span class="n">car_info</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">company</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">car_info</span>
         
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;run car for a distance&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">odometer</span> <span class="o">+=</span> <span class="n">distance</span>
     
-    <span class="k">def</span> <span class="nf">read_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;return the distances the car has run through&quot;&quot;&quot;</span>
         <span class="n">odo_info</span> <span class="o">=</span> <span class="s2">&quot;This car has run </span><span class="si">{}</span><span class="s2"> km.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">odo_info</span>
@@ -1132,7 +1152,8 @@ A spider has 8 legs
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/python_class.png"><img alt="../../_images/python_class.png" class="align-center" src="../../_images/python_class.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/python_class.png"><img alt="../../_images/python_class.png" class="align-center" src="../../_images/python_class.png" style="width: 700px;" />
+</a>
 <p>Let’s say now I buy a new <code class="docutils literal notranslate"><span class="pre">Car</span></code> and name it as <code class="docutils literal notranslate"><span class="pre">my_lovely_car</span></code>🚘:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1184,7 +1205,7 @@ This car has run 5.5 km.
 <p>It’s time to leverage on numerous Python-based packages to empower our codes 💪. We can import modules by a statement of <code class="docutils literal notranslate"><span class="pre">import</span></code>. To access one of the functions, we could specify the name of the module and the name of the classes or functions, concatenating by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="c1"># import third-party NumPy module</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>  <span class="c1"># import third-party NumPy module</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># arange function generates an array with evenly spaced values</span>
@@ -1202,11 +1223,11 @@ This car has run 5.5 km.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign a short alias to make it easier for us to use it</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
 <span class="c1"># Import a submodule in module</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">random</span>  <span class="c1"># random is a submodule of numpy for random sampling</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">random</span>  <span class="c1"># random is a submodule of numpy for random sampling</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>    <span class="c1"># random.random() function generates a random value</span>
 </pre></div>
 </div>
@@ -1221,7 +1242,7 @@ This car has run 5.5 km.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try this!!!</span>
-<span class="kn">import</span> <span class="nn">antigravity</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">antigravity</span>
 </pre></div>
 </div>
 </div>
@@ -1235,7 +1256,7 @@ This car has run 5.5 km.
 <p>It is almost impossible to memorize the tremendous amounts of packages and functions. Using built-in function <code class="docutils literal notranslate"><span class="pre">help()</span></code> can quickly print out the capability description of the function, as well as what are the inputs and outputs of this function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">)</span>  <span class="c1"># Print help of ones funcion in Numpy</span>
 </pre></div>
@@ -1379,8 +1400,7 @@ ones(shape, dtype=None, order=&#39;C&#39;, *, like=None)
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1467,8 +1487,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

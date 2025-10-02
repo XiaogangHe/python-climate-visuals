@@ -16,34 +16,31 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -79,11 +76,10 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HW#1: Extreme Rainfall Deficit in Singapore" href="../homework/homework1-solution.html" />
+    <link rel="next" title="HW#1: Extreme Rainfall Deficit in Singapore" href="../homework/homework1.html" />
     <link rel="prev" title="1.1. Matplotlib tutorial (Basic)" href="matplotlib-basic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -99,8 +95,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -108,6 +115,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -115,8 +123,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -132,8 +140,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -163,17 +170,21 @@
     
     
     <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
-    <img src="../../_static/favicon.png" class="logo__image only-dark pst-js-only" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
@@ -217,7 +228,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 (solutions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
@@ -384,16 +395,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -457,9 +476,9 @@
 <p>We first import the packages that might be used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -904,9 +923,9 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import packages needed for the example</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
 <span class="c1"># plots show in the notebook</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline  
 
@@ -948,7 +967,8 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x2bd9d0274f0&gt;
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png"><img alt="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" src="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" style="width: 683px; height: 390px;" /></a>
+<a class="reference internal image-reference" href="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png"><img alt="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" src="../../_images/b4b7e1f900877694c132a424e7d36676952c6f542a4a11ec4175df035032245f.png" style="width: 683px; height: 390px;" />
+</a>
 </div>
 </div>
 <p>Then we move the above 2D filled-contour plot to the map.</p>
@@ -973,7 +993,8 @@
   warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png"><img alt="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" src="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" style="width: 666px; height: 340px;" /></a>
+<a class="reference internal image-reference" href="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png"><img alt="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" src="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" style="width: 666px; height: 340px;" />
+</a>
 </div>
 </div>
 <p>Note that to plot a map, you need to manually create an axis (which means <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> does not work anymore) and pass a <code class="docutils literal notranslate"><span class="pre">projection=...</span></code> keyword to the axis. The projection argument is used when creating plots and determines the projection of the resulting plot (i.e. what the plot looks like). The line <code class="docutils literal notranslate"><span class="pre">plt.axes(projection=ccrs.PlateCarree())</span></code> sets up a GeoAxes instance which exposes a variety of other map related methods. You may pick your own projection such as Miller, Orthographic, or Robinson.</p>
@@ -996,11 +1017,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png"><img alt="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" src="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" style="width: 666px; height: 355px;" /></a>
-<a class="reference internal image-reference" href="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png"><img alt="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" src="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" style="width: 657px; height: 355px;" /></a>
-<a class="reference internal image-reference" href="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png"><img alt="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" src="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" style="width: 395px; height: 355px;" /></a>
-<a class="reference internal image-reference" href="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png"><img alt="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" src="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" style="width: 340px; height: 355px;" /></a>
-<a class="reference internal image-reference" href="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png"><img alt="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" src="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" style="width: 684px; height: 319px;" /></a>
+<a class="reference internal image-reference" href="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png"><img alt="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" src="../../_images/5b2e1a89f28810f109be3497fa75a727cfaf73d0e19343716a666d3835db05e8.png" style="width: 666px; height: 355px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png"><img alt="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" src="../../_images/468202db57f7bc51243e0557825aaebcc217dcbca5a338192d74b81baa962b19.png" style="width: 657px; height: 355px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png"><img alt="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" src="../../_images/5c2c498a3a7cc29c8beccccb46ec33653b45f85595e047e28bdce18f4b4ad165.png" style="width: 395px; height: 355px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png"><img alt="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" src="../../_images/b18563d901af6a6b2a88d427e7b99def2f79d273c13035337703430b3648440e.png" style="width: 340px; height: 355px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png"><img alt="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" src="../../_images/ac47e1718cf2b96af9192d4111c1b72c3c5af8b87e82b326240d5b4e8046b550.png" style="width: 684px; height: 319px;" />
+</a>
 </div>
 </div>
 <p>If we want to plot the data in another projection, we need to pass a <code class="docutils literal notranslate"><span class="pre">transform=...</span></code> argument to the plot command. The transform argument to plotting functions tells Cartopy what coordinate system your data are defined in.</p>
@@ -1020,7 +1046,8 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x2bd8ef10280&gt;
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png"><img alt="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" src="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" style="width: 657px; height: 340px;" /></a>
+<a class="reference internal image-reference" href="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png"><img alt="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" src="../../_images/408bf98178186ddf72710b0b57ded7c3a600ead00746b46ab128bd3e3eb2cdcb.png" style="width: 657px; height: 340px;" />
+</a>
 </div>
 </div>
 <p>In Cartopy, we can very easily plot coastlines (<code class="docutils literal notranslate"><span class="pre">ax.coastlines()</span></code>) and gridlines (<code class="docutils literal notranslate"><span class="pre">ax.gridlines()</span></code>), which give a better context for the data than before and also show the full globe.</p>
@@ -1044,7 +1071,8 @@
   warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png"><img alt="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" src="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" style="width: 599px; height: 340px;" /></a>
+<a class="reference internal image-reference" href="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png"><img alt="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" src="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" style="width: 599px; height: 340px;" />
+</a>
 </div>
 </div>
 </section>
@@ -1062,7 +1090,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
 
 <span class="n">central_lat</span> <span class="o">=</span> <span class="mf">37.5</span>
 <span class="n">central_lon</span> <span class="o">=</span> <span class="o">-</span><span class="mi">96</span>
@@ -1087,7 +1115,8 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x2bda3623a00&gt;
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png"><img alt="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" src="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" style="width: 567px; height: 340px;" /></a>
+<a class="reference internal image-reference" href="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png"><img alt="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" src="../../_images/045010d7cc875bdf6492d8679c52bc590d66068aedcb0e4a5cdacf6fa49b2434.png" style="width: 567px; height: 340px;" />
+</a>
 </div>
 </div>
 </section>
@@ -1096,7 +1125,7 @@
 <p>Note that Cartopy transforms can be passed to xarray. This creates a very quick path for creating professional looking maps from netCDF data. In this section, we use the ERA5-Land reanalysis data of monthly 2m temperature in 2020 to demonstrate how to plot maps from a dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="c1"># Set working directory to the folder where your .nc file is located</span>
 <span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../../assets/data/ERA5_monthly_2020_t2m.nc&#39;</span>
 <span class="c1"># fn = &#39;ERA5_monthly_2020_tpt2m.nc&#39;</span>
@@ -1496,13 +1525,14 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x270e9ed32e0&gt;
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png"><img alt="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" src="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" style="width: 487px; height: 242px;" /></a>
+<a class="reference internal image-reference" href="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png"><img alt="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" src="../../_images/1968dbe6df714d22016bc3c970d810499dbe0dd0f00ed12b3ceb9bdd2953d027.png" style="width: 487px; height: 242px;" />
+</a>
 </div>
 </div>
 <p>You may use xarray to manipulate the netCDF file. Alternatively, you can use netCDF4 package to import the dataset as in the following codes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">netCDF4</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nc</span>
 
 <span class="c1"># Displays the content of your NetCFD file (.nc)</span>
 <span class="c1"># With this operation you can find the variable names, dimension, and units</span>
@@ -1632,7 +1662,8 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png"><img alt="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" src="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" style="width: 535px; height: 362px;" /></a>
+<a class="reference internal image-reference" href="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png"><img alt="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" src="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" style="width: 535px; height: 362px;" />
+</a>
 </div>
 </div>
 <p>For images without contours,</p>
@@ -1653,7 +1684,8 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png"><img alt="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" src="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" style="width: 516px; height: 362px;" /></a>
+<a class="reference internal image-reference" href="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png"><img alt="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" src="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" style="width: 516px; height: 362px;" />
+</a>
 </div>
 </div>
 <p>Browse the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/index.html">Cartopy Gallery</a> to learn more about all the different types of data and plotting methods available.</p>
@@ -1711,7 +1743,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
       </div>
     </a>
     <a class="right-next"
-       href="../homework/homework1-solution.html"
+       href="../homework/homework1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -1726,8 +1758,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1800,8 +1831,8 @@ By Xiaogang HE
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
