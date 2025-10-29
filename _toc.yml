@@ -65,8 +65,8 @@ parts:
     title: Homework 2 (Fall 2024)
 - caption: Course Project
   chapters:
-  - file: chapters/project/FinalProject-2025Fall
-    title: Fall 2025
+  - file: chapters/project/FinalProject-2024Fall
+    title: Fall 2024
 - caption: Gallery
   chapters:
   - file: chapters/gallery/plot_weighted_river_network
