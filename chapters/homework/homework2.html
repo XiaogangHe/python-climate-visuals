@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.3. NumPy Solution</title>
+    <title>HW#2: Visualizing Historical Temperature Changes in Singapore</title>
   
   
   
@@ -71,15 +71,13 @@
                 gtag('config', 'UA-xxx');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/data-analytics/numpy-solution';</script>
-    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/numpy-solution.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/homework/homework2';</script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/homework/homework2.html" />
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. What is Pandas?" href="pandas.html" />
-    <link rel="prev" title="2.2. NumPy Exercise" href="numpy-exercise.html" />
+    <link rel="next" title="Visualizing Climate Change’s Impact on Water Demand for Crop in Southeast Asia under Extreme Heat" href="../project/FinalProject-2025Fall.html" />
+    <link rel="prev" title="HW#1: Extreme Rainfall Deficit in Singapore" href="homework1-solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,33 +188,33 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-basic.html">1.1. Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python-exercise.html">1.2. Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python-solution.html">1.3. Solution</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-basic.html">1.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-exercise.html">1.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-solution.html">1.3. Solution</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="numpy.html">2. NumPy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="numpy-basic.html">2.1. Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy-exercise.html">2.2. Exercise</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Solution</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-basic.html">2.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-exercise.html">2.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-solution.html">2.3. Solution</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="pandas-basic.html">3.1. Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas-exercise.html">3.2. Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas-solution.html">3.3. Solution</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-basic.html">3.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-solution.html">3.3. Solution</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="scipy-basic.html">4.1. Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scipy-exercise.html">4.2. Exercise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scipy-solution.html">4.3. Solution</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-basic.html">4.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-exercise.html">4.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-solution.html">4.3. Solution</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="xarray-basic.html">5.1. Tutorial</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/xarray-basic.html">5.1. Tutorial</a></li>
 </ul>
 </details></li>
 </ul>
@@ -229,9 +227,9 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 Solution (Fall 2025)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2024)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homework1-solution.html">Homework 1 Solution (Fall 2025)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 2 (Fall 2024)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
 <ul class="nav bd-sidenav">
@@ -298,7 +296,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/data-analytics/numpy-solution.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/homework/homework2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +342,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/data-analytics/numpy-solution.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/homework/homework2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,7 +426,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>NumPy Solution</h1>
+    <h1>HW#2: Visualizing Historical Temperature Changes in Singapore</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -438,7 +436,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">2.3.1. Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-visualize-the-gev-distribution-30-marks">Task 1: Visualize the GEV distribution (30 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks">Task 2: Visualize the trend of temperature anomaly (70 marks)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks">Q1: Visualize the time series and local trend (slope) of historical temperature anomalies for Singapore (35 marks)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-add-climate-stripes-for-singapore-35-marks">Q2: Add climate stripes for Singapore (35 marks)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -450,38 +453,105 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numpy-solution">
-<h1><span class="section-number">2.3. </span>NumPy Solution<a class="headerlink" href="#numpy-solution" title="Link to this heading">#</a></h1>
-<section id="task">
-<h2><span class="section-number">2.3.1. </span>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
-<p>In machine learning tasks, when we deal with data from different features, it is very common that we need to normalize data so that the different units among features would not affect the performances of machine learning algorithms.</p>
-<p>Now we have temperature and precipitation observations from 7 sites. Write a line of code to accomplish Min-Max normalization for each feature.</p>
-<p>Hint: The equation of Min-Max normalization to <span class="math notranslate nohighlight">\(x\)</span> is
-<span class="math notranslate nohighlight">\(
-\begin{align}
-x_{norm} = \frac{x-\min(x)}{\max(x)-\min(x)}
-\end{align}
-\)</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hw-2-visualizing-historical-temperature-changes-in-singapore">
+<h1>HW#2: Visualizing Historical Temperature Changes in Singapore<a class="headerlink" href="#hw-2-visualizing-historical-temperature-changes-in-singapore" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objectives</p>
+<p>This homework will provide you a real-world example in terms of:</p>
+<ul class="simple">
+<li><p>how to visualize the GEV distribution</p></li>
+<li><p>how to visualize time series of temperature anomalies and the trend</p></li>
+<li><p>how to make beautiful, accessible, and understandable data visualizations</p></li>
+</ul>
+<p>Happy coding!</p>
+</div>
+<div class="admonition-submission-guide admonition">
+<p class="admonition-title">Submission Guide</p>
+<p>Deadline: <strong>Sunday 11:59 pm, 16th November 2025</strong>
+(Note: Late submissions will not be accepted).</p>
+<p>Please upload your solutions to <a class="reference external" href="https://canvas.nus.edu.sg/courses/77993/assignments">Canvas</a> in a Jupyter Notebook format with the name “Homework2_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Kewei ZHANG (<a class="reference external" href="mailto:kewei_zhang&#37;&#52;&#48;u&#46;nus&#46;edu">kewei_zhang<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Yifan LU (<a class="reference external" href="mailto:yifan_lu&#37;&#52;&#48;u&#46;nus&#46;edu">yifan_lu<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">25.1</span><span class="p">,</span> <span class="mf">27.5</span><span class="p">,</span> <span class="mf">32.3</span><span class="p">,</span> <span class="mf">24.4</span><span class="p">,</span> <span class="mf">28.2</span><span class="p">,</span> <span class="mf">29.8</span><span class="p">,</span> <span class="mf">30.1</span><span class="p">],</span>  <span class="c1"># a row of temperature</span>
-                 <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span>  <span class="mf">2.5</span><span class="p">,</span>  <span class="mf">8.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="mf">28.4</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">]])</span> <span class="c1"># a row of precipitation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Fill your student ID and full name below.</span>
 
-<span class="c1"># Your solution goes here.</span>
-<span class="n">norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.08860759, 0.39240506, 1.        , 0.        , 0.48101266,
-        0.6835443 , 0.72151899],
-       [0.69892473, 0.07168459, 0.28673835, 0.34050179, 0.        ,
-        1.        , 0.43010753]])
+<span class="c1"># Student ID:</span>
+<span class="c1"># Full name:</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><strong>Data</strong>:
+You will need to use the historical (1982-2020) daily mean air temperature data measured at Singapore’s Changi station for this homework.
+You can create a DataFrame using Pandas by reading the file “../../assets/data/Changi_daily_temperature.csv”.</p>
+<section id="task-1-visualize-the-gev-distribution-30-marks">
+<h2>Task 1: Visualize the GEV distribution (30 marks)<a class="headerlink" href="#task-1-visualize-the-gev-distribution-30-marks" title="Link to this heading">#</a></h2>
+<p>To visualize the GEV distribution, you can:</p>
+<ol class="arabic simple">
+<li><p>Fit the Generalized Extreme Value (GEV) distribution to annual maximum daily temperature data and estimate the GEV parameters using the <strong>L-Moments method</strong>.</p></li>
+<li><p>Plot the probability density function (PDF) curve to represent the distribution directly.</p></li>
+<li><p>Calculate the return level for a 10-year event and mark it on the plot.</p></li>
+<li><p>Shade the plot with different colors to distinguish areas above and below the calculated return level.</p></li>
+<li><p>Ensure that the necessary non-data elements are included, such as title, x/y axis labels, legend, etc. (you can check the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-visuals/matplotlib-basic.html">Matplotlib tutorial</a> for details).</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Bonus: 10 marks</p>
+<p>Illustrate how return levels vary across different return periods (e.g., 2, 5, 10, 20, 50, 100 years) using interactive sliders or dashboards. Resources such as the <a class="reference external" href="https://plotly.com/python/sliders/">Plotly documentation</a> and <a class="reference external" href="https://www.youtube.com/watch?v=gs4d0_AKQi8">this tutorial video</a> may be helpful for this task.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-2-visualize-the-trend-of-temperature-anomaly-70-marks">
+<h2>Task 2: Visualize the trend of temperature anomaly (70 marks)<a class="headerlink" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks" title="Link to this heading">#</a></h2>
+<section id="q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks">
+<h3>Q1: Visualize the time series and local trend (slope) of historical temperature anomalies for Singapore (35 marks)<a class="headerlink" href="#q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Calculate the annual mean temperature from the daily data. This will result in a dataset of 39 values — one per year. (5 marks)</p></li>
+<li><p>Calculate the annual temperature anomalies using the first 10-year period as the baseline. (Hint: subtract the mean temperature over 1982 to 1991 from the annual mean temperature for each year.) (5 marks)</p></li>
+<li><p>Visualize the change in these annual temperature anomalies over time, ensuring that you include essential non-data elements. (10 marks)</p></li>
+<li><p>Compute a rolling linear regression (10-year moving window) of annual mean temperature anomalies to estimate how the local warming rate evolves through time. (10 marks)</p></li>
+<li><p>Plot the resulting slope (°C per decade) against the central year. (5 marks)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q2-add-climate-stripes-for-singapore-35-marks">
+<h3>Q2: Add climate stripes for Singapore (35 marks)<a class="headerlink" href="#q2-add-climate-stripes-for-singapore-35-marks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Reproduce the <a class="reference external" href="https://showyourstripes.info/s/asia/singapore">climate stripes</a> for Singapore using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. (20 marks)</p></li>
+<li><p>Overlay the annual temperature anomaly time series and its local trend (from Q1) on top of your generated climate stripes. (15 marks)</p></li>
+</ul>
+<p>Tips:</p>
+<ul class="simple">
+<li><p>Refer to <a class="reference external" href="https://github.com/josephshea/ClimateStripes/blob/master/ClimateStripes-Canada.ipynb">this GitHub repository</a> for guidance on creating climate stripes.</p></li>
+<li><p>Fine-tune the aesthetics of your chart (e.g., color palette of the diverging colorbar) to ensure it is visually appealing and accessible (colorblind safe).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Bonus: 10 marks</p>
+<p>Create an interactive plot where users can hover over climate stripes and trend lines to view detailed information. For inspiration, you can refer to <a class="reference external" href="https://ourworldindata.org/un-population-2024-revision">this example</a>.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -498,7 +568,7 @@ x_{norm} = \frac{x-\min(x)}{\max(x)-\min(x)}
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters/data-analytics"
+            path: "./chapters/homework"
         },
         predefinedOutput: true
     }
@@ -516,20 +586,20 @@ x_{norm} = \frac{x-\min(x)}{\max(x)-\min(x)}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="numpy-exercise.html"
+       href="homework1-solution.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>NumPy Exercise</p>
+        <p class="prev-next-title">HW#1: Extreme Rainfall Deficit in Singapore</p>
       </div>
     </a>
     <a class="right-next"
-       href="pandas.html"
+       href="../project/FinalProject-2025Fall.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>What is Pandas?</p>
+        <p class="prev-next-title">Visualizing Climate Change’s Impact on Water Demand for Crop in Southeast Asia under Extreme Heat</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -549,7 +619,12 @@ x_{norm} = \frac{x-\min(x)}{\max(x)-\min(x)}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">2.3.1. Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-visualize-the-gev-distribution-30-marks">Task 1: Visualize the GEV distribution (30 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks">Task 2: Visualize the trend of temperature anomaly (70 marks)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks">Q1: Visualize the time series and local trend (slope) of historical temperature anomalies for Singapore (35 marks)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-add-climate-stripes-for-singapore-35-marks">Q2: Add climate stripes for Singapore (35 marks)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
