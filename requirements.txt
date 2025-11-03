@@ -1,4 +1,4 @@
-jupyter-book
+jupyter-book<2  # Breaking changes to Version 2: https://jupyterbook.org/stable/resources/upgrade/#section-structure-legacy-book
 numpy
 pandas>=1
 matplotlib
