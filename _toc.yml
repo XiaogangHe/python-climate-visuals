@@ -61,8 +61,8 @@ parts:
   chapters:
   - file: chapters/homework/homework1-solution
     title: Homework 1 Solution (Fall 2025)
-  - file: chapters/homework/homework2
-    title: Homework 2 (Fall 2025)
+  - file: chapters/homework/homework2-solution
+    title: Homework 2 Solution (Fall 2025)
 - caption: Course Project
   chapters:
   - file: chapters/project/FinalProject-2025Fall
