@@ -3,6 +3,11 @@ root: intro
 options:
   numbered: true
 parts:
+- caption: Coding with AI
+  numbered: true
+  chapters:
+  - file: chapters/coding-with-ai/llm-intro
+    title: Introduction to LLM
 - caption: Data Analytics
   numbered: true
   chapters:
