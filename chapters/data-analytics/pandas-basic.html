@@ -30,9 +30,9 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
@@ -228,8 +228,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 Solution (Fall 2025)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solution.html">Homework 2 Solution (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1 (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2025)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
 <ul class="nav bd-sidenav">
@@ -519,10 +519,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="c1"># Since &#39;data&#39; is the first location parameter, you can also ignore &#39;data=&#39; and directly specify the value</span>
+<span class="c1"># Since 'data' is the first location parameter, you can also ignore 'data=' and directly specify the value</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]))</span>    <span class="c1"># Numpy array</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>              <span class="c1"># List</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span>  <span class="c1"># Dictionary</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span>  <span class="c1"># Dictionary</span>
 <span class="n">s4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>                      <span class="c1"># Scalar</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
@@ -558,7 +558,7 @@ dtype: int64
 <p>In general, it is better to create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object with meaningful labels to distinguish and identify each value. When constructing the <code class="docutils literal notranslate"><span class="pre">Series</span></code>, the labels are added by specifying the value of the <code class="docutils literal notranslate"><span class="pre">index</span></code> parameter or specifying the <code class="docutils literal notranslate"><span class="pre">data</span></code> as a <code class="docutils literal notranslate"><span class="pre">dict</span></code> object as we mentioned above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s5</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">])</span>  <span class="c1"># specify the index by &#39;index&#39; option</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s5</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">])</span>  <span class="c1"># specify the index by 'index' option</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -581,14 +581,14 @@ dynamically within the new <code class="docutils literal notranslate"><span clas
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 
-<span class="n">s6</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">s6</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">]</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
 
 <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">40</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After reassigning value, the value of series </span><span class="se">\n</span><span class="s2">also will be updated automatically:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"After reassigning value, the value of series </span><span class="se">\n</span><span class="s2">also will be updated automatically:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -624,7 +624,7 @@ also modified the corresponding element in the <code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100  20 -40]
-Index([&#39;x&#39;, &#39;y&#39;, &#39;z&#39;], dtype=&#39;object&#39;)
+Index(['x', 'y', 'z'], dtype='object')
 </pre></div>
 </div>
 </div>
@@ -635,7 +635,7 @@ Index([&#39;x&#39;, &#39;y&#39;, &#39;z&#39;], dtype=&#39;object&#39;)
 <p>You can select any individual element in the same way as <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> arrays by specifying the sequence number with the attribute <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> of <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span><span class="mi">8</span><span class="p">})</span>
 <span class="n">s</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -649,7 +649,7 @@ Index([&#39;x&#39;, &#39;y&#39;, &#39;z&#39;], dtype=&#39;object&#39;)
 <p>Or you can specify the value of the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -663,7 +663,7 @@ Index([&#39;x&#39;, &#39;y&#39;, &#39;z&#39;], dtype=&#39;object&#39;)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">'a'</span><span class="p">:</span><span class="s1">'c'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -688,7 +688,7 @@ dtype: int64
 <h3><span class="section-number">3.1.2.3. </span>Assigning Values to the Elements<a class="headerlink" href="#assigning-values-to-the-elements" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">s</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
 <span class="n">s</span>
 </pre></div>
@@ -800,7 +800,7 @@ dtype: float64
 <p>The <code class="docutils literal notranslate"><span class="pre">NaN</span></code> refers to <code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">a</span> <span class="pre">Number</span></code>, which is generally caused by the missing value. Before data analysis, the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values need to be addressed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declaring a &#39;Series&#39; including the NaN value</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declaring a 'Series' including the NaN value</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">])</span>
 <span class="n">s</span>
 </pre></div>
@@ -810,7 +810,7 @@ dtype: float64
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Declaring a &#39;Series&#39; including the NaN value</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Declaring a 'Series' including the NaN value</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">s</span>
 
@@ -818,15 +818,15 @@ dtype: float64
 <span class="g g-Whitespace">    </span><span class="mi">778</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">__former_attrs__</span><span class="p">[</span><span class="n">attr</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">__expired_attributes__</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">781</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span>         <span class="sa">f</span><span class="s2">&quot;`np.</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">` was removed in the NumPy 2.0 release. &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">783</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">__expired_attributes__</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">782</span>         <span class="sa">f</span><span class="s2">"`np.</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">` was removed in the NumPy 2.0 release. "</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span>         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">__expired_attributes__</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">784</span>         <span class="n">name</span><span class="o">=</span><span class="kc">None</span>
 <span class="g g-Whitespace">    </span><span class="mi">785</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span> <span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="s2">&quot;chararray&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span> <span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="s2">"chararray"</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span>         <span class="s2">&quot;`np.chararray` is deprecated and will be removed from &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span>         <span class="s2">&quot;the main namespace in the future. Use an array with a string &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>         <span class="s2">&quot;or bytes dtype instead.&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>         <span class="s2">"`np.chararray` is deprecated and will be removed from "</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>         <span class="s2">"the main namespace in the future. Use an array with a string "</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>         <span class="s2">"or bytes dtype instead."</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="ne">AttributeError</span>: `np.NaN` was removed in the NumPy 2.0 release. Use `np.nan` instead.
 </pre></div>
@@ -886,8 +886,8 @@ dtype: float64
 <h3><span class="section-number">3.1.2.7. </span>Operations of Multiple Series<a class="headerlink" href="#operations-of-multiple-series" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;Singapore&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Malaysia&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Vietnam&quot;</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="s2">&quot;Cambodia&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">})</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">&quot;China&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">:</span> <span class="mi">73</span><span class="p">,</span> <span class="s2">&quot;Vietnam&quot;</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="s2">&quot;Laos&quot;</span><span class="p">:</span> <span class="mi">31</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">"Singapore"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"Malaysia"</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">"Vietnam"</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="s2">"Cambodia"</span><span class="p">:</span> <span class="mi">41</span><span class="p">})</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s2">"China"</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span> <span class="s2">"Japan"</span><span class="p">:</span> <span class="mi">73</span><span class="p">,</span> <span class="s2">"Vietnam"</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="s2">"Laos"</span><span class="p">:</span> <span class="mi">31</span><span class="p">})</span>
 <span class="n">s</span> <span class="o">*</span> <span class="n">s1</span>
 </pre></div>
 </div>
@@ -943,11 +943,11 @@ dtype: float64
 <p>Call <code class="docutils literal notranslate"><span class="pre">DataFrame()</span></code> function to create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">Array</span></code>, <code class="docutils literal notranslate"><span class="pre">List</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> can all be the input of <code class="docutils literal notranslate"><span class="pre">data</span></code> argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="s1">&#39;daodao&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-                   <span class="p">[</span><span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-                   <span class="p">[</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
-                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">"Malaysia"</span><span class="p">,</span> <span class="s2">"Kuala Lumpur"</span><span class="p">,</span> <span class="s1">'daodao'</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">"Singapore"</span><span class="p">,</span> <span class="s2">"Singapore"</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">"Vietnam"</span><span class="p">,</span> <span class="s2">"Hanoi"</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"Capital"</span><span class="p">,</span> <span class="s2">"Population"</span><span class="p">,</span> <span class="s2">"Isdeveloped"</span><span class="p">],</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -968,20 +968,20 @@ c    Vietnam         Hanoi   97338579         True
     <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">59</span><span class="p">]]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-<span class="c1"># List,  use &#39;columns&#39; and &#39;index&#39; parameters to specify the column and index of generated dataframe.</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="mi">32365999</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
-                   <span class="p">[</span><span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-                   <span class="p">[</span><span class="s2">&quot;Vietnam&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
-                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">],</span>
-                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="c1"># List,  use 'columns' and 'index' parameters to specify the column and index of generated dataframe.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s2">"Malaysia"</span><span class="p">,</span> <span class="s2">"Kuala Lumpur"</span><span class="p">,</span> <span class="mi">32365999</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">"Singapore"</span><span class="p">,</span> <span class="s2">"Singapore"</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
+                   <span class="p">[</span><span class="s2">"Vietnam"</span><span class="p">,</span> <span class="s2">"Hanoi"</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">,</span> <span class="kc">True</span><span class="p">]],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"Capital"</span><span class="p">,</span> <span class="s2">"Population"</span><span class="p">,</span> <span class="s2">"Isdeveloped"</span><span class="p">],</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="c1"># dict</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Vietnam&quot;</span><span class="p">],</span>
-                   <span class="s2">&quot;Capital&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Kuala Lumpur&quot;</span><span class="p">,</span> <span class="s2">&quot;Singapore&quot;</span><span class="p">,</span> <span class="s2">&quot;Hanoi&quot;</span><span class="p">],</span>
-                   <span class="s2">&quot;Population&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32365999</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">],</span>
-                   <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]},</span>
-                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"Country"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Malaysia"</span><span class="p">,</span> <span class="s2">"Singapore"</span><span class="p">,</span> <span class="s2">"Vietnam"</span><span class="p">],</span>
+                   <span class="s2">"Capital"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Kuala Lumpur"</span><span class="p">,</span> <span class="s2">"Singapore"</span><span class="p">,</span> <span class="s2">"Hanoi"</span><span class="p">],</span>
+                   <span class="s2">"Population"</span><span class="p">:</span> <span class="p">[</span><span class="mi">32365999</span><span class="p">,</span> <span class="mi">5850342</span><span class="p">,</span> <span class="mi">97338579</span><span class="p">],</span>
+                   <span class="s2">"Isdeveloped"</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]},</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1009,7 +1009,7 @@ c    Vietnam         Hanoi    97338579         True
 <p>Similar to <code class="docutils literal notranslate"><span class="pre">Series</span></code>, two ways can be used to select the elements from <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Call <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">loc[]</span></code> to select the elements by position and label, respectively .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use &#39;:&#39; to represent select all</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use ':' to represent select all</span>
 <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1059,7 +1059,7 @@ c    Vietnam         Hanoi    97338579         True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;Country&quot;</span><span class="p">:</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">"Country"</span><span class="p">:</span><span class="s2">"Population"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1112,7 +1112,7 @@ c    Vietnam         Hanoi    97338579         True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"Population"</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1182,7 +1182,7 @@ Name: a, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['a', 'b', 'c'], dtype='object')
 </pre></div>
 </div>
 </div>
@@ -1194,7 +1194,7 @@ Name: a, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Country&#39;, &#39;Capital&#39;, &#39;Population&#39;, &#39;Isdeveloped&#39;], dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['Country', 'Capital', 'Population', 'Isdeveloped'], dtype='object')
 </pre></div>
 </div>
 </div>
@@ -1206,9 +1206,9 @@ Name: a, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;Malaysia&#39;, &#39;Kuala Lumpur&#39;, 32365999, False],
-       [&#39;Singapore&#39;, &#39;Singapore&#39;, 5850342, True],
-       [&#39;Vietnam&#39;, &#39;Hanoi&#39;, 97338579, True]], dtype=object)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([['Malaysia', 'Kuala Lumpur', 32365999, False],
+       ['Singapore', 'Singapore', 5850342, True],
+       ['Vietnam', 'Hanoi', 97338579, True]], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1216,7 +1216,7 @@ Name: a, dtype: object
 <p>Select the corresponding column(s) according to the labels or indexes of columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Country&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"Country"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1231,7 +1231,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Country&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">]]</span> <span class="c1"># Use list to select multiple columns  </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">"Country"</span><span class="p">,</span> <span class="s2">"Population"</span><span class="p">]]</span> <span class="c1"># Use list to select multiple columns  </span>
 </pre></div>
 </div>
 </div>
@@ -1295,7 +1295,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="c1"># using label-based slice to select multiple rows</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"a"</span><span class="p">:</span><span class="s2">"b"</span><span class="p">]</span> <span class="c1"># using label-based slice to select multiple rows</span>
 </pre></div>
 </div>
 </div>
@@ -1399,10 +1399,10 @@ Name: Country, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Japan&quot;</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tokyo&quot;</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">126476461</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Isdeveloped&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"Country"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Japan"</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"Capital"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Tokyo"</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"Population"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">126476461</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"Isdeveloped"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">df1</span>
 </pre></div>
 </div>
@@ -1460,7 +1460,7 @@ Name: Country, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mi">126476461</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Japan"</span><span class="p">,</span> <span class="s2">"Tokyo"</span><span class="p">,</span> <span class="mi">126476461</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -1521,10 +1521,10 @@ Name: Country, dtype: object
 <h3><span class="section-number">3.1.3.4. </span>Assigning index, columns, and name of index and columns<a class="headerlink" href="#assigning-index-columns-and-name-of-index-and-columns" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">]</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;attributes&quot;</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Coun&quot;</span><span class="p">,</span> <span class="s2">&quot;Cap&quot;</span><span class="p">,</span> <span class="s2">&quot;Pop&quot;</span><span class="p">,</span> <span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"e"</span><span class="p">,</span> <span class="s2">"f"</span><span class="p">,</span> <span class="s2">"g"</span><span class="p">]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"label"</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"attributes"</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Coun"</span><span class="p">,</span> <span class="s2">"Cap"</span><span class="p">,</span> <span class="s2">"Pop"</span><span class="p">,</span> <span class="s2">"ID"</span><span class="p">]</span>
 <span class="n">df1</span>
 </pre></div>
 </div>
@@ -1592,12 +1592,12 @@ Name: Country, dtype: object
 <h3><span class="section-number">3.1.3.5. </span>Delete columns from dataframe<a class="headerlink" href="#delete-columns-from-dataframe" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">df1</span><span class="p">[</span><span class="s2">"ID"</span><span class="p">]</span>
 <span class="c1"># axis = 1 or columns represents delete columns</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Coun&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">"Coun"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># axis = 0 or rows represents delete columns</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;e&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">"e"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'rows'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">df1</span>
 </pre></div>
@@ -1652,10 +1652,10 @@ Name: Country, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># inplace=True</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
-<span class="n">df2_return</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Country&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----"</span><span class="p">)</span>
+<span class="n">df2_return</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">"Country"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df2_return</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1681,10 +1681,10 @@ None
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># inplace=False</span>
 <span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
-<span class="n">df3_return</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Country&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----"</span><span class="p">)</span>
+<span class="n">df3_return</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">"Country"</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df3_return</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1776,7 +1776,7 @@ c         Hanoi    97338579         True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtering accroding to conditions of one column</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50000000</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"Population"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50000000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1827,7 +1827,7 @@ c         Hanoi    97338579         True
 <p>You can filter the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> according to conditions of multiple columns like the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50000000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Isdeveloped&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Population"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50000000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Isdeveloped"</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -1939,7 +1939,7 @@ c         Hanoi    97338579         True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Country&#39;, &#39;Capital&#39;, &#39;Population&#39;, &#39;Isdeveloped&#39;], dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['Country', 'Capital', 'Population', 'Isdeveloped'], dtype='object')
 </pre></div>
 </div>
 </div>
@@ -1951,7 +1951,7 @@ c         Hanoi    97338579         True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index(['a', 'b', 'c'], dtype='object')
 </pre></div>
 </div>
 </div>
@@ -2151,7 +2151,7 @@ c         Hanoi    97338579         True
 <p>Conduct horizontal merging by specifying <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument as ‘columns’ or 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">df3</span><span class="p">,</span> <span class="n">df4</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">df3</span><span class="p">,</span> <span class="n">df4</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2442,8 +2442,8 @@ c         Hanoi    97338579         True
 <p>Compute covariance and <em>Pearson correlation coefficients</em> between different columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i1&#39;</span><span class="p">,</span> <span class="s1">&#39;i2&#39;</span><span class="p">,</span> <span class="s1">&#39;i3&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i5&#39;</span><span class="p">],</span>
-                   <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">,</span> <span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;c5&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'i1'</span><span class="p">,</span> <span class="s1">'i2'</span><span class="p">,</span> <span class="s1">'i3'</span><span class="p">,</span> <span class="s1">'i4'</span><span class="p">,</span> <span class="s1">'i5'</span><span class="p">],</span>
+                   <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'c1'</span><span class="p">,</span> <span class="s1">'c2'</span><span class="p">,</span> <span class="s1">'c3'</span><span class="p">,</span> <span class="s1">'c4'</span><span class="p">,</span> <span class="s1">'c5'</span><span class="p">])</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2598,7 +2598,7 @@ c         Hanoi    97338579         True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'kendall'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2818,7 +2818,7 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_position</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Population'</span><span class="p">,</span> <span class="s1">'Country'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_position</span><span class="o">=</span><span class="s1">'first'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2879,8 +2879,8 @@ dtype: float64
 <h2><span class="section-number">3.1.4. </span>NaN value<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i1&#39;</span><span class="p">,</span> <span class="s1">&#39;i2&#39;</span><span class="p">,</span> <span class="s1">&#39;i3&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i5&#39;</span><span class="p">],</span>
-                   <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">,</span> <span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;c5&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'i1'</span><span class="p">,</span> <span class="s1">'i2'</span><span class="p">,</span> <span class="s1">'i3'</span><span class="p">,</span> <span class="s1">'i4'</span><span class="p">,</span> <span class="s1">'i5'</span><span class="p">],</span>
+                   <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'c1'</span><span class="p">,</span> <span class="s1">'c2'</span><span class="p">,</span> <span class="s1">'c3'</span><span class="p">,</span> <span class="s1">'c4'</span><span class="p">,</span> <span class="s1">'c5'</span><span class="p">])</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
@@ -3098,7 +3098,7 @@ dtype: int64
 
 <span class="c1"># 0, or ‘index’ : Drop rows which contain missing values.</span>
 <span class="c1"># 1, or ‘columns’ : Drop columns which contain missing value.</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">"any"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3155,21 +3155,21 @@ dtype: int64
 <p>Date index is very useful for you to deal with time series. You can create a date index by the <code class="docutils literal notranslate"><span class="pre">date_range</span></code> function. The date index mentioned here is usually discrete with equal intervals and it usually has three features: starting date, end date, and frequency (or intervals).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2018-01-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">"2018-01-01"</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"H"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dti</span><span class="p">)</span>
-<span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2021-09-28&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2021-09-30&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;10H&quot;</span><span class="p">)</span>
+<span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">"2021-09-28"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"2021-09-30"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"10H"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dti</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2018-01-01 00:00:00&#39;, &#39;2018-01-01 01:00:00&#39;,
-               &#39;2018-01-01 02:00:00&#39;],
-              dtype=&#39;datetime64[ns]&#39;, freq=&#39;H&#39;)
-DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
-               &#39;2021-09-28 20:00:00&#39;, &#39;2021-09-29 06:00:00&#39;,
-               &#39;2021-09-29 16:00:00&#39;],
-              dtype=&#39;datetime64[ns]&#39;, freq=&#39;10H&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex(['2018-01-01 00:00:00', '2018-01-01 01:00:00',
+               '2018-01-01 02:00:00'],
+              dtype='datetime64[ns]', freq='H')
+DatetimeIndex(['2021-09-28 00:00:00', '2021-09-28 10:00:00',
+               '2021-09-28 20:00:00', '2021-09-29 06:00:00',
+               '2021-09-29 16:00:00'],
+              dtype='datetime64[ns]', freq='10H')
 </pre></div>
 </div>
 </div>
@@ -3177,34 +3177,34 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 <p>Manipulating and converting date times with timezone information</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2021-09-28&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2021-09-30&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;10H&quot;</span><span class="p">)</span>
-<span class="n">dti</span> <span class="o">=</span> <span class="n">dti</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">"2021-09-28"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"2021-09-30"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"10H"</span><span class="p">)</span>
+<span class="n">dti</span> <span class="o">=</span> <span class="n">dti</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">"UTC"</span><span class="p">)</span>
 <span class="n">dti</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2021-09-28 00:00:00+00:00&#39;, &#39;2021-09-28 10:00:00+00:00&#39;,
-               &#39;2021-09-28 20:00:00+00:00&#39;, &#39;2021-09-29 06:00:00+00:00&#39;,
-               &#39;2021-09-29 16:00:00+00:00&#39;],
-              dtype=&#39;datetime64[ns, UTC]&#39;, freq=&#39;10H&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex(['2021-09-28 00:00:00+00:00', '2021-09-28 10:00:00+00:00',
+               '2021-09-28 20:00:00+00:00', '2021-09-29 06:00:00+00:00',
+               '2021-09-29 16:00:00+00:00'],
+              dtype='datetime64[ns, UTC]', freq='10H')
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2021-09-28&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2021-09-30&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;10H&quot;</span><span class="p">)</span>
-<span class="n">dti</span> <span class="o">=</span> <span class="n">dti</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">&quot;Asia/Singapore&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">"2021-09-28"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"2021-09-30"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"10H"</span><span class="p">)</span>
+<span class="n">dti</span> <span class="o">=</span> <span class="n">dti</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s2">"Asia/Singapore"</span><span class="p">)</span>
 <span class="n">dti</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2021-09-28 00:00:00+08:00&#39;, &#39;2021-09-28 10:00:00+08:00&#39;,
-               &#39;2021-09-28 20:00:00+08:00&#39;, &#39;2021-09-29 06:00:00+08:00&#39;,
-               &#39;2021-09-29 16:00:00+08:00&#39;],
-              dtype=&#39;datetime64[ns, Asia/Singapore]&#39;, freq=None)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex(['2021-09-28 00:00:00+08:00', '2021-09-28 10:00:00+08:00',
+               '2021-09-28 20:00:00+08:00', '2021-09-29 06:00:00+08:00',
+               '2021-09-29 16:00:00+08:00'],
+              dtype='datetime64[ns, Asia/Singapore]', freq=None)
 </pre></div>
 </div>
 </div>
@@ -3212,14 +3212,14 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 <p>Using the <code class="docutils literal notranslate"><span class="pre">origin</span></code> option, one can specify an alternative starting point for the creation of a <code class="docutils literal notranslate"><span class="pre">DatetimeIndex</span></code>. For example, to use 1900-01-01 00:00:00 as the starting time and hour as the unit period length:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">&quot;1900-01-01 00:00:00&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"h"</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s2">"1900-01-01 00:00:00"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;1900-01-05 04:00:00&#39;, &#39;1900-01-05 05:00:00&#39;,
-               &#39;1900-01-05 06:00:00&#39;],
-              dtype=&#39;datetime64[ns]&#39;, freq=None)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex(['1900-01-05 04:00:00', '1900-01-05 05:00:00',
+               '1900-01-05 06:00:00'],
+              dtype='datetime64[ns]', freq=None)
 </pre></div>
 </div>
 </div>
@@ -3240,7 +3240,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prepare data, this section will be introduced in the next tutorial</span>
 <span class="c1"># Data Source: http://www.weather.gov.sg/climate-historical-daily/</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Changi_daily_rainfall.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3300,8 +3300,8 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Downsampling: Convert daily data to yearly data by sum or max</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">dfsum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">dfsum</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Yearly Rainfall Total (mm)&quot;</span><span class="p">]</span>
+<span class="n">dfsum</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"Y"</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">dfsum</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Yearly Rainfall Total (mm)"</span><span class="p">]</span>
 <span class="n">dfsum</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3359,8 +3359,8 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">dfmax</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Yearly Rainfall Maximum (mm)&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"Y"</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">dfmax</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Yearly Rainfall Maximum (mm)"</span><span class="p">]</span>
 <span class="n">dfmax</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3418,9 +3418,9 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Upsampling: Convert monthly data to 10 days&#39; data </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Upsampling: Convert monthly data to 10 days' data </span>
 <span class="c1"># by directly return (asfreq) or forward filling (pad/ffill)</span>
-<span class="n">dfmax</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;10D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">asfreq</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">dfmax</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'10D'</span><span class="p">)</span><span class="o">.</span><span class="n">asfreq</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3477,7 +3477,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmax</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;10D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmax</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'10D'</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3534,7 +3534,7 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmax</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfmax</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'D'</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3596,11 +3596,11 @@ DatetimeIndex([&#39;2021-09-28 00:00:00&#39;, &#39;2021-09-28 10:00:00&#39;,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate average and maximum wind speed of each station</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Station&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Changi&#39;</span><span class="p">,</span> <span class="s1">&#39;Changi&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Climenti&#39;</span><span class="p">,</span> <span class="s1">&#39;Climenti&#39;</span><span class="p">],</span>
-                   <span class="s1">&#39;Wind Speed&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">]})</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Station&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Station&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Station'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Changi'</span><span class="p">,</span> <span class="s1">'Changi'</span><span class="p">,</span>
+                              <span class="s1">'Climenti'</span><span class="p">,</span> <span class="s1">'Climenti'</span><span class="p">],</span>
+                   <span class="s1">'Wind Speed'</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Station'</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Station'</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -3621,12 +3621,12 @@ Climenti        16.0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># custom function</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Station&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Changi&#39;</span><span class="p">,</span> <span class="s1">&#39;Changi&#39;</span><span class="p">,</span> <span class="s1">&#39;Changi&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Climenti&#39;</span><span class="p">,</span> <span class="s1">&#39;Climenti&#39;</span><span class="p">,</span> <span class="s1">&#39;Climenti&#39;</span><span class="p">],</span>
-                   <span class="s1">&#39;Wind Speed&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Station'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Changi'</span><span class="p">,</span> <span class="s1">'Changi'</span><span class="p">,</span> <span class="s1">'Changi'</span><span class="p">,</span>
+                              <span class="s1">'Climenti'</span><span class="p">,</span> <span class="s1">'Climenti'</span><span class="p">,</span> <span class="s1">'Climenti'</span><span class="p">],</span>
+                   <span class="s1">'Wind Speed'</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">groupNormalization</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="n">w</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">w</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Station&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">groupNormalization</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'Station'</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">groupNormalization</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3695,7 +3695,7 @@ Climenti        16.0
 <p>Typically, you can read data from files ending with “. xlsx” and “. csv” using <code class="docutils literal notranslate"><span class="pre">read_excel()</span></code> and <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> functions, respectively. The <code class="docutils literal notranslate"><span class="pre">index_col</span></code> and <code class="docutils literal notranslate"><span class="pre">header</span></code> arguments are used to specify the column and row to be used as <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code> of the dataframe. You can also set <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> as <code class="docutils literal notranslate"><span class="pre">True</span></code> to parse <code class="docutils literal notranslate"><span class="pre">index</span></code> as the date format. If your date format is uncommon, you can specify the <code class="docutils literal notranslate"><span class="pre">date_parser</span></code> argument to be a function for converting a sequence of string columns to an array of datetime instances.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Changi_daily_rainfall.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
                  <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -3754,8 +3754,8 @@ Climenti        16.0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
-                 <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Changi_daily_rainfall.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                 <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3814,7 +3814,7 @@ Climenti        16.0
 <p>You can also specify the <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> argument as a <code class="docutils literal notranslate"><span class="pre">list</span></code> to parse a column as a date format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Changi_daily_rainfall.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
                  <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>

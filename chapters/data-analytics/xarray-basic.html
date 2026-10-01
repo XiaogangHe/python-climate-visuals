@@ -30,9 +30,9 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
@@ -228,8 +228,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 Solution (Fall 2025)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solution.html">Homework 2 Solution (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1 (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2025)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
 <ul class="nav bd-sidenav">
@@ -517,11 +517,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span>
-                  <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">],</span>
-                  <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-                          <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]},</span>
-                  <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="s1">&#39;This is a custom DataArray for tutorial&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;license&#39;</span><span class="p">:</span> <span class="s1">&#39;CC BY-NC-ND 4.0&#39;</span><span class="p">})</span>
+                  <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">],</span>
+                  <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+                          <span class="s1">'y'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]},</span>
+                  <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">'summary'</span><span class="p">:</span> <span class="s1">'This is a custom DataArray for tutorial'</span><span class="p">,</span>
+                         <span class="s1">'license'</span><span class="p">:</span> <span class="s1">'CC BY-NC-ND 4.0'</span><span class="p">})</span>
 <span class="n">da</span>
 </pre></div>
 </div>
@@ -909,7 +909,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;x&#39;, &#39;y&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('x', 'y')
 </pre></div>
 </div>
 </div>
@@ -935,8 +935,8 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;summary&#39;: &#39;This is a custom DataArray for tutorial&#39;,
- &#39;license&#39;: &#39;CC BY-NC-ND 4.0&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'summary': 'This is a custom DataArray for tutorial',
+ 'license': 'CC BY-NC-ND 4.0'}
 </pre></div>
 </div>
 </div>
@@ -1315,7 +1315,7 @@ Dimensions without coordinates: dim_0, dim_1</pre><div class='xr-wrap' hidden><d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;dim_0&#39;, &#39;dim_1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('dim_0', 'dim_1')
 </pre></div>
 </div>
 </div>
@@ -1354,15 +1354,15 @@ Dimensions without coordinates: dim_0, dim_1</pre><div class='xr-wrap' hidden><d
 <span class="c1"># change values</span>
 <span class="n">da1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="c1"># change dims (input dict)</span>
-<span class="n">da1</span> <span class="o">=</span> <span class="n">da1</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;n&#39;</span><span class="p">})</span>
+<span class="n">da1</span> <span class="o">=</span> <span class="n">da1</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="s1">'n'</span><span class="p">})</span>
 
 <span class="c1"># change name (input str)</span>
-<span class="n">da1</span> <span class="o">=</span> <span class="n">da1</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;Spatial Rainfall&#39;</span><span class="p">)</span>
+<span class="n">da1</span> <span class="o">=</span> <span class="n">da1</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">'Spatial Rainfall'</span><span class="p">)</span>
 
 <span class="c1"># add attrs</span>
-<span class="n">da1</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;generated by numpy randomly&#39;</span>
+<span class="n">da1</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'gen'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'generated by numpy randomly'</span>
 <span class="c1"># delete attrs</span>
-<span class="k">del</span> <span class="n">da1</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">da1</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'summary'</span><span class="p">]</span>
 <span class="n">da1</span>
 </pre></div>
 </div>
@@ -1749,8 +1749,8 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># list</span>
-                           <span class="s1">&#39;v2&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])})</span>  <span class="c1">#1D-array</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># list</span>
+                           <span class="s1">'v2'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])})</span>  <span class="c1">#1D-array</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -2118,7 +2118,7 @@ Data variables:
 <p><code class="docutils literal notranslate"><span class="pre">Series</span></code> of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>: When value of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a <code class="docutils literal notranslate"><span class="pre">Series</span></code> of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the key of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> will become the name of the variable and values of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> will become values of the variable.  The <code class="docutils literal notranslate"><span class="pre">index</span></code> of the <code class="docutils literal notranslate"><span class="pre">Series</span></code> will become values of coordinates of the variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -2484,9 +2484,9 @@ Data variables:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
-<span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;str&#39;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">s</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+<span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'str'</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">s</span><span class="p">})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -2853,9 +2853,9 @@ Data variables:
 <p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>: When value of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, the key of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> will become the name of the variable and values of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> will become values of the variable. The <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code> of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> will become values of coordinates of the variable. Therefore, the variable constructed by <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> has two dimensions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;str&#39;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'str'</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -3226,9 +3226,9 @@ Data variables:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
-                   <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;str&#39;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
+                   <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'c1'</span><span class="p">,</span> <span class="s1">'c2'</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'str'</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">df</span><span class="p">})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -3598,10 +3598,10 @@ Data variables:
 <p><code class="docutils literal notranslate"><span class="pre">tuple</span></code> with two elements: When value of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, the key of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> will become the name of the variable. The first elements of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> will become dimension names of the variable and the second elements of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> will become values of the variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tp</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;d1&#39;</span><span class="p">,</span> <span class="s1">&#39;d2&#39;</span><span class="p">),</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tp</span> <span class="o">=</span> <span class="p">((</span><span class="s1">'d1'</span><span class="p">,</span> <span class="s1">'d2'</span><span class="p">),</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
                      <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
                      <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">tp</span><span class="p">})</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">tp</span><span class="p">})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -3969,7 +3969,7 @@ Data variables:
 <p><code class="docutils literal notranslate"><span class="pre">DataArray</span></code>: When value of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> is a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, the key of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> will become the name of the variable. The dimensions and coordinates of the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> will be added to the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">da</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">da</span><span class="p">})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -4340,8 +4340,8 @@ Data variables:
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">tp</span><span class="p">},</span>
-                <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;d1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="s1">&#39;d2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">]})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">tp</span><span class="p">},</span>
+                <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">'d1'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="s1">'d2'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'c1'</span><span class="p">,</span> <span class="s1">'c2'</span><span class="p">]})</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -4719,9 +4719,9 @@ Data variables:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
                         <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span>
-                  <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">],</span>
-                  <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-                          <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]})</span>
+                  <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">],</span>
+                  <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+                          <span class="s1">'y'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">da</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">da</span><span class="p">))</span>
 </pre></div>
@@ -4746,7 +4746,7 @@ Coordinates:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;v1&#39;</span><span class="p">:</span> <span class="n">da</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_vars</span><span class="o">=</span><span class="p">{</span><span class="s1">'v1'</span><span class="p">:</span> <span class="n">da</span><span class="p">})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ds</span><span class="p">))</span>
 </pre></div>
@@ -4779,7 +4779,7 @@ Data variables:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data source: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../../assets/data/era5_singapore_2021.9.1.nc&#39;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">'../../assets/data/era5_singapore_2021.9.1.nc'</span><span class="p">)</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -7119,7 +7119,7 @@ Attributes:
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">sel()</span></code> function to conduct label-based indexing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2021-09-01 00:00:00&#39;</span><span class="p">)</span>  <span class="c1"># select all data of 2021-09-01 00:00:00</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">'2021-09-01 00:00:00'</span><span class="p">)</span>  <span class="c1"># select all data of 2021-09-01 00:00:00</span>
 </pre></div>
 </div>
 </div>
@@ -7492,7 +7492,7 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select data locate in (103.5, 1.5) of 2021-09-01 00:00:00</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="mf">103.5</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;2021-09-01 00:00:00&#39;</span><span class="p">)</span>  
+<span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="mf">103.5</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s1">'2021-09-01 00:00:00'</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -7887,10 +7887,10 @@ Attributes:
 <span class="c1"># For example, if your student ID is A0188677A and you will get future data</span>
 <span class="c1"># you can using following codes to access your data.</span>
 
-<span class="n">student_ID</span> <span class="o">=</span> <span class="s1">&#39;A0188677A&#39;</span>
-<span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;future&#39;</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">.nc&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">student_ID</span> <span class="o">=</span> <span class="s1">'A0188677A'</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s1">'future'</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">.nc'</span><span class="o">%</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/</span><span class="si">%s</span><span class="s1">'</span><span class="o">%</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="c1"># download file from remote server</span>
 <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -8280,18 +8280,18 @@ Attributes:
     
     <span class="n">ssl</span><span class="o">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">_create_unverified_context</span>
     
-    <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">.nc&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">.nc'</span><span class="o">%</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     
-    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://hydrology.princeton.edu/data/hexg/CE3201_final_project_data/</span><span class="si">%s</span><span class="s1">'</span><span class="o">%</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
-<span class="n">student_ID</span> <span class="o">=</span> <span class="s1">&#39;A0188677A&#39;</span>
-<span class="c1"># label = &#39;future&#39;</span>
-<span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;historical&#39;</span>
+<span class="n">student_ID</span> <span class="o">=</span> <span class="s1">'A0188677A'</span>
+<span class="c1"># label = 'future'</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s1">'historical'</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">read_by_student_ID</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
 <span class="n">ds</span>
 </pre></div>

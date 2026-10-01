@@ -30,9 +30,9 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
@@ -76,7 +76,7 @@
     <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HW#1: Extreme Rainfall Deficit in Singapore" href="../homework/homework1-solution.html" />
+    <link rel="next" title="HW#1: Extreme Rainfall Deficit in Singapore" href="../homework/homework1.html" />
     <link rel="prev" title="1.1. Matplotlib tutorial (Basic)" href="matplotlib-basic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -228,8 +228,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 Solution (Fall 2025)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solution.html">Homework 2 Solution (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1 (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2025)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
 <ul class="nav bd-sidenav">
@@ -486,7 +486,7 @@ document.write(`
 <p>Here, we utilize the “diamonds” dataset from Seaborn package for the demonstration of plots in statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diamonds</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;diamonds&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diamonds</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">"diamonds"</span><span class="p">)</span>
 <span class="n">diamonds</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -598,7 +598,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changes the global defaults</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"ticks"</span><span class="p">)</span>
 
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
@@ -608,10 +608,10 @@ document.write(`
 <span class="c1"># plot according to classification</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
     <span class="n">diamonds</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
-    <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
-    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;light:m_r&quot;</span><span class="p">,</span>
-    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;.3&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span>
+    <span class="n">multiple</span><span class="o">=</span><span class="s2">"stack"</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">"light:m_r"</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">".3"</span><span class="p">,</span>
     <span class="n">linewidth</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
 <span class="p">)</span>
@@ -635,7 +635,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changes the global defaults</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"ticks"</span><span class="p">)</span>
 
 <span class="c1"># removes the top and right axes spines</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -643,13 +643,13 @@ document.write(`
 <span class="c1"># plot according to classification</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
     <span class="n">diamonds</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
-    <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
-    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;light:m_r&quot;</span><span class="p">,</span>
-    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;.3&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span>
+    <span class="n">multiple</span><span class="o">=</span><span class="s2">"stack"</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">"light:m_r"</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">".3"</span><span class="p">,</span>
     <span class="n">linewidth</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">'hist'</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -671,7 +671,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changes the global defaults</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"ticks"</span><span class="p">)</span>
 
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
@@ -681,8 +681,8 @@ document.write(`
 <span class="c1"># plot according to classification</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span><span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
-    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span><span class="n">multiple</span><span class="o">=</span><span class="s2">"stack"</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">palette</span><span class="o">=</span><span class="s2">"crest"</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> 
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
 <span class="p">)</span>
@@ -706,7 +706,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changes the global defaults</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"ticks"</span><span class="p">)</span>
 
 <span class="c1"># removes the top and right axes spines</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -714,11 +714,11 @@ document.write(`
 <span class="c1"># plot according to classification</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span><span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
-    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span><span class="n">multiple</span><span class="o">=</span><span class="s2">"stack"</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">palette</span><span class="o">=</span><span class="s2">"crest"</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> 
     <span class="n">log_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># log scale</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">'kde'</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -741,15 +741,15 @@ document.write(`
 <span class="c1"># plot according to classification</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">ecdfplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
-    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">"crest"</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span> 
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;price&#39;, ylabel=&#39;Proportion&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel='price', ylabel='Proportion'&gt;
 </pre></div>
 </div>
 <img alt="../../_images/d88b93ca69b934ef976bc8966ed834a1b782a926f9750e05cfe53e746246ecc8.png" src="../../_images/d88b93ca69b934ef976bc8966ed834a1b782a926f9750e05cfe53e746246ecc8.png" />
@@ -760,10 +760,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot according to classification</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span>
-    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;crest&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s2">"crest"</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span> 
-    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;ecdf&#39;</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">'ecdf'</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -782,14 +782,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> 
-    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"bar"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"color"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> 
+    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">"dark"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span>
 <span class="p">)</span>
 <span class="c1"># ci: Size of confidence intervals to draw around estimated values. </span>
 
 <span class="n">g</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Color&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">"Color"</span><span class="p">,</span> <span class="s2">"Price"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -807,8 +807,8 @@ document.write(`
 
 <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> 
-    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"color"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> 
+    <span class="n">ci</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">"dark"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span>
 <span class="p">)</span>
 <span class="c1"># ci: Size of confidence intervals to draw around estimated values. </span>
 
@@ -827,11 +827,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> 
-    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> 
+    <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"box"</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> 
+    <span class="n">palette</span><span class="o">=</span><span class="s2">"dark"</span><span class="p">,</span> 
     <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-    <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">,</span>
+    <span class="n">orient</span><span class="o">=</span><span class="s2">"v"</span><span class="p">,</span>
     <span class="n">whis</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">fliersize</span><span class="o">=</span><span class="mf">0.5</span>
 <span class="p">)</span>
@@ -839,7 +839,7 @@ document.write(`
 <span class="c1"># whis: Proportion of the IQR past the low and high quartiles to extend the plot whiskers.</span>
 
 <span class="n">g</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">&quot;Cut&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s2">"Cut"</span><span class="p">,</span> <span class="s2">"Price"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -857,9 +857,9 @@ document.write(`
 
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> 
-    <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">,</span> 
-    <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;v&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">"cut"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> 
+    <span class="n">palette</span><span class="o">=</span><span class="s2">"dark"</span><span class="p">,</span> 
+    <span class="n">orient</span><span class="o">=</span><span class="s2">"v"</span><span class="p">,</span>
     <span class="n">whis</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">fliersize</span><span class="o">=</span><span class="mf">0.5</span>
 <span class="p">)</span>
@@ -880,12 +880,12 @@ document.write(`
 <p>Scatter plots could be generated by <code class="docutils literal notranslate"><span class="pre">scatterplot()</span></code>. For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"price"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;x&#39;, ylabel=&#39;price&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel='x', ylabel='price'&gt;
 </pre></div>
 </div>
 <img alt="../../_images/97ebed5f1bd61f02ce65bfc683f6ab44f026f022254fedc93de4a11469906bc8.png" src="../../_images/97ebed5f1bd61f02ce65bfc683f6ab44f026f022254fedc93de4a11469906bc8.png" />
@@ -894,8 +894,8 @@ document.write(`
 <p>In addition, Seaborn has a function called <code class="docutils literal notranslate"><span class="pre">pairplot()</span></code>, which shows the scatter matrix and is extremely useful for multivariate analysis. We use “penguins” dataset for this example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">"penguins"</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"species"</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="s2">"o"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"D"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -930,8 +930,8 @@ document.write(`
 <span class="o">%</span><span class="k">matplotlib</span> inline  
 
 <span class="c1"># additional configuration (optional)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39; 
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.figsize'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina' 
 </pre></div>
 </div>
 </div>
@@ -956,10 +956,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;My basic plot&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;My data [unit]&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'My basic plot'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Latitude'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Longitude'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'My data [unit]'</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -990,7 +990,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E:\software\anaconda3\lib\site-packages\cartopy\io\__init__.py:260: DownloadWarning: Downloading: https://naciscdn.org/naturalearth/110m/physical/ne_110m_coastline.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+  warnings.warn('Downloading: {}'.format(url), DownloadWarning)
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png"><img alt="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" src="../../_images/37e114e5807f5bef9d6fe3d14e4ee48893126fa3b545d480832e8f4224cbf2cb.png" style="width: 666px; height: 340px;" />
@@ -1012,7 +1012,7 @@ document.write(`
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1059,7 @@ document.write(`
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">(</span><span class="n">central_lon</span><span class="p">,</span> <span class="n">central_lat</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;50m&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">'50m'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1068,7 +1068,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E:\software\anaconda3\lib\site-packages\cartopy\io\__init__.py:260: DownloadWarning: Downloading: https://naciscdn.org/naturalearth/50m/physical/ne_50m_coastline.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+  warnings.warn('Downloading: {}'.format(url), DownloadWarning)
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png"><img alt="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" src="../../_images/f4f47fe7364d9091876d6cbeea92be608cf8fde78a03ab497fc4368263f13a09.png" style="width: 599px; height: 340px;" />
@@ -1103,10 +1103,10 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">OCEAN</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">STATES</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAKES</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">RIVERS</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">STATES</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAKES</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">RIVERS</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'None'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span>
 <span class="c1"># ax.gridlines()</span>
 </pre></div>
 </div>
@@ -1127,8 +1127,8 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="c1"># Set working directory to the folder where your .nc file is located</span>
-<span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;../../assets/data/ERA5_monthly_2020_t2m.nc&#39;</span>
-<span class="c1"># fn = &#39;ERA5_monthly_2020_tpt2m.nc&#39;</span>
+<span class="n">fn</span> <span class="o">=</span> <span class="s1">'../../assets/data/ERA5_monthly_2020_t2m.nc'</span>
+<span class="c1"># fn = 'ERA5_monthly_2020_tpt2m.nc'</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">ds</span>
 </pre></div>
@@ -1512,12 +1512,12 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
 <p>Xarray has a simple chioce for plotting, which is <code class="docutils literal notranslate"><span class="pre">Dataset.plot()</span></code>. After specifying the projected axes and transformed axes, it generate the map automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t2m</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t2m</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
-<span class="n">t2m</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;shrink&#39;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">})</span>
+<span class="n">t2m</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">'shrink'</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -1537,15 +1537,15 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
 <span class="c1"># Displays the content of your NetCFD file (.nc)</span>
 <span class="c1"># With this operation you can find the variable names, dimension, and units</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="s1">'</span><span class="se">\n\n</span><span class="s1">'</span><span class="p">)</span>
 <span class="c1"># ds gives us information about the variables contained in the file and their dimensions.</span>
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">,</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
 <span class="c1"># Read data according to the variable names</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][:]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][:]</span>
-<span class="n">t2m</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;t2m&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 2m-temperature for 2020-01</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">'longitude'</span><span class="p">][:]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">'latitude'</span><span class="p">][:]</span>
+<span class="n">t2m</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">'t2m'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 2m-temperature for 2020-01</span>
 
 <span class="c1"># Note t2m is a multidimensional array as we extracted several</span>
 <span class="c1"># tiles specified by their longitude and latitude (first two dimensions);</span>
@@ -1555,7 +1555,7 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'netCDF4._netCDF4.Dataset'&gt;
 root group (NETCDF3_64BIT_OFFSET data model, file format NETCDF3):
     CDI: Climate Data Interface version 1.9.9rc1 (https://mpimet.mpg.de/cdi)
     Conventions: CF-1.6
@@ -1568,7 +1568,7 @@ Mon Oct 11 09:07:11 2021: cdo selyear,2020 ERA5_monthly_1985to2020.nc ERA5_month
     groups:  
 
 
-&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+&lt;class 'netCDF4._netCDF4.Variable'&gt;
 int32 time(time)
     standard_name: time
     long_name: time
@@ -1579,7 +1579,7 @@ unlimited dimensions: time
 current shape = (12,)
 filling on, default _FillValue of -2147483647 used 
 
-&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+&lt;class 'netCDF4._netCDF4.Variable'&gt;
 float32 longitude(longitude)
     standard_name: longitude
     long_name: longitude
@@ -1589,7 +1589,7 @@ unlimited dimensions:
 current shape = (1041,)
 filling on, default _FillValue of 9.969209968386869e+36 used 
 
-&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+&lt;class 'netCDF4._netCDF4.Variable'&gt;
 float32 latitude(latitude)
     standard_name: latitude
     long_name: latitude
@@ -1599,7 +1599,7 @@ unlimited dimensions:
 current shape = (551,)
 filling on, default _FillValue of 9.969209968386869e+36 used 
 
-&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+&lt;class 'netCDF4._netCDF4.Variable'&gt;
 int16 t2m(time, latitude, longitude)
     long_name: 2 metre temperature
     units: K
@@ -1611,7 +1611,7 @@ unlimited dimensions: time
 current shape = (12, 551, 1041)
 filling on 
 
-&lt;class &#39;netCDF4._netCDF4.Variable&#39;&gt;
+&lt;class 'netCDF4._netCDF4.Variable'&gt;
 int16 tp(time, latitude, longitude)
     long_name: Total precipitation
     units: m
@@ -1625,21 +1625,21 @@ filling on
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-29-86bcde68219e&gt;:6: DeprecationWarning: tostring() is deprecated. Use tobytes() instead.
-  print(ds,&#39;\n\n&#39;)
+  print(ds,'\n\n')
 &lt;ipython-input-29-86bcde68219e&gt;:9: DeprecationWarning: tostring() is deprecated. Use tobytes() instead.
-  print(var,&#39;\n&#39;)
+  print(var,'\n')
 &lt;ipython-input-29-86bcde68219e&gt;:12: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  lon = ds.variables[&#39;longitude&#39;][:]
+  lon = ds.variables['longitude'][:]
 &lt;ipython-input-29-86bcde68219e&gt;:13: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  lat = ds.variables[&#39;latitude&#39;][:]
+  lat = ds.variables['latitude'][:]
 &lt;ipython-input-29-86bcde68219e&gt;:14: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  t2m = ds.variables[&#39;t2m&#39;][0]  # 2m-temperature for 2020-01
+  t2m = ds.variables['t2m'][0]  # 2m-temperature for 2020-01
 &lt;ipython-input-29-86bcde68219e&gt;:15: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  tp = ds.variables[&#39;tp&#39;][0]    # totol precipitation for 2020-01b
+  tp = ds.variables['tp'][0]    # totol precipitation for 2020-01b
 </pre></div>
 </div>
 </div>
@@ -1651,15 +1651,15 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2020-01&#39;</span><span class="p">)</span>
-<span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">t2m</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;2m temperature [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'2020-01'</span><span class="p">)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">t2m</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'OrRd'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">"horizontal"</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"2m temperature [K]"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, '2m temperature [K]')
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png"><img alt="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" src="../../_images/4a603c3c4d145c8aa0c4182071c6c26debe6e2fd890b48b84fe814ccc33581f4.png" style="width: 535px; height: 362px;" />
@@ -1673,15 +1673,15 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2020-01&#39;</span><span class="p">)</span>
-<span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">t2m</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;2m temperature [K]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'2020-01'</span><span class="p">)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">t2m</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'OrRd'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">"horizontal"</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"2m temperature [K]"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;2m temperature [K]&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, '2m temperature [K]')
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png"><img alt="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" src="../../_images/2cff2bc18d044e274e42e75f6c5c1828d2996059018d39cea25b092f3f2241e6.png" style="width: 516px; height: 362px;" />
@@ -1743,7 +1743,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
       </div>
     </a>
     <a class="right-next"
-       href="../homework/homework1-solution.html"
+       href="../homework/homework1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

@@ -30,9 +30,9 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
@@ -230,8 +230,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1-solution.html">Homework 1 Solution (Fall 2025)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2-solution.html">Homework 2 Solution (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1 (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2025)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
 <ul class="nav bd-sidenav">
@@ -500,13 +500,13 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
 <span class="c1"># Mean (Location Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mean: "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 
 <span class="c1"># Median (Location Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Median: "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 
 <span class="c1"># Variance (Scale Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variance: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1">#ddof=1 provides an unbiased estimator of the variance</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Variance: "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1">#ddof=1 provides an unbiased estimator of the variance</span>
 </pre></div>
 </div>
 </div>
@@ -526,16 +526,16 @@ Variance:  [ 8.66666667  8.91666667 11.72916667 10.0625      3.83333333]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IQR (Scale Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IQR: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"IQR: "</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">iqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 
 <span class="c1"># Skewness (Shape Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skewness: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Skewness: "</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 
 <span class="c1"># Kurtosis (Shape Parameter)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kurtosis: &quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Kurtosis: "</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 
 <span class="c1"># You can also quickly get descriptive statistics with a single function</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive statistics:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Descriptive statistics:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -554,7 +554,7 @@ Descriptive statistics:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Changi_daily_rainfall.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dr</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 </pre></div>
@@ -636,7 +636,7 @@ dtype: float64
 <span class="n">SF</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># generate survival function (1-CDF)</span>
 <span class="n">PPF</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># obtain percent point (inverse of CDF)</span>
 <span class="n">RVS</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># generate 1000 random variates</span>
-<span class="n">MMS</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mvsk&#39;</span><span class="p">)</span>  <span class="c1"># obtain the four moments</span>
+<span class="n">MMS</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">'mvsk'</span><span class="p">)</span>  <span class="c1"># obtain the four moments</span>
 </pre></div>
 </div>
 </div>
@@ -646,11 +646,11 @@ dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">PDF</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;PDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"PDF"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">CDF</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"CDF"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -668,16 +668,16 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># pesudo dataset</span>
-<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;MLE&quot;</span><span class="p">)</span>  <span class="c1"># do a maximum-likelihood fit</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"MLE"</span><span class="p">)</span>  <span class="c1"># do a maximum-likelihood fit</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
 
 <span class="c1"># Plot figure</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">mu</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span>
-         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Samples&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">'stepfilled'</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Samples'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">),</span>
-         <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+         <span class="s1">'k-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Fit'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -707,7 +707,7 @@ dtype: float64
 
 <span class="n">PMF</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># generate PMF in x</span>
 <span class="n">CDF</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># generate CDF in x</span>
-<span class="n">MMS</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mvsk&#39;</span><span class="p">)</span>  <span class="c1"># obtain the four moments</span>
+<span class="n">MMS</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">moments</span><span class="o">=</span><span class="s1">'mvsk'</span><span class="p">)</span>  <span class="c1"># obtain the four moments</span>
 <span class="n">RVS</span> <span class="o">=</span> <span class="n">distr</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># generate random variates</span>
 </pre></div>
 </div>
@@ -715,14 +715,14 @@ dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">PMF</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PMF</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">PMF</span><span class="p">,</span> <span class="s1">'bo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PMF</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"PMF"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">CDF</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">CDF</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CDF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">CDF</span><span class="p">,</span> <span class="s1">'bo'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">CDF</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"CDF"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -765,10 +765,10 @@ dtype: float64
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains some basic correlation functions, such as <code class="docutils literal notranslate"><span class="pre">pearsonr</span></code> (Pearson correlation coefficient), <code class="docutils literal notranslate"><span class="pre">spearmanr</span></code> (Spearman correlation coefficient), <code class="docutils literal notranslate"><span class="pre">kendalltau</span></code> (Kendall’s tau correlation measure). Next is an example of Kendall’s tau correlation for annual rainfall.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Changi_daily_rainfall.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">yr</span> <span class="o">=</span> <span class="n">dr</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># aggregate annual rainfall total</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Changi_daily_rainfall.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">yr</span> <span class="o">=</span> <span class="n">dr</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"Y"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"right"</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># aggregate annual rainfall total</span>
 <span class="n">yr</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">yr</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
-<span class="n">yr</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Yearly Rainfall Total (mm)&quot;</span><span class="p">]</span>
+<span class="n">yr</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Yearly Rainfall Total (mm)"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">yr</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
 <span class="n">tau</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kendalltau</span><span class="p">(</span><span class="n">yr</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">yr</span><span class="p">)</span>
@@ -802,10 +802,10 @@ Date
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Data</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assets/data/Streamflow_02401390.dat&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> 
+<span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../../assets/data/Streamflow_02401390.dat'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">'\s+'</span><span class="p">,</span> 
                  <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Streamflow&quot;</span><span class="p">]</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Date&#39;</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Streamflow"</span><span class="p">]</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Date'</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -865,19 +865,19 @@ Date
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate 5-day flow</span>
 <span class="n">ds5day</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># moving average</span>
-<span class="n">ds5day</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;5-day flow&quot;</span><span class="p">]</span>
+<span class="n">ds5day</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"5-day flow"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds5day</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
 <span class="c1"># Extract annual low-flow</span>
-<span class="n">lowf</span> <span class="o">=</span> <span class="n">ds5day</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>  <span class="c1"># yearly minimum</span>
+<span class="n">lowf</span> <span class="o">=</span> <span class="n">ds5day</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"Y"</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>  <span class="c1"># yearly minimum</span>
 <span class="n">lowf</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">lowf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
-<span class="n">lowf</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">]</span>
+<span class="n">lowf</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Annual low-flow"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lowf</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
 <span class="c1"># Plot annual 5-day low-flow</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lowf</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Low-flow ($m^3/s$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Year"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Low-flow ($m^3/s$)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -923,7 +923,7 @@ Date
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span><span class="p">,</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">scale0</span>  <span class="o">=</span> <span class="n">gev</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;MLE&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span><span class="p">,</span> <span class="n">loc0</span><span class="p">,</span> <span class="n">scale0</span>  <span class="o">=</span> <span class="n">gev</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"MLE"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">loc0</span><span class="p">,</span> <span class="n">scale0</span><span class="p">,</span> <span class="n">c0</span><span class="p">)</span>
 <span class="n">MLEGEV</span> <span class="o">=</span> <span class="n">gev</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">loc0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale0</span><span class="p">)</span>  <span class="c1"># Frozen distribution</span>
 </pre></div>
@@ -971,11 +971,11 @@ Date
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate samples L-moments</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">samlmom3</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    samlmom3 returns the first three L-moments of samples</span>
 <span class="sd">    sample is the 1-d array</span>
 <span class="sd">    n is the total number of the samples, j is the j_th sample</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
     <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -990,7 +990,7 @@ Date
     <span class="k">return</span> <span class="n">lmom1</span><span class="p">,</span> <span class="n">lmom2</span><span class="p">,</span> <span class="n">lmom3</span>
 
 
-<span class="n">LMM</span> <span class="o">=</span> <span class="n">samlmom3</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">LMM</span> <span class="o">=</span> <span class="n">samlmom3</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">"Annual low-flow"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">LMM</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1018,10 +1018,10 @@ Date
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">pargev_fsolve</span><span class="p">(</span><span class="n">lmom</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    pargev_fsolve estimates the parameters of the Generalized Extreme Value </span>
 <span class="sd">    distribution given the L-moments of samples</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">lmom_ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">lmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
     <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">t</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">2</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
@@ -1051,17 +1051,17 @@ Date
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">pargev</span><span class="p">(</span><span class="n">lmom</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    pargev returns the parameters of the Generalized Extreme Value </span>
 <span class="sd">    distribution given the L-moments of samples</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">lmom_ratios</span> <span class="o">=</span> <span class="p">[</span><span class="n">lmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lmom</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">lmom</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
     
     <span class="n">SMALL</span> <span class="o">=</span> <span class="mf">1e-5</span>
     <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-6</span>
     <span class="n">maxit</span> <span class="o">=</span> <span class="mi">20</span>
     
-    <span class="c1"># EU IS EULER&#39;S CONSTANT</span>
+    <span class="c1"># EU IS EULER'S CONSTANT</span>
     <span class="n">EU</span> <span class="o">=</span> <span class="mf">0.57721566</span>
     <span class="n">DL2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">DL3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1083,7 +1083,7 @@ Date
     
     <span class="n">T3</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">T3</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid L-Moments&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Invalid L-Moments"</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">T3</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="n">A0</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">A1</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">A2</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">A3</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="n">A4</span><span class="p">))))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">B1</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="p">(</span><span class="n">B2</span> <span class="o">+</span> <span class="n">T3</span> <span class="o">*</span> <span class="n">B3</span><span class="p">)))</span>
@@ -1114,7 +1114,7 @@ Date
                 <span class="n">para2</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">G</span> <span class="o">/</span> <span class="p">(</span><span class="n">GAM</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">**-</span><span class="n">G</span><span class="p">))</span>
                 <span class="n">para1</span> <span class="o">=</span> <span class="n">lmom_ratios</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">para2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">GAM</span><span class="p">)</span> <span class="o">/</span> <span class="n">G</span>
                 <span class="k">return</span> <span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="n">para3</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Iteration has not converged&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Iteration has not converged"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">Z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">T3</span>
         <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="p">(</span><span class="n">C1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="p">(</span><span class="n">C2</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">C3</span><span class="p">)))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="p">(</span><span class="n">D1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">D2</span><span class="p">))</span>
@@ -1153,19 +1153,19 @@ Date
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot empirical PDF</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span>
-         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Empirical PDF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lowf</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">'stepfilled'</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Empirical PDF'</span><span class="p">)</span>
 <span class="c1"># Plot estimated PDF based on maximum likelihood method</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span>
-         <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated PDF (MLE)&#39;</span><span class="p">)</span>
+         <span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Estimated PDF (MLE)'</span><span class="p">)</span>
 <span class="c1"># Plot estimated PDF based on the method of L-moments</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span>
-         <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated PDF (LMM)&#39;</span><span class="p">)</span>
+         <span class="s1">'b-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Estimated PDF (LMM)'</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Annual 5-day Low-flow ($m^3/s$)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Annual 5-day Low-flow ($m^3/s$)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1181,20 +1181,20 @@ Date
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot empirical CDF</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lowf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">]),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lowf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Annual low-flow"</span><span class="p">]),</span>
             <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">lowf</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
-            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orangered&#39;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Empirical CDF&#39;</span><span class="p">)</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">'orangered'</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Empirical CDF'</span><span class="p">)</span>
 <span class="c1"># Plot estimated PDF based on maximum likelihood method</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
-         <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated CDF (MLE)&#39;</span><span class="p">)</span>
+         <span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Estimated CDF (MLE)'</span><span class="p">)</span>
 <span class="c1"># Plot estimated PDF based on the method of L-moments</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
-         <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated CDF (LMM)&#39;</span><span class="p">)</span>
+         <span class="s1">'b-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Estimated CDF (LMM)'</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Annual 5-day Low-flow ($m^3/s$)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Annual 5-day Low-flow ($m^3/s$)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1209,9 +1209,9 @@ Date
 <p>There are several tests available to test the performances of distribution fits. Here we used the Kolmogorov-Smirnov (KS) test, which is available in <code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>. This is a two-sided test for the null hypothesis that <strong>the distribution of independent samples is identical to the specified cumulative distribution</strong>. If the KS statistic is small or the p-value is high, then we cannot reject the hypothesis that samples follow the specified distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MLEKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">"Annual low-flow"</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">MLEKS</span><span class="p">)</span>
-<span class="n">LMMKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">&quot;Annual low-flow&quot;</span><span class="p">],</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+<span class="n">LMMKS</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">lowf</span><span class="p">[</span><span class="s2">"Annual low-flow"</span><span class="p">],</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">LMMKS</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1237,22 +1237,22 @@ KstestResult(statistic=0.14516854345180497, pvalue=0.5061871580723805)
 
 <span class="c1"># extreme low-flow under each return period</span>
 <span class="n">LFTmle</span> <span class="o">=</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span>
-<span class="n">LFTmle</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LFTmle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Annual 5-day low-flow&quot;</span><span class="p">])</span>
-<span class="n">LFTmle</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Return period&quot;</span>
+<span class="n">LFTmle</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LFTmle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"Annual 5-day low-flow"</span><span class="p">])</span>
+<span class="n">LFTmle</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Return period"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">LFTmle</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]])</span>
 
 <span class="n">LFTlmm</span> <span class="o">=</span> <span class="n">LMMGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span>
-<span class="n">LFTlmm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LFTlmm</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Annual 5-day low-flow&quot;</span><span class="p">])</span>
-<span class="n">LFTlmm</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Return period&quot;</span>
+<span class="n">LFTlmm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LFTlmm</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"Annual 5-day low-flow"</span><span class="p">])</span>
+<span class="n">LFTlmm</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Return period"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">LFTlmm</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]])</span>
 
 <span class="c1"># Plot low-flow vs return periods</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LFTmle</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MLE&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LFTlmm</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;LMM&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Annual 5-day low-flow ($m^3/s$)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Return period (years)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LFTmle</span><span class="p">,</span> <span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'MLE'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">LFTlmm</span><span class="p">,</span> <span class="s1">'b-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'LMM'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Annual 5-day low-flow ($m^3/s$)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Return period (years)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
