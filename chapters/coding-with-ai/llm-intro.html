@@ -1,0 +1,1673 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. A Quick Introduction to Large Language Models (LLMs)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/coding-with-ai/llm-intro';</script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/coding-with-ai/llm-intro.html" />
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. What is Python?" href="../data-analytics/python.html" />
+    <link rel="prev" title="Python Climate Visuals" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding with AI</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction to LLM</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-basic.html">1.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-exercise.html">1.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-solution.html">1.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-basic.html">2.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-exercise.html">2.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-solution.html">2.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-basic.html">3.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-solution.html">3.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-basic.html">4.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-exercise.html">4.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-solution.html">4.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/xarray-basic.html">5.1. Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-advanced.html">1.2. Tutorial (Advanced)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1 (Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2025)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/FinalProject-2025Fall.html">Fall 2025</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../gallery/plot_weighted_river_network.html">River Network</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Others</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../others/refs.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/coding-with-ai/llm-intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/xiaoganghe/python-climate-visuals" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/coding-with-ai/llm-intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A Quick Introduction to Large Language Models (LLMs)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-llm">1.1. 1. What is an LLM?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokens-how-an-llm-reads-text">1.2. 2. Tokens: how an LLM reads text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-the-next-token">1.3. 3. Predicting the next token</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-context-window-the-model-s-working-memory">1.4. 4. The context window: the model’s working memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompts-how-you-steer-the-model">1.5. 5. Prompts: how you steer the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-chatbot-to-agent">1.6. 6. From chatbot to agent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#live-demo-plausible-but-wrong">1.7. 7. Live demo: plausible but wrong</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-request">1.7.1. The request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-agent-gave-us">1.7.2. What the agent gave us</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-1-the-one-you-can-see">1.7.3. Bug #1 — the one you can see</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-2-and-3-the-ones-you-can-t-see">1.7.4. Bug #2 (and #3) — the ones you can’t see</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tempting-fix-that-is-still-wrong">1.7.4.1. A tempting fix that is still wrong</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-comparison-the-stakeholder-actually-wanted">1.7.4.2. The comparison the stakeholder actually wanted</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-point">1.7.5. The point</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#none-of-this-is-the-agent-s-fault-exactly">1.7.5.1. None of this is the agent’s fault, exactly</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-reusable-check">1.7.6. A reusable check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">1.8. 8. Key takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-yourself">1.9. 9. Try it yourself</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-quick-introduction-to-large-language-models-llms">
+<h1><span class="section-number">1. </span>A Quick Introduction to Large Language Models (LLMs)<a class="headerlink" href="#a-quick-introduction-to-large-language-models-llms" title="Link to this heading">#</a></h1>
+<p>Before we use AI tools to help us write code, it helps to know what is actually happening inside them. You do not need to know the exact libraries or functions beforehand, but you need a <strong>mental model</strong> good enough to predict when the tool will help and when it will mislead you.</p>
+<div class="note admonition">
+<p class="admonition-title">Learning outcomes</p>
+<p>By the end, you should be able to:</p>
+<ul class="simple">
+<li><p>Explain what an LLM does and does not do, and how chat, inline completion, and agent tools differ.</p></li>
+<li><p>Write prompts that provide the context scientific code needs, including data structure, units, library versions, and constraints.</p></li>
+<li><p>Verify AI-generated analysis using sanity checks rather than trusting code simply because it runs.</p></li>
+<li><p>Identify common failure modes in climate and statistical code.</p></li>
+</ul>
+</div>
+<section id="what-is-an-llm">
+<h2><span class="section-number">1.1. </span>1. What is an LLM?<a class="headerlink" href="#what-is-an-llm" title="Link to this heading">#</a></h2>
+<p>A <strong>Large Language Model (LLM)</strong> is a neural network trained on a huge amount of text (books, websites, and a lot of public code) to do one thing:</p>
+<blockquote>
+<div><p><strong>Given some text, predict what comes next.</strong></p>
+</div></blockquote>
+<p>ChatGPT, Claude, Gemini and GitHub Copilot are all built on LLMs. Most modern LLMs use the <strong>Transformer</strong> architecture, introduced by Google researchers in 2017 (<em>Attention Is All You Need</em>). Its key idea, <em>attention</em>, lets the model weigh how relevant every earlier piece of text is when predicting the next piece.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Year</p></th>
+<th class="head"><p>Milestone</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2017</p></td>
+<td><p>Transformer architecture published</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nov 2022</p></td>
+<td><p>ChatGPT (GPT-3.5) marks first LLM chatbot to reach a mass audience</p></td>
+</tr>
+<tr class="row-even"><td><p>2023 onward</p></td>
+<td><p>GPT-4, Claude, Gemini and others; rapid improvement in coding ability</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tokens-how-an-llm-reads-text">
+<h2><span class="section-number">1.2. </span>2. Tokens: how an LLM reads text<a class="headerlink" href="#tokens-how-an-llm-reads-text" title="Link to this heading">#</a></h2>
+<p>An LLM does not see letters or words. A <strong>tokenizer</strong> first chops text into small pieces called <strong>tokens</strong>, then maps each token to an integer ID. The model only ever works with these numbers.</p>
+<p>Let’s look at a real tokenizer. <code class="docutils literal notranslate"><span class="pre">tiktoken</span></code> is OpenAI’s open-source tokenizer library; other companies’ models use different tokenizers, but they all work the same way.
+You can also paste texts into the <a class="reference external" href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> web page instead. It highlights each token in a different colour and shows the token count.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment the next line if tiktoken is not installed</span>
+<span class="c1"># !pip install -q tiktoken</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">tiktoken</span>
+
+<span class="n">enc</span> <span class="o">=</span> <span class="n">tiktoken</span><span class="o">.</span><span class="n">get_encoding</span><span class="p">(</span><span class="s2">"o200k_base"</span><span class="p">)</span>  <span class="c1"># the tokenizer used by GPT-4o-era OpenAI models</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show_tokens</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">pieces</span> <span class="o">=</span> <span class="p">[</span><span class="n">enc</span><span class="o">.</span><span class="n">decode</span><span class="p">([</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">  -&gt;  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> tokens"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   pieces:"</span><span class="p">,</span> <span class="n">pieces</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   IDs:   "</span><span class="p">,</span> <span class="n">ids</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_tokens</span><span class="p">(</span><span class="s2">"Daily rainfall at Changi"</span><span class="p">)</span>
+<span class="n">show_tokens</span><span class="p">(</span><span class="s2">"evapotranspiration"</span><span class="p">)</span>
+<span class="n">show_tokens</span><span class="p">(</span><span class="s2">"Rainfall on 12 Jan was 142.4 mm"</span><span class="p">)</span>
+<span class="n">show_tokens</span><span class="p">(</span><span class="s2">"樟宜的日降雨量"</span><span class="p">)</span>  <span class="c1"># "Daily rainfall at Changi" in Chinese</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'Daily rainfall at Changi'  -&gt;  5 tokens
+   pieces: ['Daily', ' rainfall', ' at', ' Ch', 'angi']
+   IDs:    [34217, 82809, 540, 1036, 23214]
+
+'evapotranspiration'  -&gt;  5 tokens
+   pieces: ['ev', 'ap', 'otrans', 'p', 'iration']
+   IDs:    [6923, 403, 169597, 79, 11960]
+
+'Rainfall on 12 Jan was 142.4 mm'  -&gt;  12 tokens
+   pieces: ['Rain', 'fall', ' on', ' ', '12', ' Jan', ' was', ' ', '142', '.', '4', ' mm']
+   IDs:    [74615, 14229, 402, 220, 899, 11558, 673, 220, 18330, 13, 19, 8957]
+
+'樟宜的日降雨量'  -&gt;  8 tokens
+   pieces: ['�', '�', '宜', '的', '日', '降', '雨', '量']
+   IDs:    [14491, 253, 67176, 1616, 2292, 36722, 53307, 13323]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Things to notice when you run the cell above:</p>
+<ul class="simple">
+<li><p>Common words are usually <strong>one token</strong>, often including the leading space (<code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">rainfall&quot;</span></code>); rare or long words are split into pieces.</p></li>
+<li><p>Numbers such as <code class="docutils literal notranslate"><span class="pre">142.4</span></code> are split into fragments, not stored as a single value.</p></li>
+<li><p>Non-English text can sometimes uses <strong>more tokens</strong> per character.</p></li>
+</ul>
+<p>A rough rule of thumb for English: <strong>1 token ≈ ¾ of a word</strong>, so 100 tokens ≈ 75 words. Let’s check it on a paragraph:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paragraph</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"Singapore has a tropical rainforest climate with no distinct seasons. "</span>
+    <span class="s2">"Rainfall is abundant throughout the year, but the northeast monsoon "</span>
+    <span class="s2">"from December to early March brings some of the wettest weeks, "</span>
+    <span class="s2">"with long spells of continuous rain."</span>
+<span class="p">)</span>
+<span class="n">n_words</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">paragraph</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">n_tokens</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">paragraph</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">n_words</span><span class="si">}</span><span class="s2"> words, </span><span class="si">{</span><span class="n">n_tokens</span><span class="si">}</span><span class="s2"> tokens, </span><span class="si">{</span><span class="n">n_words</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_tokens</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> words per token"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37 words, 44 tokens, 0.84 words per token
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Why this matters for coding:</strong> an LLM processes <code class="docutils literal notranslate"><span class="pre">142.4</span></code> as tokens (text fragments), rather than as a numerical value in the way Python does. This can contribute to errors in numerical reasoning, such as confusing which decimal is larger (<a class="reference external" href="https://huggingface.co/spaces/huggingface/number-tokenization-blog">9.9 or 9.11?</a>). For calculations, let Python do the arithmetic rather than relying on the chatbot.</p>
+</div>
+</section>
+<section id="predicting-the-next-token">
+<h2><span class="section-number">1.3. </span>3. Predicting the next token<a class="headerlink" href="#predicting-the-next-token" title="Link to this heading">#</a></h2>
+<p>Text generation is a simple loop:</p>
+<ol class="arabic simple">
+<li><p>Read all the tokens so far.</p></li>
+<li><p>Output a <strong>probability for every possible next token</strong>.</p></li>
+<li><p>Pick one, append it, and repeat.</p></li>
+</ol>
+<p>A long answer, or a whole Python script, is just this step repeated hundreds of times.</p>
+<p>Below is a <strong>toy</strong> version. Suppose the prompt is <em>“The wettest month in Singapore is usually”</em>. The model produces a raw score (a <em>logit</em>) for each candidate token, and turns the scores into probabilities with the <em>softmax</em> function. The numbers here are made up for illustration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">" November"</span><span class="p">,</span> <span class="s2">" December"</span><span class="p">,</span> <span class="s2">" January"</span><span class="p">,</span> <span class="s2">" April"</span><span class="p">,</span> <span class="s2">" July"</span><span class="p">]</span>
+<span class="n">logits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>  <span class="c1"># toy logits, not from a real LLM</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">next_token_probs</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="c1"># Softmax with temperature: higher temperature -&gt; flatter distribution</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">logits</span> <span class="o">/</span> <span class="n">temperature</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">-</span> <span class="n">z</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>  <span class="c1"># for numerical stability</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span> <span class="o">/</span> <span class="n">p</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+
+<span class="n">probs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">next_token_probs</span><span class="p">(</span><span class="n">logits</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">candidates</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>November    0.545
+December    0.299
+January     0.090
+April       0.049
+July        0.016
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most chat tools do not always pick the most likely token. They <strong>sample</strong> from these probabilities, and a setting called <strong>temperature</strong> controls how adventurous the sampling is:</p>
+<ul class="simple">
+<li><p><strong>Low temperature</strong> → almost always the top token (predictable, repetitive).</p></li>
+<li><p><strong>High temperature</strong> → lower-probability tokens get picked more often (varied, sometimes wrong).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">temperatures</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">next_token_probs</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">],</span> <span class="n">p</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#2a78b8"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"temperature = </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"0.9"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"top"</span><span class="p">,</span> <span class="s2">"right"</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">side</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Probability of next token"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">'Next token after "The wettest month in Singapore is usually"'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2814621e7410c52a34d1dc0afc33419a958c0c5f8746ddfaf7dcd9cbdd9dfaae.png" src="../../_images/2814621e7410c52a34d1dc0afc33419a958c0c5f8746ddfaf7dcd9cbdd9dfaae.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Generate the next token 1,000 times at each temperature and count the results</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">next_token_probs</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">picks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">candidates</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">))</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">picks</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"T = </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">:"</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 0.3: November 880, December 119, January 1, April 0, July 0
+T = 1.0: November 568, December 279, January 87, April 50, July 16
+T = 2.0: November 379, December 294, January 143, April 127, July 57
+</pre></div>
+</div>
+</div>
+</div>
+<p>Three consequences follow directly:</p>
+<ul class="simple">
+<li><p><strong>It produces <em>plausible</em> text, not <em>verified</em> text.</strong> The model has no built-in fact-checker. A wrong answer is generated in exactly the same way, and with the same confident tone, as a right one.</p></li>
+<li><p><strong>Answers vary between runs.</strong> Because of sampling, asking the same question twice may give you different code.</p></li>
+<li><p><strong>Knowledge is frozen at training time.</strong> The model learned from text up to its <em>training cutoff</em>. Libraries keep changing, so LLMs often suggest code that used to work. Two examples that break with current NumPy and pandas:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"NumPy"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">"| pandas"</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># 1. np.NaN was removed in NumPy 2.0</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"np.NaN      -&gt;"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+
+<span class="c1"># 2. Frequency alias "H" (hourly) was deprecated in pandas 2.2 and removed in pandas 3.0</span>
+<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">caught</span><span class="p">:</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"always"</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">"2021-01-01"</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"H"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'freq="H"    -&gt; still works, but warns:'</span><span class="p">,</span> <span class="n">caught</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">message</span> <span class="k">if</span> <span class="n">caught</span> <span class="k">else</span> <span class="s2">"no warning"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'freq="H"    -&gt;'</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">". Use 'h' instead."</span><span class="p">)</span>
+
+<span class="c1"># The modern versions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">np.nan ="</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">"2021-01-01"</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"h"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NumPy 2.5.3 | pandas 3.0.6 
+
+np.NaN      -&gt; `np.NaN` was removed in the NumPy 2.0 release. Use `np.nan` instead.
+freq="H"    -&gt; Invalid frequency: H. Use 'h' instead.
+
+np.nan = nan
+DatetimeIndex(['2021-01-01 00:00:00', '2021-01-01 01:00:00',
+               '2021-01-01 02:00:00'],
+              dtype='datetime64[us]', freq='h')
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-context-window-the-model-s-working-memory">
+<h2><span class="section-number">1.4. </span>4. The context window: the model’s working memory<a class="headerlink" href="#the-context-window-the-model-s-working-memory" title="Link to this heading">#</a></h2>
+<p>Everything the model can “see” when answering is its <strong>context</strong>: the system instructions, your conversation so far, any files or data you pasted, and the answer it is currently writing.</p>
+<ul class="simple">
+<li><p>The context has a maximum size, the <strong>context window</strong>, measured in tokens. As of 2026, leading models accept from a few hundred thousand up to around a million tokens — but these numbers change every few months.</p></li>
+<li><p><strong>The model knows nothing about your data unless it is in the context.</strong> It has never seen your CSV. If you do not tell it the column names, units or what a code value means, it will guess.</p></li>
+<li><p>Bigger is not always better: very long contexts can make the model lose track of details buried in the middle. Give it the relevant information, not everything.</p></li>
+</ul>
+<p>Take the Changi daily rainfall data used in the Pandas tutorial. Is it a good idea to paste the whole file into a chat?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/XiaogangHe/python-climate-visuals/master/assets/data/Changi_daily_rainfall.csv"</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">csv_text</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> rows, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">csv_text</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> characters"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Roughly </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">csv_text</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">4</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> tokens (using ~4 characters per token as a rough guide)"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14,610 rows, 236,239 characters
+Roughly 59,059 tokens (using ~4 characters per token as a rough guide)
+</pre></div>
+</div>
+</div>
+</div>
+<p>That is a lot of context spent on numbers the model does not need to see. A short <strong>summary</strong> of the data’s structure is far more useful: it tells the model exactly what it needs to write correct code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">describe_for_prompt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># Build a compact text description of a DataFrame to paste into an AI prompt</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">"DataFrame with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> rows and </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> column(s)."</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"Index: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+        <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">" (frequency: </span><span class="si">{</span><span class="n">pd</span><span class="o">.</span><span class="n">infer_freq</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">)</span> <span class="k">else</span> <span class="s2">""</span><span class="p">),</span>
+        <span class="s2">"Columns:"</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">", units: </span><span class="si">{</span><span class="n">units</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">units</span> <span class="ow">and</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">units</span> <span class="k">else</span> <span class="s2">""</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">col</span><span class="si">!r}</span><span class="s2">: dtype </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> missing values</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"First rows:"</span><span class="p">)</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+
+<span class="n">data_summary</span> <span class="o">=</span> <span class="n">describe_for_prompt</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="p">{</span><span class="s2">"Daily Rainfall Total (mm)"</span><span class="p">:</span> <span class="s2">"mm/day"</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame with 14,610 rows and 1 column(s).
+Index: DatetimeIndex from 1981-01-01 00:00:00 to 2020-12-31 00:00:00 (frequency: D)
+Columns:
+  - 'Daily Rainfall Total (mm)': dtype float64, 0 missing values, units: mm/day
+First rows:
+            Daily Rainfall Total (mm)
+Date                                 
+1981-01-01                        0.0
+1981-01-02                        0.0
+1981-01-03                        0.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prompts-how-you-steer-the-model">
+<h2><span class="section-number">1.5. </span>5. Prompts: how you steer the model<a class="headerlink" href="#prompts-how-you-steer-the-model" title="Link to this heading">#</a></h2>
+<p>A <strong>prompt</strong> is the text you give the model. As the model continues whatever it is given, a more specific prompt narrows down which continuations are likely.</p>
+<ul class="simple">
+<li><p><strong>System prompt</strong> — background instructions set by the app or developer (e.g. <em>“You are a patient tutor; give hints, not full answers”</em>).</p></li>
+<li><p><strong>User prompt</strong> — your actual request.</p></li>
+</ul>
+<p>For scientific code, a good prompt covers five things:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Part</p></th>
+<th class="head"><p>Ask yourself</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Context</strong></p></td>
+<td><p>What is this for?</p></td>
+<td><p>“Describing the seasonal rainfall pattern at Changi for a course project”</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Data</strong></p></td>
+<td><p>What exactly does it look like?</p></td>
+<td><p>Paste the data summary, including units</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Task</strong></p></td>
+<td><p>What should the output be?</p></td>
+<td><p>“Mean monthly rainfall for each calendar month, as a bar chart”</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Constraints</strong></p></td>
+<td><p>Which tools and versions?</p></td>
+<td><p>“pandas ≥ 2.2, NumPy ≥ 2, matplotlib”</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Verification</strong></p></td>
+<td><p>How will I know it is right?</p></td>
+<td><p>“List 3 checks I should run on the result”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>❌ <strong>Weak:</strong> <em>“Write code to plot Changi rainfall.”</em></p>
+<p>✅ <strong>Strong:</strong> built below from the data summary we just made.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strong_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'''I am describing the seasonal rainfall pattern at Changi, Singapore, for a course project.</span>
+
+<span class="s1">My data is a pandas DataFrame called `df`:</span>
+<span class="si">{</span><span class="n">data_summary</span><span class="si">}</span>
+
+<span class="s1">Task: for each calendar month (Jan-Dec), compute the mean monthly rainfall</span>
+<span class="s1">total over all years in the data, and plot it as a bar chart.</span>
+
+<span class="s1">Constraints: pandas &gt;= 2.2 and NumPy &gt;= 2 syntax; matplotlib for the plot.</span>
+<span class="s1">Label the axes with units. Explain your approach in 2-3 sentences before</span>
+<span class="s1">writing the code.</span>
+
+<span class="s1">After the code, list 3 checks I should run to confirm the result is correct.'''</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">strong_prompt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am describing the seasonal rainfall pattern at Changi, Singapore, for a course project.
+
+My data is a pandas DataFrame called `df`:
+DataFrame with 14,610 rows and 1 column(s).
+Index: DatetimeIndex from 1981-01-01 00:00:00 to 2020-12-31 00:00:00 (frequency: D)
+Columns:
+  - 'Daily Rainfall Total (mm)': dtype float64, 0 missing values, units: mm/day
+First rows:
+            Daily Rainfall Total (mm)
+Date                                 
+1981-01-01                        0.0
+1981-01-02                        0.0
+1981-01-03                        0.0
+
+Task: for each calendar month (Jan-Dec), compute the mean monthly rainfall
+total over all years in the data, and plot it as a bar chart.
+
+Constraints: pandas &gt;= 2.2 and NumPy &gt;= 2 syntax; matplotlib for the plot.
+Label the axes with units. Explain your approach in 2-3 sentences before
+writing the code.
+
+After the code, list 3 checks I should run to confirm the result is correct.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="from-chatbot-to-agent">
+<h2><span class="section-number">1.6. </span>6. From chatbot to agent<a class="headerlink" href="#from-chatbot-to-agent" title="Link to this heading">#</a></h2>
+<p>The same LLM can be used in different ways:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Who runs the code?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Chat</strong> (ChatGPT, Claude, Gemini)</p></td>
+<td><p>You paste code or questions in, copy code out</p></td>
+<td><p><strong>You</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inline completion</strong> (e.g. Copilot in VS Code)</p></td>
+<td><p>Suggests the next few lines as you type</p></td>
+<td><p><strong>You</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Agent</strong> (e.g. Claude Code, Codex, Gemini CLI, Colab’s Data Science Agent)</p></td>
+<td><p>Given <strong>tools</strong> (read files, write code, run it), it works in a loop until the task is done</p></td>
+<td><p><strong>The agent</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>An agent’s loop looks like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Goal → Plan → Act (edit / run code) → Observe (output or error) → repeat until done
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Agents fix code that crashes, not code that runs but is wrong.</strong></p>
+<p>A crash produces an error message, which the agent can read and act on. Code that runs but gives the wrong answer produces nothing, so the agent has no reason to look again. Spotting those mistakes takes domain knowledge, and that part is <strong>YOUR</strong> job. We’ll see this in the live demo in the next section.</p>
+</div>
+</section>
+<section id="live-demo-plausible-but-wrong">
+<h2><span class="section-number">1.7. </span>7. Live demo: plausible but wrong<a class="headerlink" href="#live-demo-plausible-but-wrong" title="Link to this heading">#</a></h2>
+<p>We have seen <em>why</em> LLMs can produce confident, wrong answers. Now let’s watch it happen. We give an AI agent a request of the kind you would genuinely get from a stakeholder (which most of the time, is an underspecified one) and look closely at what comes back.</p>
+<p><strong>The data.</strong> One year (2025) of synthetic daily rainfall from 12 rain gauges (<code class="docutils literal notranslate"><span class="pre">S01</span></code>–<code class="docutils literal notranslate"><span class="pre">S12</span></code>) across Singapore, in <code class="docutils literal notranslate"><span class="pre">rain_gauges_2025.csv</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dataset is <strong>synthetic</strong>. We generated it, so we know the true answer. The data-quality problems in it are the kind that appear in real monitoring networks.</p>
+</div>
+<section id="the-request">
+<h3><span class="section-number">1.7.1. </span>The request<a class="headerlink" href="#the-request" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><em>“Here’s a year of daily rainfall from our 12 rain gauges. Which areas got the most rain in 2025? Give me the top 5, and we’ll prioritise them for drain upgrades.”</em></p>
+</div></blockquote>
+<p>We pass this, together with the CSV, to an AI coding agent.</p>
+<p><strong>Before we run it, let’s poll: what do you expect to go wrong?</strong></p>
+<ol class="arabic simple">
+<li><p>It will crash / write code that doesn’t run</p></li>
+<li><p>It will run, and the answer will be right</p></li>
+<li><p>It will run, and the answer will be wrong in a way I can see</p></li>
+<li><p>It will run, and the answer will be wrong in a way I can’t see</p></li>
+</ol>
+</section>
+<section id="what-the-agent-gave-us">
+<h3><span class="section-number">1.7.2. </span>What the agent gave us<a class="headerlink" href="#what-the-agent-gave-us" title="Link to this heading">#</a></h3>
+<p>Reasonable-looking code. It runs cleanly, with no warnings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../../assets/data/llm_rain_gauges_2025.csv"</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">])</span>
+
+<span class="c1"># Total rainfall per station in 2025</span>
+<span class="n">totals</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"station"</span><span class="p">,</span> <span class="s2">"region"</span><span class="p">])[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span>
+      <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+      <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">top5_agent</span> <span class="o">=</span> <span class="n">totals</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">top5_agent</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>station  region 
+S07      West       42502.0
+S10      Central     2861.5
+S05      East        2679.7
+S08      West        2501.9
+S01      North       2360.4
+Name: rainfall_mm, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is that an answer you would send to your stakeholder?</p>
+</section>
+<section id="bug-1-the-one-you-can-see">
+<h3><span class="section-number">1.7.3. </span>Bug #1 — the one you can see<a class="headerlink" href="#bug-1-the-one-you-can-see" title="Link to this heading">#</a></h3>
+<p>Singapore typically gets a couple of thousand millimetres of rain a year. Station <code class="docutils literal notranslate"><span class="pre">S07</span></code> reports over <strong>40,000 mm</strong>. Let’s look at the values themselves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    4392.000000
+mean       15.423679
+std       301.763889
+min         0.000000
+25%         0.000000
+50%         0.000000
+75%         6.900000
+max      9999.000000
+Name: rainfall_mm, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>station</th>
+      <th>region</th>
+      <th>rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>172</th>
+      <td>2025-06-02</td>
+      <td>S07</td>
+      <td>West</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>344</th>
+      <td>2025-09-21</td>
+      <td>S07</td>
+      <td>West</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>1460</th>
+      <td>2025-03-14</td>
+      <td>S07</td>
+      <td>West</td>
+      <td>9999.0</td>
+    </tr>
+    <tr>
+      <th>1805</th>
+      <td>2025-06-03</td>
+      <td>S07</td>
+      <td>West</td>
+      <td>9999.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Four days of exactly <strong>9999 mm</strong>. That is not rainfall data, but an error code. The gauge’s <strong>data dictionary</strong>, which nobody gave the agent, will say so at another place:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td><p>Calendar date (local time)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">station</span></code></p></td>
+<td><p>Gauge ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">region</span></code></p></td>
+<td><p>Area of Singapore</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rainfall_mm</span></code></p></td>
+<td><p>Daily rainfall total in mm. <strong><code class="docutils literal notranslate"><span class="pre">9999</span></code> = sensor fault, value unknown.</strong> Dates with no record = logger offline.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The agent was never told this, so it summed the error codes as if they were rain. Let’s treat them as missing and try again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_clean</span><span class="p">[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">9999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="n">totals_fixed</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"station"</span><span class="p">,</span> <span class="s2">"region"</span><span class="p">])[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">top5_fixed</span> <span class="o">=</span> <span class="n">totals_fixed</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">top5_fixed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>station  region 
+S10      Central    2861.5
+S05      East       2679.7
+S07      West       2506.0
+S08      West       2501.9
+S01      North      2360.4
+Name: rainfall_mm, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plausible. Defensible. Around 2,400–2,900 mm, which is about what you’d expect for a year in Singapore.</p>
+<p>So we’re done, right?</p>
+</section>
+<section id="bug-2-and-3-the-ones-you-can-t-see">
+<h3><span class="section-number">1.7.4. </span>Bug #2 (and #3) — the ones you can’t see<a class="headerlink" href="#bug-2-and-3-the-ones-you-can-t-see" title="Link to this heading">#</a></h3>
+<p>Every station should have exactly <strong>365 rows</strong>, one per day. That is a one-line check:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"station"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>station
+S01    365
+S02    365
+S03    318
+S04    365
+S05    365
+S06    365
+S07    365
+S08    365
+S09    365
+S10    424
+S11    365
+S12    365
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Two stations are wrong, in opposite directions:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">S03</span></code> has 318 rows</strong> — 47 days are missing.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">S10</span></code> has 424 rows</strong> — 59 days appear twice.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which dates are missing at S03?</span>
+<span class="n">all_days</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">"2025-01-01"</span><span class="p">,</span> <span class="s2">"2025-12-31"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"D"</span><span class="p">)</span>
+<span class="n">s03_days</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">"station"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"S03"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">]</span>
+<span class="n">missing</span> <span class="o">=</span> <span class="n">all_days</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">s03_days</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"S03 is missing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> days: </span><span class="si">{</span><span class="n">missing</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">missing</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Which rows are duplicated at S10?</span>
+<span class="n">dups</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"station"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dups</span><span class="p">)</span><span class="si">}</span><span class="s2"> duplicated rows, all at </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dups</span><span class="p">[</span><span class="s1">'station'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="si">}</span><span class="s2">, "</span>
+      <span class="sa">f</span><span class="s2">"from </span><span class="si">{</span><span class="n">dups</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">dups</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S03 is missing 47 days: 2025-11-15 to 2025-12-31
+59 duplicated rows, all at S10, from 2025-01-01 to 2025-02-28
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S03</span></code>’s logger went <strong>offline from 15 November</strong> to the end of the year. Those days are <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">NaN</span></code>. They are simply absent, so <code class="docutils literal notranslate"><span class="pre">.sum()</span></code> has nothing to warn about. <code class="docutils literal notranslate"><span class="pre">S03</span></code> looks drier than it was.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S10</span></code>’s logger <strong>re-uploaded January and February</strong>, so those days are counted twice. <code class="docutils literal notranslate"><span class="pre">S10</span></code> looks wetter than it was, enough to reach the top of the list.</p></li>
+</ul>
+<p>Nothing crashed. Nothing warned.</p>
+<section id="a-tempting-fix-that-is-still-wrong">
+<h4><span class="section-number">1.7.4.1. </span>A tempting fix that is still wrong<a class="headerlink" href="#a-tempting-fix-that-is-still-wrong" title="Link to this heading">#</a></h4>
+<p>“Just scale <code class="docutils literal notranslate"><span class="pre">S03</span></code> up to a full year” sounds reasonable. But look <em>when</em> the gap happened:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deduped</span> <span class="o">=</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"station"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">])</span>
+<span class="n">monthly</span> <span class="o">=</span> <span class="n">deduped</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">deduped</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">monthly</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"month"</span>
+<span class="n">monthly</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"mean daily rainfall (mm), all stations"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>month
+1     14.1
+2      7.8
+3      3.4
+4      4.1
+5      4.2
+6      3.7
+7      5.1
+8      4.9
+9      4.8
+10     6.4
+11     7.3
+12     9.7
+Name: mean daily rainfall (mm), all stations, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The missing weeks fall in the <strong>wettest part of the year</strong> (the northeast monsoon). Scaling up by the number of days would assume <code class="docutils literal notranslate"><span class="pre">S03</span></code> missed an <em>average</em> seven weeks of weather, and would still underestimate it.</p>
+</section>
+<section id="the-comparison-the-stakeholder-actually-wanted">
+<h4><span class="section-number">1.7.4.2. </span>The comparison the stakeholder actually wanted<a class="headerlink" href="#the-comparison-the-stakeholder-actually-wanted" title="Link to this heading">#</a></h4>
+<p>“Which areas got the most rain” is a comparison <strong>between places</strong>. A fair comparison uses the <strong>same days for every station</strong>:</p>
+<ol class="arabic simple">
+<li><p>Remove the duplicated rows.</p></li>
+<li><p>Treat <code class="docutils literal notranslate"><span class="pre">9999</span></code> as missing.</p></li>
+<li><p>Keep only the days on which <strong>every</strong> station has a valid reading, then compare mean daily rainfall.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One column per station; keep only days where all 12 stations have a valid value</span>
+<span class="n">wide</span> <span class="o">=</span> <span class="n">deduped</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">"date"</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">"station"</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">"rainfall_mm"</span><span class="p">)</span>
+<span class="n">common</span> <span class="o">=</span> <span class="n">wide</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">common</span><span class="p">)</span><span class="si">}</span><span class="s2"> of 365 days have valid data at every station"</span><span class="p">)</span>
+
+<span class="n">corrected</span> <span class="o">=</span> <span class="n">common</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">corrected</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"mean daily rainfall on common days (mm)"</span>
+<span class="n">corrected</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>314 of 365 days have valid data at every station
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>station
+S03    7.50
+S05    6.88
+S07    6.62
+S08    6.53
+S01    6.12
+Name: mean daily rainfall on common days (mm), dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent_top5</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">top5_agent</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">"station"</span><span class="p">))</span>
+<span class="n">fixed_top5</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">top5_fixed</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">"station"</span><span class="p">))</span>
+<span class="n">correct_top5</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">corrected</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">"agent"</span><span class="p">:</span> <span class="n">agent_top5</span><span class="p">,</span> <span class="s2">"after fixing 9999"</span><span class="p">:</span> <span class="n">fixed_top5</span><span class="p">,</span> <span class="s2">"corrected"</span><span class="p">:</span> <span class="n">correct_top5</span><span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">RangeIndex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"rank"</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>agent</th>
+      <th>after fixing 9999</th>
+      <th>corrected</th>
+    </tr>
+    <tr>
+      <th>rank</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>S07</td>
+      <td>S10</td>
+      <td>S03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>S10</td>
+      <td>S05</td>
+      <td>S05</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>S05</td>
+      <td>S07</td>
+      <td>S07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>S08</td>
+      <td>S08</td>
+      <td>S08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>S01</td>
+      <td>S01</td>
+      <td>S01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The <strong>wettest station (<code class="docutils literal notranslate"><span class="pre">S03</span></code>) was missing from both earlier lists</strong>, and <code class="docutils literal notranslate"><span class="pre">S10</span></code>, which should not be in the top 5 at all, was ranked <strong>#1</strong> after the “obvious” fix.</p>
+<p>Because the data is synthetic, we can check against the truth (the clean data before any problems were introduced):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">truth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../../assets/data/llm_rain_gauges_2025_truth.csv"</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">"date"</span><span class="p">])</span>
+<span class="n">true_totals</span> <span class="o">=</span> <span class="n">truth</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"station"</span><span class="p">)[</span><span class="s2">"rainfall_mm"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"true top 5:     "</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">true_totals</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="mi">5</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"corrected top 5:"</span><span class="p">,</span> <span class="n">correct_top5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"agent's top 5:  "</span><span class="p">,</span> <span class="n">agent_top5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>true top 5:      ['S03', 'S05', 'S07', 'S08', 'S01']
+corrected top 5: ['S03', 'S05', 'S07', 'S08', 'S01']
+agent's top 5:   ['S07', 'S10', 'S05', 'S08', 'S01']
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-point">
+<h3><span class="section-number">1.7.5. </span>The point<a class="headerlink" href="#the-point" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The agent’s first answer contained an <strong>obvious</strong> error (9999 mm). Fixing it produced numbers that looked <strong>completely reasonable</strong>, and made us <em>more</em> confident in a list that was still wrong.</p></li>
+<li><p>The remaining problems (a logger outage and a duplicate upload) produce <strong>no error, no warning and no strange values</strong>. They were only visible through a boring check: <em>does each station have 365 rows?</em></p></li>
+<li><p>The final answer comes with a caveat worth telling the stakeholder: <code class="docutils literal notranslate"><span class="pre">S03</span></code>’s total for 2025 cannot be stated exactly, because about seven of its wettest weeks were never recorded.</p></li>
+</ul>
+<section id="none-of-this-is-the-agent-s-fault-exactly">
+<h4><span class="section-number">1.7.5.1. </span>None of this is the agent’s fault, exactly<a class="headerlink" href="#none-of-this-is-the-agent-s-fault-exactly" title="Link to this heading">#</a></h4>
+<p>It was asked a vague question, and it answered it. It had no data dictionary, and nobody told it what the numbers meant.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>What went wrong</p></th>
+<th class="head"><p>Where this notebook addresses it</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“Most rain” was never defined; no one asked for a fair comparison</p></td>
+<td><p><strong>Prompts (Section 5)</strong> — ask the question you actually mean</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">9999</span></code> means “sensor fault”</p></td>
+<td><p><strong>Context (Section 4)</strong> — the model only knows what you put in its context</p></td>
+</tr>
+<tr class="row-even"><td><p>How would I have caught the gap and the duplicates?</p></td>
+<td><p><strong>Verification</strong> — the sanity check below</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A better prompt would have included the data dictionary and one extra line:</p>
+<blockquote>
+<div><p><em>“Before answering, check the data for error codes, missing dates and duplicate rows, and tell me what you found.”</em></p>
+</div></blockquote>
+</section>
+</section>
+<section id="a-reusable-check">
+<h3><span class="section-number">1.7.6. </span>A reusable check<a class="headerlink" href="#a-reusable-check" title="Link to this heading">#</a></h3>
+<p>The checks we just did by hand take a few lines, and they can be modified and applied to other time-series dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_daily_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">id_col</span><span class="p">,</span> <span class="n">date_col</span><span class="p">,</span> <span class="n">value_col</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">(</span><span class="mi">9999</span><span class="p">,)):</span>
+    <span class="c1"># Quick data-quality report for a long-format daily dataset</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="n">date_col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"D"</span><span class="p">)</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s2">"rows"</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">id_col</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span>
+        <span class="s2">"expected"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">days</span><span class="p">),</span>
+        <span class="s2">"duplicates"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="n">id_col</span><span class="p">,</span> <span class="n">date_col</span><span class="p">])]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">id_col</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span>
+        <span class="s2">"flagged"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">value_col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flags</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">id_col</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span>
+        <span class="s2">"NaN"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">value_col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">id_col</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+        <span class="s2">"min"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="n">value_col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flags</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">id_col</span><span class="p">)[</span><span class="n">value_col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="s2">"max"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="n">value_col</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flags</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">id_col</span><span class="p">)[</span><span class="n">value_col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">report</span><span class="p">[</span><span class="s2">"missing_days"</span><span class="p">]</span> <span class="o">=</span> <span class="n">report</span><span class="p">[</span><span class="s2">"expected"</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">"rows"</span><span class="p">]</span> <span class="o">-</span> <span class="n">report</span><span class="p">[</span><span class="s2">"duplicates"</span><span class="p">])</span>
+    <span class="n">problems</span> <span class="o">=</span> <span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">"missing_days"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">"duplicates"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">report</span><span class="p">[</span><span class="s2">"flagged"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">report</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">"duplicates"</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"flagged"</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"NaN"</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">"missing_days"</span><span class="p">:</span> <span class="nb">int</span><span class="p">})[</span><span class="n">problems</span><span class="p">]</span>
+
+
+<span class="n">check_daily_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">"station"</span><span class="p">,</span> <span class="s2">"date"</span><span class="p">,</span> <span class="s2">"rainfall_mm"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rows</th>
+      <th>expected</th>
+      <th>duplicates</th>
+      <th>flagged</th>
+      <th>NaN</th>
+      <th>min</th>
+      <th>max</th>
+      <th>missing_days</th>
+    </tr>
+    <tr>
+      <th>station</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>S03</th>
+      <td>318</td>
+      <td>365</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>131.7</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>S07</th>
+      <td>365</td>
+      <td>365</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>104.9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>S10</th>
+      <td>424</td>
+      <td>365</td>
+      <td>59</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>101.1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Three stations, three different problems, one table. Run a check like this <strong>before</strong> you ask any question of a new dataset. Regardless whether you wrote the analysis or an AI did.</p>
+</section>
+</section>
+<section id="key-takeaways">
+<h2><span class="section-number">1.8. </span>8. Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>An LLM <strong>predicts the next token</strong>. It generates plausible text, not verified truth.</p></li>
+<li><p>It reads <strong>tokens</strong>, not numbers. Let Python do the maths.</p></li>
+<li><p>It only knows what is in its <strong>context</strong>. Tell it about your data, units and library versions.</p></li>
+<li><p>Its knowledge has a <strong>cutoff</strong>. Expect outdated syntax.</p></li>
+<li><p>Output <strong>varies between runs</strong>. Never assume one run is representative.</p></li>
+<li><p><strong>Code that runs is not code that is correct.</strong> Always check units, row counts, missing and duplicated values, and whether the numbers are physically plausible.</p></li>
+<li><p>You must be able to <strong>explain every line you submit</strong>, and cite your AI use according to the course policy.</p></li>
+</ol>
+</section>
+<section id="try-it-yourself">
+<h2><span class="section-number">1.9. </span>9. Try it yourself<a class="headerlink" href="#try-it-yourself" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">show_tokens()</span></code> on your own name, once in English and once in another language you know. Which uses more tokens?</p></li>
+<li><p>Re-run the sampling cell with <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">0.05</span></code> and <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">=</span> <span class="pre">5</span></code>. What happens, and which setting would you want for writing code?</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/coding-with-ai"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Climate Visuals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../data-analytics/python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>What is Python?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-llm">1.1. 1. What is an LLM?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokens-how-an-llm-reads-text">1.2. 2. Tokens: how an LLM reads text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-the-next-token">1.3. 3. Predicting the next token</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-context-window-the-model-s-working-memory">1.4. 4. The context window: the model’s working memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompts-how-you-steer-the-model">1.5. 5. Prompts: how you steer the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-chatbot-to-agent">1.6. 6. From chatbot to agent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#live-demo-plausible-but-wrong">1.7. 7. Live demo: plausible but wrong</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-request">1.7.1. The request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-agent-gave-us">1.7.2. What the agent gave us</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-1-the-one-you-can-see">1.7.3. Bug #1 — the one you can see</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bug-2-and-3-the-ones-you-can-t-see">1.7.4. Bug #2 (and #3) — the ones you can’t see</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tempting-fix-that-is-still-wrong">1.7.4.1. A tempting fix that is still wrong</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-comparison-the-stakeholder-actually-wanted">1.7.4.2. The comparison the stakeholder actually wanted</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-point">1.7.5. The point</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#none-of-this-is-the-agent-s-fault-exactly">1.7.5.1. None of this is the agent’s fault, exactly</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-reusable-check">1.7.6. A reusable check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">1.8. 8. Key takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-yourself">1.9. 9. Try it yourself</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xiaogang HE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
