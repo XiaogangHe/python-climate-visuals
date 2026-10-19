@@ -57,7 +57,7 @@ parts:
 - caption: Homework
   chapters:
   - file: chapters/homework/homework1
-    title: Homework 1 (Fall 2025)
+    title: Homework 1 (Fall 2026)
   - file: chapters/homework/homework2
     title: Homework 2 (Fall 2025)
 - caption: Course Project
