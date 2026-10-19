@@ -71,8 +71,6 @@
                 gtag('config', 'UA-xxx');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/homework/homework1';</script>
     <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/homework/homework1.html" />
     <link rel="icon" href="../../_static/favicon.png"/>
@@ -443,7 +441,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-fit-the-gev-distribution-20-marks">Q3: Fit the GEV distribution (20 marks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-estimate-the-return-level-of-the-extreme-events-20-marks">Q4: Estimate the return level of the extreme events (20 marks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-test-the-goodness-of-fit-20-marks">Q5: Test the goodness-of-fit (20 marks)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-simple-peaks-over-threshold-histogram-10-marks">Q6: Simple peaks over threshold &amp; histogram (10 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-sensitivity-analysis-of-averaging-period-10-marks">Q6: Sensitivity analysis of averaging period (10 marks)</a></li>
 </ul>
             </nav>
         </div>
@@ -468,10 +466,10 @@ document.write(`
 </div>
 <div class="admonition-submission-guide admonition">
 <p class="admonition-title">Submission Guide</p>
-<p>Deadline: <strong>Sunday 11:59 pm, 2nd November 2025</strong>
+<p>Deadline: <strong>Sunday 11:59 pm, 1st November 2026</strong>
 (Note: Late submissions will not be accepted).</p>
-<p>Please upload your solutions to <a class="reference external" href="https://canvas.nus.edu.sg/courses/77993/assignments">Canvas</a> in a Jupyter Notebook format with the name “Homework1_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
-<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Kewei ZHANG (<a class="reference external" href="mailto:kewei_zhang&#37;&#52;&#48;u&#46;nus&#46;edu">kewei_zhang<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Yifan LU (<a class="reference external" href="mailto:yifan_lu&#37;&#52;&#48;u&#46;nus&#46;edu">yifan_lu<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+<p>Please upload your solutions to <a class="reference external" href="https://canvas.nus.edu.sg/courses/93388/assignments/279688">Canvas</a> in a Jupyter Notebook format with the name “Homework1_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>) or Yifan LU (<a class="reference external" href="mailto:yifan_lu&#37;&#52;&#48;u&#46;nus&#46;edu">yifan_lu<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,12 +503,12 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </section>
 <section id="q2-preprocess-daily-rainfall-data-20-marks">
 <h2>Q2: Preprocess daily rainfall data (20 marks)<a class="headerlink" href="#q2-preprocess-daily-rainfall-data-20-marks" title="Link to this heading">#</a></h2>
-<p>Find the seasonal maximum rainfall deficit for DJF, based on the 15-day centered moving average rainfall deficit.</p>
+<p>Find the seasonal maximum rainfall deficit for DJF, based on the 30-day centered moving average rainfall deficit.</p>
 <p>To do this:</p>
 <ul class="simple">
-<li><p>Compute the 15-day centered moving average of daily rainfall. (10 marks)</p></li>
-<li><p>Calculate the daily rainfall deficit by subtracting the 15-day moving average rainfall from the mean rainfall calculated in Q1. This will be used in Q6. (5 marks)</p></li>
-<li><p>For each DJF season, take the maximum deficit (one value per season). This yields 39 seasonal maxima that are used for Q3–Q5 (block-maxima approach). (5 marks)</p></li>
+<li><p>Compute the 30-day centered moving average of daily rainfall. (10 marks)</p></li>
+<li><p>Calculate the daily rainfall deficit by subtracting the 30-day moving average rainfall from the mean rainfall calculated in Q1. (5 marks)</p></li>
+<li><p>For each DJF season, take the maximum deficit (one value per season). This yields 39 seasonal maxima. (5 marks)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,16 +565,15 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 </div>
 </div>
 </section>
-<section id="q6-simple-peaks-over-threshold-histogram-10-marks">
-<h2>Q6: Simple peaks over threshold &amp; histogram (10 marks)<a class="headerlink" href="#q6-simple-peaks-over-threshold-histogram-10-marks" title="Link to this heading">#</a></h2>
-<p>Using the same 15-day centered moving-average deficit obtained in Q2:</p>
+<section id="q6-sensitivity-analysis-of-averaging-period-10-marks">
+<h2>Q6: Sensitivity analysis of averaging period (10 marks)<a class="headerlink" href="#q6-sensitivity-analysis-of-averaging-period-10-marks" title="Link to this heading">#</a></h2>
+<p>The rainfall deficit in Q2 was calculated using a 30-day centered moving average. The choice of averaging period can affect the magnitude and timing of identified extreme events.</p>
+<p>Using the same DJF rainfall data:</p>
 <ul class="simple">
-<li><p>Compute the 95th percentile of the pooled DJF moving-average deficit and set this as the threshold 𝑢. Report the numeric value of 𝑢. (5 marks)</p></li>
-<li><p>Plot a histogram of the seasonal exceedance counts <span class="math notranslate nohighlight">\(𝑘_s\)</span> in 39 years, with a 1-2 line caption describing the distribution. Day <span class="math notranslate nohighlight">\(i\)</span> is considered as an exceedance if the deficit is larger than the threshold (<span class="math notranslate nohighlight">\(x_i-u&gt;0\)</span>). (5 marks)</p></li>
-</ul>
-<p><strong>Bonus (5 marks):</strong></p>
-<ul class="simple">
-<li><p>Show the polyline of the seasonal mean exceedance magnitude (<span class="math notranslate nohighlight">\(𝑦_s​ = \frac{1}{k_s}\sum_i \max\{x_i-u,0\}\)</span>) as well in the graph.</p></li>
+<li><p>Calculate a 7-day centered moving average of daily rainfall and the corresponding daily rainfall deficit using the mean rainfall from Q1. (3 marks)</p></li>
+<li><p>For each DJF season, calculate the maximum rainfall deficit based on the 7-day moving average and compare it with the 30-day maximum obtained in Q2. (3 marks)</p></li>
+<li><p>Create a scatter plot comparing the 7-day and 30-day seasonal maximum deficits, with a 1:1 reference line. (2 marks)</p></li>
+<li><p>Identify the DJF season with the largest difference between the 7-day and 30-day maximum deficits. Briefly explain why changing the averaging period can change the magnitude of an extreme rainfall deficit. (2 marks)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,7 +655,7 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-fit-the-gev-distribution-20-marks">Q3: Fit the GEV distribution (20 marks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-estimate-the-return-level-of-the-extreme-events-20-marks">Q4: Estimate the return level of the extreme events (20 marks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-test-the-goodness-of-fit-20-marks">Q5: Test the goodness-of-fit (20 marks)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-simple-peaks-over-threshold-histogram-10-marks">Q6: Simple peaks over threshold &amp; histogram (10 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-sensitivity-analysis-of-averaging-period-10-marks">Q6: Sensitivity analysis of averaging period (10 marks)</a></li>
 </ul>
   </nav></div>
 
