@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Visualizing Temperature Change, Extremes, and ENSO in Southeast Asia</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=137df72d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-xxx');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/project/FinalProject-2026Fall';</script>
+    <link rel="canonical" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/project/FinalProject-2026Fall.html" />
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/favicon.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/favicon.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Coding with AI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../coding-with-ai/llm-intro.html">1. Introduction to LLM</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analytics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/python.html">1. Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-basic.html">1.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-exercise.html">1.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/python-solution.html">1.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/numpy.html">2. NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-basic.html">2.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-exercise.html">2.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/numpy-solution.html">2.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/pandas.html">3. Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-basic.html">3.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-exercise.html">3.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/pandas-solution.html">3.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/scipy.html">4. SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-basic.html">4.1. Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-exercise.html">4.2. Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/scipy-solution.html">4.3. Solution</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-analytics/xarray.html">5. Xarray</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-analytics/xarray-basic.html">5.1. Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data-visuals/matplotlib.html">1. Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-basic.html">1.1. Tutorial (Basic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-visuals/matplotlib-advanced.html">1.2. Tutorial (Advanced)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework 1 (Fall 2026)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework 2 (Fall 2025)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FinalProject-2025Fall.html">Fall 2025</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../gallery/plot_weighted_river_network.html">River Network</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Others</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../others/refs.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xiaoganghe/python-climate-visuals/master?urlpath=tree/chapters/project/FinalProject-2026Fall.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/xiaoganghe/python-climate-visuals" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/project/FinalProject-2026Fall.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Visualizing Temperature Change, Extremes, and ENSO in Southeast Asia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">Data Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-long-term-temperature-changes-20-marks">Task 1: Long-Term Temperature Changes (20 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-extreme-heat-and-generalized-extreme-value-distributions-30-marks">Task 2: Extreme Heat and Generalized Extreme Value Distributions (30 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-temperature-and-enso-variability-15-marks">Task 3: Temperature and ENSO Variability (15 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-agent-assisted-exploration-20-marks">Task 4: Agent-Assisted Exploration (20 marks)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-use-log">Agent Use Log</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-write-ups-15-marks">Short Write-ups (15 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-words">Final Words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-policies">AI policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="visualizing-temperature-change-extremes-and-enso-in-southeast-asia">
+<h1>Visualizing Temperature Change, Extremes, and ENSO in Southeast Asia<a class="headerlink" href="#visualizing-temperature-change-extremes-and-enso-in-southeast-asia" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Project Overview</p>
+<p>Climate change is not expressed only as a gradual increase in average temperature. Changes in temperature variability, seasonal conditions, and extreme heat can reveal different aspects of a changing climate. Natural climate variability can also temporarily amplify or offset the long-term warming signal.</p>
+<p>In this project, you will use climate-model simulations for your assigned city in Southeast Asia to investigate four related questions:</p>
+<ol class="arabic simple">
+<li><p>How is temperature changing over time, and how does the seasonal cycle change?</p></li>
+<li><p>How are extreme temperatures changing, and what do GEV distributions tell us about rare heat events?</p></li>
+<li><p>How are historical temperatures associated with different ENSO phases?</p></li>
+<li><p>What new climate question can you find in the data with the help of an AI agent, and how do you know your answer is right?</p></li>
+</ol>
+<p>The project is designed to combine climate data analysis, statistical modelling, and creative visualization. You should focus on communicating the main patterns clearly rather than producing a large number of separate plots.</p>
+</div>
+<div class="admonition-submission-guide admonition">
+<p class="admonition-title">Submission Guide</p>
+<p>Deadline: <strong>Tuesday 11:59 pm, 1st December 2026</strong>
+(Note: Late submissions will not be accepted).</p>
+<p>You must submit your project to <a class="reference external" href="https://canvas.nus.edu.sg/courses/93388/assignments/279687">Canvas</a>. Please upload a Jupyter Notebook with the name “FinalProject_StudentID.ipynb”. You need to include your codes, figures, and the required write-ups in a single Jupyter Notebook file. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>) or Yifan LU (<a class="reference external" href="mailto:yifan_lu&#37;&#52;&#48;u&#46;nus&#46;edu">yifan_lu<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill your student ID and full name below.</span>
+
+<span class="c1"># Student ID:</span>
+<span class="c1"># Full name:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-description">
+<h2>Data Description<a class="headerlink" href="#data-description" title="Link to this heading">#</a></h2>
+<p>Each of you has been randomly assigned a city in Southeast Asia (see Figure below) according to your student ID. For this project, you only need to work on the city assigned to you. Simulated near-surface air temperature (tas, unit: K) from the latest climate models have been provided (available <a class="reference external" href="https://github.com/XiaogangHe/python-climate-visuals/tree/master/assets/data/finalproject">here</a>, you can load the data directly without downloading using the example provided below). This data have been divided into two parts: historical (1850.01.01-2014.12.31) simulations (<code class="docutils literal notranslate"><span class="pre">CityName_hist.csv</span></code>) and future (2015.01.01-2099.12.31) projections (<code class="docutils literal notranslate"><span class="pre">CityName_future.csv</span></code>). Historical data contains 12 climate models and 60265 time steps. Future data contains 12 climate models and 31046 time steps in 2 climate scenarios (ssp245: middle-of-the-road scenario; ssp585: fossil-fuel based development; check SSP details <a class="reference external" href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change">here</a>).</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/XiaogangHe/python-climate-visuals/master/assets/images/selected_city.png"><img alt="https://raw.githubusercontent.com/XiaogangHe/python-climate-visuals/master/assets/images/selected_city.png" class="align-center" src="https://raw.githubusercontent.com/XiaogangHe/python-climate-visuals/master/assets/images/selected_city.png" style="width: 80%;" />
+</a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the following script to obtain the city assigned to you. </span>
+<span class="c1"># Note: You must use the assigned city for this project.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">getCityName</span><span class="p">(</span><span class="n">studentID</span><span class="p">):</span>
+    
+    <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/XiaogangHe/python-climate-visuals/master/assets/data/2025_FinalProject_Student_City.json"</span>
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+        <span class="n">studentCity</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">studentID</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">studentCity</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> is not a correct student ID!'</span><span class="o">%</span><span class="k">studentID</span>)
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">studentCity</span><span class="p">[</span><span class="n">studentID</span><span class="p">]</span>
+
+<span class="c1"># Example: (please use your own ID)</span>
+<span class="n">studentID</span> <span class="o">=</span> <span class="s1">'E0000000'</span>  
+<span class="n">cityName</span> <span class="o">=</span> <span class="n">getCityName</span><span class="p">(</span><span class="n">studentID</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cityName</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An example is provided on how to load the temperature data for historical (tas_hist) and future (tas_ssp245, tas_ssp585) simulations from the provided <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files. For more details on data loading and preprocessing, please check the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-basic.html#input-output-of-data">Pandas tutorial</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the following script to obtain the data assigned to you. </span>
+<span class="n">cityName</span> <span class="o">=</span> <span class="s2">"Singapore"</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_data</span><span class="p">(</span><span class="n">cityName</span><span class="p">):</span>
+    
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/XiaogangHe/python-climate-visuals/master/assets/data/finalproject"</span>
+    <span class="n">hist_address</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">cityName</span> <span class="o">+</span> <span class="s2">"_hist.csv"</span>
+    <span class="n">future_address</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">cityName</span> <span class="o">+</span> <span class="s2">"_future.csv"</span>
+    <span class="n">soi_address</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">"/soi.txt"</span>
+    
+    <span class="c1"># Refer to https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html</span>
+    <span class="c1"># for more details about MultiIndex of DataFrame </span>
+    <span class="n">hist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">hist_address</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
+                       <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span>
+    <span class="c1"># huss_hist = hist.loc[:,idx["huss",:]].droplevel(level=0,axis=1)</span>
+    <span class="n">tas_hist</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">idx</span><span class="p">[</span><span class="s2">"tas"</span><span class="p">,:]]</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">future</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">future_address</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># huss_ssp245 = future.loc[:,idx["huss","ssp245",:]].droplevel(level=[0,1],axis=1)</span>
+    <span class="c1"># huss_ssp585 = future.loc[:,idx["huss","ssp585",:]].droplevel(level=[0,1],axis=1)</span>
+    <span class="n">tas_ssp245</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">idx</span><span class="p">[</span><span class="s2">"tas"</span><span class="p">,</span><span class="s2">"ssp245"</span><span class="p">,:]]</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">tas_ssp585</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">idx</span><span class="p">[</span><span class="s2">"tas"</span><span class="p">,</span><span class="s2">"ssp585"</span><span class="p">,:]]</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Monthly standardized SOI (NOAA). The file is fixed-width: a 4-character</span>
+    <span class="c1"># year followed by twelve 6-character monthly values.</span>
+    <span class="n">soi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_fwf</span><span class="p">(</span><span class="n">soi_address</span><span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">"year"</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)),</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">soi</span> <span class="o">=</span> <span class="n">soi</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+    <span class="n">soi</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">-01"</span> <span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">soi</span><span class="o">.</span><span class="n">index</span><span class="p">])</span>
+    <span class="n">soi</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"soi"</span>
+    
+    <span class="k">return</span> <span class="n">tas_hist</span><span class="p">,</span> <span class="n">tas_ssp245</span><span class="p">,</span> <span class="n">tas_ssp585</span><span class="p">,</span> <span class="n">soi</span>
+
+<span class="n">tas_hist</span><span class="p">,</span> <span class="n">tas_ssp245</span><span class="p">,</span> <span class="n">tas_ssp585</span><span class="p">,</span> <span class="n">soi</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">cityName</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-1-long-term-temperature-changes-20-marks">
+<h2>Task 1: Long-Term Temperature Changes (20 marks)<a class="headerlink" href="#task-1-long-term-temperature-changes-20-marks" title="Link to this heading">#</a></h2>
+<p>Investigate how the temperature of your assigned city has changed from the historical period into the future.</p>
+<p>Your analysis should reveal both the long-term warming signal and any changes in the seasonal character of temperature. Consider the historical climate in relation to the pre-industrial period, and compare future conditions under SSP2-4.5 and SSP5-8.5.</p>
+<p>Your visualization should make it possible to assess:</p>
+<ol class="arabic simple">
+<li><p>how temperature has changed over time;</p></li>
+<li><p>how much the different climate models agree or disagree;</p></li>
+<li><p>whether warming is distributed similarly throughout the year.</p></li>
+</ol>
+<p>Use an appropriate baseline for calculating temperature anomalies and choose a visualization or combination of visualizations that communicates these changes effectively.</p>
+<div class="tip admonition">
+<p class="admonition-title">Bonus: 10 marks</p>
+<p>While you can create 24 (12 climate models × 2 climate scenarios) similar warming stripes, we hope you could come up with some creative design (e.g., layout, chart types) that are sufficiently compact to allow for meaningful comparison between periods, seasons, models, and future scenarios.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-2-extreme-heat-and-generalized-extreme-value-distributions-30-marks">
+<h2>Task 2: Extreme Heat and Generalized Extreme Value Distributions (30 marks)<a class="headerlink" href="#task-2-extreme-heat-and-generalized-extreme-value-distributions-30-marks" title="Link to this heading">#</a></h2>
+<p>Extreme temperatures can change differently from the average temperature. In this task, use the Generalized Extreme Value (GEV) distribution to investigate how the characteristics of rare heat events change over time.</p>
+<p>Focus on two seasons:</p>
+<ul class="simple">
+<li><p>June–September</p></li>
+<li><p>December–February</p></li>
+</ul>
+<p><em>Note: Some seasons span two calendar years (e.g., December–February). Pay careful attention to how you define and assign these seasons when calculating seasonal statistics, annual maxima, or comparing years.</em></p>
+<p><strong>Seasonal temperature extremes</strong></p>
+<p>Construct a time series of seasonal maximum temperatures for each year for the following periods:</p>
+<ul class="simple">
+<li><p>1850–1900 — pre-industrial baseline;</p></li>
+<li><p>1950–2014 — historical period;</p></li>
+<li><p>2015–2099 — SSP2-4.5;</p></li>
+<li><p>2015–2099 — SSP5-8.5.</p></li>
+</ul>
+<p>For this task, use the multi-model mean temperature series.</p>
+<p><strong>GEV analysis</strong></p>
+<p>To do this:</p>
+<ol class="arabic simple">
+<li><p>Fit a Generalized Extreme Value (GEV) distribution using Maximum Likelihood Estimation (MLE) to the seasonal maxima for each period, season, and future scenario.</p></li>
+<li><p>Assess the quality of your fitted distributions.</p></li>
+<li><p>Visualize the shift in your fitted GEV distributions over different periods and  scenarios. (Hint: You may use visualization tools such as <a class="reference external" href="https://www.data-to-viz.com/graph/ridgeline.html#:~:text=Definition,presented%20with%20a%20slight%20overlap.">Ridgeline plot</a>)</p></li>
+<li><p>Using the fitted GEV distributions to estimate the 1-in-100-year and 1-in-1000-year return level. Then, compare how these values change between periods and scenarios.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-3-temperature-and-enso-variability-15-marks">
+<h2>Task 3: Temperature and ENSO Variability (15 marks)<a class="headerlink" href="#task-3-temperature-and-enso-variability-15-marks" title="Link to this heading">#</a></h2>
+<p>Long-term warming occurs alongside substantial year-to-year climate variability. In this task, investigate whether historical temperature conditions differ between El Niño and La Niña years using the Southern Oscillation Index (SOI).</p>
+<p>This analysis is restricted to 1951–2014, for which the accompanying monthly SOI record is available. The project materials include monthly standardized SOI values. Use these values to derive a single SOI-based ENSO classification for each year, based on the calendar-year (January–December) mean of the monthly SOI:</p>
+<ul class="simple">
+<li><p>Positive annual mean SOI → La Niña</p></li>
+<li><p>Negative annual mean SOI → El Niño</p></li>
+</ul>
+<p>For this task, focus specifically on June–September. Investigate whether temperature conditions during this season differ between the two SOI-based ENSO phases.</p>
+<p>Your analysis should consider both typical temperature conditions and extreme heat. Use appropriate visualizations to compare the temperature distributions and investigate whether unusually warm June–September seasons occur with different frequencies between El Niño and La Niña years.</p>
+<div class="tip admonition">
+<p class="admonition-title">Bonus (10 marks)</p>
+<p>Before comparing El Niño and La Niña years, here’s something to think about:
+<strong>Long-term warming.</strong> El Niño and La Niña years may not be spread evenly across 1951–2014. If one phase occurs more often in later, warmer decades, it can look warmer even without any real ENSO effect. Remove the long-term trend from your June–September temperatures (e.g., subtract a linear trend) before comparing the two phases, and check how your results change with and without detrending.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-4-agent-assisted-exploration-20-marks">
+<h2>Task 4: Agent-Assisted Exploration (20 marks)<a class="headerlink" href="#task-4-agent-assisted-exploration-20-marks" title="Link to this heading">#</a></h2>
+<p>In Tasks 1–3, the questions were given to you. In this task, you find one yourself. Use an AI coding/analysis agent (e.g., ChatGPT, Claude, Gemini, GitHub Copilot) as a research partner for the whole process (<strong>finding a question → analysing it → checking the result</strong>), not only as a code writer.</p>
+<p>Starting from your ENSO analysis in Task 3, work with the agent to identify and investigate <strong>one new climate question</strong> about your assigned city. The question should go beyond what Tasks 1–3 already ask. It may extend one of them or come from something you notice in the data. Possible directions:</p>
+<ul class="simple">
+<li><p>warming trends</p></li>
+<li><p>extreme temperatures</p></li>
+<li><p>model uncertainty</p></li>
+<li><p>year-to-year variability</p></li>
+<li><p>an unusual pattern you discover in the data</p></li>
+</ul>
+<p>Your Task 4 should include:</p>
+<ol class="arabic simple">
+<li><p><strong>Question and motivation</strong> — what you asked, why it is interesting, and how you arrived at it with the agent.</p></li>
+<li><p><strong>Analysis</strong> — code and one or two figures that answer the question.</p></li>
+<li><p><strong>Validation</strong> — evidence that your result reflects the climate data, not a mistake in the code or in the data handling.</p></li>
+<li><p><strong>Answer</strong> — a short interpretation, including the limitations of your analysis.</p></li>
+</ol>
+<p>Rules:</p>
+<ul class="simple">
+<li><p>Use only the data provided for this project (the temperature simulations and the SOI record).</p></li>
+<li><p>Parts 1, 3 and 4 are written content and must be in your own words (see AI policies).</p></li>
+</ul>
+<p><strong>Marking:</strong> question and analysis (10), validation and interpretation (5), Agent Use Log (5).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your solutions go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="agent-use-log">
+<h3>Agent Use Log<a class="headerlink" href="#agent-use-log" title="Link to this heading">#</a></h3>
+<p><strong>Agent(s) used:</strong> <em>(tool and model, e.g., “Claude, Sonnet”)</em></p>
+<p><strong>Key prompts (2–3):</strong> <em>(what are some of the main guidance you provided)</em></p>
+<p><strong>One useful suggestion:</strong> <em>(what the agent suggested, and how you used it)</em></p>
+<p><strong>One rejected or corrected suggestion:</strong> <em>(what the agent suggested, why it was wrong or unsuitable, how you found out, and what you did instead)</em></p>
+<p><strong>Sanity checks 1 &amp; 2:</strong> <em>(what you checked, how you checked it, and the result)</em></p>
+<p><em>A sanity check compares a result against something you know independently — for example, a value calculated by hand for one year, the units, or a plot of the raw series. “The code ran without errors” is not a sanity check.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your write-ups go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="short-write-ups-15-marks">
+<h2>Short Write-ups (15 marks)<a class="headerlink" href="#short-write-ups-15-marks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>What story are you trying to tell? (Hints: You could discuss major findings from your analysis, key takeaways, and possible implications.)</p></li>
+<li><p>Why did you choose such a visual design and how does it facilitate effective communication? (Hint: you could provide some rationale in terms of your choice of chart types, use of color, size, etc.)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your write-ups go here.</span>
+<span class="c1"># Use the + icon in the toolbar to add a cell.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Reminder</p>
+<p>The goal is to communicate more information without simply adding more separate plots.
+Feel free to make your own design. You can utilize <a class="reference external" href="https://nightingaledvs.com/data-visualization-using-chatgpt-to-code/">ChatGPT</a> for better data storytelling, such as creating <a class="reference external" href="https://medium.com/mcd-unison/3-minute-data-science-dashboards-with-chatgpt-4-and-dash-8a54646510d8">dashboards</a> or <a class="reference external" href="https://medium.com/&#64;htobochnik/animated-data-visualization-in-python-how-to-leverage-chatgpt-56de5f196004">animation</a>.</p>
+</div>
+</section>
+<section id="final-words">
+<h2>Final Words<a class="headerlink" href="#final-words" title="Link to this heading">#</a></h2>
+<p>You may recycle your code from HW1 and HW2 where appropriate.</p>
+<p>Remember to:</p>
+<ul class="simple">
+<li><p>check your date and seasonal selections carefully, especially when working with seasons that span two calendar years;</p></li>
+<li><p>make your figures readable and understandable without requiring the reader to inspect the code;</p></li>
+<li><p>consider the principles in the official <a class="reference external" href="https://www.ipcc.ch/site/assets/uploads/2019/04/IPCC-visual-style-guide.pdf">IPCC Visual Style Guide</a> when designing your figures.</p></li>
+</ul>
+<p>For this final project, quality matters more than quantity. A small number of thoughtful, well-designed figures is much more valuable than a large collection of repetitive plots.</p>
+<p>Enjoy coding!</p>
+</section>
+<section id="ai-policies">
+<h2>AI policies<a class="headerlink" href="#ai-policies" title="Link to this heading">#</a></h2>
+<p>You can use ChatGPT (or other AI tools) for coding, visualization design, and related tasks, and Task 4 requires you to use an AI agent. However, AI should not be used for any written content: the short write-ups, the written parts of Task 4 (question and motivation, validation, answer), and the descriptions in your Agent Use Log must be your own.</p>
+<p>For AI use outside Task 4, add a one-line acknowledgement at the end of your notebook (tool, date, and what it was used for).</p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
+<p>National Centers for Environmental Information. (2026). El Niño / Southern Oscillation (ENSO). <a class="reference external" href="https://www.ncei.noaa.gov/access/monitoring/enso/soi#calculation-of-soi">https://www.ncei.noaa.gov/access/monitoring/enso/soi#calculation-of-soi</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">Data Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-long-term-temperature-changes-20-marks">Task 1: Long-Term Temperature Changes (20 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-extreme-heat-and-generalized-extreme-value-distributions-30-marks">Task 2: Extreme Heat and Generalized Extreme Value Distributions (30 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-temperature-and-enso-variability-15-marks">Task 3: Temperature and ENSO Variability (15 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-agent-assisted-exploration-20-marks">Task 4: Agent-Assisted Exploration (20 marks)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-use-log">Agent Use Log</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-write-ups-15-marks">Short Write-ups (15 marks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-words">Final Words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-policies">AI policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Xiaogang HE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
