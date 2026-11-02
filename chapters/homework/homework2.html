@@ -491,7 +491,7 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-visualize-the-gev-distribution-30-marks">Task 1: Visualize the GEV distribution (30 marks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks">Task 2: Visualize the trend of temperature anomaly (70 marks)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks">Q1: Visualize the time series and local trend (slope) of historical temperature anomalies for Singapore (35 marks)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-visualize-historical-temperature-anomalies-and-decadal-warming-35-marks">Q1: Visualize historical temperature anomalies and decadal warming (35 marks)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-add-climate-stripes-for-singapore-35-marks">Q2: Add climate stripes for Singapore (35 marks)</a></li>
 </ul>
 </li>
@@ -520,10 +520,10 @@
 </div>
 <div class="admonition-submission-guide admonition">
 <p class="admonition-title">Submission Guide</p>
-<p>Deadline: <strong>Sunday 11:59 pm, 16th November 2025</strong>
+<p>Deadline: <strong>Sunday 11:59 pm, 15th November 2026</strong>
 (Note: Late submissions will not be accepted).</p>
-<p>Please upload your solutions to <a class="reference external" href="https://canvas.nus.edu.sg/courses/77993/assignments">Canvas</a> in a Jupyter Notebook format with the name “Homework2_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
-<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>), Kewei ZHANG (<a class="reference external" href="mailto:kewei_zhang&#37;&#52;&#48;u&#46;nus&#46;edu">kewei_zhang<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>) or Yifan LU (<a class="reference external" href="mailto:yifan_lu&#37;&#52;&#48;u&#46;nus&#46;edu">yifan_lu<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
+<p>Please upload your solutions to <a class="reference external" href="https://canvas.nus.edu.sg/courses/93388/assignments/279689">Canvas</a> in a Jupyter Notebook format with the name “Homework2_StudentID.ipynb”. Make sure to write down your student ID and full name in the cell below.</p>
+<p>For any questions, feel free to contact Prof. Xiaogang HE (<a class="reference external" href="mailto:hexg&#37;&#52;&#48;nus&#46;edu&#46;sg">hexg<span>&#64;</span>nus<span>&#46;</span>edu<span>&#46;</span>sg</a>) or Yifan LU (<a class="reference external" href="mailto:yifan_lu&#37;&#52;&#48;u&#46;nus&#46;edu">yifan_lu<span>&#64;</span>u<span>&#46;</span>nus<span>&#46;</span>edu</a>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -563,14 +563,13 @@ You can create a DataFrame using Pandas by reading the file “../../assets/data
 </section>
 <section id="task-2-visualize-the-trend-of-temperature-anomaly-70-marks">
 <h2>Task 2: Visualize the trend of temperature anomaly (70 marks)<a class="headerlink" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks" title="Link to this heading">#</a></h2>
-<section id="q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks">
-<h3>Q1: Visualize the time series and local trend (slope) of historical temperature anomalies for Singapore (35 marks)<a class="headerlink" href="#q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks" title="Link to this heading">#</a></h3>
+<section id="q1-visualize-historical-temperature-anomalies-and-decadal-warming-35-marks">
+<h3>Q1: Visualize historical temperature anomalies and decadal warming (35 marks)<a class="headerlink" href="#q1-visualize-historical-temperature-anomalies-and-decadal-warming-35-marks" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Calculate the annual mean temperature from the daily data. This will result in a dataset of 39 values — one per year. (5 marks)</p></li>
-<li><p>Calculate the annual temperature anomalies using the first 10-year period as the baseline. (Hint: subtract the mean temperature over 1982 to 1991 from the annual mean temperature for each year.) (5 marks)</p></li>
-<li><p>Visualize the change in these annual temperature anomalies over time, ensuring that you include essential non-data elements. (10 marks)</p></li>
-<li><p>Compute a rolling linear regression (10-year moving window) of annual mean temperature anomalies to estimate how the local warming rate evolves through time. (10 marks)</p></li>
-<li><p>Plot the resulting slope (°C per decade) against the central year. (5 marks)</p></li>
+<li><p>Calculate the annual mean temperature from the daily data. This will result in a dataset of 39 values. (5 marks)</p></li>
+<li><p>Calculate the annual temperature anomalies using the first 10-year period as the baseline. (5 marks)</p></li>
+<li><p>Calculate the 10-year temperature change for each year from 1992 onward by subtracting the annual anomaly 10 years earlier from the current annual anomaly. (10 marks)</p></li>
+<li><p>Create a combined visualization showing the annual temperature anomaly as a line and the 10-year temperature change as bars. Clearly distinguish the two variables and provide appropriate axis labels. (15 marks)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,7 +584,8 @@ You can create a DataFrame using Pandas by reading the file “../../assets/data
 <h3>Q2: Add climate stripes for Singapore (35 marks)<a class="headerlink" href="#q2-add-climate-stripes-for-singapore-35-marks" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Reproduce the <a class="reference external" href="https://showyourstripes.info/s/asia/singapore">climate stripes</a> for Singapore using <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. (20 marks)</p></li>
-<li><p>Overlay the annual temperature anomaly time series and its local trend (from Q1) on top of your generated climate stripes. (15 marks)</p></li>
+<li><p>Overlay the annual temperature anomaly time series from Q1 on top of the generated climate stripes. (10 marks)</p></li>
+<li><p>Annotate the warmest and coolest years in the record and include appropriate non-data elements. (5 marks)</p></li>
 </ul>
 <p>Tips:</p>
 <ul class="simple">
@@ -676,7 +676,7 @@ You can create a DataFrame using Pandas by reading the file “../../assets/data
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-visualize-the-gev-distribution-30-marks">Task 1: Visualize the GEV distribution (30 marks)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-visualize-the-trend-of-temperature-anomaly-70-marks">Task 2: Visualize the trend of temperature anomaly (70 marks)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-visualize-the-time-series-and-local-trend-slope-of-historical-temperature-anomalies-for-singapore-35-marks">Q1: Visualize the time series and local trend (slope) of historical temperature anomalies for Singapore (35 marks)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-visualize-historical-temperature-anomalies-and-decadal-warming-35-marks">Q1: Visualize historical temperature anomalies and decadal warming (35 marks)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-add-climate-stripes-for-singapore-35-marks">Q2: Add climate stripes for Singapore (35 marks)</a></li>
 </ul>
 </li>
