@@ -543,7 +543,7 @@ You can create a DataFrame using Pandas by reading file “../../assets/data/Cha
 <p>Hint:</p>
 <ul class="simple">
 <li><p>You can filter the daily rainfall time series for DJF using Pandas’ boolean filtering method. Details on filtering values can be found in the <a class="reference external" href="https://xiaoganghe.github.io/python-climate-visuals/chapters/data-analytics/pandas-basic.html">Pandas tutorial</a>.</p></li>
-<li><p>DJF spans across two calendar years. Make sure you only include complete DJF seasons. For the period 1891 to 2020, this results in 39 complete DJF seasons, from DJF 1981-1982 to DJF 2019-2020.</p></li>
+<li><p>DJF spans across two calendar years. Make sure you only include complete DJF seasons. For the period 1981 to 2020, this results in 39 complete DJF seasons, from DJF 1981-1982 to DJF 2019-2020.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1664,15 +1664,15 @@ Parameters fitted by L-Moments: shape=0.945, loc=5.164, scale=2.052
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">kstest</span>
 <span class="n">GEVKS</span> <span class="o">=</span> <span class="n">kstest</span><span class="p">(</span><span class="n">DJF_max_def</span><span class="p">[</span><span class="s2">"DJF Maximum Rainfall Deficit (mm)"</span><span class="p">],</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Goodness-of-fit for GEV distribution: statisic is </span><span class="si">{:.3f}</span><span class="s1">, pvalue is </span><span class="si">{:.3f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">GEVKS</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="n">GEVKS</span><span class="o">.</span><span class="n">pvalue</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Goodness-of-fit for GEV distribution: statistic is </span><span class="si">{:.3f}</span><span class="s1">, pvalue is </span><span class="si">{:.3f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">GEVKS</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="n">GEVKS</span><span class="o">.</span><span class="n">pvalue</span><span class="p">))</span>
 <span class="n">NORMKS</span> <span class="o">=</span> <span class="n">kstest</span><span class="p">(</span><span class="n">DJF_max_def</span><span class="p">[</span><span class="s2">"DJF Maximum Rainfall Deficit (mm)"</span><span class="p">],</span> <span class="n">MLEnorm</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Goodness-of-fit for Normal dirstribution: statisic is </span><span class="si">{:.3f}</span><span class="s1">, pvalue is </span><span class="si">{:.3f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NORMKS</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="n">NORMKS</span><span class="o">.</span><span class="n">pvalue</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Goodness-of-fit for Normal distribution: statistic is </span><span class="si">{:.3f}</span><span class="s1">, pvalue is </span><span class="si">{:.3f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NORMKS</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="n">NORMKS</span><span class="o">.</span><span class="n">pvalue</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Goodness-of-fit for GEV distribution: statisic is 0.077, pvalue is 0.961
-Goodness-of-fit for Normal dirstribution: statisic is 0.164, pvalue is 0.217
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Goodness-of-fit for GEV distribution: statistic is 0.077, pvalue is 0.961
+Goodness-of-fit for Normal distribution: statistic is 0.164, pvalue is 0.217
 </pre></div>
 </div>
 </div>
@@ -1684,11 +1684,11 @@ Goodness-of-fit for Normal dirstribution: statisic is 0.164, pvalue is 0.217
             <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">DJF_max_def</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span><span class="o">/</span><span class="n">DJF_max_def</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
             <span class="n">color</span> <span class="o">=</span> <span class="s1">'k'</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Empirical CDF'</span><span class="p">)</span>
 
-<span class="c1"># Plot estimated PDF based on maximum likelihood method</span>
+<span class="c1"># Plot estimated CDF based on maximum likelihood method</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">MLEGEV</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Estimated CDF (GEV)'</span><span class="p">)</span>
-<span class="c1"># Plot estimated PDF based on the method of L-moments</span>
+<span class="c1"># Plot estimated CDF of the fitted normal distribution</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">MLEnorm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">MLEnorm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">MLEnorm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> 
          <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Estimated CDF (Normal)'</span><span class="p">)</span>
@@ -1861,7 +1861,7 @@ When we move towards longer return periods (more extreme events), the two curves
     <span class="n">comparison</span><span class="p">[</span><span class="s1">'30-day Maximum Deficit (mm)'</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">comparison</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">comparison</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1956,180 +1956,6 @@ When we move towards longer return periods (more extreme events), the two curves
       <td>6.080</td>
       <td>1.123</td>
     </tr>
-    <tr>
-      <th>1991</th>
-      <td>7.203</td>
-      <td>6.103</td>
-      <td>1.100</td>
-    </tr>
-    <tr>
-      <th>1992</th>
-      <td>7.203</td>
-      <td>6.263</td>
-      <td>0.940</td>
-    </tr>
-    <tr>
-      <th>1993</th>
-      <td>7.203</td>
-      <td>6.250</td>
-      <td>0.953</td>
-    </tr>
-    <tr>
-      <th>1994</th>
-      <td>7.075</td>
-      <td>3.123</td>
-      <td>3.951</td>
-    </tr>
-    <tr>
-      <th>1995</th>
-      <td>7.203</td>
-      <td>2.790</td>
-      <td>4.413</td>
-    </tr>
-    <tr>
-      <th>1996</th>
-      <td>7.203</td>
-      <td>6.827</td>
-      <td>0.377</td>
-    </tr>
-    <tr>
-      <th>1997</th>
-      <td>7.203</td>
-      <td>5.620</td>
-      <td>1.583</td>
-    </tr>
-    <tr>
-      <th>1998</th>
-      <td>7.203</td>
-      <td>4.957</td>
-      <td>2.247</td>
-    </tr>
-    <tr>
-      <th>1999</th>
-      <td>7.046</td>
-      <td>2.713</td>
-      <td>4.333</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>6.846</td>
-      <td>4.187</td>
-      <td>2.660</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>7.203</td>
-      <td>5.440</td>
-      <td>1.763</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>7.203</td>
-      <td>-0.533</td>
-      <td>7.737</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>7.203</td>
-      <td>6.140</td>
-      <td>1.063</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>7.203</td>
-      <td>7.177</td>
-      <td>0.027</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>7.203</td>
-      <td>3.663</td>
-      <td>3.540</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>7.203</td>
-      <td>6.217</td>
-      <td>0.987</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>7.203</td>
-      <td>4.103</td>
-      <td>3.100</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>7.203</td>
-      <td>7.183</td>
-      <td>0.020</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>7.203</td>
-      <td>6.993</td>
-      <td>0.210</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>7.203</td>
-      <td>4.537</td>
-      <td>2.667</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>7.203</td>
-      <td>4.883</td>
-      <td>2.320</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>7.203</td>
-      <td>-0.537</td>
-      <td>7.740</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>7.203</td>
-      <td>7.197</td>
-      <td>0.007</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>7.203</td>
-      <td>6.710</td>
-      <td>0.493</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>6.946</td>
-      <td>5.463</td>
-      <td>1.483</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>7.089</td>
-      <td>2.857</td>
-      <td>4.232</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>7.203</td>
-      <td>5.263</td>
-      <td>1.940</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>7.203</td>
-      <td>6.797</td>
-      <td>0.407</td>
-    </tr>
-    <tr>
-      <th>2019</th>
-      <td>7.203</td>
-      <td>6.503</td>
-      <td>0.700</td>
-    </tr>
   </tbody>
 </table>
 </div></div></div>
@@ -2190,6 +2016,7 @@ When we move towards longer return periods (more extreme events), the two curves
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identify the DJF season with the largest absolute difference</span>
+<span class="n">comparison</span><span class="p">[</span><span class="s1">'Absolute Difference (mm)'</span><span class="p">]</span> <span class="o">=</span> <span class="n">comparison</span><span class="p">[</span><span class="s1">'Difference (7-day - 30-day)'</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
 <span class="n">largest_year</span> <span class="o">=</span> <span class="n">comparison</span><span class="p">[</span><span class="s1">'Absolute Difference (mm)'</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 
 <span class="n">largest_result</span> <span class="o">=</span> <span class="n">comparison</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">largest_year</span><span class="p">]</span>
